@@ -1,0 +1,17 @@
+{
+  "name": "inforg-landpage",
+  "version": "0.1.0",
+  "description": "Inforg landpage.",
+  "keywords": [
+      "inforg",
+      "landpage"
+  ],
+  "author": "Inforg <contact@inforg.dev> (https://inforg.dev)",
+  "contributors": [
+      "Luis Float <contact@luisfloat.com> (https://luisfloat.com)"
+  ],
+  "homepage": "https://github.com/inforgdev/inforgdev.github.io",
+  "repo": "github:inforgdev/inforgdev.github.io",
+  "bugs": "https://github.com/inforgdev/inforgdev.github.io/issues",
+  "license": "SEE LICENSE IN LICENSE.md"
+}
