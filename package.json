@@ -2,6 +2,10 @@
   "name": "inforg-landpage",
   "version": "0.1.0",
   "description": "Inforg landpage.",
+  "scripts": {
+    "docs:dev": "vitepress dev src/main",
+    "docs:build": "vitepress build src/main"
+  },
   "keywords": [
       "inforg",
       "landpage"
@@ -13,5 +17,9 @@
   "homepage": "https://github.com/inforgdev/inforgdev.github.io",
   "repo": "github:inforgdev/inforgdev.github.io",
   "bugs": "https://github.com/inforgdev/inforgdev.github.io/issues",
-  "license": "SEE LICENSE IN LICENSE.md"
+  "license": "SEE LICENSE IN LICENSE.md",
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.4",
+    "vue": "^3.2.37"
+  }
 }
