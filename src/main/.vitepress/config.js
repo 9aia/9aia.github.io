@@ -13,7 +13,7 @@ export default {
             { text: 'SpongiaCSS', link: 'https://inforg.dev/spongia-css' },
         ],
         footer: {
-            copyright: '2022 Inforg',
+            copyright: 'By Inforg',
         },
     }
 }
