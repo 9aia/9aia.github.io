@@ -2,6 +2,7 @@ export default {
     title: 'Inforg',
     description: 'Inforg landpage website',
     appearance: true,
+    outDir: '../../host',
     themeConfig: {
         siteTitle: 'Inforg',
         socialLinks: [
