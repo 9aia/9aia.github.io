@@ -1,6 +1,6 @@
 {
     "name": "inforg-landpage",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "description": "Inforg landpage.",
     "scripts": {
         "docs:dev": "vitepress dev src/main",
