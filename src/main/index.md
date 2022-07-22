@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Inforg
-  text: Dev tools experiment lab.
+  text: System software laboratory.
   actions:
     - theme: alt
       text: View on GitHub
