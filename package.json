@@ -3,8 +3,8 @@
     "version": "0.2.0",
     "description": "Inforg landpage.",
     "scripts": {
-        "docs:dev": "vitepress dev src/main",
-        "docs:build": "vitepress build src/main"
+        "docs:dev": "vitepress dev ./",
+        "docs:build": "vitepress build ./"
     },
     "keywords": [
         "inforg",
