@@ -12,6 +12,7 @@ export default {
         ],
         nav: [
             { text: 'SpongiaCSS', link: 'https://inforg.dev/spongia-css' },
+            { text: 'OctopoJS', link: 'https://inforg.dev/octopo-js' },
         ],
         footer: {
             copyright: 'By Inforg',
