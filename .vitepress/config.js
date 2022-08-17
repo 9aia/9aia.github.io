@@ -13,6 +13,7 @@ export default {
         ],
         nav: [
             { text: 'SpongiaCSS', link: 'https://inforg.dev/spongia-css' },
+            { text: 'VesicJS', link: 'https://inforg.dev/vesic-js' },
             { text: 'OctopoJS', link: 'https://inforg.dev/octopo-js' },
         ],
         footer: {
