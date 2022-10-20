@@ -1,7 +1,6 @@
 export default {
     title: 'Inforg',
     description: 'Inforg landpage website',
-    appearance: true,
     srcDir: 'src/main',
     outDir: 'dist/',
     themeConfig: {
