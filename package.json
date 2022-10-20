@@ -19,7 +19,7 @@
     "bugs": "https://github.com/inforgdev/inforgdev.github.io/issues",
     "license": "SEE LICENSE IN LICENSE.md",
     "devDependencies": {
-        "vitepress": "^1.0.0-alpha.4",
+        "vitepress": "^1.0.0-alpha.21",
         "vue": "^3.2.37"
     }
 }
