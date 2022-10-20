@@ -6,4 +6,4 @@ export default {
     srcDir: 'src/main/views/',
     outDir: 'dist/',
     themeConfig,
-}
+};
