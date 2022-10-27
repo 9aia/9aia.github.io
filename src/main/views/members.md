@@ -5,30 +5,30 @@ layout: page
 <script setup>
 import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme'
 
-function member(name, title, username, avatar, items) {
-    const links = (username, items) => {
-        const data = [];
-        const link = (icon, link) => ({ icon, link });
+const ghPhoto = (id) => id && `https://www.github.com/${id}.png`;
 
-        if(items?.gh !== null) data.push(link("github", `https://github.com/${items?.gh || username}`));
-        if(items?.tt !== null) data.push(link("twitter", `https://twitter.com/${items?.tt || username}`));
+const memberBuilder = (uid, o, i) => i = {
+    done: () => o,
+    prop: (k, v) => (o = { ...o, [k]: v }) && i,
+    propArray: (k, v) => i.prop(k, [ ...(o[k] || []), v]),
 
-        return data;
-    };
-
-    return {
-        name,
-        title,
-        avatar: avatar || `https://www.github.com/${username}.png`,
-        links: links(username, items),
-    };
-}
+    link: (icon, link) => i.propArray("links", { icon, link }),
+    social: (social, url, id = uid) => i.link(social, id && `${url}${id}`),
+    
+    name: (name) => i.prop("name", name),
+    title: (title) => i.prop("title", title),
+    avatar: (data) => i.prop("avatar", data || ghPhoto(uid)),
+    ghAvatar: (id) => i.avatar(ghPhoto(id)),
+    twitter: (id) => i.social("twitter", `https://twitter.com/`, id),
+    github: (id) => i.social("github", `https://github.com/`, id),
+};
+const m = (uid, name, title) => memberBuilder(uid).name(name).title(title).avatar();
 
 const members = [
-    member("Luis Float", "Founder | Software Developer", "luisfloat", undefined),
-    member("Kruceo", "Software Developer", "kruceo", undefined, { tt: null }),
-    member("Vini Center", "Software Developer", "vinicenter"),
-]
+    m("luisfloat", "Luis Float", "Founder | Software Developer").github().twitter().done(),
+    m("kruceo", "Kruceo", "Software Developer").github().done(),
+    m("vinicenter", "Vini Center", "Software Developer").github().twitter().done(),
+];
 </script>
 
 <VPTeamPage>
