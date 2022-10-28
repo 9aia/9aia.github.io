@@ -1,6 +1,6 @@
 {
     "name": "inforg-landpage",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "description": "Inforg landpage.",
     "scripts": {
         "main:dev": "vitepress dev ./",
@@ -19,6 +19,7 @@
     "bugs": "https://github.com/inforgdev/inforgdev.github.io/issues",
     "license": "SEE LICENSE IN LICENSE.md",
     "devDependencies": {
+        "sass": "^1.55.0",
         "vitepress": "^1.0.0-alpha.21",
         "vue": "^3.2.37"
     }
