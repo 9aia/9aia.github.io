@@ -7,9 +7,7 @@ export default {
     ],
     nav: [
         { text: "Members", link: "/members" },
-        { text: "SpongiaCSS", link: "https://inforg.dev/spongia-css" },
-        { text: "VesicJS", link: "https://inforg.dev/vesic-js" },
-        { text: "OctopoJS", link: "https://inforg.dev/octopo-js" },
+        { text: "Projects", link: "/projects "},
     ],
     footer: {
         copyright: "By Inforg",
