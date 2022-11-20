@@ -20,7 +20,7 @@
     "license": "SEE LICENSE IN LICENSE.md",
     "devDependencies": {
         "sass": "^1.55.0",
-        "vitepress": "^1.0.0-alpha.21",
+        "vitepress": "^1.0.0-alpha.29",
         "vue": "^3.2.37"
     }
 }
