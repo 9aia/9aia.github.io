@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { CustomTheme } from "../types/custom-theme";
-import VPSocialLinks from "vitepress/dist/client/theme-default/components/VPSocialLinks.vue";
+import VPSocialLink from "vitepress/dist/client/theme-default/components/VPSocialLink.vue";
 import VPLink from "vitepress/dist/client/theme-default/components/VPLink.vue";
 defineProps<{
     project: CustomTheme.Project,
@@ -12,16 +12,11 @@ defineProps<{
     <div class="profile">
         <div class="data">
             <h1 class="name">{{ project.name }}</h1>
-            <p v-if="project.title" class="description">
-                <span v-if="project.title" class="title">{{ project.title }}</span>
-            </p>
-            <p v-if="project.desc" class="desc">{{ project.desc }}</p>
+            <p v-if="project.description" class="description">{{ project.description }}</p>
             
             <div class="website">
                 <VPLink :href="project.website">Website</VPLink>
-                <div v-if="project.links" class="links">
-                    <VPSocialLinks :links="project.links" />
-                </div>
+                <VPSocialLink icon="github" :link="`https://github.com/inforgdev/${project.name}`">Website</VPSocialLink>
             </div>
         </div>
     </div>
@@ -53,15 +48,6 @@ defineProps<{
         font-size: 16px;
     }
     & .description {
-        margin: 0;
-        font-weight: 500;
-        color: var(--vp-c-text-2);
-
-        padding-top: 4px;
-        line-height: 20px;
-        font-size: 14px;
-    }
-    & .desc {
         margin: 0 auto;
 
         padding-top: 12px;
