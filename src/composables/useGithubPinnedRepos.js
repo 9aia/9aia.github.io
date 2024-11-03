@@ -9,7 +9,7 @@ function fetchPinnedRepos(username, cb) {
             let repos = [];
 
             for(let repo of data) {
-                if(!repo.topics || !repo.topics?.includes("inforg")) {
+                if(!repo.topics || !repo.topics?.includes("neogaia-public")) {
                     continue;
                 }
 
@@ -17,7 +17,7 @@ function fetchPinnedRepos(username, cb) {
                     name: repo.name,
                     description: repo.description,
                     website: repo.homepage,
-                    keywords: repo.topics.filter(topic => topic != "inforg"),
+                    keywords: repo.topics.filter(topic => topic != "neogaia-public"),
                     account: username,
                 });
             };

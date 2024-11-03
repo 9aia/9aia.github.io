@@ -1,33 +1,59 @@
-# Inforg Website
+# NeoGaia Lab's Website
 
-<a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/Contributing-CONTRIBUTING.md-005c99?style=flat&amp;logo=" alt="Contributing"/></a> <a href="LICENSE.md"><img src="https://img.shields.io/badge/License-LICENSE.md-005c99?style=flat&amp;logo=" alt="License"/></a>
+This repository powers our official website, where we showcase our projects and the team behind our initiatives.
 
-## About
+## Project Structure
 
-It's the official Inforg organization website.
+This website is built using [Vitepress](https://vitepress.dev) with a custom theme and [UnoCSS](https://unocss.dev) for styling. It includes static pages and dynamic project data to offer an interactive experience for visitors.
 
-## Features
+### Key Directories
 
-* **VitePress** as static site generation framework;
-* **Vue** as framework for building web user interfaces;
-* **TypeScript** as programming language;
-* **SCSS** for CSS preprocessing.
+- **`/src`**: Contains markdown files for content (`index.md`, `about.md`, etc.) and Vue components for dynamic data.
+- **`.vitepress`**: Custom configuration for Vitepress, including theme and site structure.
 
-## Download
+### Features
 
-Download via Git from Github repository:
+- **Dark Mode**: Provides a dark appearance by default for a modern, visually engaging UI.
+- **GitHub Integration**: Pulls data from GitHub repositories to display our latest projects.
 
-```bash
-git clone https://github.com/inforgdev/inforgdev.github.io.git
-```
+## Development Goals
 
-## Usage
+You can find our current and planned tasks in the [TODO.md](./TODO.md) file.
 
-Name         | Script               | Description
--------------|----------------------|------------------------------------------
-`main:dev`   | `npm run main:dev`   | Enable source code watch and live-reload
-`main:build` | `npm run main:build` | Build website into `dist/`
+### Development Environment
 
-## Support
+This project relies on the following tools and libraries:
 
-If there is some question, contact us via e-mail or any social media.
+- **Vitepress** for static site generation
+- **UnoCSS** for styling and theme customization
+- **SCSS** for enhanced styling capabilities
+- **Axios** for making HTTP requests, especially for GitHub API integration (upcoming) to fetch repository data
+
+#### Installation
+
+To get started locally:
+
+1. **Clone the repo**:
+    ```bash
+    git clone https://github.com/neogaialab/neogaialab.github.io
+    cd neogaialab.github.io
+    ```
+
+2. **Install dependencies**:
+    ```bash
+    pnpm install
+    ```
+
+3. **Run the development server**:
+    ```bash
+    pnpm dev
+    ```
+
+4. **Build for production**:
+    ```bash
+    pnpm build
+    ```
+
+## Contributing
+
+We welcome contributions that align with our mission of open-source, minimal, and tech-forward projects. Please feel free to submit issues, feature requests, or pull requests.

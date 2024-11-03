@@ -1,26 +1,30 @@
 <script setup lang="ts">
-import type { CustomTheme } from "../types/custom-theme";
+import type { Project } from "../types";
 import VPSocialLink from "vitepress/dist/client/theme-default/components/VPSocialLink.vue";
 import VPLink from "vitepress/dist/client/theme-default/components/VPLink.vue";
+
 defineProps<{
-    project: CustomTheme.Project,
+    project: Project,
 }>();
 </script>
 
 <template>
-<article class="ProjectsItem">
-    <div class="profile">
-        <div class="data">
-            <h1 class="name">{{ project.name }}</h1>
-            <p v-if="project.description" class="description">{{ project.description }}</p>
-            
-            <div class="website">
-                <VPLink :href="project.website">Website</VPLink>
-                <VPSocialLink icon="github" :link="`https://github.com/inforgdev/${project.name}`">Website</VPSocialLink>
+    <article class="ProjectsItem">
+        <div class="profile">
+            <div class="data flex justify-between flex-col h-full gap-2">
+                <div>
+                    <h1 class="name">{{ project.name }}</h1>
+                    <p v-if="project.description" class="description">{{ project.description }}</p>
+                </div>
+
+                <div class="website">
+                    <VPLink :href="project.website" v-if="project.website">Website</VPLink>
+                    <VPSocialLink icon="github" :link="`https://github.com/neogaialab/${project.name}`" class="ml--2">Website
+                    </VPSocialLink>
+                </div>
             </div>
         </div>
-    </div>
-</article>
+    </article>
 </template>
 
 <style lang="scss" scoped>
@@ -41,12 +45,13 @@ defineProps<{
     }
 
     & .name {
-        margin:  0;
+        margin: 0;
         font-weight: 600;
 
         line-height: 24px;
         font-size: 16px;
     }
+
     & .description {
         margin: 0 auto;
 
@@ -54,12 +59,10 @@ defineProps<{
         line-height: 20px;
         font-size: 14px;
     }
+
     & .links {
         display: flex;
         height: 56px;
-
-        margin: 0 -6px 0px;
-        padding: 10px 0 0;
     }
 
     .website {
@@ -67,8 +70,6 @@ defineProps<{
         align-items: center;
         justify-content: space-between;
         flex-direction: row-reverse;
-        margin-top: 6px;
-        margin-bottom: -20px;
     }
 }
 </style>
