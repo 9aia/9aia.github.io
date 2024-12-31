@@ -84,7 +84,7 @@ onBeforeMount(() => {
 
 We are always looking for passionate individuals to join us. If you're interested in collaborating or contributing to our projects, feel free to reach out!
 
-For inquiries, please contact Luis at <VPLink href="mailto:luisfuturist@gmail.com">luisfuturist@gmail.com</VPLink>.
+For inquiries, please contact Luis at <VPLink href="mailto:luisfuturist+9aia@gmail.com">luisfuturist+9aia@gmail.com</VPLink>.
 
 <style>
 :root {
