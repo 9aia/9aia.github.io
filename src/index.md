@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "NeoGaia Lab"
+  name: "Gaia"
   text: "An experimental contained technological environment"
   tagline: Where Technological Beings Evolve
   actions:
@@ -12,7 +12,7 @@ hero:
       link: /about
     - theme: alt
       text: View on GitHub
-      link: https://github.com/neogaialab
+      link: https://github.com/9aia
 
 features:
   - icon: 🛠️
@@ -46,7 +46,7 @@ import ProjectsItem from "./components/ProjectsItem.vue";
 
 const { data: projects, isLoading, err, fetchData } = useGithubPinnedRepos();
 onBeforeMount(() => {
-    fetchData(["neogaialab"]);
+    fetchData(["9aia"]);
 });
 </script>
 

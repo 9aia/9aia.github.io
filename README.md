@@ -1,4 +1,4 @@
-# NeoGaia Lab's Website
+# Gaia Website
 
 This repository powers our official website, where we showcase our projects and the team behind our initiatives.
 
@@ -35,8 +35,8 @@ To get started locally:
 
 1. **Clone the repo**:
     ```bash
-    git clone https://github.com/neogaialab/neogaialab.github.io
-    cd neogaialab.github.io
+    git clone https://github.com/9aia/9aia.github.io
+    cd 9aia.github.io
     ```
 
 2. **Install dependencies**:

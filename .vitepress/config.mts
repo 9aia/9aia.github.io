@@ -3,7 +3,7 @@ import UnoCSS from 'unocss/vite'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'NeoGaia Lab',
+  title: 'Gaia',
   description: 'An experimental contained technological environment.',
   srcDir: 'src/',
   outDir: 'dist/',
@@ -15,10 +15,10 @@ export default defineConfig({
       { text: 'About', link: '/about' },
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/neogaialab' }
+      { icon: 'github', link: 'https://github.com/9aia' }
     ],
     footer: {
-      copyright: 'NeoGaia Lab',
+      copyright: '9aia',
     },
   },
   vite: {

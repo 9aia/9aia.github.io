@@ -45,14 +45,14 @@ const members = [
     <VPTeamPageTitle>
         <template #title>About</template>
         <template #lead>
-            At NeoGaia Lab, we are a small group of developers dedicated to exploring and developing minimal, open-source projects.
+            At Gaia, we are a small group of developers dedicated to exploring and developing minimal, open-source projects.
         </template>
     </VPTeamPageTitle>
     <PageSection>
         <template #title>Members</template>
         <template #default>
             <p class="mb-6">
-                At NeoGaia Lab, we are a small group of developers dedicated to exploring and developing minimal, open-source projects.
+                At Gaia, we are a small group of developers dedicated to exploring and developing minimal, open-source projects.
             </p>
             <VPTeamMembers size='small' :members='members.slice(0, 1)' />
             <div class="mb-6" />

@@ -19,7 +19,7 @@ defineProps<{
 
                 <div class="website">
                     <VPLink :href="project.website" v-if="project.website">Website</VPLink>
-                    <VPSocialLink icon="github" :link="`https://github.com/neogaialab/${project.name}`" class="ml--2">Website
+                    <VPSocialLink icon="github" :link="`https://github.com/9aia/${project.name}`" class="ml--2">Website
                     </VPSocialLink>
                 </div>
             </div>
