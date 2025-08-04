@@ -1,5 +1,4 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
@@ -33,7 +32,6 @@ features:
   - icon: 🌈
     title: Interdisciplinary
     details: "We believe in the power of interdisciplinary collaboration, integrating insights from various fields to enrich our projects and address complex challenges."
-
 ---
 
 <script setup>
@@ -44,10 +42,7 @@ import PageSection from "./components/PageSection.vue";
 import Projects from "./components/Projects.vue";
 import ProjectsItem from "./components/ProjectsItem.vue";
 
-const { data: projects, isLoading, err, fetchData } = useGithubPinnedRepos();
-onBeforeMount(() => {
-    fetchData(["9aia"]);
-});
+import { data as projects } from '.vitepress/theme/projects.data.ts'
 </script>
 
 <div>
@@ -57,13 +52,11 @@ onBeforeMount(() => {
           Discover our diverse range of projects focused on developing minimal and viable solutions using cutting-edge technologies.
         </template>
     </VPTeamPageTitle>
-    <div v-if="isLoading" class="feedback loading">Loading...</div>
-    <div v-else>
-        <div v-if="err" class="feedback error">
-            There was an error loading projects from GitHub.
-        </div>
-        <Projects v-else :projects="projects" />
-    </div>
+    <ul>
+      <li v-for="project of projects">
+        {{ project.title }}
+      </li>
+    </ul>
 </div>
 
 <style scoped lang="scss">

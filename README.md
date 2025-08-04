@@ -8,7 +8,7 @@ This website is built using [Vitepress](https://vitepress.dev) with a custom the
 
 ### Key Directories
 
-- **`/src`**: Contains markdown files for content (`index.md`, `about.md`, etc.) and Vue components for dynamic data.
+- **`/`**: Contains markdown files for content (`index.md`, `about.md`, etc.) and Vue components for dynamic data.
 - **`.vitepress`**: Custom configuration for Vitepress, including theme and site structure.
 
 ### Features

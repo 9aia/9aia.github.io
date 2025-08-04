@@ -5,7 +5,6 @@ import UnoCSS from 'unocss/vite'
 export default defineConfig({
   title: 'Gaia',
   description: 'An experimental contained technological environment.',
-  srcDir: 'src/',
   outDir: 'dist/',
   appearance: 'dark',
   themeConfig: {
