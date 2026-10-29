@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Project, ProjectStatus } from "../types";
 import { computed, ref } from "vue"
+import VPButton from "vitepress/dist/client/theme-default/components/VPButton.vue";
 import ProjectsItem from "./ProjectsItem.vue";
 
 const props = defineProps<{
@@ -25,13 +26,13 @@ const filtered = computed(() =>
 <template>
     <div class="Projects">
         <div class="filters">
-            <button
+            <VPButton
                 v-for="f in filters"
                 :key="f.value"
-                class="filter"
-                :class="{ active: filter === f.value }"
+                :text="f.label"
+                :theme="filter === f.value ? 'brand' : 'alt'"
                 @click="filter = f.value"
-            >{{ f.label }}</button>
+            />
         </div>
         <div class="container">
             <div v-for="project in filtered" :key="project.name" class="item">
@@ -46,31 +47,8 @@ const filtered = computed(() =>
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
-    margin-bottom: 32px;
-}
-
-.filter {
-    padding: 6px 16px;
-    border: 1px solid var(--vp-c-divider);
-    border-radius: 999px;
-    background: transparent;
-    color: var(--vp-c-text-2);
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s, background-color 0.2s;
-
-    &:hover {
-        border-color: var(--vp-c-brand-2);
-        color: var(--vp-c-text-1);
-    }
-
-    &.active {
-        border-color: transparent;
-        background-color: var(--vp-c-brand-3);
-        color: var(--vp-c-white);
-    }
+    gap: 12px;
+    margin-bottom: 40px;
 }
 
 .container {
