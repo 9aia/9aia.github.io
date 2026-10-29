@@ -14,24 +14,24 @@ hero:
       link: https://github.com/9aia
 
 features:
-  - icon: 🛠️
-    title: Open-Source
-    details: "Committed to open-source principles, utilizing a wide range of open-source technologies in our projects and striving to make our work open-source whenever possible, fostering collaboration and innovation."
-  - icon: 💻
-    title: Developer-First
-    details: "Our approach prioritizes developers, providing a robust coding experience that allows for deep customization and scalability without relying on low-code solutions."
+  - icon: 🤖
+    title: Agent Infrastructure
+    details: "Memory, coordination, verification, CI, sessions, and orchestration — the layers that let AI agents do real work on real repositories."
+  - icon: 🧑‍🤝‍🧑
+    title: Apps for Humans
+    details: "Experimental GenAI-powered apps that help people learn, understand, and manage — built on top of our own infrastructure."
+  - icon: 🦀
+    title: Rust-Powered Core
+    details: "Single binaries over the git object store — fast, portable, and built to be driven by humans and agents alike."
   - icon: 🚀
     title: Tech-Forward
-    details: "Dedicated to exploring and integrating cutting-edge technologies, especially in generative AI, we keep our projects at the forefront of technological advancement."
-  - icon: 🌐
-    title: Online-Only
-    details: "We operate entirely online, leveraging digital tools to connect, collaborate, and experiment, ensuring accessibility and inclusivity in our projects."
+    details: "We explore emerging technologies — generative AI, agent protocols, new tooling — and turn them into working software early."
   - icon: 🌱
     title: Minimal and Viable
-    details: "We focus on developing minimal yet functional products that facilitate rapid prototyping and iterative development, allowing us to respond swiftly to feedback and user needs."
+    details: "Small, functional tools shipped early and iterated quickly — working software over big promises."
   - icon: 🌈
     title: Interdisciplinary
-    details: "We believe in the power of interdisciplinary collaboration, integrating insights from various fields to enrich our projects and address complex challenges."
+    details: "Programming languages, linguistics, agents, and the web — we pull from many fields to build better tools."
 ---
 
 <script setup>
@@ -52,9 +52,36 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
       Our work comes in two layers: agent-facing infrastructure for real repositories —
       memory (kuda), coordination (sturn), verification (mimus), CI (bupha),
       sessions (sepia), orchestration (peregrin), and project management (myco) —
-      and experimental apps on top that help people learn, understand, and manage
-      (thal, corax, tarsi). Always minimal, viable, and open source.
+      and experimental apps on top that help people learn, understand, and manage.
+      Always minimal, viable, and open source.
     </p>
+</div>
+
+<div>
+    <VPTeamPageTitle>
+        <template #title>Our Values</template>
+        <template #lead>
+          The principles behind how we build.
+        </template>
+    </VPTeamPageTitle>
+    <div class="values">
+      <div class="value">
+        <h3>Everything as Code</h3>
+        <p>When possible, an executable, reproducible, version-controlled path from idea to deployment.</p>
+      </div>
+      <div class="value">
+        <h3>Agent-First</h3>
+        <p>Agents are first-class users of our tools — CLIs, protocols, and data designed to be driven, not just clicked.</p>
+      </div>
+      <div class="value">
+        <h3>Autonomy over Micromanagement</h3>
+        <p>We build agents that own outcomes — not workflows that need babysitting step by step.</p>
+      </div>
+      <div class="value">
+        <h3>Own Your Stack</h3>
+        <p>Open, self-hostable tools — the AI works for you, not the other way around.</p>
+      </div>
+    </div>
 </div>
 
 <div>
@@ -153,6 +180,49 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
+}
+
+.values {
+    display: grid;
+    gap: 24px;
+    margin: 40px auto 0;
+    padding: 0 32px;
+    max-width: 896px;
+    grid-template-columns: 1fr;
+}
+
+.values .value {
+    border-radius: 12px;
+    background-color: var(--vp-c-bg-soft);
+    padding: 24px;
+    text-align: center;
+}
+
+.values h3 {
+    margin: 0 0 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--vp-c-text-1);
+}
+
+.values p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--vp-c-text-2);
+}
+
+@media (min-width: 768px) {
+    .values {
+        padding: 0 48px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 960px) {
+    .values {
+        padding: 0 64px;
+    }
 }
 
 .stack .chip {

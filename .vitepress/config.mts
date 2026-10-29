@@ -4,8 +4,9 @@ import UnoCSS from 'unocss/vite'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Gaia',
-  description: 'An experimental contained technological environment.',
+  description: 'Open infrastructure for agent-driven development — and experimental apps that help people learn, understand, and manage.',
   outDir: 'dist/',
+  srcExclude: ['projects/*.md'],
   appearance: 'dark',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
