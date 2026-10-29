@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "Gaia"
   text: "Put AI agents to work — on your terms"
-  tagline: Open infra for agent-driven development, plus experimental apps for learning, understanding, and managing
+  tagline: Open infrastructure for agent-driven development
   actions:
     - theme: brand
       text: About Us
@@ -17,9 +17,6 @@ features:
   - icon: 🤖
     title: Agent Infrastructure
     details: "Memory, coordination, verification, CI, sessions, and orchestration — the layers that let AI agents do real work on real repositories."
-  - icon: 🔌
-    title: Protocol-Native
-    details: "Our tools speak MCP, ACP, and plain JSON — agents plug in natively, no glue code required."
   - icon: 🗃️
     title: Repo-Native Tooling
     details: "Runs on real repositories over the git object store — no platform, no migration required."
@@ -43,11 +40,10 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
         </template>
     </VPTeamPageTitle>
     <p class="mission">
-      Our work comes in two layers: agent-facing infrastructure for real repositories —
+      We build agent-facing infrastructure for real repositories —
       memory (kuda), coordination (sturn), verification (mimus), CI (bupha),
       sessions (sepia), orchestration (peregrin), project management (myco), and
-      calendars (cicada) — plus experiments toward apps on top that help people
-      learn, understand, and manage. Always minimal, viable, and open source.
+      calendars (cicada). Always minimal, viable, and open source.
     </p>
 </div>
 
@@ -66,6 +62,10 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
       <div class="value">
         <h3>Agent-First</h3>
         <p>Agents are first-class users of our tools — CLIs, protocols, and data designed to be driven, not just clicked.</p>
+      </div>
+      <div class="value">
+        <h3>Protocol-Native</h3>
+        <p>Our tools speak MCP, ACP, and plain JSON — agents plug in natively, no glue code required.</p>
       </div>
       <div class="value">
         <h3>Autonomy over Micromanagement</h3>
