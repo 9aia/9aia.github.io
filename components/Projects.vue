@@ -84,7 +84,7 @@ const filtered = computed(() =>
 @media (min-width: 768px) {
     .container {
         grid-template-columns: repeat(2, 1fr);
-        max-width: 640px;
+        max-width: 896px;
     }
 }
 </style>
