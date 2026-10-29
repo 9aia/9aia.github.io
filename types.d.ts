@@ -1,4 +1,4 @@
-export type ProjectStatus = 'recent' | 'backlog' | 'wip' | 'deprecated';
+export type ProjectStatus = 'recent' | 'active' | 'wip' | 'deprecated';
 
 export interface Project {
     name: string;
