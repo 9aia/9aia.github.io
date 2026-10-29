@@ -45,9 +45,9 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
     <p class="mission">
       Our work comes in two layers: agent-facing infrastructure for real repositories —
       memory (kuda), coordination (sturn), verification (mimus), CI (bupha),
-      sessions (sepia), orchestration (peregrin), and project management (myco) —
-      and experimental apps on top that help people learn, understand, and manage.
-      Always minimal, viable, and open source.
+      sessions (sepia), orchestration (peregrin), project management (myco), and
+      calendars (cicada) — plus experiments toward apps on top that help people
+      learn, understand, and manage. Always minimal, viable, and open source.
     </p>
 </div>
 
@@ -115,9 +115,8 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
         <div class="chips">
           <span class="chip">TypeScript</span>
           <span class="chip">Vue</span>
-          <span class="chip">Nuxt</span>
           <span class="chip">VitePress</span>
-          <span class="chip">Flutter</span>
+          <span class="chip">Java</span>
         </div>
       </div>
       <div class="group">

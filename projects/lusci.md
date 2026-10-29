@@ -2,7 +2,7 @@
 name: lusci
 description: "Self-hosted Discord bot music player with natural language commands"
 keywords: [java, discord-bot, music, docker, nlp]
-status: active
+status: deprecated
 order: 13
 ---
 

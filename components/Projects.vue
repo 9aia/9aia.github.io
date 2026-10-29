@@ -8,17 +8,17 @@ const props = defineProps<{
     projects: Project[],
 }>();
 
-const filters: { label: string; value: ProjectStatus | 'all' }[] = [
-    { label: 'All', value: 'all' },
+const filters: { label: string; value: ProjectStatus | 'active' }[] = [
+    { label: 'Active', value: 'active' },
     { label: 'Recent', value: 'recent' },
     { label: 'WIP', value: 'wip' },
     { label: 'Deprecated', value: 'deprecated' },
 ];
 
-const filter = ref<ProjectStatus | 'all'>('all');
+const filter = ref<ProjectStatus | 'active'>('active');
 const filtered = computed(() =>
-    filter.value === 'all'
-        ? props.projects
+    filter.value === 'active'
+        ? props.projects.filter(p => p.status !== 'deprecated')
         : props.projects.filter(p => p.status === filter.value)
 );
 </script>
