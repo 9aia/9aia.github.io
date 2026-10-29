@@ -40,10 +40,11 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
         </template>
     </VPTeamPageTitle>
     <p class="mission">
-      We build agent-facing infrastructure for real repositories —
-      memory (kuda), coordination (sturn), verification (mimus), CI (bupha),
-      sessions (sepia), orchestration (peregrin), project management (myco), and
-      calendars (cicada). Always minimal, viable, and open source.
+      We're building the missing layers between coding agents and the repositories
+      they work on — memory (kuda), coordination (sturn), verification (mimus),
+      CI (bupha), sessions (sepia), orchestration (peregrin), project management
+      (myco), and calendars (cicada). Open, minimal, composable — a stack agents
+      can actually run on.
     </p>
 </div>
 
