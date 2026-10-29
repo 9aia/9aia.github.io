@@ -20,18 +20,12 @@ features:
   - icon: 🔌
     title: Protocol-Native
     details: "Our tools speak MCP, ACP, and plain JSON — agents plug in natively, no glue code required."
-  - icon: ⚡
-    title: Fast and Optimized
-    details: "Single binaries over the git object store — lean, portable, and built to be driven by humans and agents alike."
-  - icon: 🚀
-    title: Tech-Forward
-    details: "We explore emerging technologies — generative AI, agent protocols, new tooling — and turn them into working software early."
-  - icon: 🌱
-    title: Minimal and Viable
-    details: "Small, functional tools shipped early and iterated quickly — working software over big promises."
-  - icon: 🔓
-    title: Open Source
-    details: "We build in the open — inspect, self-host, and extend everything we ship. No lock-in, no black boxes."
+  - icon: 🗃️
+    title: Repo-Native Tooling
+    details: "Runs on real repositories over the git object store — no platform, no migration required."
+  - icon: 🧩
+    title: Composable by Design
+    details: "Small, single-purpose tools that chain together — adopt one layer or the whole stack."
 ---
 
 <script setup>
@@ -59,7 +53,7 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
 
 <div>
     <VPTeamPageTitle>
-        <template #title>Our Values</template>
+        <template #title>How We Build</template>
         <template #lead>
           The principles behind how we build.
         </template>
@@ -76,6 +70,10 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
       <div class="value">
         <h3>Autonomy over Micromanagement</h3>
         <p>We build agents that own outcomes — not workflows that need babysitting step by step.</p>
+      </div>
+      <div class="value">
+        <h3>Minimal &amp; Viable</h3>
+        <p>Small, functional tools shipped early and iterated quickly — working software over big promises.</p>
       </div>
       <div class="value">
         <h3>Own Your Stack</h3>
