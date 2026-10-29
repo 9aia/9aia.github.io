@@ -29,9 +29,9 @@ features:
   - icon: 🌱
     title: Minimal and Viable
     details: "Small, functional tools shipped early and iterated quickly — working software over big promises."
-  - icon: 🌈
-    title: Interdisciplinary
-    details: "Programming languages, linguistics, agents, and the web — we pull from many fields to build better tools."
+  - icon: 🔓
+    title: Open Source
+    details: "We build in the open — inspect, self-host, and extend everything we ship. No lock-in, no black boxes."
 ---
 
 <script setup>
