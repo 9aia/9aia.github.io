@@ -36,7 +36,7 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
     <VPTeamPageTitle>
         <template #title>Our Mission</template>
         <template #lead>
-          We build open infrastructure so people — and their agents — can own the AI that works for them.
+          We build open infrastructure so people and agents can own the AI that works for them.
         </template>
     </VPTeamPageTitle>
     <p class="mission">
