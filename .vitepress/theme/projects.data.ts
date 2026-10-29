@@ -1,43 +1,20 @@
 import { createContentLoader } from 'vitepress'
-
-interface Project {
-    title: string
-    url: string
-    description: string
-    date: {
-        time: number
-        string: string
-    }
-    excerpt: string | undefined
-}
+import type { Project } from '../../types'
 
 declare const data: Project[]
 export { data }
 
 export default createContentLoader('projects/*.md', {
-    excerpt: true,
     transform(raw): Project[] {
         return raw
-            .map(({ url, frontmatter, excerpt }) => ({
-                title: frontmatter.title,
+            .map(({ frontmatter }) => ({
+                name: frontmatter.name,
                 description: frontmatter.description,
-                url,
-                excerpt,
-                date: formatDate(frontmatter.date)
+                website: frontmatter.website,
+                keywords: frontmatter.keywords ?? [],
+                status: frontmatter.status,
+                order: frontmatter.order ?? 0,
             }))
-            .sort((a, b) => b.date.time - a.date.time)
+            .sort((a, b) => a.order - b.order)
     }
 })
-
-function formatDate(raw: string): Project['date'] {
-    const date = new Date(raw)
-    date.setUTCHours(12)
-    return {
-        time: +date,
-        string: date.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        })
-    }
-}

@@ -1,8 +1,10 @@
 ---
-title: Psitta
-description: Psitta is a project that I'm working on.
-url: https://9aia.com/psitta
-date: 2025-01-01
+name: psitta
+description: "Next-gen internationalization framework powered by LLMs"
+website: https://9aia.com/psitta/
+keywords: [typescript, i18n, intl, ai, web]
+status: wip
+order: 12
 ---
 
-Psitta is a project that I'm working on.
+Next-gen internationalization framework powered by GenAI.

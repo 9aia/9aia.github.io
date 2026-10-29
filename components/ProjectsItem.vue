@@ -13,7 +13,9 @@ defineProps<{
         <div class="profile">
             <div class="data flex justify-between flex-col h-full gap-2">
                 <div>
-                    <h1 class="name">{{ project.name }}</h1>
+                    <h1 class="name">{{ project.name }}
+                        <span v-if="project.status && project.status !== 'recent'" class="status">{{ project.status === 'wip' ? 'WIP' : project.status }}</span>
+                    </h1>
                     <p v-if="project.description" class="description">{{ project.description }}</p>
                 </div>
 
@@ -50,6 +52,20 @@ defineProps<{
 
         line-height: 24px;
         font-size: 16px;
+    }
+
+    & .status {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 6px;
+        padding: 2px 8px;
+        border-radius: 10px;
+        background-color: var(--vp-c-default-soft);
+        color: var(--vp-c-text-2);
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
     & .description {

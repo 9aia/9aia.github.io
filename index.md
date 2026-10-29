@@ -35,12 +35,8 @@ features:
 ---
 
 <script setup>
-import { onBeforeMount } from "vue"; 
-import { VPTeamPageTitle, VPTeamMembers, VPLink, VPHomeContent } from "vitepress/theme";
-import { useGithubPinnedRepos } from "./composables/useGithubPinnedRepos";
-import PageSection from "./components/PageSection.vue";
+import { VPTeamPageTitle, VPLink } from "vitepress/theme";
 import Projects from "./components/Projects.vue";
-import ProjectsItem from "./components/ProjectsItem.vue";
 
 import { data as projects } from '.vitepress/theme/projects.data.ts'
 </script>
@@ -52,24 +48,26 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
           Discover our diverse range of projects focused on developing minimal and viable solutions using cutting-edge technologies.
         </template>
     </VPTeamPageTitle>
-    <ul>
-      <li v-for="project of projects">
-        {{ project.title }}
-      </li>
-    </ul>
+    <div class="projects-section">
+      <Projects :projects="projects" />
+    </div>
 </div>
 
-<style scoped lang="scss">
-.feedback {
-    text-align: center;
+<style scoped>
+.projects-section {
+    padding: 40px 32px 0;
 }
 
-.loading {
-    color: var(--vp-c-gray-1);
+@media (min-width: 768px) {
+    .projects-section {
+        padding: 40px 48px 0;
+    }
 }
 
-.error {
-    color: var(--vp-c-danger-1);
+@media (min-width: 960px) {
+    .projects-section {
+        padding: 40px 64px 0;
+    }
 }
 </style>
 
