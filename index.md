@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: "Gaia"
-  text: "An experimental contained technological environment"
-  tagline: Where Technological Beings Evolve
+  text: "Open infrastructure for agent-driven development"
+  tagline: An experimental ecosystem where software and the agents that build it evolve together
   actions:
     - theme: brand
       text: About Us
