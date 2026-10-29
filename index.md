@@ -20,9 +20,9 @@ features:
   - icon: 🧑‍🤝‍🧑
     title: Apps for Humans
     details: "Experimental GenAI-powered apps that help people learn, understand, and manage — built on top of our own infrastructure."
-  - icon: 🦀
-    title: Rust-Powered Core
-    details: "Single binaries over the git object store — fast, portable, and built to be driven by humans and agents alike."
+  - icon: ⚡
+    title: Fast and Optimized
+    details: "Single binaries over the git object store — lean, portable, and built to be driven by humans and agents alike."
   - icon: 🚀
     title: Tech-Forward
     details: "We explore emerging technologies — generative AI, agent protocols, new tooling — and turn them into working software early."
