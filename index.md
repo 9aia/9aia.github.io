@@ -17,9 +17,9 @@ features:
   - icon: 🤖
     title: Agent Infrastructure
     details: "Memory, coordination, verification, CI, sessions, and orchestration — the layers that let AI agents do real work on real repositories."
-  - icon: 🧭
-    title: Products for People
-    details: "Experimental GenAI apps that help people learn, understand, and manage — built on our own infrastructure."
+  - icon: 🔌
+    title: Protocol-Native
+    details: "Our tools speak MCP, ACP, and plain JSON — agents plug in natively, no glue code required."
   - icon: ⚡
     title: Fast and Optimized
     details: "Single binaries over the git object store — lean, portable, and built to be driven by humans and agents alike."
