@@ -12,7 +12,7 @@ const filters: { label: string; value: ProjectStatus | 'all' }[] = [
     { label: 'All', value: 'all' },
     { label: 'Recent', value: 'recent' },
     { label: 'WIP', value: 'wip' },
-    { label: 'Active', value: 'active' },
+    { label: 'Deprecated', value: 'deprecated' },
 ];
 
 const filter = ref<ProjectStatus | 'all'>('all');
