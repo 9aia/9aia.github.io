@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: "Gaia"
-  text: "Open infrastructure for agent-driven development"
-  tagline: An experimental ecosystem where software and the agents that build it evolve together
+  text: "Put AI agents to work — on your terms"
+  tagline: Open infra for agent-driven development, plus experimental apps for learning, understanding, and managing
   actions:
     - theme: brand
       text: About Us
@@ -45,15 +45,15 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
     <VPTeamPageTitle>
         <template #title>Our Mission</template>
         <template #lead>
-          We explore what software development becomes when AI agents are first-class participants — and we build the open infrastructure to get there.
+          We build open infrastructure so people — and their agents — can own the AI that works for them.
         </template>
     </VPTeamPageTitle>
     <p class="mission">
-      Our current work is a stack of agent-facing infrastructure for real repositories:
-      repo memory (kuda), evented coordination (sturn), claim verification (mimus),
-      headless CI (bupha), agent sessions (sepia), orchestration (peregrin), and
-      project management (myco). Around that core we ship experimental GenAI apps and
-      tools — always minimal, viable, and open source.
+      Our work comes in two layers: agent-facing infrastructure for real repositories —
+      memory (kuda), coordination (sturn), verification (mimus), CI (bupha),
+      sessions (sepia), orchestration (peregrin), and project management (myco) —
+      and experimental apps on top that help people learn, understand, and manage
+      (thal, corax, tarsi). Always minimal, viable, and open source.
     </p>
 </div>
 
