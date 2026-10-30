@@ -2,7 +2,7 @@
 name: tarsi
 description: "Generate your changelogs from Git diffs with AI"
 keywords: [cli, ai, changelog, llm, git]
-status: recent
+status: deprecated
 order: 8
 ---
 
