@@ -14,15 +14,15 @@ hero:
       link: https://github.com/9aia
 
 features:
+  - icon: 🧠
+    title: Agent Memory &amp; Project State
+    details: "Index, query, and verify what your code is — and what your agents did. Repo memory, tasks, handoffs (kuda, myco, atta, mycena)"
   - icon: 🤖
-    title: Agent Infrastructure
-    details: "Memory, coordination, verification, CI, sessions, and orchestration — the layers that let AI agents do real work on real repositories."
-  - icon: 🗃️
-    title: Repo-Native Tooling
-    details: "Runs on real repositories over the git object store — no platform, no migration required."
-  - icon: 🧩
-    title: Composable by Design
-    details: "Small, single-purpose tools that chain together — adopt one layer or the whole stack."
+    title: Sessions &amp; Orchestration
+    details: "Drive, merge, and orchestrate coding-agent sessions across machines (sepia, peregrin, delphis)"
+  - icon: ✅
+    title: Coordination, Verification &amp; CI
+    details: "Evented ops, claims checked against the repo, headless pipelines, scheduled work (sturn, mimus, bupha, cicada)"
 ---
 
 <script setup>
@@ -57,28 +57,28 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
     </VPTeamPageTitle>
     <div class="values">
       <div class="value">
-        <h3>Everything as Code</h3>
-        <p>When possible, an executable, reproducible, version-controlled path from idea to deployment.</p>
+        <h3>Agents Are First-Class Users</h3>
+        <p>Every interface is a CLI, protocol, or data format built to be driven, not clicked.</p>
       </div>
       <div class="value">
-        <h3>Agent-First</h3>
-        <p>Agents are first-class users of our tools — CLIs, protocols, and data designed to be driven, not just clicked.</p>
+        <h3>We Run on Ourselves</h3>
+        <p>The suite manages its own development — dogfooding is the test suite.</p>
+      </div>
+      <div class="value">
+        <h3>Mechanism, Not Magic</h3>
+        <p>Small single-purpose tools, every concern behind a port, any layer swappable.</p>
       </div>
       <div class="value">
         <h3>Protocol-Native</h3>
-        <p>Our tools speak MCP, ACP, and plain JSON — agents plug in natively, no glue code required.</p>
+        <p>MCP, ACP, ndjson JSON-RPC — plug in, no glue code.</p>
       </div>
       <div class="value">
-        <h3>Autonomy over Micromanagement</h3>
-        <p>We build agents that own outcomes — not workflows that need babysitting step by step.</p>
-      </div>
-      <div class="value">
-        <h3>Minimal &amp; Viable</h3>
-        <p>Small, functional tools shipped early and iterated quickly — working software over big promises.</p>
+        <h3>Everything as Code</h3>
+        <p>Tasks, calendars, claims, pipelines: declarative, versioned, reproducible.</p>
       </div>
       <div class="value">
         <h3>Own Your Stack</h3>
-        <p>Open, self-hostable tools — the AI works for you, not the other way around.</p>
+        <p>Open source, self-hosted — your AI works for you, not the other way around.</p>
       </div>
     </div>
 </div>
