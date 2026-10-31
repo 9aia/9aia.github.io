@@ -1,6 +1,7 @@
 ---
 name: sepia
 description: "The chromatophore layer for your coding agents — adaptive sessions: merge, drive, migrate"
+website: https://9aia.com/sepia/
 keywords: [rust, acp, coding-agents, sessions]
 status: recent
 order: 5
