@@ -15,21 +15,43 @@ hero:
 
 features:
   - icon: 🧠
-    title: Agent Memory &amp; Project State
-    details: "Index, query, and verify what your code is — and what your agents did. Repo memory, tasks, handoffs (kuda, myco, atta, mycena)"
-  - icon: 🤖
-    title: Sessions &amp; Orchestration
-    details: "Drive, merge, and orchestrate coding-agent sessions across machines (sepia, peregrin, delphis)"
+    title: Memory
+    details: "Code cards, work ledgers, handoffs — durable state your agents can trust (kuda, myco, mycena, arca)"
+  - icon: 🤝
+    title: Coordination
+    details: "Live claims, ops, topics — ephemeral state kept in sync across a fleet (sturn)"
+  - icon: 🎭
+    title: Orchestration
+    details: "Campaigns driving agent sessions across machines — who, when, where (peregrin, sepia, delphis)"
   - icon: ✅
-    title: Coordination, Verification &amp; CI
-    details: "Evented ops, claims checked against the repo, headless pipelines, scheduled work (sturn, mimus, bupha, cicada)"
+    title: Verification
+    details: "Headless CI gates, proofs, scheduled runs — the deliverable is a green status (mimus, bupha, cicada)"
 ---
 
 <script setup>
-import { VPTeamPageTitle, VPLink } from "vitepress/theme";
+import { VPTeamPageTitle, VPLink, VPHomeFeatures } from "vitepress/theme";
 import Projects from "./components/Projects.vue";
 
 import { data as projects } from '.vitepress/theme/projects.data.ts'
+
+const values = [
+  { icon: "🔌", title: "Ports Are the Architecture, Not a Plugin API", details: "Every concern is a trait + impl — the boundaries are the codebase." },
+  { icon: "🤖", title: "Machine-First Wire, Not UI-First", details: "Manifest, schema, serve — surfaces for machines; humans second." },
+  { icon: "🔗", title: "Composition Over Integration", details: "Tools talk over ndjson/stdio wires — they embed, not integrate." },
+  { icon: "🌿", title: "VCS-Native State", details: "Durable state lives in versioned history, not a private DB." },
+  { icon: "📋", title: "No Bespoke DSL", details: "Config is the program, not a YAML pipeline language." },
+  { icon: "📦", title: "One Binary, One Daemon — Not a Control Plane", details: "A single process + a background service on any OS; the market answer is a server fleet + a dashboard." },
+  { icon: "🍽️", title: "We Run on Ourselves", details: "The suite manages its own development — dogfooding is the test suite." },
+  { icon: "🏠", title: "Own Your Stack", details: "Open source, self-hosted — your AI works for you, not the other way around." },
+  { icon: "🌱", title: "Grown, Not Built", details: "The engine emerges from use — the domain is a preset, not the product." },
+]
+
+const stack = [
+  { icon: "⚙️", title: "Systems & Infra", details: '<span class="VPBadge info">Rust</span> <span class="VPBadge info">Git</span> <span class="VPBadge info">Tree-sitter</span>' },
+  { icon: "🌐", title: "Web & Apps", details: '<span class="VPBadge info">TypeScript</span> <span class="VPBadge info">Vue</span> <span class="VPBadge info">VitePress</span> <span class="VPBadge info">Leptos</span>' },
+  { icon: "🤖", title: "AI & Agents", details: '<span class="VPBadge info">LLMs</span> <span class="VPBadge info">Gemini</span> <span class="VPBadge info">MCP</span> <span class="VPBadge info">ACP</span>' },
+  { icon: "☁️", title: "Platform", details: '<span class="VPBadge info">Cloudflare</span> <span class="VPBadge info">Docker</span> <span class="VPBadge info">GitHub</span>' },
+]
 </script>
 
 <div>
@@ -55,32 +77,7 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
           The principles behind how we build.
         </template>
     </VPTeamPageTitle>
-    <div class="values">
-      <div class="value">
-        <h3>Agents Are First-Class Users</h3>
-        <p>Every interface is a CLI, protocol, or data format built to be driven, not clicked.</p>
-      </div>
-      <div class="value">
-        <h3>We Run on Ourselves</h3>
-        <p>The suite manages its own development — dogfooding is the test suite.</p>
-      </div>
-      <div class="value">
-        <h3>Mechanism, Not Magic</h3>
-        <p>Small single-purpose tools, every concern behind a port, any layer swappable.</p>
-      </div>
-      <div class="value">
-        <h3>Protocol-Native</h3>
-        <p>MCP, ACP, ndjson JSON-RPC — plug in, no glue code.</p>
-      </div>
-      <div class="value">
-        <h3>Everything as Code</h3>
-        <p>Tasks, calendars, claims, pipelines: declarative, versioned, reproducible.</p>
-      </div>
-      <div class="value">
-        <h3>Own Your Stack</h3>
-        <p>Open source, self-hosted — your AI works for you, not the other way around.</p>
-      </div>
-    </div>
+    <VPHomeFeatures :features="values" />
 </div>
 
 <div>
@@ -102,45 +99,26 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
           The technologies we reach for, by layer.
         </template>
     </VPTeamPageTitle>
-    <div class="stack">
-      <div class="group">
-        <h3>Systems &amp; Infra</h3>
-        <div class="chips">
-          <span class="chip">Rust</span>
-          <span class="chip">Git</span>
-          <span class="chip">Tree-sitter</span>
-        </div>
-      </div>
-      <div class="group">
-        <h3>Web &amp; Apps</h3>
-        <div class="chips">
-          <span class="chip">TypeScript</span>
-          <span class="chip">Vue</span>
-          <span class="chip">VitePress</span>
-          <span class="chip">Java</span>
-        </div>
-      </div>
-      <div class="group">
-        <h3>AI &amp; Agents</h3>
-        <div class="chips">
-          <span class="chip">LLMs</span>
-          <span class="chip">Gemini</span>
-          <span class="chip">MCP</span>
-          <span class="chip">ACP</span>
-        </div>
-      </div>
-      <div class="group">
-        <h3>Platform</h3>
-        <div class="chips">
-          <span class="chip">Cloudflare</span>
-          <span class="chip">Docker</span>
-          <span class="chip">GitHub</span>
-        </div>
-      </div>
-    </div>
+    <VPHomeFeatures :features="stack" />
 </div>
 
 <style scoped>
+:deep(.VPFeature .details .VPBadge) {
+    margin: 0 4px 6px 0;
+}
+:deep(.vp-doc h2), :deep(.VPTeamPageTitle .title) {
+    border-top: none !important;
+    padding-top: 0 !important;
+}
+:deep(.VPFeature .title) {
+    border-top: none !important;
+    padding-top: 0 !important;
+    margin-top: 8px;
+}
+:deep(.VPFeature .details) {
+    border-top: none !important;
+    padding-top: 0;
+}
 .mission {
     max-width: 640px;
     margin: 24px auto 0;
@@ -150,98 +128,16 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
     color: var(--vp-c-text-2);
 }
 
-.stack {
-    display: grid;
-    gap: 24px;
-    margin: 40px auto 0;
-    padding: 0 32px;
-    max-width: 1152px;
-    grid-template-columns: 1fr;
-}
-
-.stack .group {
-    border-radius: 12px;
-    background-color: var(--vp-c-bg-soft);
-    padding: 24px;
-    text-align: center;
-}
-
-.stack h3 {
-    margin: 0 0 12px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--vp-c-text-1);
-}
-
-.stack .chips {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-}
-
-.values {
-    display: grid;
-    gap: 24px;
-    margin: 40px auto 0;
-    padding: 0 32px;
-    max-width: 896px;
-    grid-template-columns: 1fr;
-}
-
-.values .value {
-    border-radius: 12px;
-    background-color: var(--vp-c-bg-soft);
-    padding: 24px;
-    text-align: center;
-}
-
-.values h3 {
-    margin: 0 0 8px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--vp-c-text-1);
-}
-
-.values p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 22px;
-    color: var(--vp-c-text-2);
-}
-
 @media (min-width: 768px) {
     .values {
         padding: 0 48px;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (min-width: 960px) {
     .values {
         padding: 0 64px;
-    }
-}
-
-.stack .chip {
-    padding: 4px 12px;
-    border-radius: 999px;
-    border: 1px solid var(--vp-c-divider);
-    color: var(--vp-c-text-2);
-    font-size: 13px;
-}
-
-@media (min-width: 768px) {
-    .stack {
-        padding: 0 48px;
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 960px) {
-    .stack {
-        padding: 0 64px;
-        grid-template-columns: repeat(4, 1fr);
     }
 }
 

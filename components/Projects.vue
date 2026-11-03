@@ -66,10 +66,21 @@ const filtered = computed(() =>
     grid-template-columns: 1fr;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
     .container {
         grid-template-columns: repeat(2, 1fr);
-        max-width: 896px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 2560px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 </style>
