@@ -1,7 +1,7 @@
 ---
 name: tarsi
-description: "Generate your changelogs from Git diffs with AI"
-keywords: [cli, ai, changelog, llm, git]
+description: "Changelog generator — Git diffs → AI release notes"
+keywords: [typescript, cli, changelog, llm, release-notes]
 status: deprecated
 order: 8
 ---

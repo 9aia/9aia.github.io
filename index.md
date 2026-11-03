@@ -15,17 +15,17 @@ hero:
 
 features:
   - icon: 🧠
-    title: Memory
-    details: "Code cards, work ledgers, handoffs — durable state your agents can trust (kuda, myco, mycena, arca)"
+    title: Ledger
+    details: "Durable work memory — items, views, code cards, secrets (myco, kuda, arca)"
   - icon: 🤝
-    title: Coordination
-    details: "Live claims, ops, topics — ephemeral state kept in sync across a fleet (sturn)"
+    title: WAL
+    details: "Ephemeral coordination — live claims, ops, topics over VCS state (sturn)"
   - icon: 🎭
-    title: Orchestration
-    details: "Campaigns driving agent sessions across machines — who, when, where (peregrin, sepia, delphis)"
+    title: Orchestrator
+    details: "Campaigns driving agent sessions across machines (peregrin, sepia)"
   - icon: ✅
-    title: Verification
-    details: "Headless CI gates, proofs, scheduled runs — the deliverable is a green status (mimus, bupha, cicada)"
+    title: Queue
+    details: "Event-driven jobs, shipped as CI — verify, gate, schedule (bupha, mimus, cicada)"
 ---
 
 <script setup>
@@ -64,7 +64,7 @@ const stack = [
     <p class="mission">
       We're building the missing layers between coding agents and the repositories
       they work on — memory (kuda), coordination (sturn), verification (mimus),
-      CI (bupha), sessions (sepia), orchestration (peregrin), project management
+      job queues (bupha), sessions (sepia), orchestration (peregrin), work ledgers
       (myco), and calendars (cicada). Open, minimal, composable — a stack agents
       can actually run on.
     </p>

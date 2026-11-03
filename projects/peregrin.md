@@ -1,8 +1,8 @@
 ---
 name: peregrin
-description: "The wanderer layer for your agents — evented orchestration: graphs, drivers, approvals"
+description: "Event-driven orchestration engine — campaigns of agent workflows, multi-machine"
 website: https://9aia.com/peregrin/
-keywords: [rust, ai-agents, orchestration, event-driven, workflow]
+keywords: [rust, agents, llm, orchestration, event-driven]
 status: recent
 order: 6
 ---

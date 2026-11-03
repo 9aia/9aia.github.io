@@ -1,8 +1,8 @@
 ---
 name: sepia
-description: "The chromatophore layer for your coding agents — adaptive sessions: merge, drive, migrate"
+description: "Session lifecycle engine — start/resume/teardown for coding agents"
 website: https://9aia.com/sepia/
-keywords: [rust, acp, coding-agents, sessions]
+keywords: [rust, agents, sessions, acp, cli]
 status: recent
 order: 5
 ---

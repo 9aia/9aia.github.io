@@ -1,8 +1,8 @@
 ---
 name: kuda
-description: "A hippocampus for your codebase — repo memory: index, query, verify"
+description: "Code-map engine — verified per-module cards agents read before code"
 website: https://9aia.com/kuda/
-keywords: [rust, cli, codebase-indexing, memory, mcp]
+keywords: [rust, agents, llm, code-memory, codebase-indexing]
 status: recent
 order: 1
 ---

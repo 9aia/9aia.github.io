@@ -1,8 +1,8 @@
 ---
 name: strigi
-description: "CLI command assistance utilizing GenAI-powered natural language prompts"
+description: "Natural-language CLI shell — type intent, get commands (experimental)"
 website: https://9aia.github.io/strigi/
-keywords: [typescript, cli, ai, shell, terminal]
+keywords: [typescript, cli, natural-language, llm, experimental]
 status: deprecated
 order: 16
 ---

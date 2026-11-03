@@ -1,8 +1,8 @@
 ---
 name: mimus
-description: "Spots the cuckoo eggs in your repo — claim verification: docs-as-tests, memory audit"
+description: "Verification engine — proofs over what agents claim"
 website: https://9aia.com/mimus/
-keywords: [rust, cli, verification, docs-as-tests, lint]
+keywords: [rust, agents, llm, verification, testing]
 status: recent
 order: 3
 ---

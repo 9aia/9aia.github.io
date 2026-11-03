@@ -1,8 +1,8 @@
 ---
 name: cicada
-description: "The bug that shows up on time — calendars as code: declare, plan, apply, drift"
+description: "Scheduled-work engine — calendars and recurring agent runs"
 website: https://9aia.com/cicada/
-keywords: [rust, cli, calendar, infrastructure-as-code, mcp]
+keywords: [rust, agents, scheduling, calendar, llm]
 status: recent
 order: 9
 ---

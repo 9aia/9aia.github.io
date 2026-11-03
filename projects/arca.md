@@ -1,8 +1,8 @@
 ---
 name: arca
-description: "Secrets broker for agents — sealed, not spilled. arca:// refs in code, env-var injection at runtime, age-encrypted vaults, audit on every materialization."
+description: "Secrets broker for agents — sealed, not spilled"
 website: https://github.com/9aia/arca
-keywords: [secrets, agents, security, vault]
+keywords: [rust, agents, secrets, security, llm]
 status: recent
 order: 8
 ---
