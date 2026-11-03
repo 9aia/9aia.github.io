@@ -16,16 +16,16 @@ hero:
 features:
   - icon: 🧠
     title: Ledger
-    details: "Durable work memory — items, views, code cards, secrets (myco, kuda, arca)"
+    details: "Durable work memory: items, views, code cards, secrets (myco, kuda, arca)"
   - icon: 🤝
     title: WAL
-    details: "Ephemeral coordination — live claims, ops, topics over VCS state (sturn)"
+    details: "Ephemeral coordination: live claims, ops, topics over VCS state (sturn)"
   - icon: 🎭
     title: Orchestrator
     details: "Campaigns driving agent sessions across machines (peregrin, sepia)"
   - icon: ✅
     title: Queue
-    details: "Event-driven jobs, shipped as CI — verify, gate, schedule (bupha, mimus, cicada)"
+    details: "Event-driven jobs, shipped as CI: verify, gate, schedule (bupha, mimus, cicada)"
 ---
 
 <script setup>
@@ -35,15 +35,15 @@ import Projects from "./components/Projects.vue";
 import { data as projects } from '.vitepress/theme/projects.data.ts'
 
 const values = [
-  { icon: "🔌", title: "Ports Are the Architecture, Not a Plugin API", details: "Every concern is a trait + impl — the boundaries are the codebase." },
-  { icon: "🤖", title: "Machine-First Wire, Not UI-First", details: "Manifest, schema, serve — surfaces for machines; humans second." },
-  { icon: "🔗", title: "Composition Over Integration", details: "Tools talk over ndjson/stdio wires — they embed, not integrate." },
+  { icon: "🔌", title: "Ports Are the Architecture, Not a Plugin API", details: "Every concern is a trait + impl; the boundaries are the codebase." },
+  { icon: "🤖", title: "Machine-First Wire, Not UI-First", details: "Manifest, schema, serve: surfaces for machines, humans second." },
+  { icon: "🔗", title: "Composition Over Integration", details: "Tools talk over ndjson/stdio wires. They embed, not integrate." },
   { icon: "🌿", title: "VCS-Native State", details: "Durable state lives in versioned history, not a private DB." },
   { icon: "📋", title: "No Bespoke DSL", details: "Config is the program, not a YAML pipeline language." },
-  { icon: "📦", title: "One Binary, One Daemon — Not a Control Plane", details: "A single process + a background service on any OS; the market answer is a server fleet + a dashboard." },
-  { icon: "🍽️", title: "We Run on Ourselves", details: "The suite manages its own development — dogfooding is the test suite." },
-  { icon: "🏠", title: "Own Your Stack", details: "Open source, self-hosted — your AI works for you, not the other way around." },
-  { icon: "🌱", title: "Grown, Not Built", details: "The engine emerges from use — the domain is a preset, not the product." },
+  { icon: "📦", title: "One Binary, One Daemon — Not a Control Plane", details: "A single process + a background service on any OS. The market answer is a server fleet + a dashboard." },
+  { icon: "🍽️", title: "We Run on Ourselves", details: "The suite manages its own development. Dogfooding is the test suite." },
+  { icon: "🏠", title: "Own Your Stack", details: "Open source, self-hosted. Your AI works for you, not the other way around." },
+  { icon: "🌱", title: "Grown, Not Built", details: "The engine emerges from use; the domain is a preset, not the product." },
 ]
 
 const stack = [
@@ -63,10 +63,9 @@ const stack = [
     </VPTeamPageTitle>
     <p class="mission">
       We're building the missing layers between coding agents and the repositories
-      they work on — memory (kuda), coordination (sturn), verification (mimus),
-      job queues (bupha), sessions (sepia), orchestration (peregrin), work ledgers
-      (myco), and calendars (cicada). Open, minimal, composable — a stack agents
-      can actually run on.
+      they work on — a ledger (myco, kuda), a WAL (sturn), an orchestrator
+      (peregrin, sepia), and a queue (bupha, mimus, cicada). Open, minimal,
+      composable. A stack agents can actually run on.
     </p>
 </div>
 
@@ -84,7 +83,7 @@ const stack = [
     <VPTeamPageTitle>
         <template #title>Our Products</template>
         <template #lead>
-          Discover our diverse range of projects focused on developing minimal and viable solutions using cutting-edge technologies.
+          The machines. Each a small engine, each owning one mechanism.
         </template>
     </VPTeamPageTitle>
     <div class="projects-section">

@@ -49,11 +49,29 @@ const members = [
         </template>
     </VPTeamPageTitle>
     <PageSection>
+        <template #title>The Factory</template>
+        <template #default>
+            <p class="mb-4">
+                We think of the stack as a factory, not a suite. Each tool is a machine: a small
+                engine with one mechanism and a shipped preset. myco is the ledger on the floor,
+                kuda the code memory, sturn the wiring, bupha the conveyor, sepia the shifts,
+                peregrin the foreman, arca the safe.
+            </p>
+            <p class="mb-4">
+                None of them were designed as engines. They became them. Features kept pulling the
+                same way until the mechanism stood alone and the domain was just configuration.
+                That's the method: engines are grown from use, not planned upfront. Every new
+                feature answers "engine or preset?" Machines stay small, replaceable, and owned.
+            </p>
+            <p>
+                And the factory is run by the workers it serves: agents are the operators, not the
+                audience. Self-hosted, composable, yours.
+            </p>
+        </template>
+    </PageSection>
+    <PageSection>
         <template #title>Members</template>
         <template #default>
-            <p class="mb-6">
-                At Gaia, we are a small group of developers dedicated to exploring and developing minimal, open-source projects.
-            </p>
             <VPTeamMembers size='small' :members='members.slice(0, 1)' />
             <div class="mb-6" />
             <VPTeamMembers size='small' :members='members.slice(1)' />
