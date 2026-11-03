@@ -82,7 +82,7 @@ const stack = [
 
 <div>
     <VPTeamPageTitle>
-        <template #title>Our Projects</template>
+        <template #title>Our Products</template>
         <template #lead>
           Discover our diverse range of projects focused on developing minimal and viable solutions using cutting-edge technologies.
         </template>
