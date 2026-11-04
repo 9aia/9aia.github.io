@@ -4,10 +4,12 @@
     "sass": "^1.89.2",
     "unocss": "^0.63.6",
     "vitepress": "^1.6.3",
+    "vitepress-sidebar": "^1.41.0",
+    "vitepress-theme-9aia": "github:9aia/vitepress-theme-9aia",
     "vue": "^3.5.17"
   },
   "scripts": {
-    "dev": "vitepress dev",
+    "dev": "vitepress dev --port 13101",
     "build": "vitepress build",
     "preview": "vitepress preview"
   }
