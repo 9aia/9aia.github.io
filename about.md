@@ -30,6 +30,14 @@ const members = [
         ]
     },
     {
+        name: 'Emanuel Corrêa Carneiro',
+        title: 'Software Developer',
+        avatar: 'https://github.com/eccarneiro.png',
+        links: [
+            { icon: 'github', link: 'https://github.com/eccarneiro' },
+        ]
+    },
+    {
         name: 'Kruceo',
         title: 'Software Developer',
         avatar: 'https://github.com/kruceo.png',
