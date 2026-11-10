@@ -1,17 +1,26 @@
 ---
 name: bupha
-description: "Deprecated queue engine for event-driven jobs, shipped as CI. Retired; superseded by peregrin campaigns (ci-gate)."
+description: "CI for your own forge: pluggable push sources queue per-sha pipeline runs on your box — GitHub first, GitLab later — with GitHub Actions workflows as a runner dialect and tamias-native distribution."
 website: https://9aia.com/bupha/
 keywords: [rust, agents, ci, queue, llm]
-status: deprecated
+status: recent
+stage: alpha
 order: 4
 ---
 
-A queue engine for event-driven jobs — ingest from pluggable sources, run
-the effect (shell, dagger, http), report the outcome. Shipped as CI: pushes
-queue per-sha pipeline runs and report commit statuses.
+CI for your own forge — pushes from pluggable sources queue per-sha
+pipeline runs on your box and report commit statuses back. Single
+binary, one systemd unit, no YAML DSL required: the pipeline is a
+script (`ci.sh`) or a dagger function — or a real
+`.github/workflows/*.yml`, via the `gha` runner dialect.
 
-**Retired.** bupha has been replaced in production by peregrin campaigns —
-the org's CI gate is the tamias-managed `ci-gate` campaign
-(`peregrin campaign run ci-gate-full.yaml`) fed by the GitHub webhook
-tunnel. This page and the repo are kept for history.
+- **Forge-agnostic by ports** — webhook triggers and status sinks sit
+  behind traits; GitHub today, GitLab impls on the roadmap.
+- **GHA dialect** — `runner.kind = "gha"` executes workflow YAML
+  natively (explicit supported subset; unsupported syntax errors
+  loudly).
+- **tamias-native** — `tamias-driver-bupha` makes fleets
+  tamias-installable (`type: bupha` bundles deploy the watcher,
+  tunnel, and forge hooks).
+- **Queue semantics built for CI** — latest-wins batching,
+  superseded shas get honest statuses, persistent ACID queue.
