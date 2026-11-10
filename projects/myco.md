@@ -1,6 +1,6 @@
 ---
 name: myco
-description: "Records engine for agent work — views + mutations; project management is the shipped prelude"
+description: "Records engine for agent work: a myco CLI owns every write to a repo's project/ ledger (todos, issues, proposals, plans, ADRs, handoffs). Markdown is canonical, git history is the audit trail."
 website: https://9aia.com/myco/
 keywords: [rust, agents, llm, project-management, cli]
 status: recent

@@ -1,6 +1,6 @@
 ---
 name: mimus
-description: "Verification engine — proofs over what agents claim"
+description: "Verification engine and critic for repos and agent memory: extracts claims from docs, comments, and cards, verifies them against the code, and repairs the fixable."
 website: https://9aia.com/mimus/
 keywords: [rust, agents, llm, verification, testing]
 status: recent

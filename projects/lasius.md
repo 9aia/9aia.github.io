@@ -1,6 +1,6 @@
 ---
 name: lasius
-description: "Workspace gardener for GitHub orgs — clone, sync, inspect, generate editor workspace files"
+description: "Workspace gardener for GitHub orgs: clones, syncs, inspects, and generates editor workspace files for every repo of an org under one root."
 website: https://9aia.com/lasius/
 keywords: [rust, github, cli, devtools, workspace]
 status: recent

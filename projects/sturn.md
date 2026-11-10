@@ -1,6 +1,6 @@
 ---
 name: sturn
-description: "Ephemeral coordination engine — claims/ops/topics over VCS state"
+description: "Ephemeral coordination engine for agents: claims, ops, and topics over the git object store, so agents see each other's intent in milliseconds instead of at merge."
 website: https://9aia.com/sturn/
 keywords: [rust, agents, git, coordination, event-sourcing]
 status: recent

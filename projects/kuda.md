@@ -1,6 +1,6 @@
 ---
 name: kuda
-description: "Code-map engine — verified per-module cards agents read before code"
+description: "Code-map engine for agent workflows: crawls repos into verified per-module cards (repo card, module cards, symbol graph) that agents query instead of re-exploring."
 website: https://9aia.com/kuda/
 keywords: [rust, agents, llm, code-memory, codebase-indexing]
 status: recent

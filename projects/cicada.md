@@ -1,6 +1,6 @@
 ---
 name: cicada
-description: "Scheduled-work engine — calendars and recurring agent runs"
+description: "Scheduled-work engine: declare calendars in YAML, plan and apply them against live providers with drift detection, plus an MCP server so agents can reconcile them."
 website: https://9aia.com/cicada/
 keywords: [rust, agents, scheduling, calendar, llm]
 status: recent

@@ -1,6 +1,6 @@
 ---
 name: hypha
-description: "Distributed substrate for agent workloads — entities, ops, snapshots, locks"
+description: "Distributed substrate for agent workloads: a generic entity plane with namespaced ops, snapshots, and locks across your machines. Integrations plug in as entity kinds."
 website: https://9aia.com/hypha/
 keywords: [rust, agents, distributed, infrastructure]
 status: recent

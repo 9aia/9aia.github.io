@@ -1,6 +1,6 @@
 ---
 name: cuora
-description: "Secrets broker for agents — sealed, not spilled"
+description: "Secrets broker for agents: code carries cuora:// references instead of values, the CLI injects secrets as env vars at run time, and every materialization is audited."
 website: https://9aia.com/cuora/
 keywords: [rust, agents, secrets, security, llm]
 status: recent

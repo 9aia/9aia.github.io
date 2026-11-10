@@ -1,6 +1,6 @@
 ---
 name: peregrin
-description: "Event-driven orchestration engine — campaigns of agent workflows, multi-machine"
+description: "Event-driven orchestration engine for agent workflows: declarative campaigns of events, nodes, and drivers across your machines, with a sepia-powered session plane on every node."
 website: https://9aia.com/peregrin/
 keywords: [rust, agents, llm, orchestration, event-driven]
 status: recent

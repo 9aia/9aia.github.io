@@ -1,6 +1,6 @@
 ---
 name: bupha
-description: "Queue engine for event-driven jobs — shipped as CI"
+description: "Deprecated queue engine for event-driven jobs, shipped as CI. Retired; superseded by peregrin campaigns (ci-gate)."
 website: https://9aia.com/bupha/
 keywords: [rust, agents, ci, queue, llm]
 status: deprecated
