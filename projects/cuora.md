@@ -4,6 +4,7 @@ description: "Secrets broker for agents — sealed, not spilled"
 website: https://9aia.com/cuora/
 keywords: [rust, agents, secrets, security, llm]
 status: recent
+stage: beta
 order: 8
 ---
 

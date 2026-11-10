@@ -4,6 +4,7 @@ description: "Verification engine — proofs over what agents claim"
 website: https://9aia.com/mimus/
 keywords: [rust, agents, llm, verification, testing]
 status: recent
+stage: alpha
 order: 3
 ---
 

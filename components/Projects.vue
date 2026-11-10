@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Project, ProjectStatus } from "../types";
+import type { Project, ProjectStage, ProjectStatus } from "../types";
 import { computed, ref } from "vue"
 import VPButton from "vitepress/dist/client/theme-default/components/VPButton.vue";
 import ProjectsItem from "./ProjectsItem.vue";
@@ -8,8 +8,12 @@ const props = defineProps<{
     projects: Project[],
 }>();
 
-const ALL_FILTERS: { label: string; value: ProjectStatus | 'active' }[] = [
+type Filter = ProjectStatus | ProjectStage | 'active';
+
+const ALL_FILTERS: { label: string; value: Filter }[] = [
     { label: 'Active', value: 'active' },
+    { label: 'Beta', value: 'beta' },
+    { label: 'Alpha', value: 'alpha' },
     { label: 'Recent', value: 'recent' },
     { label: 'WIP', value: 'wip' },
     { label: 'Deprecated', value: 'deprecated' },
@@ -18,16 +22,21 @@ const ALL_FILTERS: { label: string; value: ProjectStatus | 'active' }[] = [
 const filters = computed(() =>
     ALL_FILTERS.filter(f =>
         f.value === 'active' ||
-        props.projects.some(p => p.status === f.value)
+        (f.value === 'beta' || f.value === 'alpha'
+            ? props.projects.some(p => p.stage === f.value)
+            : props.projects.some(p => p.status === f.value))
     )
 );
 
-const filter = ref<ProjectStatus | 'active'>('active');
-const filtered = computed(() =>
-    filter.value === 'active'
+const filter = ref<Filter>('active');
+const filtered = computed(() => {
+    if (filter.value === 'beta' || filter.value === 'alpha') {
+        return props.projects.filter(p => p.stage === filter.value);
+    }
+    return filter.value === 'active'
         ? props.projects.filter(p => p.status !== 'deprecated')
-        : props.projects.filter(p => p.status === filter.value)
-);
+        : props.projects.filter(p => p.status === filter.value);
+});
 </script>
 
 <template>

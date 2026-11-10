@@ -4,6 +4,7 @@ description: "Records engine for agent work — views + mutations; project manag
 website: https://9aia.com/myco/
 keywords: [rust, agents, llm, project-management, cli]
 status: recent
+stage: beta
 order: 7
 ---
 

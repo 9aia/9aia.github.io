@@ -1,5 +1,5 @@
 import { createContentLoader } from 'vitepress'
-import type { Project } from '../../types'
+import type { Project, ProjectStage } from '../../types'
 
 declare const data: Project[]
 export { data }
@@ -13,6 +13,7 @@ export default createContentLoader('projects/*.md', {
                 website: frontmatter.website,
                 keywords: frontmatter.keywords ?? [],
                 status: frontmatter.status,
+                stage: frontmatter.stage as ProjectStage | undefined,
                 order: frontmatter.order ?? 0,
             }))
             .sort((a, b) => a.order - b.order)

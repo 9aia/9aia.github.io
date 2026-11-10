@@ -4,6 +4,7 @@ description: "Scheduled-work engine — calendars and recurring agent runs"
 website: https://9aia.com/cicada/
 keywords: [rust, agents, scheduling, calendar, llm]
 status: recent
+stage: beta
 order: 9
 ---
 

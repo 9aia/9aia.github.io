@@ -4,6 +4,7 @@ description: "Code-map engine — verified per-module cards agents read before c
 website: https://9aia.com/kuda/
 keywords: [rust, agents, llm, code-memory, codebase-indexing]
 status: recent
+stage: alpha
 order: 1
 ---
 

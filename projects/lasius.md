@@ -4,6 +4,7 @@ description: "Workspace gardener for GitHub orgs — clone, sync, inspect, gener
 website: https://9aia.com/lasius/
 keywords: [rust, github, cli, devtools, workspace]
 status: recent
+stage: beta
 order: 11
 ---
 

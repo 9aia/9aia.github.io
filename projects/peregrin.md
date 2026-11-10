@@ -4,6 +4,7 @@ description: "Event-driven orchestration engine — campaigns of agent workflows
 website: https://9aia.com/peregrin/
 keywords: [rust, agents, llm, orchestration, event-driven]
 status: recent
+stage: beta
 order: 6
 ---
 

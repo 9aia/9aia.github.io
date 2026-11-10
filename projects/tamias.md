@@ -4,6 +4,7 @@ description: "Package & content manager for the agent factory — fetch, store, 
 website: https://9aia.com/tamias/
 keywords: [rust, agents, packages, cache, cli]
 status: recent
+stage: beta
 order: 12
 ---
 

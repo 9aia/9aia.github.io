@@ -4,6 +4,7 @@ description: "Distributed substrate for agent workloads — entities, ops, snaps
 website: https://9aia.com/hypha/
 keywords: [rust, agents, distributed, infrastructure]
 status: recent
+stage: beta
 order: 14
 ---
 
