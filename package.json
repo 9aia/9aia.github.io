@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "vitepress dev --port 13101",
     "build": "vitepress build",
-    "preview": "vitepress preview"
+    "preview": "vitepress preview",
+    "docs:deploy": "bun run build && bunx gh-pages -d dist"
   }
 }

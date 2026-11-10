@@ -41,17 +41,17 @@ To get started locally:
 
 2. **Install dependencies**:
     ```bash
-    pnpm install
+    bun install
     ```
 
 3. **Run the development server**:
     ```bash
-    pnpm dev
+    bun run dev
     ```
 
 4. **Build for production**:
     ```bash
-    pnpm build
+    bun run build
     ```
 
 ## Contributing
