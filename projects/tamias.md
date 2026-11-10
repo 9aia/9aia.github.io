@@ -1,7 +1,7 @@
 ---
 name: tamias
 description: "Package & content manager for the agent factory — fetch, store, cache, dispense"
-website: https://github.com/9aia/tamias
+website: https://9aia.com/tamias/
 keywords: [rust, agents, packages, cache, cli]
 status: recent
 order: 12

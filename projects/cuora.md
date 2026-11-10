@@ -1,7 +1,7 @@
 ---
 name: cuora
 description: "Secrets broker for agents — sealed, not spilled"
-website: https://github.com/9aia/cuora
+website: https://9aia.com/cuora/
 keywords: [rust, agents, secrets, security, llm]
 status: recent
 order: 8

@@ -1,7 +1,7 @@
 ---
 name: strigi
 description: "Natural-language CLI shell — type intent, get commands (experimental)"
-website: https://9aia.github.io/strigi/
+website: https://9aia.com/strigi/
 keywords: [typescript, cli, natural-language, llm, experimental]
 status: deprecated
 order: 16

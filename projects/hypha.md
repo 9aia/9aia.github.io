@@ -1,7 +1,7 @@
 ---
 name: hypha
 description: "Distributed substrate for agent workloads — entities, ops, snapshots, locks"
-website: https://github.com/9aia/hypha
+website: https://9aia.com/hypha/
 keywords: [rust, agents, distributed, infrastructure]
 status: recent
 order: 14
