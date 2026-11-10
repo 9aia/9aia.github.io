@@ -25,7 +25,7 @@ features:
     details: "Campaigns driving agent sessions across machines (peregrin, sepia)"
   - icon: ✅
     title: Queue
-    details: "Event-driven jobs, shipped as CI: verify, gate, schedule (bupha, mimus, cicada)"
+    details: "Event-driven jobs, shipped as CI: verify, gate, schedule (peregrin ci-gate, mimus, cicada)"
 ---
 
 <script setup>
@@ -64,7 +64,7 @@ const stack = [
     <p class="mission">
       We're building the missing layers between coding agents and the repositories
       they work on — a ledger (myco, kuda), a WAL (sturn), an orchestrator
-      (peregrin, sepia), and a queue (bupha, mimus, cicada). Open, minimal,
+      (peregrin, sepia), and a queue (mimus, cicada). Open, minimal,
       composable. A stack agents can actually run on.
     </p>
 </div>

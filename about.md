@@ -62,7 +62,7 @@ const members = [
             <p class="mb-4">
                 We think of the stack as a factory, not a suite. Each tool is a machine: a small
                 engine with one mechanism and a shipped preset. myco is the ledger on the floor,
-                kuda the code memory, sturn the wiring, bupha the conveyor, sepia the shifts,
+                kuda the code memory, sturn the wiring, ci-gate the conveyor, sepia the shifts,
                 peregrin the foreman, arca the safe.
             </p>
             <p class="mb-4">
