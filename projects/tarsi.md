@@ -1,10 +1,13 @@
 ---
 name: tarsi
-description: "AI-powered CLI that generates clear, user-focused changelogs from recent git changes. Archived; no longer maintained."
-keywords: [typescript, cli, changelog, llm, release-notes]
-status: deprecated
+description: "Release plane: changelog → semver bump → tag → publish, shipped as type: tarsi tamias profiles driven by peregrin campaigns. Rewrite in progress."
+keywords: [rust, release, changelog, semver, tamias]
+status: recent
+stage: alpha
 order: 8
 ---
 
-An AI-powered CLI that automatically generates clear, user-focused changelogs
-from recent git changes.
+The release plane — changelog generation, semver bump, tag, and
+publish as a declarative pipeline. Ships as `type: tarsi` tamias
+profiles executed by peregrin campaigns, so a release is content,
+not a script. Rewrite in progress.
