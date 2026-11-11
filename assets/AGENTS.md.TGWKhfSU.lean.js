@@ -1,1 +1,0 @@
-import{_ as s,o as t,c as o,a1 as a}from"./chunks/framework.Dcbl3eEm.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"AGENTS.md","filePath":"AGENTS.md"}'),r={name:"AGENTS.md"};function n(i,e,c,l,d,u){return t(),o("div",null,[...e[0]||(e[0]=[a("",4)])])}const h=s(r,[["render",n]]);export{p as __pageData,h as default};
