@@ -1,6 +1,7 @@
 ---
 name: scarab
 description: "Config & template expertise: generic config loading (port/discovery/formats) and templated content packs distributed via tamias."
+website: https://9aia.com/scarab/
 keywords: [rust, config, templates, tamias]
 status: recent
 stage: alpha
