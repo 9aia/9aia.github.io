@@ -7,11 +7,11 @@ hero:
   tagline: Open infrastructure for agent-driven development
   actions:
     - theme: brand
+      text: Tamias
+      link: https://9aia.com/tamias/
+    - theme: alt
       text: About Us
       link: /about
-    - theme: alt
-      text: View on GitHub
-      link: https://github.com/9aia
 
 features:
   - icon: 📦
