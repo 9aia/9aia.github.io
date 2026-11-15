@@ -25,3 +25,43 @@
 - `sturn leave` on exit — drops the actor's claims.
 
 <!-- /sturn:agent-awareness -->
+
+# 9aia.github.io — agent/dev map
+
+Gaia's website — a VitePress site whose content lives at the repo
+root (this is the site itself, not a repo with a `docs/` worktree).
+
+## Layout
+
+| Path | Role |
+| --- | --- |
+| `index.md`, `about.md`, `todo.md` | root content pages |
+| `projects/*.md` | project pages — frontmatter feeds the VitePress content loader for the projects index |
+| `components/` | Vue components (`PageSection`, `Projects`, `ProjectsItem`) |
+| `.vitepress/` | site config (`config.mts`), custom theme, UnoCSS/SCSS wiring |
+| `public/` | static assets (`CNAME` → 9aia.com) |
+| `project/` | myco ledger worktree (orphan branch — never hand-edit; myco verbs are the write path) |
+
+## Commands
+
+```bash
+bun install
+bun run dev          # vitepress dev --port 13101
+bun run build        # vitepress build → dist/
+bun run preview      # preview the production build
+bun run docs:deploy  # build + gh-pages deploy (9aia.com)
+```
+
+## Rules
+
+- English everywhere; conventional commits.
+- `project/` files are written by myco verbs only.
+- This repo *is* the VitePress site — content/config at root,
+  `.vitepress/` for theme wiring; `cypera.toml` exempts the
+  docs-site contract rules (no separate docs worktree by design).
+
+## Boundary
+
+Owns the public website only. Org repos keep their own docs sites;
+the shared look lives in `vitepress-theme-9aia` /
+`slidev-theme-9aia`.

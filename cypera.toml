@@ -1,0 +1,6 @@
+# 9aia.github.io — the website itself. The repo *is* the VitePress
+# site (content at root, config in .vitepress/), not a repo with a
+# docs/ worktree, so the docs-site contract rules are exempt.
+
+[check]
+skip = ["docs-site", "docs-check-script"]
