@@ -5,7 +5,7 @@ website: https://9aia.com/kuda/
 keywords: [rust, agents, llm, code-memory, codebase-indexing]
 status: recent
 stage: alpha
-order: 1
+order: 4
 ---
 
 Repo memory for agent-driven workflows — crawls repos and builds a compressed,

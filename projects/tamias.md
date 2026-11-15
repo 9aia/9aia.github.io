@@ -5,9 +5,10 @@ website: https://9aia.com/tamias/
 keywords: [rust, agents, packages, cache, cli]
 status: recent
 stage: beta
-order: 13
+order: 1
 ---
 
-Package & content manager for the agent factory: fetch, store, cache,
-dispense. Named for the chipmunk — cheek pouches carry a payload home, a
+The entrypoint of the stack: package & content manager — fetch, store,
+cache, dispense. Every 9aia tool installs and updates through tamias
+packs. Named for the chipmunk — cheek pouches carry a payload home, a
 larder holds it, scatter-caches hide it by key.

@@ -5,7 +5,7 @@ website: https://9aia.com/myco/
 keywords: [rust, agents, llm, project-management, cli]
 status: recent
 stage: beta
-order: 7
+order: 3
 ---
 
 A records engine for agent work — declarative views over a markdown ledger,

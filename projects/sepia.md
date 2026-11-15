@@ -5,7 +5,7 @@ website: https://9aia.com/sepia/
 keywords: [rust, agents, sessions, acp, cli]
 status: recent
 stage: beta
-order: 5
+order: 8
 ---
 
 Coding-agent sessions, agnostically — one canonical IR, store drivers, and an

@@ -14,6 +14,9 @@ hero:
       link: https://github.com/9aia
 
 features:
+  - icon: 📦
+    title: Packages
+    details: "Fetch, store, cache, dispense — every 9aia tool installs and updates through tamias packs"
   - icon: 🧠
     title: Ledger
     details: "Durable work memory: items, views, code cards, secrets (myco, kuda, cuora)"
@@ -63,9 +66,9 @@ const stack = [
     </VPTeamPageTitle>
     <p class="mission">
       We're building the missing layers between coding agents and the repositories
-      they work on — a ledger (myco, kuda), a WAL (sturn), an orchestrator
-      (peregrin, sepia), and a queue (bupha, mimus, cicada). Open, minimal,
-      composable. A stack agents can actually run on.
+      they work on — packages (tamias), a ledger (myco, kuda), a WAL (sturn),
+      an orchestrator (peregrin, sepia), and a queue (bupha, mimus, cicada).
+      Open, minimal, composable. A stack agents can actually run on.
     </p>
 </div>
 

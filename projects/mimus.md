@@ -5,7 +5,7 @@ website: https://9aia.com/mimus/
 keywords: [rust, agents, llm, verification, testing]
 status: recent
 stage: alpha
-order: 3
+order: 5
 ---
 
 A critic for repos and agent memory — extracts claims from docs, comments, and

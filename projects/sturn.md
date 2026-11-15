@@ -5,7 +5,7 @@ website: https://9aia.com/sturn/
 keywords: [rust, agents, git, coordination, event-sourcing]
 status: recent
 stage: alpha
-order: 2
+order: 6
 ---
 
 Evented coordination over the git object store — the WAL is the state, the

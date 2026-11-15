@@ -5,7 +5,7 @@ website: https://9aia.com/scarab/
 keywords: [rust, config, templates, tamias]
 status: recent
 stage: alpha
-order: 11
+order: 9
 ---
 
 Config & template expertise for the 9aia stack — generic config

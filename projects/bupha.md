@@ -5,7 +5,7 @@ website: https://9aia.com/bupha/
 keywords: [rust, agents, ci, queue, llm]
 status: recent
 stage: alpha
-order: 4
+order: 14
 ---
 
 The CI integration for tamias — pushes from pluggable sources queue

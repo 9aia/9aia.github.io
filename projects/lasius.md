@@ -5,7 +5,7 @@ website: https://9aia.com/lasius/
 keywords: [rust, github, cli, devtools, workspace]
 status: recent
 stage: beta
-order: 12
+order: 10
 ---
 
 Git & workspace expertise for GitHub orgs: `lasius.toml` is the only

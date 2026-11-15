@@ -4,7 +4,7 @@ description: "Slidev theme matching the 9aia VitePress design language — same 
 keywords: [slidev, theme, presentations, typescript]
 status: recent
 stage: beta
-order: 20
+order: 18
 ---
 
 A [Slidev](https://sli.dev) theme styled after the 9aia VitePress

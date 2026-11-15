@@ -5,7 +5,7 @@ website: https://9aia.com/hypha/
 keywords: [rust, agents, distributed, infrastructure]
 status: recent
 stage: beta
-order: 15
+order: 2
 ---
 
 The distributed substrate for agent workloads: entities, ops, snapshots,

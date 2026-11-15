@@ -61,9 +61,10 @@ const members = [
         <template #default>
             <p class="mb-4">
                 We think of the stack as a factory, not a suite. Each tool is a machine: a small
-                engine with one mechanism and a shipped preset. myco is the ledger on the floor,
-                kuda the code memory, sturn the wiring, bupha the gate, sepia the shifts,
-                peregrin the foreman, cuora the safe.
+                engine with one mechanism and a shipped preset. tamias is the packaging dock —
+                everything installs and updates through its packs — myco the ledger on the
+                floor, kuda the code memory, sturn the wiring, bupha the gate, sepia the
+                shifts, peregrin the foreman, cuora the safe.
             </p>
             <p class="mb-4">
                 None of them were designed as engines. They became them. Features kept pulling the

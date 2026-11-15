@@ -5,7 +5,7 @@ website: https://9aia.com/cuora/
 keywords: [rust, agents, secrets, security, llm]
 status: recent
 stage: beta
-order: 8
+order: 7
 ---
 
 A secrets broker built for agents: `cuora://` references live in code and

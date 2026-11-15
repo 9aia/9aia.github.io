@@ -4,7 +4,7 @@ description: "Fungus-garden layer: tended architecture — apps, packages, and s
 keywords: [typescript, architecture, monorepo, wip]
 status: wip
 stage: alpha
-order: 18
+order: 16
 ---
 
 The fungus-garden layer — tended architecture, still being grown.
