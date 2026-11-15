@@ -16,7 +16,7 @@ hero:
 features:
   - icon: 🧠
     title: Ledger
-    details: "Durable work memory: items, views, code cards, secrets (myco, kuda, arca)"
+    details: "Durable work memory: items, views, code cards, secrets (myco, kuda, cuora)"
   - icon: 🤝
     title: WAL
     details: "Ephemeral coordination: live claims, ops, topics over VCS state (sturn)"

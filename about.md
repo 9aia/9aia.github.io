@@ -63,7 +63,7 @@ const members = [
                 We think of the stack as a factory, not a suite. Each tool is a machine: a small
                 engine with one mechanism and a shipped preset. myco is the ledger on the floor,
                 kuda the code memory, sturn the wiring, ci-gate the conveyor, sepia the shifts,
-                peregrin the foreman, arca the safe.
+                peregrin the foreman, cuora the safe.
             </p>
             <p class="mb-4">
                 None of them were designed as engines. They became them. Features kept pulling the

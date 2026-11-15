@@ -14,11 +14,11 @@ This website is built using [Vitepress](https://vitepress.dev) with a custom the
 ### Features
 
 - **Dark Mode**: Provides a dark appearance by default for a modern, visually engaging UI.
-- **GitHub Integration**: Pulls data from GitHub repositories to display our latest projects.
+- **Project Pages**: `projects/*.md` files carry frontmatter that the VitePress content loader turns into the projects index.
 
 ## Development Goals
 
-You can find our current and planned tasks in the [TODO.md](./TODO.md) file.
+You can find our current and planned tasks in the [todo.md](./todo.md) file.
 
 ### Development Environment
 
@@ -27,7 +27,6 @@ This project relies on the following tools and libraries:
 - **Vitepress** for static site generation
 - **UnoCSS** for styling and theme customization
 - **SCSS** for enhanced styling capabilities
-- **Axios** for making HTTP requests, especially for GitHub API integration (upcoming) to fetch repository data
 
 #### Installation
 
