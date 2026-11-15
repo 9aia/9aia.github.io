@@ -5,7 +5,7 @@ website: https://9aia.com/pavo/
 keywords: [rust, agents, visualization, ui, drivers]
 status: recent
 stage: alpha
-order: 13
+order: 14
 ---
 
 The visualization host for the 9aia tool suite — the factory's screen.

@@ -4,7 +4,7 @@ description: "Release plane: changelog → semver bump → tag → publish as ta
 keywords: [rust, release, changelog, semver, tamias]
 status: recent
 stage: alpha
-order: 8
+order: 9
 ---
 
 The release plane — changelog generation, semver bump, tag, and

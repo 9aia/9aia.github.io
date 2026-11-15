@@ -5,7 +5,7 @@ website: https://9aia.com/tamias/
 keywords: [rust, agents, packages, cache, cli]
 status: recent
 stage: beta
-order: 12
+order: 13
 ---
 
 Package & content manager for the agent factory: fetch, store, cache,

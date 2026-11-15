@@ -5,7 +5,7 @@ website: https://9aia.com/cicada/
 keywords: [rust, agents, scheduling, calendar, llm, tamias, peregrin]
 status: recent
 stage: beta
-order: 9
+order: 10
 ---
 
 Calendars as code — declare your calendars in YAML, plan, apply, and detect

@@ -4,7 +4,7 @@ description: "Natural-language CLI assistant: describe what you want in plain En
 website: https://9aia.com/strigi/
 keywords: [typescript, cli, natural-language, llm, experimental]
 status: deprecated
-order: 16
+order: 17
 ---
 
 An open-source AI assistant that generates commands from natural language and

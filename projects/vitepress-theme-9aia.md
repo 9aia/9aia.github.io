@@ -4,7 +4,7 @@ description: "The 9aia design language for VitePress: token system, organism-awa
 keywords: [vitepress, theme, design-system, typescript]
 status: recent
 stage: beta
-order: 18
+order: 19
 ---
 
 The 9aia design language for VitePress — rounded, blue, organism-aware.
