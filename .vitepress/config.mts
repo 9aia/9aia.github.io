@@ -6,7 +6,7 @@ export default defineConfig({
   title: 'Gaia',
   description: 'Open infrastructure for agent-driven development',
   outDir: 'dist/',
-  srcExclude: ['projects/*.md'],
+  srcExclude: ['projects/*.md', 'project/**'],
   appearance: 'dark',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
