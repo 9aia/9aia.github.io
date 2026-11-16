@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T02:46:11.270Z",
+  "generated": "2026-11-16T03:00:26.832Z",
   "repos": [
     {
       "name": "tamias",
@@ -139,7 +139,7 @@
           "message": "docs(config): pin canonical cuora vault for tamias/registry-token (T-037)",
           "url": "https://github.com/9aia/tamias/commit/b30cc04c8cc361832832217205f7d9eeca5ee56c",
           "tags": [
-            "tamias-source-v0.1.5"
+            "tamias-source-registry-v0.1.5"
           ]
         },
         {
@@ -452,6 +452,11 @@
           "name": "tamias-source-v0.1.4",
           "sha": "6c7fb600e8395baa84fa6145f7930bd9698f3903",
           "date": "2026-11-11T01:39:05Z"
+        },
+        {
+          "name": "tamias-source-registry-v0.1.5",
+          "sha": "b30cc04c8cc361832832217205f7d9eeca5ee56c",
+          "date": "2026-11-13T01:22:34Z"
         },
         {
           "name": "tamias-source-registry-v0.1.4",

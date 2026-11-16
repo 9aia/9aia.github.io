@@ -16,6 +16,8 @@ hero:
 
 <script setup>
 import { VPTeamPageTitle, VPLink } from "vitepress/theme";
+import { Carousel, Slide, Navigation } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css'
 
 import { data as projects } from '.vitepress/theme/projects.data.ts'
 import { data as activity } from '.vitepress/theme/activity.data.ts'
@@ -28,14 +30,6 @@ const layerMeta = [
 ]
 
 const layerTitle = Object.fromEntries(layerMeta.map((l) => [l.key, l.title]))
-
-// One accent hue per layer — the organism's position in the stack, at a glance.
-const layerColor = {
-  delivery: '#41d1ff',
-  memory: '#a78bfa',
-  process: '#fbbf24',
-  interface: '#fb7185',
-}
 
 const layers = layerMeta.map((l) => ({
   ...l,
@@ -87,23 +81,25 @@ function shortDate(iso) {
           Each an organism owning one mechanism. Swipe through; every card links to its docs.
         </template>
     </VPTeamPageTitle>
-    <div class="rail">
-        <a
-            v-for="p in active"
-            :key="p.name"
-            :href="p.docs ?? p.website ?? '#'"
-            class="organism"
-            :style="{ '--layer': layerColor[p.layer] }"
-        >
-            <span class="organism-top">
+    <Carousel
+        class="organism-carousel"
+        :items-to-show="4.2"
+        :items-to-scroll="1"
+        :wrap-around="true"
+        :mouse-drag="true"
+        :breakpoints="{ 768: { itemsToShow: 2.4 }, 1280: { itemsToShow: 4.2 } }"
+    >
+        <Slide v-for="p in active" :key="p.name">
+            <a :href="p.docs ?? p.website ?? '#'" class="organism">
+                <span class="organism-name">{{ p.name }}</span>
                 <span class="organism-layer">{{ layerTitle[p.layer] ?? p.layer }}</span>
-                <span class="organism-arrow" aria-hidden="true">↗</span>
-            </span>
-            <span class="organism-name">{{ p.name }}</span>
-            <span class="organism-tag">{{ p.tagline }}</span>
-            <span class="organism-desc">{{ p.description }}</span>
-        </a>
-    </div>
+                <span class="organism-tag">{{ p.tagline }}</span>
+            </a>
+        </Slide>
+        <template #addons>
+            <Navigation />
+        </template>
+    </Carousel>
 </div>
 
 <div>
@@ -255,81 +251,51 @@ function shortDate(iso) {
     margin-top: 24px;
 }
 
-.rail {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    padding: 8px 32px 32px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
+.organism-carousel {
+    padding: 8px 32px 24px;
+}
+
+.organism-carousel .carousel__slide {
+    padding: 0 8px;
 }
 
 .organism {
-    flex: 0 0 260px;
-    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 20px 22px;
-    border-radius: 14px;
-    border: 1px solid var(--vp-c-divider);
-    border-left: 3px solid var(--layer, var(--vp-c-brand-1));
+    gap: 6px;
+    height: 100%;
+    padding: 20px 24px;
+    border-radius: 12px;
     background-color: var(--vp-c-bg-soft);
     text-decoration: none;
-    transition: transform 0.15s ease, border-color 0.15s ease;
+    transition: transform 0.15s ease;
 }
 
 .organism:hover {
-    transform: translateY(-3px);
-    border-color: var(--layer, var(--vp-c-brand-1));
-}
-
-.organism-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.organism-layer {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--layer, var(--vp-c-text-3));
-}
-
-.organism-arrow {
-    color: var(--vp-c-text-3);
-    font-size: 14px;
-    transition: color 0.15s ease, transform 0.15s ease;
-}
-
-.organism:hover .organism-arrow {
-    color: var(--layer, var(--vp-c-brand-1));
-    transform: translate(2px, -2px);
+    transform: translateY(-2px);
 }
 
 .organism-name {
     font-weight: 700;
-    font-size: 17px;
+    font-size: 16px;
     color: var(--vp-c-text-1);
+}
+
+.organism:hover .organism-name {
+    color: var(--vp-c-brand-1);
+}
+
+.organism-layer {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--vp-c-text-3);
 }
 
 .organism-tag {
     font-size: 13px;
-    font-weight: 500;
     line-height: 19px;
-    color: var(--vp-c-brand-1);
-}
-
-.organism-desc {
-    font-size: 12px;
-    line-height: 18px;
     color: var(--vp-c-text-2);
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 .releases-teaser {
@@ -379,7 +345,7 @@ function shortDate(iso) {
 }
 
 @media (min-width: 768px) {
-    .rail {
+    .organism-carousel {
         padding: 8px 48px 24px;
     }
     .releases-teaser {
@@ -388,7 +354,7 @@ function shortDate(iso) {
 }
 
 @media (min-width: 960px) {
-    .rail {
+    .organism-carousel {
         padding: 8px 64px 24px;
     }
     .releases-teaser {

@@ -13,5 +13,8 @@
     "build": "bun scripts/fetch-activity.mjs && vitepress build",
     "preview": "vitepress preview",
     "docs:deploy": "bun run build && bunx gh-pages -d dist"
+  },
+  "dependencies": {
+    "vue3-carousel": "^0.19.0"
   }
 }

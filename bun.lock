@@ -3,6 +3,9 @@
   "configVersion": 1,
   "workspaces": {
     "": {
+      "dependencies": {
+        "vue3-carousel": "^0.19.0",
+      },
       "devDependencies": {
         "sass": "^1.89.2",
         "unocss": "^0.63.6",
@@ -605,6 +608,8 @@
     "vue": ["vue@3.5.45", "", { "dependencies": { "@vue/compiler-dom": "3.5.45", "@vue/compiler-sfc": "3.5.45", "@vue/runtime-dom": "3.5.45", "@vue/server-renderer": "3.5.45", "@vue/shared": "3.5.45" }, "peerDependencies": { "typescript": "*" }, "optionalPeers": ["typescript"] }, "sha512-3cvsib8m9c0vB24+MDKsgcW4+Da4xaBl9Z/5Tbm2pmSIsRPxcil4cdXjXlVsmJ2g64XJo5h+IRd7rsdGT9pZaw=="],
 
     "vue-flow-layout": ["vue-flow-layout@0.0.5", "", { "dependencies": { "vue": "^3.4.37" } }, "sha512-lZlqQ/Se1trGMtBMneZDWaiQiQBuxU8ivZ+KpJMem5zKROFpzuPq9KqyWABbSYbxq0qhqZs1I4DBwrY041rtOA=="],
+
+    "vue3-carousel": ["vue3-carousel@0.19.0", "", { "peerDependencies": { "vue": "^3.5.0" } }, "sha512-ILHcEYYHkhHKs1Bit3Pj2TR0hRSBF9b0XR/Lzt9mcZ6zo3dGG5q20Jj0DdnfuGBMQfd918QrErKAeKEh8Y/XXw=="],
 
     "yaml": ["yaml@2.9.1", "", { "bin": { "yaml": "bin.mjs" } }, "sha512-3NxN8+78OdzbT7C/WjGsyfPAtJaN3FNDsWxv7Y7mcDsT/oOmgW8BpyQQFFBnvZE3j9Y2Sdz1ULFLezL7Eb2yFw=="],
 
