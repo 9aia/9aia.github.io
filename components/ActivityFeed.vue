@@ -211,15 +211,13 @@ const groups = computed(() => {
 .filter {
   padding: 4px 14px;
   border-radius: 999px;
-  border: 1px solid var(--vp-c-divider);
-  background: transparent;
+  background: var(--vp-c-bg-soft);
   color: var(--vp-c-text-2);
   font-size: 13px;
   cursor: pointer;
 }
 .filter.active {
   background: var(--vp-c-brand-soft);
-  border-color: var(--vp-c-brand-1);
   color: var(--vp-c-brand-1);
   font-weight: 600;
 }
@@ -235,7 +233,6 @@ const groups = computed(() => {
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: var(--vp-c-text-3);
-  border-bottom: 1px solid var(--vp-c-divider);
 }
 .feed-item {
   display: flex;

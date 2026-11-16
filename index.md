@@ -179,13 +179,7 @@ function shortDate(iso) {
 
 .organism-carousel .carousel__prev,
 .organism-carousel .carousel__next {
-    border: 1px solid var(--vp-c-divider);
-    transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.organism-carousel .carousel__prev:hover,
-.organism-carousel .carousel__next:hover {
-    border-color: var(--vp-c-brand-1);
+    transition: color 0.15s ease, background 0.15s ease;
 }
 
 .ecosystem-cta {

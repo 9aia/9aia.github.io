@@ -84,8 +84,7 @@ function href(p) {
   min-width: 32px;
   padding: 4px 10px;
   border-radius: 8px;
-  border: 1px solid var(--vp-c-divider);
-  background: transparent;
+  background: var(--vp-c-bg-soft);
   color: var(--vp-c-text-2);
   font-size: 13px;
   cursor: pointer;
@@ -95,11 +94,9 @@ function href(p) {
 }
 .page-btn:hover:not(.disabled) {
   color: var(--vp-c-brand-1);
-  border-color: var(--vp-c-brand-1);
 }
 .page-btn.active {
   background: var(--vp-c-brand-soft);
-  border-color: var(--vp-c-brand-1);
   color: var(--vp-c-brand-1);
   font-weight: 600;
 }
