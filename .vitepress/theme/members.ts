@@ -21,7 +21,7 @@ export interface Member {
 export const members: Member[] = [
     {
         name: 'Luis Emidio',
-        title: 'Founder | Software Developer',
+        title: 'Founder',
         avatar: 'https://www.github.com/luisfuturist.png',
         links: [
             { icon: 'github', link: 'https://github.com/luisfuturist' },
@@ -31,7 +31,7 @@ export const members: Member[] = [
     },
     {
         name: 'Vinicius Emidio Bosi',
-        title: 'Software Developer',
+        title: 'AI Builder',
         avatar: 'https://github.com/vinicenter.png',
         links: [
             { icon: 'github', link: 'https://github.com/vinicenter' },
@@ -41,7 +41,7 @@ export const members: Member[] = [
     },
     {
         name: 'Emanuel Corrêa Carneiro',
-        title: 'Software Developer',
+        title: 'AI Builder',
         avatar: 'https://github.com/eccarneiro.png',
         links: [
             { icon: 'github', link: 'https://github.com/eccarneiro' },
@@ -49,7 +49,7 @@ export const members: Member[] = [
     },
     {
         name: 'Kruceo',
-        title: 'Software Developer',
+        title: 'AI Builder',
         avatar: 'https://github.com/kruceo.png',
         links: [
             { icon: 'github', link: 'https://github.com/kruceo' },
