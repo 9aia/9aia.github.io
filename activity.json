@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T07:04:12.080Z",
+  "generated": "2026-11-16T07:13:15.466Z",
   "repos": [
     {
       "name": "tamias",
@@ -2697,6 +2697,57 @@
       "repo": "https://github.com/9aia/cuora",
       "commits": [
         {
+          "sha": "2703ee9bae376ff830532153e9553b109b507259",
+          "date": "2026-11-16T07:12:46Z",
+          "message": "chore(release): bump versions",
+          "url": "https://github.com/9aia/cuora/commit/2703ee9bae376ff830532153e9553b109b507259",
+          "tags": [
+            "cuora-v1.0.3"
+          ]
+        },
+        {
+          "sha": "f7d2bf20b9b2249b4eb8c2d24d41955c0993c020",
+          "date": "2026-11-16T07:08:57Z",
+          "message": "chore: ignore repo-local vault/identity artifacts",
+          "url": "https://github.com/9aia/cuora/commit/f7d2bf20b9b2249b4eb8c2d24d41955c0993c020",
+          "tags": []
+        },
+        {
+          "sha": "fba57536a15b1f7e9304b3fa7c6ae0a63d5252d1",
+          "date": "2026-11-16T07:08:56Z",
+          "message": "style: cargo fmt --all",
+          "url": "https://github.com/9aia/cuora/commit/fba57536a15b1f7e9304b3fa7c6ae0a63d5252d1",
+          "tags": []
+        },
+        {
+          "sha": "255c6736f1170fd91580011e00c465e8f17938ba",
+          "date": "2026-11-16T07:07:09Z",
+          "message": "fix(deploy-cf,cli): same loopback parse fix; bound piped secret reads",
+          "url": "https://github.com/9aia/cuora/commit/255c6736f1170fd91580011e00c465e8f17938ba",
+          "tags": []
+        },
+        {
+          "sha": "99c6e432dbaacb4e1487f620e14904f89774b3b9",
+          "date": "2026-11-16T07:06:01Z",
+          "message": "fix(sealed): confine payload reads to the payload dir; tighten secret-file mode",
+          "url": "https://github.com/9aia/cuora/commit/99c6e432dbaacb4e1487f620e14904f89774b3b9",
+          "tags": []
+        },
+        {
+          "sha": "6bafa522e77d75cf996bf85da0c80600a901af19",
+          "date": "2026-11-16T07:03:57Z",
+          "message": "fix(vault-cf): parse the loopback host instead of prefix-matching",
+          "url": "https://github.com/9aia/cuora/commit/6bafa522e77d75cf996bf85da0c80600a901af19",
+          "tags": []
+        },
+        {
+          "sha": "8ab9e877f97439b0bf741a20a26c9a557b21582c",
+          "date": "2026-11-16T07:01:03Z",
+          "message": "fix(identity-file): tighten keyfile mode before writing key material",
+          "url": "https://github.com/9aia/cuora/commit/8ab9e877f97439b0bf741a20a26c9a557b21582c",
+          "tags": []
+        },
+        {
           "sha": "97bab55ea317ec31788f262f1e0ba9be74a52cdf",
           "date": "2026-11-16T06:52:07Z",
           "message": "chore: sync Cargo.lock to 1.0.2",
@@ -2716,7 +2767,7 @@
           "message": "chore(release): bump versions",
           "url": "https://github.com/9aia/cuora/commit/d51293db497f6ef68f4dc974463043d5e8dc9e70",
           "tags": [
-            "cuora-shell-v1.0.2"
+            "cuora-testkit-v1.0.2"
           ]
         },
         {
@@ -3002,55 +3053,6 @@
           "message": "refactor(cuora-cli): lib-ify the engine — Cli/Cmd, parse/parse_from/command/dispatch/run_from",
           "url": "https://github.com/9aia/cuora/commit/88b2b4673197d0260b53825d9861e0e2b5323ac5",
           "tags": []
-        },
-        {
-          "sha": "2ea5562a69e75433d3add95b6c4c3de5399acf92",
-          "date": "2026-11-10T19:44:07Z",
-          "message": "docs: boundary — bupha is the CI repo; gate migrating from peregrin ci-gate",
-          "url": "https://github.com/9aia/cuora/commit/2ea5562a69e75433d3add95b6c4c3de5399acf92",
-          "tags": []
-        },
-        {
-          "sha": "9b935078af6157e79c636123feeedfe28b134d6f",
-          "date": "2026-11-10T03:51:12Z",
-          "message": "chore: release/ci script comments — bupha retired, releases manual",
-          "url": "https://github.com/9aia/cuora/commit/9b935078af6157e79c636123feeedfe28b134d6f",
-          "tags": []
-        },
-        {
-          "sha": "77a1212c098321baa88b5f7ac3167120dbb5bb0d",
-          "date": "2026-11-10T03:47:42Z",
-          "message": "docs: bupha retired — gate is the peregrin ci-gate campaign",
-          "url": "https://github.com/9aia/cuora/commit/77a1212c098321baa88b5f7ac3167120dbb5bb0d",
-          "tags": []
-        },
-        {
-          "sha": "fa11ddd7448051cef2b379d5f9ccf8fca26708df",
-          "date": "2026-11-09T17:32:17Z",
-          "message": "refactor(cuora-driver): adopt pavo-driver-kit",
-          "url": "https://github.com/9aia/cuora/commit/fa11ddd7448051cef2b379d5f9ccf8fca26708df",
-          "tags": []
-        },
-        {
-          "sha": "6f6d967275ffcf5c2b3639fd63a74c14e0912487",
-          "date": "2026-11-08T22:51:39Z",
-          "message": "test(driver): pavo conformance — check_driver gate",
-          "url": "https://github.com/9aia/cuora/commit/6f6d967275ffcf5c2b3639fd63a74c14e0912487",
-          "tags": []
-        },
-        {
-          "sha": "ad4a7435cd12181b8a8981512dfed7407f8e7ae5",
-          "date": "2026-11-08T22:05:36Z",
-          "message": "fix(driver): cuora-driver — renderers field + Render arm for pavo-protocol v1 renderer plugins",
-          "url": "https://github.com/9aia/cuora/commit/ad4a7435cd12181b8a8981512dfed7407f8e7ae5",
-          "tags": []
-        },
-        {
-          "sha": "d24c5fad1dadc922599f7e72039add7ca3f8b965",
-          "date": "2026-11-08T16:11:31Z",
-          "message": "feat(driver): tamias-driver-cuora — pavo view driver; retire cuora-tui",
-          "url": "https://github.com/9aia/cuora/commit/d24c5fad1dadc922599f7e72039add7ca3f8b965",
-          "tags": []
         }
       ],
       "tags": [
@@ -3120,6 +3122,11 @@
           "date": "2026-11-16T05:56:19Z"
         },
         {
+          "name": "cuora-v1.0.3",
+          "sha": "2703ee9bae376ff830532153e9553b109b507259",
+          "date": "2026-11-16T07:12:46Z"
+        },
+        {
           "name": "cuora-v1.0.2",
           "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
           "date": "2026-11-16T06:47:56Z"
@@ -3148,11 +3155,6 @@
           "name": "cuora-testkit-v1.0.0",
           "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
           "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-shell-v1.0.2",
-          "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
-          "date": "2026-11-16T06:47:56Z"
         }
       ]
     },
@@ -3178,6 +3180,11 @@
         }
       ],
       "tags": [
+        {
+          "name": "tardigrada-v0.3.0",
+          "sha": "6d187ed77010e875c8bb38b716f70d95153123f5",
+          "date": "2026-11-16T07:04:57Z"
+        },
         {
           "name": "tardigrada-v0.2.0",
           "sha": "4d709c412f758055dae1a2d8997fc4f85582f4dc",
