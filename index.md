@@ -252,25 +252,28 @@ function shortDate(iso) {
 }
 
 .organism-carousel {
+    --vc-nav-background: var(--vp-c-bg-soft);
+    --vc-nav-color: var(--vp-c-text-1);
+    --vc-nav-color-hover: var(--vp-c-brand-1);
+    --vc-nav-border-radius: 50%;
+    --vc-nav-height: 36px;
+    --vc-nav-width: 36px;
     padding: 8px 32px 24px;
-}
-
-.organism-carousel .carousel__slide {
-    padding: 0 8px;
 }
 
 .organism-carousel .carousel__prev,
 .organism-carousel .carousel__next {
-    background-color: var(--vp-c-bg-soft);
-    color: var(--vp-c-text-1);
     border: 1px solid var(--vp-c-divider);
     transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .organism-carousel .carousel__prev:hover,
 .organism-carousel .carousel__next:hover {
-    color: var(--vp-c-brand-1);
     border-color: var(--vp-c-brand-1);
+}
+
+.organism-carousel .carousel__slide {
+    padding: 0 8px;
 }
 
 .organism {
