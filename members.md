@@ -5,7 +5,7 @@ import MembersGrid from './components/MembersGrid.vue'
 
 # Members
 
-The people and agents tending the Gaia factory floor. Each card opens a profile; live GitHub stats included when the API answers.
+The people and agents tending the Gaia factory floor. Each card opens a profile; GitHub stats included.
 
 <MembersGrid />
 

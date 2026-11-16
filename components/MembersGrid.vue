@@ -1,6 +1,6 @@
 <script setup>
-import { computed, nextTick, onMounted, onUnmounted, reactive, ref, watch } from 'vue'
-import { members, githubUsername, linkLabel } from '../.vitepress/theme/members.ts'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { members, linkLabel } from '../.vitepress/theme/members.ts'
 
 const props = defineProps({
     items: { type: Array, default: null },
@@ -11,37 +11,6 @@ const otherMembers = computed(() => roster.value.slice(1))
 
 const selected = ref(null)
 const dialogEl = ref(null)
-const profiles = reactive({})
-// Module-level cache survives dialog close/reopen — keyed by GitHub
-// username, value is the same reactive entry exposed via `profiles`.
-const profileCache = new Map()
-
-function ensureProfile(username) {
-    if (!username || profileCache.has(username)) return
-    const entry = reactive({ status: 'loading', data: null })
-    profileCache.set(username, entry)
-    profiles[username] = entry
-    fetch(`https://api.github.com/users/${username}`, {
-        headers: { Accept: 'application/vnd.github+json' },
-    })
-        .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-        .then((data) => {
-            entry.status = 'ok'
-            entry.data = data
-        })
-        .catch(() => {
-            // Rate limit / offline / deleted account — the dialog just
-            // shows the static roster info; no error UI.
-            entry.status = 'error'
-        })
-}
-
-const selectedUsername = computed(() =>
-    selected.value ? githubUsername(selected.value) : null,
-)
-const selectedProfile = computed(() =>
-    selectedUsername.value ? profiles[selectedUsername.value] : null,
-)
 
 function openMember(m) {
     selected.value = m
@@ -53,7 +22,6 @@ function closeDialog() {
 
 watch(selected, async (v) => {
     if (v) {
-        ensureProfile(githubUsername(v))
         await nextTick()
         dialogEl.value?.querySelector('.member-dialog-close')?.focus()
     }
@@ -69,6 +37,10 @@ onMounted(() => {
 onUnmounted(() => {
     document.removeEventListener('keydown', onDialogKeydown)
 })
+
+function blogHref(blog) {
+    return /^https?:\/\//.test(blog) ? blog : `https://${blog}`
+}
 
 function fmtDate(iso) {
     if (!iso) return null
@@ -172,34 +144,31 @@ function fmtDate(iso) {
                     >{{ linkLabel(l.link) }}</a>
                 </p>
 
-                <section v-if="selectedProfile?.status === 'ok'" class="member-gh">
+                <section v-if="selected.gh" class="member-gh">
                     <h3>GitHub</h3>
-                    <p v-if="selectedProfile.data.bio" class="member-gh-bio">
-                        {{ selectedProfile.data.bio }}
+                    <p v-if="selected.gh.bio" class="member-gh-bio">
+                        {{ selected.gh.bio }}
                     </p>
                     <ul class="member-gh-meta">
-                        <li v-if="selectedProfile.data.company">
-                            {{ selectedProfile.data.company.replace(/^@/, '') }}
+                        <li v-if="selected.gh.company">
+                            {{ selected.gh.company.replace(/^@/, '') }}
                         </li>
-                        <li v-if="selectedProfile.data.location">{{ selectedProfile.data.location }}</li>
-                        <li v-if="fmtDate(selectedProfile.data.created_at)">
-                            Joined {{ fmtDate(selectedProfile.data.created_at) }}
+                        <li v-if="selected.gh.location">{{ selected.gh.location }}</li>
+                        <li v-if="fmtDate(selected.gh.joined)">
+                            Joined {{ fmtDate(selected.gh.joined) }}
                         </li>
                     </ul>
                     <p class="member-gh-stats">
-                        <span>{{ selectedProfile.data.followers ?? 0 }} followers</span>
-                        <span>{{ selectedProfile.data.following ?? 0 }} following</span>
-                        <span>{{ selectedProfile.data.public_repos ?? 0 }} public repos</span>
+                        <span>{{ selected.gh.followers }} followers</span>
+                        <span>{{ selected.gh.following }} following</span>
+                        <span>{{ selected.gh.publicRepos }} public repos</span>
                     </p>
-                    <p v-if="selectedProfile.data.blog" class="member-gh-blog">
-                        <a :href="selectedProfile.data.blog" target="_blank" rel="noopener">
-                            {{ selectedProfile.data.blog }}
+                    <p v-if="selected.gh.blog" class="member-gh-blog">
+                        <a :href="blogHref(selected.gh.blog)" target="_blank" rel="noopener">
+                            {{ selected.gh.blog }}
                         </a>
                     </p>
                 </section>
-                <p v-else-if="selectedProfile?.status === 'loading'" class="member-gh-loading">
-                    Loading GitHub profile…
-                </p>
             </div>
         </div>
     </div>
@@ -403,7 +372,7 @@ function fmtDate(iso) {
     color: var(--vp-c-brand-1);
 }
 .member-dialog-bio {
-    margin: 0 0 16px;
+    margin: 20px 0 16px;
     font-size: 14px;
     line-height: 22px;
     color: var(--vp-c-text-2);
@@ -472,14 +441,6 @@ function fmtDate(iso) {
 .member-gh-blog a:hover {
     text-decoration: underline;
 }
-.member-gh-loading {
-    margin: 22px 0 0;
-    padding-top: 18px;
-    border-top: 1px solid var(--vp-c-divider);
-    font-size: 13px;
-    color: var(--vp-c-text-3);
-}
-
 /* Mobile: edge-to-edge fullscreen sheet, same as StackGraph. */
 @media (max-width: 640px) {
     .member-dialog-backdrop {

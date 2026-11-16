@@ -11,12 +11,24 @@ export interface MemberLink {
     link: string
 }
 
+export interface MemberGitHub {
+    bio?: string
+    company?: string
+    location?: string
+    blog?: string
+    joined: string
+    followers: number
+    following: number
+    publicRepos: number
+}
+
 export interface Member {
     name: string
     title: string
     bio: string
     avatar: string
     links: MemberLink[]
+    gh?: MemberGitHub
 }
 
 export const members: Member[] = [
@@ -29,7 +41,17 @@ export const members: Member[] = [
             { icon: 'github', link: 'https://github.com/luisfuturist' },
             { icon: 'x', link: 'https://x.com/luisfuturist' },
             { icon: { svg: siteIcon }, link: 'https://luisfuturist.com' },
-        ]
+        ],
+        gh: {
+            bio: 'Founder @9aia / Software & AI R&D @neuralmind-ai / AI Grad @FIAP / STEM',
+            company: '@9aia @neuralmind-ai',
+            location: 'Cyberspace',
+            blog: 'https://luisfuturist.com',
+            joined: '2021-10-01',
+            followers: 21,
+            following: 11,
+            publicRepos: 20,
+        }
     },
     {
         name: 'Vinicius Emidio Bosi',
@@ -40,7 +62,17 @@ export const members: Member[] = [
             { icon: 'github', link: 'https://github.com/vinicenter' },
             { icon: 'twitter', link: 'https://x.com/vinicenter' },
             { icon: { svg: siteIcon }, link: 'https://vini.center' },
-        ]
+        ],
+        gh: {
+            bio: 'Software Developer',
+            company: '@multiplierx',
+            location: 'Santa Catarina, Brazil',
+            blog: 'https://vini.center',
+            joined: '2016-11-10',
+            followers: 49,
+            following: 66,
+            publicRepos: 39,
+        }
     },
     {
         name: 'Emanuel Corrêa Carneiro',
@@ -49,7 +81,15 @@ export const members: Member[] = [
         avatar: 'https://github.com/eccarneiro.png',
         links: [
             { icon: 'github', link: 'https://github.com/eccarneiro' },
-        ]
+        ],
+        gh: {
+            bio: 'Estudante de Engenharia de Software cursando o 8° período.',
+            location: 'Brasil - GO',
+            joined: '2022-06-10',
+            followers: 18,
+            following: 22,
+            publicRepos: 47,
+        }
     },
     {
         name: 'Kruceo',
@@ -59,7 +99,17 @@ export const members: Member[] = [
         links: [
             { icon: 'github', link: 'https://github.com/kruceo' },
             { icon: { svg: siteIcon }, link: 'https://kruceo.com' },
-        ]
+        ],
+        gh: {
+            bio: 'Software Developer',
+            company: 'Kruceo',
+            location: 'Brazil',
+            blog: 'kruceo.com',
+            joined: '2022-01-28',
+            followers: 6,
+            following: 9,
+            publicRepos: 39,
+        }
     },
     {
         name: 'Claude Code',
