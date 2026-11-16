@@ -8,6 +8,6 @@ stage: alpha
 order: 9
 ---
 
-Config & template expertise for the 9aia stack — generic config
+Config & template expertise for the 9aia stack: generic config
 loading behind a port (discovery, formats) and templated content
 packs distributed as tamias content.

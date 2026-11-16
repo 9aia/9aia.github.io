@@ -2,6 +2,13 @@
 import { computed, nextTick, onMounted, onUnmounted, reactive, ref, watch } from 'vue'
 import { members, githubUsername, linkLabel } from '../.vitepress/theme/members.ts'
 
+const props = defineProps({
+    items: { type: Array, default: null },
+})
+const roster = computed(() => props.items ?? members)
+const founder = computed(() => roster.value[0])
+const otherMembers = computed(() => roster.value.slice(1))
+
 const selected = ref(null)
 const dialogEl = ref(null)
 const profiles = reactive({})
@@ -73,21 +80,38 @@ function fmtDate(iso) {
 </script>
 
 <template>
-    <div class="members-grid">
+    <div class="members-layout">
         <button
-            v-for="m in members"
-            :key="m.name"
             type="button"
-            class="member-card"
-            :aria-label="`Open ${m.name} details`"
-            @click="openMember(m)"
+            class="member-card member-card--founder"
+            :aria-label="`Open ${founder.name} details`"
+            @click="openMember(founder)"
         >
-            <img class="member-card-avatar" :src="m.avatar" :alt="m.name" loading="lazy" />
-            <span class="member-card-name">{{ m.name }}</span>
-            <span class="member-card-title">{{ m.title }}</span>
-            <span class="member-card-bio">{{ m.bio }}</span>
-            <span class="member-card-hint">Details →</span>
+            <img class="member-card-avatar member-card-avatar--founder" :src="founder.avatar" :alt="founder.name" loading="lazy" />
+            <span class="member-card-founder-text">
+                <span class="member-card-name">{{ founder.name }}</span>
+                <span class="member-card-title">{{ founder.title }}</span>
+                <span class="member-card-bio">{{ founder.bio }}</span>
+                <span class="member-card-hint">Details →</span>
+            </span>
         </button>
+
+        <div class="members-grid">
+            <button
+                v-for="m in otherMembers"
+                :key="m.name"
+                type="button"
+                class="member-card"
+                :aria-label="`Open ${m.name} details`"
+                @click="openMember(m)"
+            >
+                <img class="member-card-avatar" :src="m.avatar" :alt="m.name" loading="lazy" />
+                <span class="member-card-name">{{ m.name }}</span>
+                <span class="member-card-title">{{ m.title }}</span>
+                <span class="member-card-bio">{{ m.bio }}</span>
+                <span class="member-card-hint">Details →</span>
+            </button>
+        </div>
     </div>
 
     <!-- Dialog lives inline (no Teleport), same pattern as StackGraph's
@@ -182,20 +206,20 @@ function fmtDate(iso) {
 </template>
 
 <style scoped>
+.members-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 24px;
+}
 .members-grid {
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr;
-    margin-top: 24px;
 }
 @media (min-width: 640px) {
     .members-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (min-width: 1100px) {
-    .members-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 .member-card {
@@ -219,8 +243,32 @@ function fmtDate(iso) {
 .members-grid .member-card:nth-child(3) {
     border-radius: var(--radius-blob-c);
 }
-.members-grid .member-card:nth-child(4) {
-    border-radius: var(--radius-blob-a);
+.member-card--founder {
+    border-radius: var(--radius-blob-c);
+    background-color: var(--vp-c-brand-soft);
+}
+.member-card-founder-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+.member-card-avatar--founder {
+    width: 96px;
+    height: 96px;
+}
+.member-card--founder .member-card-bio {
+    -webkit-line-clamp: 4;
+}
+@media (min-width: 640px) {
+    .member-card--founder {
+        flex-direction: row;
+        align-items: center;
+        gap: 32px;
+        padding: 32px;
+    }
 }
 .member-card:hover {
     transform: translateY(-2px);
@@ -236,6 +284,7 @@ function fmtDate(iso) {
     border-radius: 50%;
     object-fit: cover;
     background: var(--vp-c-bg-soft);
+    filter: grayscale(1);
 }
 .member-card-name {
     font-size: 16px;
@@ -334,6 +383,7 @@ function fmtDate(iso) {
     border-radius: var(--radius-blob-b);
     object-fit: cover;
     background: var(--vp-c-bg-soft);
+    filter: grayscale(1);
 }
 .member-dialog-name {
     margin: 0;

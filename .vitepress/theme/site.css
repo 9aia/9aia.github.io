@@ -29,3 +29,11 @@
 .vp-doc .member-dialog-avatar {
   background: var(--vp-c-bg-soft);
 }
+
+/* Member photos render in black & white across the site. */
+.vp-doc .VPTeamMembers img,
+.vp-doc .avatar-stack-img,
+.vp-doc .member-card-avatar,
+.vp-doc .member-dialog-avatar {
+  filter: grayscale(1);
+}

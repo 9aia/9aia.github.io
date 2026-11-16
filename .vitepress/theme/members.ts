@@ -23,7 +23,7 @@ export const members: Member[] = [
     {
         name: 'Luis Emidio',
         title: 'Founder',
-        bio: 'Founder of Gaia — open infrastructure for AI agents. Software & AI R&D at Neuralmind; AI graduate (FIAP).',
+        bio: 'Founder of Gaia, an independent R&D org building open infrastructure for agent-driven development. AI researcher at Neuralmind; AI graduate (FIAP), drawn to formal methods and everything-as-code.',
         avatar: 'https://www.github.com/luisfuturist.png',
         links: [
             { icon: 'github', link: 'https://github.com/luisfuturist' },
@@ -34,7 +34,7 @@ export const members: Member[] = [
     {
         name: 'Vinicius Emidio Bosi',
         title: 'AI Builder',
-        bio: 'Software developer at Multiplier X. Homelab, home automation, and systems tinkering.',
+        bio: 'Software developer at Multiplier X, currently deep in Nuxt 3. Writes about web development on vini.center; tinks with homelab and home automation.',
         avatar: 'https://github.com/vinicenter.png',
         links: [
             { icon: 'github', link: 'https://github.com/vinicenter' },
@@ -45,7 +45,7 @@ export const members: Member[] = [
     {
         name: 'Emanuel Corrêa Carneiro',
         title: 'AI Builder',
-        bio: 'Software engineering student. Builds mobile apps and AI infra tooling — most recently an incident-response agent for Kubernetes.',
+        bio: 'Full stack developer at HomeFit (remote, Australia), focused on mobile apps. Works across React, Next.js, React Native, Node.js, Python, and Docker.',
         avatar: 'https://github.com/eccarneiro.png',
         links: [
             { icon: 'github', link: 'https://github.com/eccarneiro' },
@@ -54,11 +54,41 @@ export const members: Member[] = [
     {
         name: 'Kruceo',
         title: 'AI Builder',
-        bio: 'Rafael Krueger — software developer. Builds agent tooling: schedulers, MCP servers, and self-hosted utilities.',
+        bio: 'Software developer building agent tooling: MCP servers, schedulers, and self-hosted utilities. Also ships CasaOS apps and maintains kruceo.com.',
         avatar: 'https://github.com/kruceo.png',
         links: [
             { icon: 'github', link: 'https://github.com/kruceo' },
             { icon: { svg: siteIcon }, link: 'https://kruceo.com' },
+        ]
+    },
+    {
+        name: 'Claude Code',
+        title: 'AI Agent',
+        bio: 'Agentic coding tool from Anthropic that lives in your terminal.',
+        avatar: 'https://github.com/anthropics.png',
+        links: [
+            { icon: 'github', link: 'https://github.com/anthropics/claude-code' },
+            { icon: 'link', link: 'https://claude.com/claude-code' },
+        ]
+    },
+    {
+        name: 'Devin',
+        title: 'AI Agent',
+        bio: 'Autonomous AI software engineer from Cognition.',
+        avatar: 'https://github.com/CognitionAI.png',
+        links: [
+            { icon: 'link', link: 'https://devin.ai' },
+            { icon: 'github', link: 'https://github.com/CognitionAI' },
+        ]
+    },
+    {
+        name: 'Cline',
+        title: 'AI Agent',
+        bio: 'Open-source AI coding agent for VS Code.',
+        avatar: 'https://github.com/cline.png',
+        links: [
+            { icon: 'github', link: 'https://github.com/cline/cline' },
+            { icon: 'link', link: 'https://cline.bot' },
         ]
     }
 ]

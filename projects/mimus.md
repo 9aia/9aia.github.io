@@ -8,5 +8,5 @@ stage: alpha
 order: 5
 ---
 
-A critic for repos and agent memory — extracts claims from docs, comments, and
+A critic for repos and agent memory: extracts claims from docs, comments, and
 index cards, verifies them against the code, and repairs the fixable ones.

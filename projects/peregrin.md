@@ -8,5 +8,5 @@ stage: beta
 order: 13
 ---
 
-Event-driven orchestration for agent workflows — nodes, campaigns, and remote
+Event-driven orchestration for agent workflows: nodes, campaigns, and remote
 transport across your machines.

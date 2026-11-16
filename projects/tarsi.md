@@ -8,7 +8,7 @@ order: 12
 website: https://9aia.com/tarsi/
 ---
 
-The release plane — changelog generation, semver bump, tag, and
+The release plane: changelog generation, semver bump, tag, and
 publish exposed as `tarsi-serve` ndjson ops. Release profiles ride
 `type: tarsi` tamias packs (`libraries/9aia-release`) and peregrin's
 `libraries/release` campaign drives the same ops, so a release is

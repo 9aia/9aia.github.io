@@ -7,7 +7,7 @@ import AvatarStack from './components/AvatarStack.vue'
 
 <div class="contact-hero">
     <div class="contact-hero-text">
-        <p>Gaia is open source and self-hosted — every organism in the stack is yours to run, fork, and tend. Signals reach us where the work happens: pick a channel below.</p>
+        <p>Gaia is open source and self-hosted. Every organism in the stack is yours to run, fork, and tend. Signals reach us where the work happens: pick a channel below.</p>
     </div>
     <div class="contact-hero-blobs">
         <BlobCluster class="hero-blob hero-blob--back" color="indigo" radius="c" :count="10" />
@@ -20,24 +20,30 @@ import AvatarStack from './components/AvatarStack.vue'
 <div class="contact-grid">
     <div class="channel">
         <BlobCluster class="channel-blob" color="powder" radius="b" :count="10" />
+        <div class="channel-body">
         <h3 class="channel-title">General inquiries</h3>
         <p>Questions, collaboration, or just want to see the factory floor? Email Luis at <VPLink href="mailto:luisfuturist+9aia@gmail.com">luisfuturist+9aia@gmail.com</VPLink>.</p>
+        </div>
     </div>
     <div class="channel">
         <BlobCluster class="channel-blob" color="mint" radius="a" :count="10" />
+        <div class="channel-body">
         <h3 class="channel-title">Contributing</h3>
         <p>Every project lives on GitHub under the <VPLink href="https://github.com/9aia">9aia org</VPLink>. The org does not run public issue or pull request queues; reach out directly (see General inquiries) before sending changes.</p>
+        </div>
     </div>
     <div class="channel">
         <BlobCluster class="channel-blob" color="blush" radius="c" :count="10" />
+        <div class="channel-body">
         <h3 class="channel-title">Security</h3>
         <p>Found a vulnerability? Contact us privately first, before disclosing anywhere (see General inquiries). Do not publish details publicly.</p>
+        </div>
     </div>
 </div>
 
 ## The team
 
-<p class="team-lead">Four developers keep the factory running — the humans behind the organisms.</p>
+<p class="team-lead">The people and agents keeping the factory running.</p>
 <p class="team-row">
     <AvatarStack />
     <VPLink href="/members">Meet the team →</VPLink>
@@ -82,18 +88,13 @@ import AvatarStack from './components/AvatarStack.vue'
     gap: 20px;
     grid-template-columns: 1fr;
 }
-@media (min-width: 768px) {
-    .contact-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 .channel {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 250px;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
     border-radius: var(--radius-blob-a);
-    padding: 32px;
+    padding: 24px 32px;
     background-color: var(--vp-c-bg-soft);
 }
 .contact-grid .channel:nth-child(2) {
@@ -103,8 +104,20 @@ import AvatarStack from './components/AvatarStack.vue'
     border-radius: var(--radius-blob-c);
 }
 .contact-grid .channel .channel-blob {
-    width: 104px;
-    margin-bottom: 20px;
+    width: 72px;
+    flex: none;
+}
+@media (max-width: 640px) {
+    .channel {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}
+.contact-grid .channel .channel-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 .contact-grid .channel .channel-title {
     margin: 0 0 8px;

@@ -31,6 +31,7 @@ import { members } from '../.vitepress/theme/members.ts'
     object-fit: cover;
     background: var(--vp-c-bg-soft);
     border: 2px solid var(--vp-c-bg);
+    filter: grayscale(1);
     transition: transform 0.15s ease;
 }
 .avatar-stack-img:first-child {

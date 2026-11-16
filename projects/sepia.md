@@ -8,5 +8,5 @@ stage: beta
 order: 8
 ---
 
-Coding-agent sessions, agnostically — one canonical IR, store drivers, and an
+Coding-agent sessions, agnostically: one canonical IR, store drivers, and an
 ACP client for every agent.

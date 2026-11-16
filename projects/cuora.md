@@ -9,5 +9,5 @@ order: 7
 ---
 
 A secrets broker built for agents: `cuora://` references live in code and
-config; values materialize as env vars at runtime — sealed, age-encrypted,
+config; values materialize as env vars at runtime: sealed, age-encrypted,
 audited on every access.

@@ -9,7 +9,7 @@ order: 10
 ---
 
 Git & workspace expertise for GitHub orgs: `lasius.toml` is the only
-config — it clones every repo of an org under one root, fast-forward
+config: it clones every repo of an org under one root, fast-forward
 syncs them all, reports drift, and generates the editor workspace
 file. The shared `lasius-vcs` port carries the git primitives other
 repos build on.

@@ -8,5 +8,5 @@ stage: alpha
 order: 15
 ---
 
-The visualization host for the 9aia tool suite — the factory's screen.
+The visualization host for the 9aia tool suite: the factory's screen.
 Products ship tamias drivers; pavo renders their views.

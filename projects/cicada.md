@@ -8,8 +8,8 @@ stage: beta
 order: 11
 ---
 
-Calendars as code — declare your calendars in YAML, plan, apply, and detect
+Calendars as code: declare your calendars in YAML, plan, apply, and detect
 drift against live providers, the same way you manage infrastructure.
 Calendar bundles distribute as tamias `type: cicada` packages
-(`tamias-driver-cicada`), and peregrin campaigns compose cicada verbs —
-`range`, `drift`, `plan`, `apply` — into scheduled workflows.
+(`tamias-driver-cicada`), and peregrin campaigns compose cicada verbs (`range`, `drift`,
+`plan`, `apply`) into scheduled workflows.

@@ -1,8 +1,11 @@
 <script setup>
-import { VPTeamMembers, VPLink } from 'vitepress/theme'
+import { VPLink } from 'vitepress/theme'
 import ValuesGrid from './components/ValuesGrid.vue'
 import AvatarStack from './components/AvatarStack.vue'
+import MembersGrid from './components/MembersGrid.vue'
 import { members } from '.vitepress/theme/members.ts'
+
+const emidio = members.find((m) => m.title === 'Founder')
 </script>
 
 # About
@@ -50,14 +53,15 @@ And the factory is run by the workers it serves: agents are the operators, not t
     </div>
 </div>
 
-## Members
+## Leadership
 
-<p class="members-teaser">
-    <AvatarStack />
-    <VPLink href="/members">Full profiles and live GitHub stats →</VPLink>
-</p>
-
-<VPTeamMembers size="small" :members="members" />
+<div class="leadership">
+    <MembersGrid :items="emidio ? [emidio] : []" />
+    <p class="members-teaser">
+        <AvatarStack />
+        <VPLink href="/members">Full profiles and live GitHub stats →</VPLink>
+    </p>
+</div>
 
 ## Contact
 
@@ -97,10 +101,13 @@ Questions, contributions, or collaboration? See the <VPLink href="/contact">cont
     font-size: 13px;
     color: var(--vp-c-text-2);
 }
+.leadership {
+    max-width: 720px;
+}
 .members-teaser {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin: 0 0 24px;
+    margin: 16px 0 0;
 }
 </style>

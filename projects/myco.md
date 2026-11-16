@@ -8,5 +8,5 @@ stage: beta
 order: 3
 ---
 
-A records engine for agent work — declarative views over a markdown ledger,
+A records engine for agent work: declarative views over a markdown ledger,
 mutations as single-writer commits. Project management is the shipped prelude.

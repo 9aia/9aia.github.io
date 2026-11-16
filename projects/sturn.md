@@ -8,5 +8,5 @@ stage: alpha
 order: 6
 ---
 
-Evented coordination over the git object store — the WAL is the state, the
+Evented coordination over the git object store: the WAL is the state, the
 working tree is a projection, the bus is a cache.
