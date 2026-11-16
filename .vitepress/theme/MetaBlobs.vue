@@ -96,6 +96,9 @@ const fragSrc = (deriv: boolean) =>
 
 onMounted(() => {
   const el = canvas.value!;
+  // Mount inside .VPHero so the absolute canvas covers the hero box;
+  // .main keeps z-index:10 so hero text stays above the blobs.
+  document.querySelector('.VPHero')?.appendChild(el);
   const gl = el.getContext("webgl", {
     alpha: true,
     antialias: false,

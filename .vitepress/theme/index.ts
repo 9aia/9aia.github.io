@@ -1,5 +1,5 @@
 // https://vitepress.dev/guide/custom-theme
-import { defineComponent, h, onMounted, ref, Teleport } from 'vue'
+import { defineComponent, h, onMounted, ref } from 'vue'
 import type { Theme } from 'vitepress'
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
@@ -25,7 +25,7 @@ const Layout = defineComponent({
           mounted.value &&
           frontmatter.value.layout === 'home' &&
           frontmatter.value.hero
-            ? h(Teleport, { to: '.VPHero' }, () => h(MetaBlobs))
+            ? h(MetaBlobs)
             : null,
       })
   }

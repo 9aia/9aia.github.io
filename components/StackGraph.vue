@@ -48,7 +48,7 @@ const rawEdges = computed(() => {
     return edges
 })
 
-const { flowNodes, flowEdges } = computed(() => {
+const layout = computed(() => {
     const g = new dagre.graphlib.Graph()
     g.setGraph({ rankdir: 'LR', nodesep: 24, ranksep: 110, marginx: 16, marginy: 16 })
     g.setDefaultEdgeLabel(() => ({}))
@@ -90,8 +90,11 @@ const { flowNodes, flowEdges } = computed(() => {
         }
     })
 
-    return { flowNodes: nodes, flowEdges: edges }
+    return { nodes, edges }
 })
+
+const flowNodes = computed(() => layout.value.nodes)
+const flowEdges = computed(() => layout.value.edges)
 </script>
 
 <template>
