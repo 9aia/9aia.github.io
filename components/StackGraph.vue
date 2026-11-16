@@ -1,6 +1,6 @@
 <script setup>
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
-import dagre from '@dagrejs/dagre'
+import ELK from 'elkjs/lib/elk.bundled.js'
 import { VueFlow, MarkerType } from '@vue-flow/core'
 import { Controls } from '@vue-flow/controls'
 import '@vue-flow/core/dist/style.css'
@@ -59,6 +59,8 @@ const isFullscreen = ref(false)
 
 function onVfInit(instance) {
     vfInstance.value = instance
+    // Nodes may already be laid out if ELK resolved before init.
+    if (flowNodes.value.length) instance.fitView({ padding: 0.08 })
 }
 
 async function toggleFullscreen() {
@@ -146,25 +148,50 @@ const rawEdges = computed(() => {
     return edges
 })
 
-const layout = computed(() => {
-    const g = new dagre.graphlib.Graph()
-    g.setGraph({ rankdir: 'LR', nodesep: 24, ranksep: 110, marginx: 16, marginy: 16 })
-    g.setDefaultEdgeLabel(() => ({}))
+const elk = new ELK()
 
-    for (const lp of allProjects.value) {
-        g.setNode(`p-${lp.name}`, { width: NODE_W, height: NODE_H })
-    }
-    for (const e of rawEdges.value) {
-        g.setEdge(e.source, e.target)
-    }
-    dagre.layout(g)
+// ELK layered layout — positions resolve asynchronously, so nodes/edges
+// populate once elk.layout() resolves (Vue Flow mounts empty until then).
+const flowNodes = ref([])
+const flowEdges = ref([])
 
-    const nodes = allProjects.value.map((lp) => {
-        const n = g.node(`p-${lp.name}`)
+let layoutSeq = 0
+
+async function runLayout() {
+    const seq = ++layoutSeq
+    const graph = {
+        id: 'stack',
+        layoutOptions: {
+            'elk.algorithm': 'layered',
+            'elk.direction': 'RIGHT',
+            'elk.edgeRouting': 'SPLINES',
+            'elk.spacing.nodeNode': '40',
+            'elk.layered.spacing.nodeNodeBetweenLayers': '90',
+            'elk.spacing.edgeNode': '24',
+            'elk.padding': '[top=16,left=16,bottom=16,right=16]',
+        },
+        children: allProjects.value.map((lp) => ({
+            id: `p-${lp.name}`,
+            width: NODE_W,
+            height: NODE_H,
+        })),
+        edges: rawEdges.value.map((e) => ({
+            id: `${e.kind}:${e.source}->${e.target}`,
+            sources: [e.source],
+            targets: [e.target],
+        })),
+    }
+
+    const res = await elk.layout(graph)
+    if (seq !== layoutSeq) return // a newer layout superseded this one
+
+    const pos = new Map(res.children.map((c) => [c.id, c]))
+    flowNodes.value = allProjects.value.map((lp) => {
+        const n = pos.get(`p-${lp.name}`)
         return {
             id: `p-${lp.name}`,
             type: 'project',
-            position: { x: n.x - NODE_W / 2, y: n.y - NODE_H / 2 },
+            position: { x: n.x, y: n.y },
             data: {
                 p: lp,
                 layer: lp.layer,
@@ -175,7 +202,7 @@ const layout = computed(() => {
         }
     })
 
-    const edges = rawEdges.value.map((e) => {
+    flowEdges.value = rawEdges.value.map((e) => {
         const src = byName.value.get(e.source.slice(2))
         const color = LAYER_COLORS[src.layer.key] ?? '#9aa5c4'
         return {
@@ -195,14 +222,11 @@ const layout = computed(() => {
             _target: e.target,
         }
     })
+}
 
-    return { nodes, edges }
-})
-
-const flowNodes = computed(() => layout.value.nodes)
-
-const flowEdges = computed(() =>
-    layout.value.edges.map((e) => {
+// Edges with dimming applied — computed so hover state stays reactive.
+const dimmedEdges = computed(() =>
+    flowEdges.value.map((e) => {
         const dim =
             relatedIds.value !== null &&
             e._source !== hovered.value &&
@@ -216,6 +240,16 @@ const flowEdges = computed(() =>
         }
     }),
 )
+
+watch(flowNodes, async (nodes) => {
+    if (nodes.length) {
+        await nextTick()
+        vfInstance.value?.fitView({ padding: 0.08 })
+    }
+})
+
+onMounted(runLayout)
+watch(() => props.layers, runLayout)
 </script>
 
 <template>
@@ -223,7 +257,7 @@ const flowEdges = computed(() =>
         <VueFlow
             class="stack-flow"
             :nodes="flowNodes"
-            :edges="flowEdges"
+            :edges="dimmedEdges"
             :nodes-connectable="false"
             :nodes-draggable="false"
             fit-view-on-init
@@ -583,19 +617,15 @@ const flowEdges = computed(() =>
     color: var(--vp-c-brand-1);
 }
 
+/* True fullscreen: the canvas fills the viewport edge-to-edge; legend and
+   the exit button stay as floating overlays and take no layout space. */
 .stack-graph-wrap:fullscreen {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 20px;
-    box-sizing: border-box;
+    height: 100%;
     background: var(--vp-c-bg);
 }
 
 .stack-graph-wrap:fullscreen .stack-flow {
-    flex: 1;
-    height: auto;
-    min-height: 0;
+    height: 100%;
     border: none;
     border-radius: 0;
 }
