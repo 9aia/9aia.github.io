@@ -7,7 +7,7 @@
         "@vue-flow/controls": "^1.1.3",
         "@vue-flow/core": "^1.48.2",
         "elkjs": "^0.12.1",
-        "vitepress-theme-9aia": "github:9aia/vitepress-theme-9aia#be09f3251f1a157600babd8ad7c1ef80f24c9179",
+        "vitepress-theme-9aia": "github:9aia/vitepress-theme-9aia#54048bb9af5bc0fa7978d0c500ce7bee7db91aa9",
         "vue3-carousel": "^0.19.0",
       },
       "devDependencies": {
@@ -633,7 +633,7 @@
 
     "vitepress-sidebar": ["vitepress-sidebar@1.41.0", "", { "dependencies": { "glob": "^13.0.6", "gray-matter": "^4.0.3", "qsu": "^1.100.0" } }, "sha512-nL+jWlSgmn0Ssg8/PBcZmwbJ2vBFFg3nur+pX1qWihuP/ihTCI12Z/U2cFG54e/jTsWAGLm0KVfaid0NpA/jsQ=="],
 
-    "vitepress-theme-9aia": ["vitepress-theme-9aia@github:9aia/vitepress-theme-9aia#be09f32", { "peerDependencies": { "vitepress": ">=1.0.0", "vue": "^3.4.0" } }, "9aia-vitepress-theme-9aia-be09f32", "sha512-33atY/uckTQIZxwoe4ySLuyITf9frtD56/ut1/ux6uNa5hUK+gji/79TnYL4TfJaMj+XBg0hwILvr/SuaDEWdw=="],
+    "vitepress-theme-9aia": ["vitepress-theme-9aia@github:9aia/vitepress-theme-9aia#54048bb", { "peerDependencies": { "vitepress": ">=1.0.0", "vue": "^3.4.0" } }, "9aia-vitepress-theme-9aia-54048bb", "sha512-U5Jk+4gmFRnKMza3KI6NOEqKWxV5Aw2qEN3ek/85nXSsV0IXmhXq9GRabpj4bVd5xlHlVwDEnsdmPXk6V55o8g=="],
 
     "vue": ["vue@3.5.45", "", { "dependencies": { "@vue/compiler-dom": "3.5.45", "@vue/compiler-sfc": "3.5.45", "@vue/runtime-dom": "3.5.45", "@vue/server-renderer": "3.5.45", "@vue/shared": "3.5.45" }, "peerDependencies": { "typescript": "*" }, "optionalPeers": ["typescript"] }, "sha512-3cvsib8m9c0vB24+MDKsgcW4+Da4xaBl9Z/5Tbm2pmSIsRPxcil4cdXjXlVsmJ2g64XJo5h+IRd7rsdGT9pZaw=="],
 
