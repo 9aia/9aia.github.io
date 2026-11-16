@@ -1,7 +1,7 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import dagre from '@dagrejs/dagre'
-import { VueFlow } from '@vue-flow/core'
+import { VueFlow, MarkerType } from '@vue-flow/core'
 import { Controls } from '@vue-flow/controls'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
@@ -16,6 +16,41 @@ const LAYER_COLORS = {
     memory: '#a78bfa',
     process: '#fbbf24',
     interface: '#fb7185',
+}
+
+const LAYER_ICONS = {
+    delivery:
+        '<rect width="16" height="12" x="4" y="8" rx="2"/><path d="M12 8V4H8"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>',
+    memory:
+        '<path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>',
+    process:
+        '<rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/>',
+    interface:
+        '<rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>',
+}
+
+const hovered = ref(null)
+
+const relatedIds = computed(() => {
+    if (!hovered.value) return null
+    const set = new Set([hovered.value])
+    for (const e of rawEdges.value) {
+        // Only hard dependencies define the lit neighborhood — `integrates`
+        // is a soft relation and would keep hub nodes (e.g. tamias) lit
+        // against the whole graph.
+        if (e.kind !== 'dep') continue
+        if (e.source === hovered.value) set.add(e.target)
+        if (e.target === hovered.value) set.add(e.source)
+    }
+    return set
+})
+
+function onNodeEnter({ node }) {
+    hovered.value = node.id
+}
+
+function onNodeLeave() {
+    hovered.value = null
 }
 
 const NODE_W = 230
@@ -87,6 +122,14 @@ const layout = computed(() => {
             type: 'default',
             class: `dep-edge dep-edge--${e.kind}`,
             style: { stroke: color, strokeOpacity: e.kind === 'dep' ? 0.6 : 0.4 },
+            markerEnd: {
+                type: MarkerType.ArrowClosed,
+                color,
+                width: 18,
+                height: 18,
+            },
+            _source: e.source,
+            _target: e.target,
         }
     })
 
@@ -94,7 +137,22 @@ const layout = computed(() => {
 })
 
 const flowNodes = computed(() => layout.value.nodes)
-const flowEdges = computed(() => layout.value.edges)
+
+const flowEdges = computed(() =>
+    layout.value.edges.map((e) => {
+        const dim =
+            relatedIds.value !== null &&
+            e._source !== hovered.value &&
+            e._target !== hovered.value
+        return {
+            ...e,
+            class: `${e.class} ${dim ? 'dep-edge-dim' : ''}`,
+            markerEnd: dim
+                ? { ...e.markerEnd, color: 'transparent' }
+                : e.markerEnd,
+        }
+    }),
+)
 </script>
 
 <template>
@@ -107,11 +165,32 @@ const flowEdges = computed(() => layout.value.edges)
             :nodes-draggable="false"
             fit-view-on-init
             :fit-view-options="{ padding: 0.08 }"
+            @node-mouse-enter="onNodeEnter"
+            @node-mouse-leave="onNodeLeave"
+            @pane-mouse-leave="onNodeLeave"
         >
             <template #node-project="nodeProps">
-                <div class="vf-node" :style="{ '--accent': nodeProps.data.color }">
+                <div
+                    class="vf-node"
+                    :class="{ 'vf-node-dim': relatedIds && !relatedIds.has(nodeProps.id) }"
+                    :style="{ '--accent': nodeProps.data.color }"
+                >
                     <a :href="nodeProps.data.p.docs ?? nodeProps.data.p.website ?? '#'" class="vf-node-link">
-                        <span class="vf-node-kicker">{{ nodeProps.data.layer.title }}</span>
+                        <span class="vf-node-kicker">
+                            <svg
+                                class="vf-node-icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                                v-html="LAYER_ICONS[nodeProps.data.layer.key]"
+                            />
+                            {{ nodeProps.data.layer.title }}
+                        </span>
                         <span class="vf-node-name">{{ nodeProps.data.p.name }}</span>
                         <span class="vf-node-tag">{{ nodeProps.data.p.tagline }}</span>
                     </a>
@@ -150,12 +229,25 @@ const flowEdges = computed(() => layout.value.edges)
     stroke-dasharray: 5 4;
 }
 
+.stack-flow .vue-flow__edge .vue-flow__edge-path {
+    transition: opacity 0.18s ease;
+}
+
+.stack-flow .vue-flow__edge.dep-edge-dim .vue-flow__edge-path {
+    opacity: 0.12;
+}
+
 .vf-node {
     width: 230px;
     border-radius: 10px;
     background: var(--vp-c-bg-soft);
     border: 1px solid var(--vp-c-divider);
     color: var(--vp-c-text-1);
+    transition: opacity 0.18s ease;
+}
+
+.vf-node.vf-node-dim {
+    opacity: 0.18;
 }
 
 .vf-node-link {
@@ -168,11 +260,20 @@ const flowEdges = computed(() => layout.value.edges)
 }
 
 .vf-node-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.8px;
     text-transform: uppercase;
     color: var(--accent);
+}
+
+.vf-node-icon {
+    width: 12px;
+    height: 12px;
+    flex: none;
 }
 
 .vf-node-name {
