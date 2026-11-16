@@ -88,8 +88,12 @@ import AvatarStack from './components/AvatarStack.vue'
     }
 }
 .channel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 250px;
     border-radius: var(--radius-blob-a);
-    padding: 24px;
+    padding: 32px;
     background-color: var(--vp-c-bg-soft);
 }
 .contact-grid .channel:nth-child(2) {
@@ -99,8 +103,8 @@ import AvatarStack from './components/AvatarStack.vue'
     border-radius: var(--radius-blob-c);
 }
 .contact-grid .channel .channel-blob {
-    width: 88px;
-    margin-bottom: 16px;
+    width: 104px;
+    margin-bottom: 20px;
 }
 .contact-grid .channel .channel-title {
     margin: 0 0 8px;

@@ -85,6 +85,7 @@ function fmtDate(iso) {
             <img class="member-card-avatar" :src="m.avatar" :alt="m.name" loading="lazy" />
             <span class="member-card-name">{{ m.name }}</span>
             <span class="member-card-title">{{ m.title }}</span>
+            <span class="member-card-bio">{{ m.bio }}</span>
             <span class="member-card-hint">Details →</span>
         </button>
     </div>
@@ -134,6 +135,8 @@ function fmtDate(iso) {
                         <p class="member-dialog-title">{{ selected.title }}</p>
                     </div>
                 </div>
+
+                <p class="member-dialog-bio">{{ selected.bio }}</p>
 
                 <p class="member-dialog-links">
                     <a
@@ -248,6 +251,15 @@ function fmtDate(iso) {
     letter-spacing: 0.5px;
     color: var(--vp-c-text-3);
 }
+.member-card-bio {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--vp-c-text-2);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 .member-card-hint {
     margin-top: auto;
     padding-top: 8px;
@@ -334,6 +346,12 @@ function fmtDate(iso) {
     font-size: 14px;
     font-weight: 500;
     color: var(--vp-c-brand-1);
+}
+.member-dialog-bio {
+    margin: 0 0 16px;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--vp-c-text-2);
 }
 .member-dialog-links {
     display: flex;

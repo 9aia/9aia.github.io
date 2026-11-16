@@ -14,6 +14,7 @@ export interface MemberLink {
 export interface Member {
     name: string
     title: string
+    bio: string
     avatar: string
     links: MemberLink[]
 }
@@ -22,6 +23,7 @@ export const members: Member[] = [
     {
         name: 'Luis Emidio',
         title: 'Founder',
+        bio: 'Founder of Gaia — open infrastructure for AI agents. Software & AI R&D at Neuralmind; AI graduate (FIAP).',
         avatar: 'https://www.github.com/luisfuturist.png',
         links: [
             { icon: 'github', link: 'https://github.com/luisfuturist' },
@@ -32,6 +34,7 @@ export const members: Member[] = [
     {
         name: 'Vinicius Emidio Bosi',
         title: 'AI Builder',
+        bio: 'Software developer at Multiplier X. Homelab, home automation, and systems tinkering.',
         avatar: 'https://github.com/vinicenter.png',
         links: [
             { icon: 'github', link: 'https://github.com/vinicenter' },
@@ -42,6 +45,7 @@ export const members: Member[] = [
     {
         name: 'Emanuel Corrêa Carneiro',
         title: 'AI Builder',
+        bio: 'Software engineering student. Builds mobile apps and AI infra tooling — most recently an incident-response agent for Kubernetes.',
         avatar: 'https://github.com/eccarneiro.png',
         links: [
             { icon: 'github', link: 'https://github.com/eccarneiro' },
@@ -50,6 +54,7 @@ export const members: Member[] = [
     {
         name: 'Kruceo',
         title: 'AI Builder',
+        bio: 'Rafael Krueger — software developer. Builds agent tooling: schedulers, MCP servers, and self-hosted utilities.',
         avatar: 'https://github.com/kruceo.png',
         links: [
             { icon: 'github', link: 'https://github.com/kruceo' },
