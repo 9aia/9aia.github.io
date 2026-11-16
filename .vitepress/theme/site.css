@@ -37,3 +37,18 @@
 .vp-doc .member-dialog-avatar {
   filter: grayscale(1);
 }
+
+/* Breathing room above card grids: these containers sit directly
+   under a heading or lead paragraph, and 36px reads as a section
+   break rather than a cramped follow-on. Adjacent margins collapse,
+   so sections that already carry their own spacing (e.g. .eco-layer,
+   .home-section, .feed-species) keep their rhythm — the rule only
+   lifts grids whose preceding margin is smaller. .members-layout
+   carries the same value in its scoped style so the two never
+   disagree regardless of stylesheet order. */
+.vp-doc .values-grid,
+.vp-doc .contact-grid,
+.vp-doc .stack-grid,
+.vp-doc .members-layout {
+  margin-top: 36px;
+}

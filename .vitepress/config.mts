@@ -24,9 +24,9 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/9aia' }
     ],
-    footer: {
-      copyright: '9aia',
-    },
+    // No `footer` key: the default VPFooter would render alongside the
+    // custom SiteFooter (components/SiteFooter.vue) wired through
+    // .vitepress/theme/index.ts.
   },
   vite: {
     plugins: [

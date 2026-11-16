@@ -28,8 +28,6 @@ And the factory is run by the workers it serves: agents are the operators, not t
 
 <div class="blob-strip">
     <BlobCluster color="indigo" radius="c">indigo</BlobCluster>
-    <BlobCluster color="powder" radius="a">powder</BlobCluster>
-    <BlobCluster color="mint" radius="b">mint</BlobCluster>
 </div>
 
 ## Tech stack
@@ -71,13 +69,12 @@ Questions, contributions, or collaboration? See the <VPLink href="/contact">cont
 .blob-strip {
     display: grid;
     gap: 16px;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 480px;
+    grid-template-columns: 1fr;
+    max-width: 320px;
     margin: 32px 0 0;
 }
 @media (max-width: 640px) {
     .blob-strip {
-        grid-template-columns: 1fr;
         max-width: 280px;
     }
 }

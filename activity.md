@@ -8,9 +8,9 @@ import { data as activity } from '.vitepress/theme/activity.data.ts'
 Tags are releases. One chronological feed of commits and tags across the org; release-tagged commits carry their tag inline.
 
 <div class="feed-species">
-    <BlobCluster color="cyan" radius="a">commits</BlobCluster>
-    <BlobCluster color="lavender" radius="b">tags</BlobCluster>
-    <BlobCluster color="mint" radius="c">releases</BlobCluster>
+    <BlobCluster color="cyan" radius="a" :count="24">commits</BlobCluster>
+    <BlobCluster color="lavender" radius="b" :count="24">tags</BlobCluster>
+    <BlobCluster color="mint" radius="c" :count="24">releases</BlobCluster>
 </div>
 
 <ActivityFeed />
@@ -22,13 +22,13 @@ Tags are releases. One chronological feed of commits and tags across the org; re
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 480px;
+  max-width: 960px;
   margin: 32px 0 24px;
 }
 @media (max-width: 640px) {
   .feed-species {
     grid-template-columns: 1fr;
-    max-width: 280px;
+    max-width: 560px;
   }
 }
 .feed-generated {

@@ -210,7 +210,7 @@ function fmtDate(iso) {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 24px;
+    margin-top: 36px;
 }
 .members-grid {
     display: grid;
@@ -301,6 +301,11 @@ function fmtDate(iso) {
     color: var(--vp-c-text-3);
 }
 .member-card-bio {
+    /* Extra air between the name/title header block and the bio —
+       the card's flex gap alone reads cramped here. Applies to both
+       the founder card (inside .member-card-founder-text) and the
+       regular cards. */
+    margin-top: 8px;
     font-size: 12px;
     line-height: 18px;
     color: var(--vp-c-text-2);
