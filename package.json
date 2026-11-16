@@ -18,7 +18,7 @@
     "@dagrejs/dagre": "^3.1.3",
     "@vue-flow/controls": "^1.1.3",
     "@vue-flow/core": "^1.48.2",
-    "vitepress-theme-9aia": "github:9aia/vitepress-theme-9aia#de26cebd2514d84052d01166c376bddc71c6267c",
+    "vitepress-theme-9aia": "github:9aia/vitepress-theme-9aia#c43c722b8e6ccae0fd3dcc7d3950bdf38baa1fbe",
     "vue3-carousel": "^0.19.0"
   }
 }
