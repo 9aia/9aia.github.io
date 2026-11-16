@@ -317,6 +317,11 @@ const flowEdges = computed(() =>
     text-decoration: none;
 }
 
+.vf-node-link:hover,
+.vf-node-link:focus-visible {
+    text-decoration: none;
+}
+
 .vf-node-kicker {
     display: inline-flex;
     align-items: center;
