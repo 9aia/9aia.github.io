@@ -271,9 +271,8 @@ const flowEdges = computed(() =>
 
 .stack-flow {
     height: 640px;
-    border: 1px solid var(--vp-c-divider);
     border-radius: 12px;
-    background: var(--vp-c-bg);
+    background: var(--vp-c-bg-alt);
 }
 
 .stack-flow .vue-flow__edge-path {
@@ -300,8 +299,8 @@ const flowEdges = computed(() =>
     width: 230px;
     border-radius: 10px;
     background: var(--vp-c-bg-soft);
-    border: 1px solid var(--vp-c-divider);
     color: var(--vp-c-text-1);
+    box-shadow: 0 1px 3px rgb(20 20 60 / 0.12);
     transition: opacity 0.18s ease;
 }
 
@@ -358,8 +357,7 @@ const flowEdges = computed(() =>
     gap: 14px;
     padding: 6px 12px;
     border-radius: 8px;
-    border: 1px solid var(--vp-c-divider);
-    background: color-mix(in srgb, var(--vp-c-bg) 85%, transparent);
+    background: color-mix(in srgb, var(--vp-c-bg-alt) 90%, transparent);
     backdrop-filter: blur(4px);
     font-size: 11px;
     color: var(--vp-c-text-2);
@@ -383,15 +381,13 @@ const flowEdges = computed(() =>
 }
 
 .stack-flow .vue-flow__controls {
-    box-shadow: none;
-    border: 1px solid var(--vp-c-divider);
+    box-shadow: 0 2px 8px rgb(20 20 60 / 0.12);
     border-radius: 8px;
     overflow: hidden;
 }
 
 .stack-flow .vue-flow__controls-button {
     background: var(--vp-c-bg-soft);
-    border-bottom: 1px solid var(--vp-c-divider);
     color: var(--vp-c-text-1);
     fill: currentColor;
 }
@@ -410,9 +406,9 @@ const flowEdges = computed(() =>
     width: 34px;
     height: 34px;
     padding: 0;
-    border: 1px solid var(--vp-c-divider);
     border-radius: 8px;
-    background: color-mix(in srgb, var(--vp-c-bg) 85%, transparent);
+    background: color-mix(in srgb, var(--vp-c-bg-alt) 90%, transparent);
+    box-shadow: 0 1px 3px rgb(20 20 60 / 0.12);
     backdrop-filter: blur(4px);
     color: var(--vp-c-text-1);
     cursor: pointer;
