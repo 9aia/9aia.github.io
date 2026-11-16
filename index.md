@@ -55,20 +55,32 @@ function shortDate(iso) {
           One organism, four layers: delivery down to interface.
         </template>
     </VPTeamPageTitle>
-    <div class="ecosystem">
-        <div v-for="l in layers" :key="l.key" class="layer-card">
-            <div class="layer-head">
-                <span class="layer-name">{{ l.title }}</span>
+    <Carousel
+        class="stack-carousel"
+        :items-to-show="3.05"
+        :items-to-scroll="1"
+        :wrap-around="true"
+        :mouse-drag="true"
+        :breakpoints="{ 640: { itemsToShow: 1.15 }, 1024: { itemsToShow: 2.05 }, 1280: { itemsToShow: 3.05 } }"
+    >
+        <Slide v-for="l in layers" :key="l.key">
+            <div class="layer-card">
+                <div class="layer-head">
+                    <span class="layer-name">{{ l.title }}</span>
+                </div>
+                <p class="layer-blurb">{{ l.blurb }}</p>
+                <ul class="layer-list">
+                    <li v-for="p in l.projects" :key="p.name">
+                        <a :href="p.docs ?? p.website ?? '#'" class="layer-link">{{ p.name }}</a>
+                        <span class="layer-tag">{{ p.tagline }}</span>
+                    </li>
+                </ul>
             </div>
-            <p class="layer-blurb">{{ l.blurb }}</p>
-            <ul class="layer-list">
-                <li v-for="p in l.projects" :key="p.name">
-                    <a :href="p.docs ?? p.website ?? '#'" class="layer-link">{{ p.name }}</a>
-                    <span class="layer-tag">{{ p.tagline }}</span>
-                </li>
-            </ul>
-        </div>
-    </div>
+        </Slide>
+        <template #addons>
+            <Navigation />
+        </template>
+    </Carousel>
     <p class="ecosystem-cta">
         <VPLink href="/ecosystem">How it all fits together →</VPLink>
     </p>
@@ -175,23 +187,46 @@ function shortDate(iso) {
     margin-top: 16px;
 }
 
-.ecosystem {
-    display: grid;
-    gap: 20px;
-    padding: 32px;
-    grid-template-columns: 1fr;
+.stack-carousel,
+.organism-carousel {
+    --vc-nav-background: var(--vp-c-bg-soft);
+    --vc-nav-color: var(--vp-c-text-1);
+    --vc-nav-color-hover: var(--vp-c-brand-1);
+    --vc-nav-border-radius: 50%;
+    --vc-nav-height: 36px;
+    --vc-nav-width: 36px;
 }
 
-@media (min-width: 768px) {
-    .ecosystem {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.stack-carousel {
+    padding: 8px 32px 24px;
 }
 
-@media (min-width: 1280px) {
-    .ecosystem {
-        grid-template-columns: repeat(4, 1fr);
-    }
+.stack-carousel .carousel__slide {
+    padding: 0 8px;
+    display: flex;
+}
+
+.stack-carousel .layer-card {
+    flex: 1;
+}
+
+.organism-carousel {
+    padding: 8px 32px 24px;
+}
+
+.organism-carousel .carousel__prev,
+.organism-carousel .carousel__next,
+.stack-carousel .carousel__prev,
+.stack-carousel .carousel__next {
+    border: 1px solid var(--vp-c-divider);
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.organism-carousel .carousel__prev:hover,
+.organism-carousel .carousel__next:hover,
+.stack-carousel .carousel__prev:hover,
+.stack-carousel .carousel__next:hover {
+    border-color: var(--vp-c-brand-1);
 }
 
 .layer-card {
@@ -249,27 +284,6 @@ function shortDate(iso) {
 .ecosystem-cta {
     text-align: center;
     margin-top: 24px;
-}
-
-.organism-carousel {
-    --vc-nav-background: var(--vp-c-bg-soft);
-    --vc-nav-color: var(--vp-c-text-1);
-    --vc-nav-color-hover: var(--vp-c-brand-1);
-    --vc-nav-border-radius: 50%;
-    --vc-nav-height: 36px;
-    --vc-nav-width: 36px;
-    padding: 8px 32px 24px;
-}
-
-.organism-carousel .carousel__prev,
-.organism-carousel .carousel__next {
-    border: 1px solid var(--vp-c-divider);
-    transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.organism-carousel .carousel__prev:hover,
-.organism-carousel .carousel__next:hover {
-    border-color: var(--vp-c-brand-1);
 }
 
 .organism-carousel .carousel__slide {
