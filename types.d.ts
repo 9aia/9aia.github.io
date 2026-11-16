@@ -1,6 +1,6 @@
 export type ProjectStatus = 'recent' | 'active' | 'wip' | 'deprecated';
 export type ProjectStage = 'alpha' | 'beta';
-export type ProjectLayer = 'packaging' | 'plane' | 'engine' | 'orchestration' | 'surface';
+export type ProjectLayer = 'delivery' | 'memory' | 'process' | 'agency';
 
 export interface Project {
     name: string;

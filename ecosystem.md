@@ -21,7 +21,7 @@ const layerMeta = [
   {
     key: 'agency',
     title: 'Agency',
-    blurb: 'What acts and what shows: peregrin orchestrates campaigns across machines, pavo renders every view the drivers emit.',
+    blurb: 'What acts and what shows: peregrin runs campaigns on the hypha entity plane, pavo renders every view the drivers emit.',
   },
 ]
 
@@ -34,7 +34,7 @@ const flow = [
   { who: 'tamias', what: 'installs and dispenses the packs that carry everything else' },
   { who: 'myco + kuda', what: 'track the work and remember the code' },
   { who: 'sturn', what: 'coordinates agents in milliseconds over the git object store' },
-  { who: 'peregrin + sepia', what: 'run campaigns and manage agent sessions across machines' },
+  { who: 'peregrin + sepia', what: 'run campaigns and manage agent sessions as entities on the hypha plane' },
   { who: 'pavo', what: 'renders every view the drivers emit' },
   { who: 'bupha', what: 'gates every push through CI' },
   { who: 'tarsi', what: 'cuts the release' },

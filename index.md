@@ -24,7 +24,7 @@ const layerMeta = [
   { key: 'delivery', title: 'Delivery', blurb: 'How everything installs, updates, ships, and passes the gate.' },
   { key: 'memory', title: 'Memory', blurb: 'What the system knows: records, code maps, coordination, substrate.' },
   { key: 'process', title: 'Process', blurb: 'How work is governed: secrets, verification, schedules, sessions, workspace.' },
-  { key: 'agency', title: 'Agency', blurb: 'What acts and what shows: orchestration in, views out.' },
+  { key: 'agency', title: 'Agency', blurb: 'What acts and what shows: campaigns on the substrate in, views out.' },
 ]
 
 const layerTitle = Object.fromEntries(layerMeta.map((l) => [l.key, l.title]))
@@ -97,9 +97,9 @@ function shortDate(iso) {
     </VPTeamPageTitle>
     <p class="mission">
       We're building the missing layers between coding agents and the repositories
-      they work on: packages (tamias), a ledger (myco, kuda), a WAL (sturn),
-      an orchestrator (peregrin, sepia), and a queue (bupha, mimus, cicada).
-      Open, minimal, composable. A stack agents can actually run on.
+      they work on: delivery (tamias, tarsi, bupha), memory (myco, kuda, sturn,
+      hypha), process (cuora, mimus, cicada, lasius, sepia), and agency
+      (peregrin, pavo). Open, minimal, composable. A stack agents can actually run on.
     </p>
     <p class="mission-cta">
         <VPLink href="/about">Our story and principles →</VPLink>
