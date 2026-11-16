@@ -3,6 +3,7 @@ layout: home
 
 hero:
   name: "Gaia"
+  blobs: true
   text: "Put AI agents to work, on your terms"
   tagline: Open infrastructure for agent-driven development
   actions:
@@ -104,8 +105,8 @@ function shortDate(iso) {
     <p class="mission">
       We're building the missing layers between coding agents and the repositories
       they work on: delivery (tamias, scarab, tarsi, bupha, hypha), memory
-      (myco, kuda), process (sturn, cuora, mimus, cicada, lasius, sepia,
-      peregrin), and interface (pavo). Open, minimal, composable. A stack
+      (myco, kuda), process (sturn, cuora, tardigrada, mimus, cicada,
+      lasius, sepia, peregrin), and interface (pavo). Open, minimal, composable. A stack
       agents can actually run on.
     </p>
     <p class="mission-cta">
