@@ -63,6 +63,12 @@ None of them were designed as engines. They became them. Features kept pulling t
 
 And the factory is run by the workers it serves: agents are the operators, not the audience. Self-hosted, composable, yours. The <VPLink href="/ecosystem">ecosystem map</VPLink> shows how the layers fit together.
 
+<div class="blob-strip">
+    <BlobCluster color="indigo" radius="c">indigo</BlobCluster>
+    <BlobCluster color="powder" radius="a">powder</BlobCluster>
+    <BlobCluster color="mint" radius="b">mint</BlobCluster>
+</div>
+
 ## Tech stack
 
 <div class="stack-grid">
@@ -95,6 +101,19 @@ And the factory is run by the workers it serves: agents are the operators, not t
 Questions, contributions, or collaboration? See the <VPLink href="/contact">contact page</VPLink>.
 
 <style scoped>
+.blob-strip {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 480px;
+    margin: 32px 0 0;
+}
+@media (max-width: 640px) {
+    .blob-strip {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+    }
+}
 .stack-grid {
     display: grid;
     gap: 20px;

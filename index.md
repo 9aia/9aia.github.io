@@ -52,6 +52,12 @@ function shortDate(iso) {
     <p class="ecosystem-cta">
         <VPLink href="/ecosystem">How it all fits together →</VPLink>
     </p>
+    <div class="blob-strip">
+        <BlobCluster color="cyan" radius="b">cyan</BlobCluster>
+        <BlobCluster color="lavender" radius="c">lavender</BlobCluster>
+        <BlobCluster color="mint" radius="a">mint</BlobCluster>
+        <BlobCluster color="blush" radius="b">blush</BlobCluster>
+    </div>
 </div>
 
 <div>
@@ -175,6 +181,20 @@ function shortDate(iso) {
 .ecosystem-cta {
     text-align: center;
     margin-top: 24px;
+}
+
+.blob-strip {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
+    margin: 32px auto 0;
+}
+
+@media (min-width: 768px) {
+    .blob-strip {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .organism-carousel .carousel__slide {

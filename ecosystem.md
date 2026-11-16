@@ -35,6 +35,13 @@ process → interface**, from how artifacts move to what renders.
 
 ## The layers
 
+<div class="eco-species">
+  <BlobCluster color="cyan" radius="a">delivery</BlobCluster>
+  <BlobCluster color="lavender" radius="b">memory</BlobCluster>
+  <BlobCluster color="mint" radius="c">process</BlobCluster>
+  <BlobCluster color="blush" radius="a">interface</BlobCluster>
+</div>
+
 <div v-for="l in layers" :key="l.key" class="eco-layer">
   <h2>{{ l.title }}</h2>
   <p class="eco-blurb">{{ l.blurb }}</p>
@@ -70,6 +77,18 @@ The suite manages its own development. This is the loop, end to end:
   font-size: 13px;
   text-align: center;
   margin-top: 12px;
+}
+.eco-species {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 560px;
+  margin: 24px 0 8px;
+}
+@media (min-width: 768px) {
+  .eco-species {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .eco-layer {
   margin-top: 48px;
