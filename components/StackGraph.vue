@@ -84,7 +84,7 @@ const layout = computed(() => {
             id: `${e.kind}:${e.source}->${e.target}`,
             source: e.source,
             target: e.target,
-            type: 'smoothstep',
+            type: 'default',
             class: `dep-edge dep-edge--${e.kind}`,
             style: { stroke: color, strokeOpacity: e.kind === 'dep' ? 0.6 : 0.4 },
         }
