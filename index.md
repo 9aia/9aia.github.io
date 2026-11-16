@@ -73,7 +73,6 @@ function shortDate(iso) {
         :items-to-scroll="1"
         :wrap-around="true"
         :mouse-drag="true"
-        breakpoint-mode="carousel"
         :breakpoints="{ 640: { itemsToShow: 2.2 }, 1024: { itemsToShow: 3.2 }, 1280: { itemsToShow: 4.2 } }"
     >
         <Slide v-for="p in active" :key="p.name">
@@ -169,7 +168,9 @@ function shortDate(iso) {
     --vc-nav-border-radius: 50%;
     --vc-nav-height: 30px;
     --vc-nav-width: 30px;
-    padding: 4px 6px 20px;
+    /* Inline padding must clear the nav arrows (--vc-nav-width + gap)
+       at every breakpoint, or they overlap the peeked slide. */
+    padding: 8px 40px 24px;
 }
 
 .organism-carousel .carousel__prev,
@@ -299,9 +300,6 @@ function shortDate(iso) {
 }
 
 @media (min-width: 640px) {
-    .organism-carousel {
-        padding: 8px 16px 24px;
-    }
     .organism {
         padding: 20px 24px;
     }
