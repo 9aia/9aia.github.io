@@ -103,8 +103,9 @@ Questions, contributions, or collaboration? See the <VPLink href="/contact">cont
 }
 .members-teaser {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 16px;
+    gap: 10px 16px;
     margin: 16px 0 0;
 }
 </style>

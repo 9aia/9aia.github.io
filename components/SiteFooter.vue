@@ -110,8 +110,9 @@ const visible = computed(
 
 .footer-team {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 14px;
+    gap: 10px 14px;
     margin: 6px 0 0;
     font-size: 13px;
 }

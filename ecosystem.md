@@ -105,6 +105,7 @@ The suite manages its own development. This is the loop, end to end:
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr;
+  margin-top: 24px;
 }
 @media (min-width: 768px) {
   .eco-grid {

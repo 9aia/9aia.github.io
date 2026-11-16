@@ -182,9 +182,10 @@ function shortDate(iso) {
 }
 .team-row {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 14px;
+    gap: 10px 14px;
     margin: 20px 0 0;
 }
 
@@ -288,6 +289,15 @@ function shortDate(iso) {
     flex-direction: column;
     gap: 4px;
     font-size: 14px;
+}
+
+/* On laptop+ the column is wide enough that margin-left:auto on the
+   date pushes it far from the tag name — cap the row measure so the
+   three columns (tag / repo / date) stay visually grouped. */
+@media (min-width: 1024px) {
+    .releases-teaser {
+        max-width: 680px;
+    }
 }
 
 .releases-teaser li {
