@@ -381,19 +381,22 @@ const flowEdges = computed(() =>
 }
 
 .stack-flow .vue-flow__controls {
-    box-shadow: 0 2px 8px rgb(20 20 60 / 0.12);
+    background: var(--vp-c-bg-alt);
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgb(20 20 60 / 0.12);
 }
 
 .stack-flow .vue-flow__controls-button {
-    background: var(--vp-c-bg-soft);
+    background: transparent;
+    border-bottom: none;
     color: var(--vp-c-text-1);
     fill: currentColor;
 }
 
 .stack-flow .vue-flow__controls-button:hover {
-    background: var(--vp-c-bg-alt);
+    background: var(--vp-c-bg-soft);
+    color: var(--vp-c-brand-1);
 }
 
 .stack-fs-btn {
