@@ -21,10 +21,10 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
 import { data as activity } from '.vitepress/theme/activity.data.ts'
 
 const layerMeta = [
-  { key: 'delivery', title: 'Delivery', blurb: 'How everything installs, updates, ships, and passes the gate.' },
-  { key: 'memory', title: 'Memory', blurb: 'What the system knows: records, code maps, coordination, substrate.' },
-  { key: 'process', title: 'Process', blurb: 'How work is governed: secrets, verification, schedules, sessions, workspace.' },
-  { key: 'agency', title: 'Agency', blurb: 'What acts and what shows: campaigns on the substrate in, views out.' },
+  { key: 'delivery', title: 'Delivery', blurb: 'How artifacts and state move: packs install, releases ship, the gate guards pushes, the substrate syncs.' },
+  { key: 'memory', title: 'Memory', blurb: 'What persists as knowledge: the work ledger and the verified code maps.' },
+  { key: 'process', title: 'Process', blurb: 'How work is governed and run: coordination, secrets, verification, schedules, sessions, campaigns.' },
+  { key: 'interface', title: 'Interface', blurb: 'What renders for humans and agents: every view the drivers emit.' },
 ]
 
 const layerTitle = Object.fromEntries(layerMeta.map((l) => [l.key, l.title]))
@@ -50,7 +50,7 @@ function shortDate(iso) {
     <VPTeamPageTitle>
         <template #title>The Stack</template>
         <template #lead>
-          One organism, four layers: delivery down to agency.
+          One organism, four layers: delivery down to interface.
         </template>
     </VPTeamPageTitle>
     <div class="ecosystem">
@@ -76,7 +76,7 @@ function shortDate(iso) {
     <VPTeamPageTitle>
         <template #title>The Organisms</template>
         <template #lead>
-          Each a small engine owning one mechanism. Swipe through; every card links to its docs.
+          Each an organism owning one mechanism. Swipe through; every card links to its docs.
         </template>
     </VPTeamPageTitle>
     <div class="carousel">
@@ -97,9 +97,10 @@ function shortDate(iso) {
     </VPTeamPageTitle>
     <p class="mission">
       We're building the missing layers between coding agents and the repositories
-      they work on: delivery (tamias, tarsi, bupha), memory (myco, kuda, sturn,
-      hypha), process (cuora, mimus, cicada, lasius, sepia), and agency
-      (peregrin, pavo). Open, minimal, composable. A stack agents can actually run on.
+      they work on: delivery (tamias, scarab, tarsi, bupha, hypha), memory
+      (myco, kuda), process (sturn, cuora, mimus, cicada, lasius, sepia,
+      peregrin), and interface (pavo). Open, minimal, composable. A stack
+      agents can actually run on.
     </p>
     <p class="mission-cta">
         <VPLink href="/about">Our story and principles →</VPLink>

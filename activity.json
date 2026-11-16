@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T02:31:46.499Z",
+  "generated": "2026-11-16T02:41:26.226Z",
   "repos": [
     {
       "name": "tamias",
@@ -7,6 +7,13 @@
       "website": "https://9aia.com/tamias/",
       "repo": "https://github.com/9aia/tamias",
       "commits": [
+        {
+          "sha": "dae49b6ebaeb610ba4a064e7fd8db56f5b1685dc",
+          "date": "2026-11-16T02:35:02Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/tamias/commit/dae49b6ebaeb610ba4a064e7fd8db56f5b1685dc",
+          "tags": []
+        },
         {
           "sha": "b196b72f5d6c7ca2afacde66a8592dd1e0f25018",
           "date": "2026-11-15T20:56:08Z",
@@ -353,13 +360,6 @@
           "message": "feat: trust tiers + official badge groundwork, install --plan, consent memory, hardening",
           "url": "https://github.com/9aia/tamias/commit/d6bae6ac4d86bafaf6bb174e84f0d253e3df19d3",
           "tags": []
-        },
-        {
-          "sha": "85a0f537d86ef2b122ba869de57f7d1a89c3ffd4",
-          "date": "2026-11-10T19:44:02Z",
-          "message": "docs: boundary — bupha is the CI repo; ci-gate migrating back (PL-013)",
-          "url": "https://github.com/9aia/tamias/commit/85a0f537d86ef2b122ba869de57f7d1a89c3ffd4",
-          "tags": []
         }
       ],
       "tags": [
@@ -471,6 +471,13 @@
       "website": "https://9aia.com/scarab/",
       "repo": "https://github.com/9aia/scarab",
       "commits": [
+        {
+          "sha": "6089512bb58f1ead1712284a078446840bff5b45",
+          "date": "2026-11-16T02:34:55Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/scarab/commit/6089512bb58f1ead1712284a078446840bff5b45",
+          "tags": []
+        },
         {
           "sha": "e15217037d0c3b0353865453b13b840bbc12c455",
           "date": "2026-11-15T20:57:16Z",
@@ -655,6 +662,13 @@
       "website": "https://9aia.com/tarsi/",
       "repo": "https://github.com/9aia/tarsi",
       "commits": [
+        {
+          "sha": "5980a1cd70aeb83dc2b4c790bba23530384ac850",
+          "date": "2026-11-16T02:36:30Z",
+          "message": "docs: security reports via private email; no-PR contribution flow",
+          "url": "https://github.com/9aia/tarsi/commit/5980a1cd70aeb83dc2b4c790bba23530384ac850",
+          "tags": []
+        },
         {
           "sha": "cb4405e0c6b660801865391ed234e6c86d2f2bf2",
           "date": "2026-11-15T20:57:30Z",
@@ -1001,13 +1015,6 @@
           "message": "docs: unarchive — reposition as release plane (Rust rewrite, P-013/PL-014)",
           "url": "https://github.com/9aia/tarsi/commit/c6984fe9e15a3d9794a1139bf74cf52b6cc04f45",
           "tags": []
-        },
-        {
-          "sha": "00de861c30c279bfa55fd83fa3f014dec16e283e",
-          "date": "2026-11-02T18:45:11Z",
-          "message": "docs: agent-awareness — sturn + kuda managed blocks (no-PR flow, card conventions)",
-          "url": "https://github.com/9aia/tarsi/commit/00de861c30c279bfa55fd83fa3f014dec16e283e",
-          "tags": []
         }
       ],
       "tags": [
@@ -1104,6 +1111,13 @@
       "website": "https://9aia.com/bupha/",
       "repo": "https://github.com/9aia/bupha",
       "commits": [
+        {
+          "sha": "7499cd9096291d4a04b3b412a49627a0f8a7bedc",
+          "date": "2026-11-16T02:34:19Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/bupha/commit/7499cd9096291d4a04b3b412a49627a0f8a7bedc",
+          "tags": []
+        },
         {
           "sha": "860a92cb435e70dae394e058544194723b203f61",
           "date": "2026-11-15T20:56:23Z",
@@ -1446,13 +1460,6 @@
           "message": "feat(gha): actions/upload-artifact + download-artifact via per-run tar store (T-048)",
           "url": "https://github.com/9aia/bupha/commit/44d6f3c6be1ec72b4a013fec597421ac040813da",
           "tags": []
-        },
-        {
-          "sha": "90db1c974073ac57e6202927acb0a9adaf854786",
-          "date": "2026-11-13T04:57:11Z",
-          "message": "docs(gha): per-job status contexts + parallel-matrix deferred design (T-048)",
-          "url": "https://github.com/9aia/bupha/commit/90db1c974073ac57e6202927acb0a9adaf854786",
-          "tags": []
         }
       ],
       "tags": [
@@ -1564,6 +1571,13 @@
       "website": "https://9aia.com/myco/",
       "repo": "https://github.com/9aia/myco",
       "commits": [
+        {
+          "sha": "e2e4b71f745b914ac548b090d74e89162e8fad3a",
+          "date": "2026-11-16T02:34:44Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/myco/commit/e2e4b71f745b914ac548b090d74e89162e8fad3a",
+          "tags": []
+        },
         {
           "sha": "2fcff7700ac0d32181879aaa6b5bc2a36da4bbb5",
           "date": "2026-11-15T22:09:41Z",
@@ -1910,13 +1924,6 @@
           "message": "chore(kuda): regen cards for priority-token emit change (I-032)",
           "url": "https://github.com/9aia/myco/commit/1ffade774e127257e60f50bb7cbe69ea0bcba572",
           "tags": []
-        },
-        {
-          "sha": "5c96eff724fc91c8f9608086ef58ca6a38110933",
-          "date": "2026-11-10T15:46:48Z",
-          "message": "fix(store-md): frontmatter priority emits pri: tokens, not serde names (I-032)",
-          "url": "https://github.com/9aia/myco/commit/5c96eff724fc91c8f9608086ef58ca6a38110933",
-          "tags": []
         }
       ],
       "tags": [
@@ -1963,6 +1970,13 @@
       "website": "https://9aia.com/kuda/",
       "repo": "https://github.com/9aia/kuda",
       "commits": [
+        {
+          "sha": "0cfede2040842938334d01c589b0f32fa8715c7b",
+          "date": "2026-11-16T02:34:37Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/kuda/commit/0cfede2040842938334d01c589b0f32fa8715c7b",
+          "tags": []
+        },
         {
           "sha": "3c8698d5309a6c9c975eea07efff56dafa2d34b6",
           "date": "2026-11-15T20:56:29Z",
@@ -2305,13 +2319,6 @@
           "message": "refactor: parse/dispatch split — Cli/Cmd pub, ops callable as dispatch(&cli)",
           "url": "https://github.com/9aia/kuda/commit/de421425dc8c0624c96b7e98ffc0d736408aa7c0",
           "tags": []
-        },
-        {
-          "sha": "4d705c43348a0a6282d6c2a5a86e266dabcdb41a",
-          "date": "2026-11-10T04:19:35Z",
-          "message": "refactor: engine as lib — kuda-cli/src/lib.rs, bin is ~10 lines",
-          "url": "https://github.com/9aia/kuda/commit/4d705c43348a0a6282d6c2a5a86e266dabcdb41a",
-          "tags": []
         }
       ],
       "tags": [
@@ -2328,6 +2335,13 @@
       "website": "https://9aia.com/mimus/",
       "repo": "https://github.com/9aia/mimus",
       "commits": [
+        {
+          "sha": "2949d3a7b45e7f488010e9ef8a99776c60c329d0",
+          "date": "2026-11-16T02:34:41Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/mimus/commit/2949d3a7b45e7f488010e9ef8a99776c60c329d0",
+          "tags": []
+        },
         {
           "sha": "30e3df2538ccf0d9175ad7916562ac77d206f8be",
           "date": "2026-11-15T20:56:36Z",
@@ -2670,13 +2684,6 @@
           "message": "chore: local gate — .githooks/pre-push runs scripts/check.sh",
           "url": "https://github.com/9aia/mimus/commit/c259234369cfbb9c9ee7c6ba7792e6091bb9cd2b",
           "tags": []
-        },
-        {
-          "sha": "fffb8e45e562304e64d3a66d35c58c507a3e7acd",
-          "date": "2026-10-22T23:39:15Z",
-          "message": "fix: e2e — audit exits 0 without cards since c81b73e",
-          "url": "https://github.com/9aia/mimus/commit/fffb8e45e562304e64d3a66d35c58c507a3e7acd",
-          "tags": []
         }
       ],
       "tags": []
@@ -2687,6 +2694,13 @@
       "website": "https://9aia.com/cuora/",
       "repo": "https://github.com/9aia/cuora",
       "commits": [
+        {
+          "sha": "311e6ee02c1abb49aafc360aea8ba0f4a0aecd70",
+          "date": "2026-11-16T02:34:29Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/cuora/commit/311e6ee02c1abb49aafc360aea8ba0f4a0aecd70",
+          "tags": []
+        },
         {
           "sha": "e502bd4cc15ee289f3c06ceeff599b885426d927",
           "date": "2026-11-15T20:56:17Z",
@@ -3031,13 +3045,6 @@
           "message": "feat(identity): backend selection — keyring fail-closed, file pin (I-007)",
           "url": "https://github.com/9aia/cuora/commit/918f9b94bb76e38ed231bd513424a669e34eddd4",
           "tags": []
-        },
-        {
-          "sha": "04eae3edb14a8d4cad2f7ddc847d1f71ed59b504",
-          "date": "2026-11-08T01:01:26Z",
-          "message": "fix(identity): re-alias existing collections via raw SetAlias (I-006)",
-          "url": "https://github.com/9aia/cuora/commit/04eae3edb14a8d4cad2f7ddc847d1f71ed59b504",
-          "tags": []
         }
       ],
       "tags": [
@@ -3054,6 +3061,13 @@
       "website": "https://9aia.com/sturn/",
       "repo": "https://github.com/9aia/sturn",
       "commits": [
+        {
+          "sha": "adc463a6cc74bf7344c51463e99a3002d41e8119",
+          "date": "2026-11-16T02:34:59Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/sturn/commit/adc463a6cc74bf7344c51463e99a3002d41e8119",
+          "tags": []
+        },
         {
           "sha": "2cc2d0e29274a3204f1e5a18a485de3664df4e37",
           "date": "2026-11-15T20:57:28Z",
@@ -3396,13 +3410,6 @@
           "message": "docs: point bupha listener example at :29173",
           "url": "https://github.com/9aia/sturn/commit/9b5383cc57ba2794741724e056990b5bf764c1cc",
           "tags": []
-        },
-        {
-          "sha": "c1934345b4df1fe630fb08dec403cf2b22b3645e",
-          "date": "2026-10-25T03:45:49Z",
-          "message": "ci: coverage workflow with 100% line gate",
-          "url": "https://github.com/9aia/sturn/commit/c1934345b4df1fe630fb08dec403cf2b22b3645e",
-          "tags": []
         }
       ],
       "tags": []
@@ -3413,6 +3420,13 @@
       "website": "https://9aia.com/hypha/",
       "repo": "https://github.com/9aia/hypha",
       "commits": [
+        {
+          "sha": "3d3221dc1a7edb4f551520034d3c1f2587ddcb10",
+          "date": "2026-11-16T02:34:34Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/hypha/commit/3d3221dc1a7edb4f551520034d3c1f2587ddcb10",
+          "tags": []
+        },
         {
           "sha": "d132b2c0ded437470b0fd1f7507426eb426682c9",
           "date": "2026-11-15T20:56:43Z",
@@ -3757,13 +3771,6 @@
           "message": "fix: make Pairing::with_token_prefix work on shared instances",
           "url": "https://github.com/9aia/hypha/commit/98694d1453503de72b06d8fb4a46cdf144facb21",
           "tags": []
-        },
-        {
-          "sha": "c659086baaa1d9f1db064c2c9e1edfcf604756ca",
-          "date": "2026-11-09T18:32:00Z",
-          "message": "feat(http): composition seams — app_routes, health probe, pair prefix",
-          "url": "https://github.com/9aia/hypha/commit/c659086baaa1d9f1db064c2c9e1edfcf604756ca",
-          "tags": []
         }
       ],
       "tags": [
@@ -3780,6 +3787,13 @@
       "website": "https://9aia.com/cicada/",
       "repo": "https://github.com/9aia/cicada",
       "commits": [
+        {
+          "sha": "cf817614000cda1486c645462193da3dab705af0",
+          "date": "2026-11-16T02:34:26Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/cicada/commit/cf817614000cda1486c645462193da3dab705af0",
+          "tags": []
+        },
         {
           "sha": "8300f79f9e056760b68178846eeeb2b43ea9c878",
           "date": "2026-11-15T20:57:36Z",
@@ -4122,13 +4136,6 @@
           "message": "feat(planning): OperationPlanner, plan/range/show use cases, fakes, CLI verbs",
           "url": "https://github.com/9aia/cicada/commit/ed6054903d8b1a842ad2be53edca9133e5ea0a45",
           "tags": []
-        },
-        {
-          "sha": "24efa2fd3227a912f9cffd3c6875a2d2844384f6",
-          "date": "2026-10-23T05:42:00Z",
-          "message": "feat(schema): YAML DSL parser, ValidateCalendar use case, cicada validate",
-          "url": "https://github.com/9aia/cicada/commit/24efa2fd3227a912f9cffd3c6875a2d2844384f6",
-          "tags": []
         }
       ],
       "tags": []
@@ -4139,6 +4146,13 @@
       "website": "https://9aia.com/lasius/",
       "repo": "https://github.com/9aia/lasius",
       "commits": [
+        {
+          "sha": "933e841d2715348011dcfc8cdc44e8d14ad34f86",
+          "date": "2026-11-16T02:34:39Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/lasius/commit/933e841d2715348011dcfc8cdc44e8d14ad34f86",
+          "tags": []
+        },
         {
           "sha": "f1eca004c9983c22bbbc3ce2acc88b6a1d0c784e",
           "date": "2026-11-15T20:56:46Z",
@@ -4456,6 +4470,13 @@
       "website": "https://9aia.com/sepia/",
       "repo": "https://github.com/9aia/sepia",
       "commits": [
+        {
+          "sha": "774e11f790b175c7473348a20eee5082d1c9236f",
+          "date": "2026-11-16T02:34:57Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/sepia/commit/774e11f790b175c7473348a20eee5082d1c9236f",
+          "tags": []
+        },
         {
           "sha": "5b334c3b6acdbce4c2a62f13567a771cd71b4770",
           "date": "2026-11-15T20:57:21Z",
@@ -4800,13 +4821,6 @@
           "message": "feat(sepia-peregrin): server-side sepia-session entity plane for hypha",
           "url": "https://github.com/9aia/sepia/commit/68501ec7cb032b8e77bf48fa02a7a11fc3210239",
           "tags": []
-        },
-        {
-          "sha": "76e885cb856df177220f317a0cb8500db3ffac61",
-          "date": "2026-11-09T18:21:03Z",
-          "message": "refactor(sepia-driver-pavo): adopt pavo-driver-kit for serve loop and manifest/view construction",
-          "url": "https://github.com/9aia/sepia/commit/76e885cb856df177220f317a0cb8500db3ffac61",
-          "tags": []
         }
       ],
       "tags": [
@@ -4823,6 +4837,13 @@
       "website": "https://9aia.com/peregrin/",
       "repo": "https://github.com/9aia/peregrin",
       "commits": [
+        {
+          "sha": "d1e8e389adb6e4679e9d10c82a8adf3b460501aa",
+          "date": "2026-11-16T02:34:53Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/peregrin/commit/d1e8e389adb6e4679e9d10c82a8adf3b460501aa",
+          "tags": []
+        },
         {
           "sha": "1b300808fbfc8d31954294b0420269baf4d916bb",
           "date": "2026-11-15T20:57:09Z",
@@ -5165,13 +5186,6 @@
           "message": "feat(webhook): push_refs param — per-route push ref filtering",
           "url": "https://github.com/9aia/peregrin/commit/ee8f4426050a79b692af6bcbeb1a555bdc6e9ce2",
           "tags": []
-        },
-        {
-          "sha": "9cff6c22e1202eb5d7d0c6d08343031a48232485",
-          "date": "2026-11-11T22:32:56Z",
-          "message": "feat(sessions): mode param on create/run + sessions.set_mode plane op",
-          "url": "https://github.com/9aia/peregrin/commit/9cff6c22e1202eb5d7d0c6d08343031a48232485",
-          "tags": []
         }
       ],
       "tags": [
@@ -5188,6 +5202,13 @@
       "website": "https://9aia.com/pavo/",
       "repo": "https://github.com/9aia/pavo",
       "commits": [
+        {
+          "sha": "ddfab83fe56c469c1e242edaebf41ea212b4105e",
+          "date": "2026-11-16T02:34:49Z",
+          "message": "docs: security reports via private email, no public disclosure",
+          "url": "https://github.com/9aia/pavo/commit/ddfab83fe56c469c1e242edaebf41ea212b4105e",
+          "tags": []
+        },
         {
           "sha": "fdef25cd77e9576c1d9fd3a15f8b23554680c1e0",
           "date": "2026-11-15T20:56:40Z",
@@ -5529,13 +5550,6 @@
           "date": "2026-11-08T23:07:09Z",
           "message": "fix(core): tamias_home fallback ./tamias -> ./.tamias (match tamias-driver fix)",
           "url": "https://github.com/9aia/pavo/commit/4cce795df85812419b7d2da609c11668961986aa",
-          "tags": []
-        },
-        {
-          "sha": "603e17174e99211289046ac458a690b3224107ea",
-          "date": "2026-11-08T22:01:47Z",
-          "message": "test(testkit,xtask): transcript/replay proptests + wire fuzz; xtask dispatch tests",
-          "url": "https://github.com/9aia/pavo/commit/603e17174e99211289046ac458a690b3224107ea",
           "tags": []
         }
       ],

@@ -102,9 +102,9 @@ Coding agents are here to stay. The question is who owns the infrastructure they
 
 ## The factory
 
-We think of the stack as a factory, not a suite. Each tool is a machine: a small engine with one mechanism and a shipped preset. tamias is the packaging dock: everything installs and updates through its packs; myco the ledger on the floor, kuda the code memory, sturn the wiring, hypha the substrate holding it all, bupha the gate, sepia the shifts, peregrin the foreman working the floor, cuora the safe.
+We think of the stack as a factory, not a suite. Each tool is an organism: a small engine with one mechanism and a shipped preset. tamias is the packaging dock: everything installs and updates through its packs; myco the ledger on the floor, kuda the code memory, sturn the wiring, hypha the substrate holding it all, bupha the gate, sepia the shifts, peregrin the foreman working the floor, cuora the safe.
 
-None of them were designed as engines. They became them. Features kept pulling the same way until the mechanism stood alone and the domain was just configuration. That's the method: engines are grown from use, not planned upfront. Every new feature answers "engine or preset?" Machines stay small, replaceable, and owned.
+None of them were designed as engines. They became them. Features kept pulling the same way until the mechanism stood alone and the domain was just configuration. That's the method: engines are grown from use, not planned upfront. Every new feature answers "engine or preset?" Organisms stay small, replaceable, and owned.
 
 And the factory is run by the workers it serves: agents are the operators, not the audience. Self-hosted, composable, yours. The <VPLink href="/ecosystem">ecosystem map</VPLink> shows how the layers fit together.
 

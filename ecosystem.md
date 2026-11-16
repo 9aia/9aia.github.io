@@ -6,22 +6,22 @@ const layerMeta = [
   {
     key: 'delivery',
     title: 'Delivery',
-    blurb: 'How artifacts move: tamias installs and dispenses packs, scarab loads config and templates, tarsi cuts releases, bupha gates every push.',
+    blurb: 'How artifacts and state move: tamias installs and dispenses packs, scarab loads config and templates, tarsi cuts releases, bupha gates every push, hypha syncs entities across nodes.',
   },
   {
     key: 'memory',
     title: 'Memory',
-    blurb: 'What the system knows: myco keeps the work ledger, kuda the verified code maps, sturn the coordination WAL, hypha the distributed substrate.',
+    blurb: 'What persists as knowledge: myco keeps the work ledger, kuda the verified code maps.',
   },
   {
     key: 'process',
     title: 'Process',
-    blurb: 'How work is governed: cuora brokers secrets, mimus verifies claims, cicada schedules, lasius manages the workspace, sepia runs sessions.',
+    blurb: 'How work is governed and run: sturn coordinates, cuora brokers secrets, mimus verifies claims, cicada schedules, lasius manages the workspace, sepia runs sessions, peregrin drives campaigns on the hypha plane.',
   },
   {
-    key: 'agency',
-    title: 'Agency',
-    blurb: 'What acts and what shows: peregrin runs campaigns on the hypha entity plane, pavo renders every view the drivers emit.',
+    key: 'interface',
+    title: 'Interface',
+    blurb: 'What renders for humans and agents: pavo draws every ViewNode IR the drivers emit, across CLI, TUI, and web.',
   },
 ]
 
@@ -43,7 +43,10 @@ const flow = [
 
 # The ecosystem
 
-GAIA is a suite of small engines, not a framework, not a control plane. Each project owns one mechanism, speaks a wire protocol, and composes with the rest. The layers below are the architecture: **delivery → memory → process → agency**, from how artifacts move to what acts and what shows.
+GAIA is a suite of organisms, not a framework, not a control plane. Each
+organism owns one mechanism, speaks a wire protocol, and composes with the
+rest. The layers below are the architecture: **delivery → memory →
+process → interface**, from how artifacts move to what renders.
 
 ## The layers
 
