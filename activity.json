@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T05:49:26.382Z",
+  "generated": "2026-11-16T05:54:21.739Z",
   "repos": [
     {
       "name": "tamias",
@@ -2695,6 +2695,20 @@
       "repo": "https://github.com/9aia/cuora",
       "commits": [
         {
+          "sha": "50e187eb821d5bcd6b4dd9373222d211dc681267",
+          "date": "2026-11-16T05:53:48Z",
+          "message": "merge: cuora identity subcommands (I-011)",
+          "url": "https://github.com/9aia/cuora/commit/50e187eb821d5bcd6b4dd9373222d211dc681267",
+          "tags": []
+        },
+        {
+          "sha": "ab68e68a9ae1a6badfb8451722996c32fb5815cc",
+          "date": "2026-11-16T05:53:19Z",
+          "message": "feat: add cuora identity subcommands alongside init",
+          "url": "https://github.com/9aia/cuora/commit/ab68e68a9ae1a6badfb8451722996c32fb5815cc",
+          "tags": []
+        },
+        {
           "sha": "311e6ee02c1abb49aafc360aea8ba0f4a0aecd70",
           "date": "2026-11-16T02:34:29Z",
           "message": "docs: security reports via private email, no public disclosure",
@@ -3030,20 +3044,6 @@
           "date": "2026-11-08T01:58:09Z",
           "message": "feat(identity)!: fail-closed keyring is now the default backend (I-007)",
           "url": "https://github.com/9aia/cuora/commit/389586ac63eede975e6d977c931b0b53cf497681",
-          "tags": []
-        },
-        {
-          "sha": "9903c8745ea56e71ec26036caa8411a8b4475b81",
-          "date": "2026-11-08T01:46:45Z",
-          "message": "fix(tui): mute non-audit arca: notices during arca ui (I-005 follow-up)",
-          "url": "https://github.com/9aia/cuora/commit/9903c8745ea56e71ec26036caa8411a8b4475b81",
-          "tags": []
-        },
-        {
-          "sha": "918f9b94bb76e38ed231bd513424a669e34eddd4",
-          "date": "2026-11-08T01:38:06Z",
-          "message": "feat(identity): backend selection — keyring fail-closed, file pin (I-007)",
-          "url": "https://github.com/9aia/cuora/commit/918f9b94bb76e38ed231bd513424a669e34eddd4",
           "tags": []
         }
       ],
