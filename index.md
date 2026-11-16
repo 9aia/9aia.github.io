@@ -179,6 +179,15 @@ function shortDate(iso) {
     transition: color 0.15s ease, background 0.15s ease;
 }
 
+/* Mobile: break out of the .VPDoc 24px inline padding so the carousel
+   runs edge-to-edge (padding returns at 768px). */
+@media (max-width: 767px) {
+    .organism-carousel {
+        margin-left: -24px;
+        margin-right: -24px;
+    }
+}
+
 .ecosystem-cta {
     text-align: center;
     margin-top: 24px;
