@@ -1,34 +1,9 @@
 <script setup>
+import { defineAsyncComponent } from 'vue'
 import { VPLink } from 'vitepress/theme'
-import { data as projects } from '.vitepress/theme/projects.data.ts'
+import { layers } from '.vitepress/theme/layers.ts'
 
-const layerMeta = [
-  {
-    key: 'delivery',
-    title: 'Delivery',
-    blurb: 'How artifacts and state move: tamias installs and dispenses packs, scarab loads config and templates, tarsi cuts releases, bupha gates every push, hypha syncs entities across nodes.',
-  },
-  {
-    key: 'memory',
-    title: 'Memory',
-    blurb: 'What persists as knowledge: myco keeps the work ledger, kuda the verified code maps.',
-  },
-  {
-    key: 'process',
-    title: 'Process',
-    blurb: 'How work is governed and run: sturn coordinates, cuora brokers secrets, tardigrada holds identity, mimus verifies claims, cicada schedules, lasius manages the workspace, sepia runs sessions, peregrin drives campaigns on the hypha plane.',
-  },
-  {
-    key: 'interface',
-    title: 'Interface',
-    blurb: 'What renders for humans and agents: pavo draws every ViewNode IR the drivers emit, across CLI, TUI, and web.',
-  },
-]
-
-const layers = layerMeta.map((l) => ({
-  ...l,
-  projects: projects.filter((p) => p.layer === l.key),
-}))
+const StackGraph = defineAsyncComponent(() => import('./components/StackGraph.vue'))
 
 const flow = [
   { who: 'tamias', what: 'installs and dispenses the packs that carry everything else' },
@@ -47,6 +22,16 @@ GAIA is a suite of organisms, not a framework, not a control plane. Each
 organism owns one mechanism, speaks a wire protocol, and composes with the
 rest. The layers below are the architecture: **delivery → memory →
 process → interface**, from how artifacts move to what renders.
+
+## The map
+
+<ClientOnly>
+  <StackGraph :layers="layers" />
+</ClientOnly>
+
+<p class="eco-graph-cta">
+  Click any organism to see what it does and what it connects to.
+</p>
 
 ## The layers
 
@@ -80,6 +65,12 @@ The suite manages its own development. This is the loop, end to end:
 </p>
 
 <style scoped>
+.eco-graph-cta {
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+  text-align: center;
+  margin-top: 12px;
+}
 .eco-layer {
   margin-top: 48px;
 }

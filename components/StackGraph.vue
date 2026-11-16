@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import dagre from '@dagrejs/dagre'
 import { VueFlow, MarkerType } from '@vue-flow/core'
 import { Controls } from '@vue-flow/controls'
@@ -74,8 +74,47 @@ function onFullscreenChange() {
     setTimeout(() => vfInstance.value?.fitView({ padding: 0.08 }), 60)
 }
 
-onMounted(() => document.addEventListener('fullscreenchange', onFullscreenChange))
-onUnmounted(() => document.removeEventListener('fullscreenchange', onFullscreenChange))
+// Project detail dialog — node clicks open this instead of navigating.
+const selected = ref(null)
+const selectedColor = ref('#9aa5c4')
+const dialogEl = ref(null)
+
+function openProject(p, color) {
+    selected.value = p
+    selectedColor.value = color ?? '#9aa5c4'
+}
+
+function closeDialog() {
+    selected.value = null
+}
+
+// Resolve a dependency name (depends_on / integrates_with) to its catalog
+// entry; unknown names render as plain text.
+function depLink(name) {
+    const p = byName.value.get(name)
+    if (!p) return null
+    return { name, href: p.docs ?? p.website ?? p.repo ?? '#' }
+}
+
+watch(selected, async (v) => {
+    if (v) {
+        await nextTick()
+        dialogEl.value?.querySelector('.stack-dialog-close')?.focus()
+    }
+})
+
+function onDialogKeydown(e) {
+    if (e.key === 'Escape' && selected.value) closeDialog()
+}
+
+onMounted(() => {
+    document.addEventListener('fullscreenchange', onFullscreenChange)
+    document.addEventListener('keydown', onDialogKeydown)
+})
+onUnmounted(() => {
+    document.removeEventListener('fullscreenchange', onFullscreenChange)
+    document.removeEventListener('keydown', onDialogKeydown)
+})
 
 const NODE_W = 230
 const NODE_H = 76
@@ -200,7 +239,12 @@ const flowEdges = computed(() =>
                     :class="{ 'vf-node-dim': relatedIds && !relatedIds.has(nodeProps.id) }"
                     :style="{ '--accent': nodeProps.data.color }"
                 >
-                    <a :href="nodeProps.data.p.docs ?? nodeProps.data.p.website ?? '#'" class="vf-node-link">
+                    <button
+                        type="button"
+                        class="vf-node-link"
+                        :aria-label="`Open ${nodeProps.data.p.name} details`"
+                        @click="openProject(nodeProps.data.p, nodeProps.data.color)"
+                    >
                         <span class="vf-node-kicker">
                             <svg
                                 class="vf-node-icon"
@@ -218,7 +262,7 @@ const flowEdges = computed(() =>
                         </span>
                         <span class="vf-node-name">{{ nodeProps.data.p.name }}</span>
                         <span class="vf-node-tag">{{ nodeProps.data.p.tagline }}</span>
-                    </a>
+                    </button>
                 </div>
             </template>
             <Controls :show-interactive="false" />
@@ -262,6 +306,73 @@ const flowEdges = computed(() =>
             </svg>
         </button>
     </div>
+
+    <Teleport to="body">
+        <div v-if="selected" class="stack-dialog-backdrop" @click.self="closeDialog">
+            <div
+                ref="dialogEl"
+                class="stack-dialog"
+                :style="{ '--accent': selectedColor }"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="stack-dialog-title"
+            >
+                <button
+                    type="button"
+                    class="stack-dialog-close"
+                    aria-label="Close dialog"
+                    @click="closeDialog"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M18 6 6 18" /><path d="m6 6 12 12" />
+                    </svg>
+                </button>
+                <div class="stack-dialog-body">
+                    <p class="stack-dialog-layer">{{ selected.layer?.title }}</p>
+                    <h2 id="stack-dialog-title" class="stack-dialog-name">{{ selected.name }}</h2>
+                    <p v-if="selected.tagline" class="stack-dialog-tag">{{ selected.tagline }}</p>
+                    <p v-if="selected.description" class="stack-dialog-desc">{{ selected.description }}</p>
+                    <p v-if="selected.role || selected.stage || selected.status" class="stack-dialog-meta">
+                        <span v-if="selected.role" class="stack-dialog-chip">{{ selected.role }}</span>
+                        <span v-if="selected.stage" class="stack-dialog-chip">{{ selected.stage }}</span>
+                        <span v-if="selected.status" class="stack-dialog-chip">{{ selected.status }}</span>
+                    </p>
+                    <p class="stack-dialog-links">
+                        <a v-if="selected.website" :href="selected.website" target="_blank" rel="noopener">Website</a>
+                        <a v-if="selected.repo" :href="selected.repo" target="_blank" rel="noopener">GitHub</a>
+                        <a v-if="selected.docs" :href="selected.docs">Docs</a>
+                    </p>
+                    <section v-if="(selected.depends_on ?? []).length" class="stack-dialog-deps">
+                        <h3>Depends on</h3>
+                        <ul>
+                            <li v-for="d in selected.depends_on" :key="`dep-${d}`">
+                                <a v-if="depLink(d)" :href="depLink(d).href">{{ d }}</a>
+                                <span v-else>{{ d }}</span>
+                            </li>
+                        </ul>
+                    </section>
+                    <section v-if="(selected.integrates_with ?? []).length" class="stack-dialog-deps">
+                        <h3>Integrates with</h3>
+                        <ul>
+                            <li v-for="d in selected.integrates_with" :key="`int-${d}`">
+                                <a v-if="depLink(d)" :href="depLink(d).href">{{ d }}</a>
+                                <span v-else>{{ d }}</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </Teleport>
 </template>
 
 <style>
@@ -270,9 +381,15 @@ const flowEdges = computed(() =>
 }
 
 .stack-flow {
-    height: 640px;
+    height: clamp(360px, 68vh, 640px);
     border-radius: 12px;
     background: var(--vp-c-bg);
+}
+
+@media (max-width: 640px) {
+    .stack-flow {
+        height: clamp(320px, 60vh, 480px);
+    }
 }
 
 .stack-flow .vue-flow,
@@ -302,7 +419,7 @@ const flowEdges = computed(() =>
 }
 
 .vf-node {
-    width: 230px;
+    width: min(230px, 80vw);
     border-radius: var(--radius-blob-a);
     background: var(--vp-c-bg-soft);
     color: var(--vp-c-text-1);
@@ -318,14 +435,24 @@ const flowEdges = computed(() =>
     display: flex;
     flex-direction: column;
     gap: 2px;
+    width: 100%;
     padding: 10px 14px;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    text-align: left;
     color: var(--vp-c-text-1);
-    text-decoration: none;
+    cursor: pointer;
 }
 
 .vf-node-link:hover,
 .vf-node-link:focus-visible {
-    text-decoration: none;
+    outline: none;
+}
+
+.vf-node-link:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--vp-c-brand-1);
+    border-radius: var(--radius-blob-a);
 }
 
 .vf-node-kicker {
@@ -362,16 +489,33 @@ const flowEdges = computed(() =>
 
 .stack-legend {
     position: absolute;
-    right: 14px;
-    bottom: 14px;
+    right: 8px;
+    bottom: 8px;
     display: flex;
-    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px 14px;
+    max-width: calc(100% - 16px);
     padding: 6px 12px;
     border-radius: 8px;
     background: color-mix(in srgb, var(--vp-c-bg-alt) 90%, transparent);
     backdrop-filter: blur(4px);
     font-size: 11px;
     color: var(--vp-c-text-2);
+}
+
+@media (max-width: 640px) {
+    .stack-legend {
+        font-size: 10px;
+        gap: 4px 10px;
+        padding: 5px 10px;
+    }
+    .stack-fs-btn {
+        width: 30px;
+        height: 30px;
+        top: 10px;
+        right: 10px;
+    }
 }
 
 .stack-legend-line {
@@ -454,5 +598,167 @@ const flowEdges = computed(() =>
     min-height: 0;
     border: none;
     border-radius: 0;
+}
+
+/* Project detail dialog */
+.stack-dialog-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgb(10 10 30 / 0.45);
+    backdrop-filter: blur(2px);
+}
+
+.stack-dialog {
+    position: relative;
+    width: min(560px, 92vw);
+    height: min(640px, 80vh);
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-blob-a);
+    background: var(--vp-c-bg-alt);
+    color: var(--vp-c-text-1);
+    box-shadow: 0 12px 40px rgb(10 10 40 / 0.35);
+    overflow: hidden;
+}
+
+.stack-dialog-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--vp-c-bg-soft);
+    color: var(--vp-c-text-2);
+    cursor: pointer;
+    transition: color 0.15s ease, background 0.15s ease;
+}
+
+.stack-dialog-close svg {
+    width: 16px;
+    height: 16px;
+}
+
+.stack-dialog-close:hover {
+    color: var(--vp-c-brand-1);
+    background: var(--vp-c-bg);
+}
+
+.stack-dialog-body {
+    overflow-y: auto;
+    padding: 28px 28px 24px;
+}
+
+.stack-dialog-layer {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--accent, var(--vp-c-brand-1));
+}
+
+.stack-dialog-name {
+    margin: 6px 0 0;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+.stack-dialog-tag {
+    margin: 8px 0 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--vp-c-brand-1);
+}
+
+.stack-dialog-desc {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--vp-c-text-2);
+}
+
+.stack-dialog-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 14px 0 0;
+}
+
+.stack-dialog-chip {
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: var(--vp-c-bg-soft);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--vp-c-text-2);
+}
+
+.stack-dialog-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 16px 0 0;
+    font-size: 13px;
+}
+
+.stack-dialog-links a {
+    color: var(--vp-c-brand-1);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.stack-dialog-links a:hover {
+    text-decoration: underline;
+}
+
+.stack-dialog-deps {
+    margin-top: 20px;
+}
+
+.stack-dialog-deps h3 {
+    margin: 0 0 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--vp-c-text-3);
+}
+
+.stack-dialog-deps ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+}
+
+.stack-dialog-deps a {
+    color: var(--vp-c-brand-1);
+    text-decoration: none;
+}
+
+.stack-dialog-deps a:hover {
+    text-decoration: underline;
+}
+
+.stack-dialog-deps span {
+    color: var(--vp-c-text-2);
 }
 </style>

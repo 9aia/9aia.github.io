@@ -23,20 +23,7 @@ import 'vue3-carousel/dist/carousel.css'
 
 import { data as projects } from '.vitepress/theme/projects.data.ts'
 import { data as activity } from '.vitepress/theme/activity.data.ts'
-
-const layerMeta = [
-  { key: 'delivery', title: 'Delivery', blurb: 'How artifacts and state move: packs install, releases ship, the gate guards pushes, the substrate syncs.' },
-  { key: 'memory', title: 'Memory', blurb: 'What persists as knowledge: the work ledger and the verified code maps.' },
-  { key: 'process', title: 'Process', blurb: 'How work is governed and run: coordination, secrets, verification, schedules, sessions, campaigns.' },
-  { key: 'interface', title: 'Interface', blurb: 'What renders for humans and agents: every view the drivers emit.' },
-]
-
-const layerTitle = Object.fromEntries(layerMeta.map((l) => [l.key, l.title]))
-
-const layers = layerMeta.map((l) => ({
-  ...l,
-  projects: projects.filter((p) => p.layer === l.key && p.status !== 'deprecated'),
-}))
+import { layerTitle, layers } from '.vitepress/theme/layers.ts'
 
 const StackGraph = defineAsyncComponent(() => import('./components/StackGraph.vue'))
 
@@ -76,11 +63,12 @@ function shortDate(iso) {
     </VPTeamPageTitle>
     <Carousel
         class="organism-carousel"
-        :items-to-show="4.2"
+        :items-to-show="1.15"
         :items-to-scroll="1"
         :wrap-around="true"
         :mouse-drag="true"
-        :breakpoints="{ 768: { itemsToShow: 2.4 }, 1280: { itemsToShow: 4.2 } }"
+        breakpoint-mode="carousel"
+        :breakpoints="{ 640: { itemsToShow: 2.2 }, 1024: { itemsToShow: 3.2 }, 1280: { itemsToShow: 4.2 } }"
     >
         <Slide v-for="p in active" :key="p.name">
             <a :href="p.docs ?? p.website ?? '#'" class="organism">
@@ -169,17 +157,18 @@ function shortDate(iso) {
 }
 
 .organism-carousel {
-    --vc-nav-background: var(--vp-c-bg-soft);
+    --vc-nav-background: var(--vp-c-bg);
     --vc-nav-color: var(--vp-c-text-1);
     --vc-nav-color-hover: var(--vp-c-brand-1);
     --vc-nav-border-radius: 50%;
-    --vc-nav-height: 36px;
-    --vc-nav-width: 36px;
-    padding: 8px 32px 24px;
+    --vc-nav-height: 30px;
+    --vc-nav-width: 30px;
+    padding: 4px 6px 20px;
 }
 
 .organism-carousel .carousel__prev,
 .organism-carousel .carousel__next {
+    box-shadow: 0 1px 4px rgb(20 20 60 / 0.18);
     transition: color 0.15s ease, background 0.15s ease;
 }
 
@@ -189,7 +178,7 @@ function shortDate(iso) {
 }
 
 .organism-carousel .carousel__slide {
-    padding: 0 8px;
+    padding: 0 6px;
 }
 
 .organism {
@@ -197,7 +186,7 @@ function shortDate(iso) {
     flex-direction: column;
     gap: 6px;
     height: 100%;
-    padding: 20px 24px;
+    padding: 16px;
     border-radius: var(--radius-blob-a);
     background-color: var(--vp-c-bg-soft);
     text-decoration: none;
@@ -212,6 +201,7 @@ function shortDate(iso) {
     font-weight: 700;
     font-size: 16px;
     color: var(--vp-c-text-1);
+    overflow-wrap: anywhere;
 }
 
 .organism:hover .organism-name {
@@ -229,16 +219,17 @@ function shortDate(iso) {
     font-size: 13px;
     line-height: 19px;
     color: var(--vp-c-text-2);
+    overflow-wrap: anywhere;
 }
 
+/* Full content-column width, same spread as the /activity feed. */
 .releases-teaser {
     list-style: none;
-    margin: 24px auto 0;
-    padding: 0 32px;
-    max-width: 640px;
+    margin: 24px 0 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
     font-size: 14px;
 }
 
@@ -246,18 +237,28 @@ function shortDate(iso) {
     display: flex;
     align-items: baseline;
     gap: 10px;
+    padding: 8px 0;
 }
 
 .release-repo {
     font-weight: 600;
     color: var(--vp-c-text-2);
     font-size: 13px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .release-date {
     margin-left: auto;
     color: var(--vp-c-text-3);
     font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.releases-teaser a {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 /* One external-link arrow per row, pinned to the last column. */
@@ -277,21 +278,26 @@ function shortDate(iso) {
     mask-image: var(--icon);
 }
 
+@media (min-width: 640px) {
+    .organism-carousel {
+        padding: 8px 16px 24px;
+    }
+    .organism {
+        padding: 20px 24px;
+    }
+}
+
 @media (min-width: 768px) {
     .organism-carousel {
+        --vc-nav-height: 36px;
+        --vc-nav-width: 36px;
         padding: 8px 48px 24px;
-    }
-    .releases-teaser {
-        padding: 0 48px;
     }
 }
 
 @media (min-width: 960px) {
     .organism-carousel {
         padding: 8px 64px 24px;
-    }
-    .releases-teaser {
-        padding: 0 64px;
     }
 }
 </style>
