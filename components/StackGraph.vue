@@ -339,9 +339,10 @@ watch(() => props.layers, runLayout)
                 <path d="M8 3v3a2 2 0 0 1-2 2H3" /><path d="M21 8h-3a2 2 0 0 1-2-2V3" /><path d="M3 16h3a2 2 0 0 1 2 2v3" /><path d="M16 21v-3a2 2 0 0 1 2-2h3" />
             </svg>
         </button>
-    </div>
-
-    <Teleport to="body">
+        <!-- Dialog lives inside .stack-graph-wrap (no Teleport): when the
+             wrap goes fullscreen it enters the top layer, and a body-level
+             dialog would render underneath it. position:fixed still
+             covers the viewport since no ancestor is transformed. -->
         <div v-if="selected" class="stack-dialog-backdrop" @click.self="closeDialog">
             <div
                 ref="dialogEl"
@@ -406,7 +407,7 @@ watch(() => props.layers, runLayout)
                 </div>
             </div>
         </div>
-    </Teleport>
+    </div>
 </template>
 
 <style>
