@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "Gaia"
   blobs: true
-  text: "Put AI agents to work, on your terms"
+  text: "Put AI to work"
   tagline: Open infrastructure technology for AI agents
   actions:
     - theme: brand
