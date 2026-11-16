@@ -12,56 +12,86 @@ hero:
     - theme: alt
       text: About Us
       link: /about
-
-features:
-  - icon: 📦
-    title: Packages
-    details: "Fetch, store, cache, dispense — every 9aia tool installs and updates through tamias packs"
-  - icon: 🧠
-    title: Ledger
-    details: "Durable work memory: items, views, code cards, secrets (myco, kuda, cuora)"
-  - icon: 🤝
-    title: WAL
-    details: "Ephemeral coordination: live claims, ops, topics over VCS state (sturn)"
-  - icon: 🎭
-    title: Orchestrator
-    details: "Campaigns driving agent sessions across machines (peregrin, sepia)"
-  - icon: ✅
-    title: Queue
-    details: "Event-driven jobs, shipped as CI: verify, gate, schedule (bupha, mimus, cicada)"
 ---
 
 <script setup>
-import { VPTeamPageTitle, VPLink, VPHomeFeatures } from "vitepress/theme";
-import Projects from "./components/Projects.vue";
+import { VPTeamPageTitle, VPLink } from "vitepress/theme";
 
 import { data as projects } from '.vitepress/theme/projects.data.ts'
+import { data as activity } from '.vitepress/theme/activity.data.ts'
 
-const values = [
-  { icon: "🔌", title: "Ports Are the Architecture, Not a Plugin API", details: "Every concern is a trait + impl; the boundaries are the codebase." },
-  { icon: "🤖", title: "Machine-First Wire, Not UI-First", details: "Manifest, schema, serve: surfaces for machines, humans second." },
-  { icon: "🔗", title: "Composition Over Integration", details: "Tools talk over ndjson/stdio wires. They embed, not integrate." },
-  { icon: "🌿", title: "VCS-Native State", details: "Durable state lives in versioned history, not a private DB." },
-  { icon: "📋", title: "No Bespoke DSL", details: "Config is the program, not a YAML pipeline language." },
-  { icon: "📦", title: "One Binary, One Daemon — Not a Control Plane", details: "A single process + a background service on any OS. The market answer is a server fleet + a dashboard." },
-  { icon: "🍽️", title: "We Run on Ourselves", details: "The suite manages its own development. Dogfooding is the test suite." },
-  { icon: "🏠", title: "Own Your Stack", details: "Open source, self-hosted. Your AI works for you, not the other way around." },
-  { icon: "🌱", title: "Grown, Not Built", details: "The engine emerges from use; the domain is a preset, not the product." },
+const layerMeta = [
+  { key: 'packaging', title: 'Packaging', blurb: 'How everything installs, updates, and ships.' },
+  { key: 'plane', title: 'Planes', blurb: 'Cross-cutting services: releases and the CI gate.' },
+  { key: 'engine', title: 'Engines', blurb: 'The machines — each a small engine owning one mechanism.' },
+  { key: 'orchestration', title: 'Orchestration', blurb: 'Campaigns that drive work across machines.' },
+  { key: 'surface', title: 'Surfaces', blurb: 'What humans and agents actually see.' },
 ]
 
-const stack = [
-  { icon: "⚙️", title: "Systems & Infra", details: '<span class="VPBadge info">Rust</span> <span class="VPBadge info">Git</span> <span class="VPBadge info">Tree-sitter</span>' },
-  { icon: "🌐", title: "Web & Apps", details: '<span class="VPBadge info">TypeScript</span> <span class="VPBadge info">Vue</span> <span class="VPBadge info">VitePress</span> <span class="VPBadge info">Leptos</span>' },
-  { icon: "🤖", title: "AI & Agents", details: '<span class="VPBadge info">LLMs</span> <span class="VPBadge info">Gemini</span> <span class="VPBadge info">MCP</span> <span class="VPBadge info">ACP</span>' },
-  { icon: "☁️", title: "Platform", details: '<span class="VPBadge info">Cloudflare</span> <span class="VPBadge info">Docker</span> <span class="VPBadge info">GitHub</span>' },
-]
+const layers = layerMeta.map((l) => ({
+  ...l,
+  projects: projects.filter((p) => p.layer === l.key),
+}))
+
+const active = projects.filter((p) => p.status !== 'deprecated')
+
+const recentReleases = activity.repos
+  .flatMap((r) => r.tags.map((t) => ({ ...t, repo: r.name, repoUrl: r.repo })))
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .slice(0, 5)
+
+function shortDate(iso) {
+  return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+}
 </script>
 
 <div>
     <VPTeamPageTitle>
-        <template #title>Our Mission</template>
+        <template #title>The Stack</template>
         <template #lead>
-          We build open infrastructure so people and agents can own the AI that works for them.
+          One machine, five layers — packaging down to surfaces, planes underneath.
+        </template>
+    </VPTeamPageTitle>
+    <div class="ecosystem">
+        <div v-for="l in layers" :key="l.key" class="layer-card">
+            <div class="layer-head">
+                <span class="layer-name">{{ l.title }}</span>
+            </div>
+            <p class="layer-blurb">{{ l.blurb }}</p>
+            <ul class="layer-list">
+                <li v-for="p in l.projects" :key="p.name">
+                    <a :href="p.docs ?? p.website ?? '#'" class="layer-link">{{ p.name }}</a>
+                    <span class="layer-tag">{{ p.tagline }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <p class="ecosystem-cta">
+        <VPLink href="/ecosystem">How it all fits together →</VPLink>
+    </p>
+</div>
+
+<div>
+    <VPTeamPageTitle>
+        <template #title>The Machines</template>
+        <template #lead>
+          Small engines, each owning one mechanism. Swipe through — every card links to its docs.
+        </template>
+    </VPTeamPageTitle>
+    <div class="carousel">
+        <a v-for="p in active" :key="p.name" :href="p.docs ?? p.website ?? '#'" class="machine">
+            <span class="machine-name">{{ p.name }}</span>
+            <span class="machine-layer">{{ p.layer }}</span>
+            <span class="machine-tag">{{ p.tagline }}</span>
+        </a>
+    </div>
+</div>
+
+<div>
+    <VPTeamPageTitle>
+        <template #title>Why GAIA</template>
+        <template #lead>
+          The missing layers between coding agents and the repositories they work on.
         </template>
     </VPTeamPageTitle>
     <p class="mission">
@@ -70,54 +100,49 @@ const stack = [
       an orchestrator (peregrin, sepia), and a queue (bupha, mimus, cicada).
       Open, minimal, composable. A stack agents can actually run on.
     </p>
+    <p class="mission-cta">
+        <VPLink href="/about">Our story and principles →</VPLink>
+    </p>
+</div>
+
+<div v-if="recentReleases.length">
+    <VPTeamPageTitle>
+        <template #title>Recently shipped</template>
+        <template #lead>
+          Tags are releases — the latest across the org.
+        </template>
+    </VPTeamPageTitle>
+    <ul class="releases-teaser">
+        <li v-for="t in recentReleases" :key="t.repo + t.name">
+            <VPLink :href="`${t.repoUrl}/releases/tag/${t.name}`">{{ t.name }}</VPLink>
+            <span class="release-repo">{{ t.repo }}</span>
+            <span class="release-date">{{ shortDate(t.date) }}</span>
+        </li>
+    </ul>
+    <p class="mission-cta">
+        <VPLink href="/releases">All releases & activity →</VPLink>
+    </p>
 </div>
 
 <div>
     <VPTeamPageTitle>
-        <template #title>How We Build</template>
+        <template #title>Get in touch</template>
         <template #lead>
-          The principles behind how we build.
+          Open source, self-hosted — come build with us.
         </template>
     </VPTeamPageTitle>
-    <VPHomeFeatures :features="values" />
-</div>
-
-<div>
-    <VPTeamPageTitle>
-        <template #title>Our Products</template>
-        <template #lead>
-          The machines. Each a small engine, each owning one mechanism.
-        </template>
-    </VPTeamPageTitle>
-    <div class="projects-section">
-      <Projects :projects="projects" />
-    </div>
-</div>
-
-<div>
-    <VPTeamPageTitle>
-        <template #title>Tech Stack</template>
-        <template #lead>
-          The technologies we reach for, by layer.
-        </template>
-    </VPTeamPageTitle>
-    <VPHomeFeatures :features="stack" />
+    <p class="mission">
+        Questions, contributions, or just want to see the factory floor?
+        <VPLink href="/contact">Contact us →</VPLink>
+    </p>
 </div>
 
 <style scoped>
-:deep(.VPFeature .details .VPBadge) {
-    margin: 0 4px 6px 0;
-}
 :deep(.vp-doc h2), :deep(.VPTeamPageTitle .title) {
     border-top: none !important;
     padding-top: 0 !important;
 }
-:deep(.VPFeature .title) {
-    border-top: none !important;
-    padding-top: 0 !important;
-    margin-top: 8px;
-}
-:deep(.VPFeature .details) {
+:deep(.VPFeature .title), :deep(.VPFeature .details) {
     border-top: none !important;
     padding-top: 0;
 }
@@ -129,42 +154,183 @@ const stack = [
     line-height: 26px;
     color: var(--vp-c-text-2);
 }
+.mission-cta {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.ecosystem {
+    display: grid;
+    gap: 20px;
+    padding: 32px;
+    grid-template-columns: 1fr;
+}
 
 @media (min-width: 768px) {
-    .values {
+    .ecosystem {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .ecosystem {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.layer-card {
+    border-radius: 12px;
+    padding: 24px;
+    background-color: var(--vp-c-bg-soft);
+}
+
+.layer-name {
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--vp-c-brand-1);
+}
+
+.layer-blurb {
+    margin: 8px 0 16px;
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--vp-c-text-2);
+}
+
+.layer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.layer-list li {
+    display: flex;
+    flex-direction: column;
+}
+
+.layer-link {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--vp-c-text-1);
+    text-decoration: none;
+}
+
+.layer-link:hover {
+    color: var(--vp-c-brand-1);
+}
+
+.layer-tag {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--vp-c-text-3);
+}
+
+.ecosystem-cta {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 8px 32px 24px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+}
+
+.machine {
+    flex: 0 0 240px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    background-color: var(--vp-c-bg-soft);
+    text-decoration: none;
+    transition: transform 0.15s ease;
+}
+
+.machine:hover {
+    transform: translateY(-2px);
+}
+
+.machine-name {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--vp-c-text-1);
+}
+
+.machine:hover .machine-name {
+    color: var(--vp-c-brand-1);
+}
+
+.machine-layer {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--vp-c-text-3);
+}
+
+.machine-tag {
+    font-size: 13px;
+    line-height: 19px;
+    color: var(--vp-c-text-2);
+}
+
+.releases-teaser {
+    list-style: none;
+    margin: 24px auto 0;
+    padding: 0 32px;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.releases-teaser li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.release-repo {
+    font-weight: 600;
+    color: var(--vp-c-text-2);
+    font-size: 13px;
+}
+
+.release-date {
+    margin-left: auto;
+    color: var(--vp-c-text-3);
+    font-size: 12px;
+}
+
+@media (min-width: 768px) {
+    .carousel {
+        padding: 8px 48px 24px;
+    }
+    .releases-teaser {
         padding: 0 48px;
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (min-width: 960px) {
-    .values {
+    .carousel {
+        padding: 8px 64px 24px;
+    }
+    .releases-teaser {
         padding: 0 64px;
     }
 }
-
-.projects-section {
-    padding: 40px 32px 0;
-}
-
-@media (min-width: 768px) {
-    .projects-section {
-        padding: 40px 48px 0;
-    }
-}
-
-@media (min-width: 960px) {
-    .projects-section {
-        padding: 40px 64px 0;
-    }
-}
 </style>
-
-## Contact Us
-
-We are always looking for passionate individuals to join us. If you're interested in collaborating or contributing to our projects, feel free to reach out!
-
-For inquiries, please contact Luis at <VPLink href="mailto:luisfuturist+9aia@gmail.com">luisfuturist+9aia@gmail.com</VPLink>.
 
 <style>
 :root {

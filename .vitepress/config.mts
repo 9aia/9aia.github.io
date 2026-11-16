@@ -12,7 +12,10 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Ecosystem', link: '/ecosystem' },
+      { text: 'Releases', link: '/releases' },
       { text: 'About', link: '/about' },
+      { text: 'Contact', link: '/contact' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/9aia' }

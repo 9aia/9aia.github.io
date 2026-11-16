@@ -14,14 +14,16 @@ defineProps<{
             <div class="data flex justify-between flex-col h-full gap-2">
                 <div>
                     <h1 class="name">{{ project.name }}
+                        <span v-if="project.layer" class="layer">{{ project.layer }}</span>
                         <span v-if="project.status && project.status !== 'recent'" class="status">{{ project.status === 'wip' ? 'WIP' : project.status }}</span>
                     </h1>
+                    <p v-if="project.tagline" class="tagline">{{ project.tagline }}</p>
                     <p v-if="project.description" class="description">{{ project.description }}</p>
                 </div>
 
                 <div class="website">
-                    <VPLink :href="project.website" v-if="project.website">Website</VPLink>
-                    <VPSocialLink icon="github" :link="`https://github.com/9aia/${project.name}`" class="ml--2">Website
+                    <VPLink :href="project.docs ?? project.website ?? undefined" v-if="project.docs ?? project.website">Docs</VPLink>
+                    <VPSocialLink icon="github" :link="project.repo ?? `https://github.com/9aia/${project.name}`" class="ml--2">Repo
                     </VPSocialLink>
                 </div>
             </div>
@@ -54,6 +56,20 @@ defineProps<{
         font-size: 16px;
     }
 
+    & .layer {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 6px;
+        padding: 2px 8px;
+        border-radius: 10px;
+        background-color: var(--vp-c-brand-soft);
+        color: var(--vp-c-brand-1);
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
     & .status {
         display: inline-block;
         vertical-align: middle;
@@ -68,12 +84,20 @@ defineProps<{
         letter-spacing: 0.5px;
     }
 
+    & .tagline {
+        margin: 8px 0 0;
+        color: var(--vp-c-brand-1);
+        font-size: 14px;
+        font-weight: 500;
+    }
+
     & .description {
         margin: 0 auto;
 
-        padding-top: 12px;
+        padding-top: 8px;
         line-height: 20px;
         font-size: 14px;
+        color: var(--vp-c-text-2);
     }
 
     & .links {
