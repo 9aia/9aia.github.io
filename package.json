@@ -18,7 +18,7 @@
     "@vue-flow/controls": "^1.1.3",
     "@vue-flow/core": "^1.48.2",
     "elkjs": "^0.12.1",
-    "vitepress-theme-9aia": "github:9aia/vitepress-theme-9aia#34e5c8d0050e997a4e455677410599efefa5120e",
+    "vitepress-theme-9aia": "github:9aia/vitepress-theme-9aia#f53d31ca23583c9c2613204ae0f1b5ba36417f4e",
     "vue3-carousel": "^0.19.0"
   }
 }
