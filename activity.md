@@ -6,8 +6,7 @@ import { data as activity } from '.vitepress/theme/activity.data.ts'
 # Activity
 
 Tags are releases. One chronological feed of commits and tags across the
-org; release-tagged commits carry their tag inline. Pages are real routes
-(`/activity`, `/activity/2`, ...) so the full history is crawlable.
+org; release-tagged commits carry their tag inline.
 
 <ActivityFeed />
 
