@@ -304,6 +304,6 @@ function shortDate(iso) {
 <style>
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #9eadf5, #94ccf2, #bd9ef2);
 }
 </style>

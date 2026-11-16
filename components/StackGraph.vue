@@ -105,7 +105,7 @@ const layout = computed(() => {
             data: {
                 p: lp,
                 layer: lp.layer,
-                color: LAYER_COLORS[lp.layer.key] ?? '#8b9bb4',
+                color: LAYER_COLORS[lp.layer.key] ?? '#9aa5c4',
             },
             connectable: false,
             draggable: false,
@@ -114,7 +114,7 @@ const layout = computed(() => {
 
     const edges = rawEdges.value.map((e) => {
         const src = byName.value.get(e.source.slice(2))
-        const color = LAYER_COLORS[src.layer.key] ?? '#8b9bb4'
+        const color = LAYER_COLORS[src.layer.key] ?? '#9aa5c4'
         return {
             id: `${e.kind}:${e.source}->${e.target}`,
             source: e.source,
