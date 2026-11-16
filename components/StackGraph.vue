@@ -791,4 +791,19 @@ watch(() => props.layers, runLayout)
 .stack-dialog-deps span {
     color: var(--vp-c-text-2);
 }
+
+/* Mobile: the dialog becomes a true fullscreen sheet — no margins,
+   no radius, edge to edge. */
+@media (max-width: 640px) {
+    .stack-dialog-backdrop {
+        padding: 0;
+    }
+
+    .stack-dialog {
+        width: 100%;
+        height: 100%;
+        height: 100dvh;
+        border-radius: 0;
+    }
+}
 </style>
