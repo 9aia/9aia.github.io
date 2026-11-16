@@ -39,7 +39,7 @@ function shortDate(iso) {
 }
 </script>
 
-<div>
+<div class="home-section">
     <VPTeamPageTitle>
         <template #title>The Stack</template>
         <template #lead>
@@ -60,7 +60,7 @@ function shortDate(iso) {
     </div>
 </div>
 
-<div>
+<div class="home-section">
     <VPTeamPageTitle>
         <template #title>The Organisms</template>
         <template #lead>
@@ -88,7 +88,7 @@ function shortDate(iso) {
     </Carousel>
 </div>
 
-<div>
+<div class="home-section">
     <VPTeamPageTitle>
         <template #title>Why Gaia</template>
         <template #lead>
@@ -107,7 +107,7 @@ function shortDate(iso) {
     </p>
 </div>
 
-<div v-if="recentReleases.length">
+<div v-if="recentReleases.length" class="home-section">
     <VPTeamPageTitle>
         <template #title>Recently shipped</template>
         <template #lead>
@@ -126,7 +126,7 @@ function shortDate(iso) {
     </p>
 </div>
 
-<div>
+<div class="home-section">
     <VPTeamPageTitle>
         <template #title>Get in touch</template>
         <template #lead>
@@ -140,6 +140,21 @@ function shortDate(iso) {
 </div>
 
 <style scoped>
+/* Air between top-level sections: each VPTeamPageTitle already pads
+   its top; this stacks on top for roughly double the previous gap. */
+.home-section + .home-section {
+    margin-top: 40px;
+}
+@media (min-width: 768px) {
+    .home-section + .home-section {
+        margin-top: 56px;
+    }
+}
+@media (min-width: 960px) {
+    .home-section + .home-section {
+        margin-top: 64px;
+    }
+}
 :deep(.vp-doc h2), :deep(.VPTeamPageTitle .title) {
     border-top: none !important;
     padding-top: 0 !important;

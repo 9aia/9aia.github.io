@@ -1,0 +1,23 @@
+/* Site-level styles — loaded after vitepress-theme-9aia's stylesheet.
+   Keep this file for cross-page concerns; per-page styles stay in the
+   markdown files' scoped <style> blocks. */
+
+/* Justified prose: body paragraphs and list items stretch to the full
+   measure on every viewport. The doc column already caps itself
+   (~750px) on wide screens, so no extra max-width is needed here.
+   Elements that set their own text-align (centered leads, captions,
+   card tiles) are untouched, and chrome — headings, tables, code,
+   badges, nav — never matches these selectors. */
+.vp-doc p:not([class]),
+.vp-doc li:not([class]) {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+/* Flex-row teasers and card grids keep ragged-right text —
+   justification is for prose columns, not tiles. */
+.vp-doc .contact-grid p,
+.vp-doc .releases-teaser li {
+  text-align: left;
+}

@@ -211,6 +211,10 @@ async function runLayout() {
             target: e.target,
             type: 'default',
             class: `dep-edge dep-edge--${e.kind}`,
+            // No edge interaction: the default 20px invisible stroke (plus
+            // the `nopan` class Vue Flow puts on every edge) would swallow
+            // pointer events and block camera drags. Edges are visual only.
+            interactionWidth: 0,
             style: { stroke: color, strokeOpacity: e.kind === 'dep' ? 0.6 : 0.4 },
             markerEnd: {
                 type: MarkerType.ArrowClosed,
@@ -260,6 +264,15 @@ watch(() => props.layers, runLayout)
             :edges="dimmedEdges"
             :nodes-connectable="false"
             :nodes-draggable="false"
+            :min-zoom="0.05"
+            :pan-on-drag="true"
+            :pan-on-scroll="false"
+            :zoom-on-scroll="true"
+            :zoom-on-pinch="true"
+            :selection-on-drag="false"
+            :nodes-focusable="false"
+            :edges-focusable="false"
+            :elements-selectable="false"
             fit-view-on-init
             :fit-view-options="{ padding: 0.08 }"
             @init="onVfInit"
@@ -431,6 +444,19 @@ watch(() => props.layers, runLayout)
 .stack-flow .vue-flow__pane,
 .stack-flow .vue-flow__viewport {
     background: transparent;
+}
+
+.stack-flow .vue-flow__edges {
+    pointer-events: none;
+}
+
+/* Belt-and-suspenders on top of `interactionWidth: 0` and
+   `elements-selectable=false` (which adds Vue Flow's `inactive` class):
+   edges must never intercept pointer events, or their wide invisible
+   interaction path plus the `nopan` class would block pane drags —
+   especially on touch, where one-finger drag should always pan. */
+.stack-flow .vue-flow__edge {
+    pointer-events: none;
 }
 
 .stack-flow .vue-flow__edge-path {

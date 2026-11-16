@@ -74,19 +74,19 @@ And the factory is run by the workers it serves: agents are the operators, not t
 <div class="stack-grid">
     <div class="stack-item">
         <h3 class="stack-title">Systems &amp; Infra</h3>
-        <p class="stack-details"><span class="VPBadge info">Rust</span> <span class="VPBadge info">Git</span> <span class="VPBadge info">Tree-sitter</span></p>
+        <p class="stack-details"><span class="VPBadge info">Rust</span> <span class="VPBadge info">Git</span> <span class="VPBadge info">SQLite</span> <span class="VPBadge info">Tree-sitter</span> <span class="VPBadge info">Ratatui</span></p>
     </div>
     <div class="stack-item">
         <h3 class="stack-title">Web &amp; Apps</h3>
-        <p class="stack-details"><span class="VPBadge info">TypeScript</span> <span class="VPBadge info">Vue</span> <span class="VPBadge info">VitePress</span> <span class="VPBadge info">Leptos</span></p>
+        <p class="stack-details"><span class="VPBadge info">TypeScript</span> <span class="VPBadge info">Vue</span> <span class="VPBadge info">Nuxt</span> <span class="VPBadge info">VitePress</span> <span class="VPBadge info">Bun</span></p>
     </div>
     <div class="stack-item">
         <h3 class="stack-title">AI &amp; Agents</h3>
-        <p class="stack-details"><span class="VPBadge info">LLMs</span> <span class="VPBadge info">Gemini</span> <span class="VPBadge info">MCP</span> <span class="VPBadge info">ACP</span></p>
+        <p class="stack-details"><span class="VPBadge info">LLMs</span> <span class="VPBadge info">MCP</span> <span class="VPBadge info">ACP</span></p>
     </div>
     <div class="stack-item">
         <h3 class="stack-title">Platform</h3>
-        <p class="stack-details"><span class="VPBadge info">Cloudflare</span> <span class="VPBadge info">Docker</span> <span class="VPBadge info">GitHub</span></p>
+        <p class="stack-details"><span class="VPBadge info">GitHub</span> <span class="VPBadge info">Cloudflare</span> <span class="VPBadge info">Docker</span></p>
     </div>
 </div>
 
