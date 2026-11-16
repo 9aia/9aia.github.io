@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T06:28:44.638Z",
+  "generated": "2026-11-16T06:44:53.978Z",
   "repos": [
     {
       "name": "tamias",
@@ -7,6 +7,15 @@
       "website": "https://9aia.com/tamias/",
       "repo": "https://github.com/9aia/tamias",
       "commits": [
+        {
+          "sha": "e2da5e4e9c36025f5219cc575927bd273fc91ba7",
+          "date": "2026-11-16T06:31:24Z",
+          "message": "feat(actions): add setup-tamias composite action",
+          "url": "https://github.com/9aia/tamias/commit/e2da5e4e9c36025f5219cc575927bd273fc91ba7",
+          "tags": [
+            "v0.1.5"
+          ]
+        },
         {
           "sha": "dae49b6ebaeb610ba4a064e7fd8db56f5b1685dc",
           "date": "2026-11-16T02:35:02Z",
@@ -302,7 +311,7 @@
           "message": "release: bump crate versions",
           "url": "https://github.com/9aia/tamias/commit/6c7fb600e8395baa84fa6145f7930bd9698f3903",
           "tags": [
-            "tamias-source-registry-v0.1.4"
+            "tamias-source-v0.1.4"
           ]
         },
         {
@@ -353,16 +362,14 @@
           "message": "feat(serve): plan op; driver kind validation at dispatch boundary",
           "url": "https://github.com/9aia/tamias/commit/eaca20b7fa46c1a301a4c17d8eb9e8173e8423ac",
           "tags": []
-        },
-        {
-          "sha": "d6bae6ac4d86bafaf6bb174e84f0d253e3df19d3",
-          "date": "2026-11-10T20:18:35Z",
-          "message": "feat: trust tiers + official badge groundwork, install --plan, consent memory, hardening",
-          "url": "https://github.com/9aia/tamias/commit/d6bae6ac4d86bafaf6bb174e84f0d253e3df19d3",
-          "tags": []
         }
       ],
       "tags": [
+        {
+          "name": "v0.1.5",
+          "sha": "e2da5e4e9c36025f5219cc575927bd273fc91ba7",
+          "date": "2026-11-16T06:31:24Z"
+        },
         {
           "name": "tamias-v0.1.5",
           "sha": "b30cc04c8cc361832832217205f7d9eeca5ee56c",
@@ -457,11 +464,6 @@
           "name": "tamias-source-registry-v0.1.5",
           "sha": "b30cc04c8cc361832832217205f7d9eeca5ee56c",
           "date": "2026-11-13T01:22:34Z"
-        },
-        {
-          "name": "tamias-source-registry-v0.1.4",
-          "sha": "6c7fb600e8395baa84fa6145f7930bd9698f3903",
-          "date": "2026-11-11T01:39:05Z"
         }
       ]
     },
@@ -1572,6 +1574,13 @@
       "repo": "https://github.com/9aia/myco",
       "commits": [
         {
+          "sha": "5ee061bbafeeb82a2adec46ebac2280df4b60d0a",
+          "date": "2026-11-16T06:42:32Z",
+          "message": "docs: fix getting-started link to include /tutorials/ path",
+          "url": "https://github.com/9aia/myco/commit/5ee061bbafeeb82a2adec46ebac2280df4b60d0a",
+          "tags": []
+        },
+        {
           "sha": "e2e4b71f745b914ac548b090d74e89162e8fad3a",
           "date": "2026-11-16T02:34:44Z",
           "message": "docs: security reports via private email, no public disclosure",
@@ -1916,13 +1925,6 @@
           "date": "2026-11-10T17:24:30Z",
           "message": "fix(cli): view about-text lists the next preset",
           "url": "https://github.com/9aia/myco/commit/54c151b213ba28d5722c40c167ab219bb8c5224e",
-          "tags": []
-        },
-        {
-          "sha": "1ffade774e127257e60f50bb7cbe69ea0bcba572",
-          "date": "2026-11-10T15:50:56Z",
-          "message": "chore(kuda): regen cards for priority-token emit change (I-032)",
-          "url": "https://github.com/9aia/myco/commit/1ffade774e127257e60f50bb7cbe69ea0bcba572",
           "tags": []
         }
       ],
@@ -2695,6 +2697,13 @@
       "repo": "https://github.com/9aia/cuora",
       "commits": [
         {
+          "sha": "cb34d189ba809d5dad0980fa11989131e927df10",
+          "date": "2026-11-16T06:32:42Z",
+          "message": "chore: sync Cargo.lock to 1.0.1",
+          "url": "https://github.com/9aia/cuora/commit/cb34d189ba809d5dad0980fa11989131e927df10",
+          "tags": []
+        },
+        {
           "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
           "date": "2026-11-16T06:20:40Z",
           "message": "chore(release): bump versions",
@@ -3041,13 +3050,6 @@
           "date": "2026-11-08T05:28:49Z",
           "message": "chore(cf): deploy cuora workers — cuora.luisfuturist.com + cuora.9aia.com",
           "url": "https://github.com/9aia/cuora/commit/5a80f72a96d254e37d752469a6a90d3e47d8066c",
-          "tags": []
-        },
-        {
-          "sha": "8bcffacc9d9a2dd1e56019619ef5005095a9cac6",
-          "date": "2026-11-08T05:05:50Z",
-          "message": "docs: fix cuora etymology (box turtle, not ark clam)",
-          "url": "https://github.com/9aia/cuora/commit/8bcffacc9d9a2dd1e56019619ef5005095a9cac6",
           "tags": []
         }
       ],
@@ -4274,6 +4276,13 @@
       "website": "https://9aia.com/lasius/",
       "repo": "https://github.com/9aia/lasius",
       "commits": [
+        {
+          "sha": "9366164f69783b59780fec8c266ab4fcd9315082",
+          "date": "2026-11-16T06:42:15Z",
+          "message": "docs: list manifest op in serve help text",
+          "url": "https://github.com/9aia/lasius/commit/9366164f69783b59780fec8c266ab4fcd9315082",
+          "tags": []
+        },
         {
           "sha": "933e841d2715348011dcfc8cdc44e8d14ad34f86",
           "date": "2026-11-16T02:34:39Z",
