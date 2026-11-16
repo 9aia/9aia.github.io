@@ -1,14 +1,6 @@
 import 'virtual:uno.css'
-import { installSectionLinkGuard } from './section-links'
-import { externalSections } from '../external-sections'
 
-// Installed at module evaluation — before VitePress creates its router —
-// so this capture-phase guard is registered ahead of the router's own
-// capture-phase click interceptor (see section-links.ts for why the
-// theme's built-in guard can't do this job on VitePress 1.6).
-installSectionLinkGuard({
-  base: () => '/',
-  sections: () => externalSections,
-})
-
+// vitepress-theme-9aia installs its external-section link guard at
+// module scope — ahead of VitePress's capture-phase router listener —
+// so /<project>/ links do real server-side navigations.
 export { default } from 'vitepress-theme-9aia'
