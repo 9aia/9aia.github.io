@@ -259,6 +259,20 @@ function shortDate(iso) {
     padding: 0 8px;
 }
 
+.organism-carousel .carousel__prev,
+.organism-carousel .carousel__next {
+    background-color: var(--vp-c-bg-soft);
+    color: var(--vp-c-text-1);
+    border: 1px solid var(--vp-c-divider);
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.organism-carousel .carousel__prev:hover,
+.organism-carousel .carousel__next:hover {
+    color: var(--vp-c-brand-1);
+    border-color: var(--vp-c-brand-1);
+}
+
 .organism {
     display: flex;
     flex-direction: column;
