@@ -18,6 +18,7 @@ export default defineConfig({
       { text: 'Ecosystem', link: '/ecosystem' },
       { text: 'Activity', link: '/activity' },
       { text: 'About', link: '/about' },
+      { text: 'Members', link: '/members' },
       { text: 'Contact', link: '/contact' },
     ],
     socialLinks: [

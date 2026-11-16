@@ -24,6 +24,7 @@ import 'vue3-carousel/dist/carousel.css'
 import { data as projects } from '.vitepress/theme/projects.data.ts'
 import { data as activity } from '.vitepress/theme/activity.data.ts'
 import { layerTitle, layers } from '.vitepress/theme/layers.ts'
+import AvatarStack from './components/AvatarStack.vue'
 
 const StackGraph = defineAsyncComponent(() => import('./components/StackGraph.vue'))
 
@@ -137,6 +138,10 @@ function shortDate(iso) {
         Questions, contributions, or just want to see the factory floor?
         <VPLink href="/contact">Contact us →</VPLink>
     </p>
+    <p class="team-row">
+        <AvatarStack />
+        <VPLink href="/members">Meet the team →</VPLink>
+    </p>
 </div>
 
 <style scoped>
@@ -174,6 +179,13 @@ function shortDate(iso) {
 .mission-cta {
     text-align: center;
     margin-top: 16px;
+}
+.team-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 20px 0 0;
 }
 
 .organism-carousel {

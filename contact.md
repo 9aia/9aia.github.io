@@ -1,5 +1,6 @@
 <script setup>
 import { VPLink } from 'vitepress/theme'
+import AvatarStack from './components/AvatarStack.vue'
 </script>
 
 # Contact
@@ -33,6 +34,14 @@ import { VPLink } from 'vitepress/theme'
         <p>Found a vulnerability? Contact us privately first, before disclosing anywhere (see General inquiries). Do not publish details publicly.</p>
     </div>
 </div>
+
+## The team
+
+<p class="team-lead">Four developers keep the factory running — the humans behind the organisms.</p>
+<p class="team-row">
+    <AvatarStack />
+    <VPLink href="/members">Meet the team →</VPLink>
+</p>
 
 <style scoped>
 .contact-hero {
@@ -103,5 +112,16 @@ import { VPLink } from 'vitepress/theme'
     font-size: 14px;
     line-height: 22px;
     color: var(--vp-c-text-2);
+}
+.team-lead {
+    margin: 0 0 16px;
+    max-width: 560px;
+    color: var(--vp-c-text-2);
+}
+.team-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0;
 }
 </style>
