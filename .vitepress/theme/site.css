@@ -21,3 +21,11 @@
 .vp-doc .releases-teaser li {
   text-align: left;
 }
+
+/* Transparent avatars (e.g. vinicenter.png) need a backing color. */
+.vp-doc .VPTeamMembers img,
+.vp-doc .avatar-stack-img,
+.vp-doc .member-card-avatar,
+.vp-doc .member-dialog-avatar {
+  background: var(--vp-c-bg-soft);
+}

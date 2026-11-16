@@ -232,6 +232,7 @@ function fmtDate(iso) {
     height: 64px;
     border-radius: 50%;
     object-fit: cover;
+    background: var(--vp-c-bg-soft);
 }
 .member-card-name {
     font-size: 16px;
@@ -320,6 +321,7 @@ function fmtDate(iso) {
     flex: none;
     border-radius: var(--radius-blob-b);
     object-fit: cover;
+    background: var(--vp-c-bg-soft);
 }
 .member-dialog-name {
     margin: 0;

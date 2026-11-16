@@ -29,6 +29,7 @@ import { members } from '../.vitepress/theme/members.ts'
     margin-left: -10px;
     border-radius: 50%;
     object-fit: cover;
+    background: var(--vp-c-bg-soft);
     border: 2px solid var(--vp-c-bg);
     transition: transform 0.15s ease;
 }
