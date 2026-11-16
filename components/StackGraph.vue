@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import dagre from '@dagrejs/dagre'
 import { VueFlow, MarkerType } from '@vue-flow/core'
 import { Controls } from '@vue-flow/controls'
@@ -52,6 +52,30 @@ function onNodeEnter({ node }) {
 function onNodeLeave() {
     hovered.value = null
 }
+
+const wrapEl = ref(null)
+const vfInstance = ref(null)
+const isFullscreen = ref(false)
+
+function onVfInit(instance) {
+    vfInstance.value = instance
+}
+
+async function toggleFullscreen() {
+    if (document.fullscreenElement) {
+        await document.exitFullscreen()
+    } else {
+        await wrapEl.value?.requestFullscreen()
+    }
+}
+
+function onFullscreenChange() {
+    isFullscreen.value = Boolean(document.fullscreenElement)
+    setTimeout(() => vfInstance.value?.fitView({ padding: 0.08 }), 60)
+}
+
+onMounted(() => document.addEventListener('fullscreenchange', onFullscreenChange))
+onUnmounted(() => document.removeEventListener('fullscreenchange', onFullscreenChange))
 
 const NODE_W = 230
 const NODE_H = 76
@@ -156,7 +180,7 @@ const flowEdges = computed(() =>
 </script>
 
 <template>
-    <div class="stack-graph-wrap">
+    <div ref="wrapEl" class="stack-graph-wrap">
         <VueFlow
             class="stack-flow"
             :nodes="flowNodes"
@@ -165,6 +189,7 @@ const flowEdges = computed(() =>
             :nodes-draggable="false"
             fit-view-on-init
             :fit-view-options="{ padding: 0.08 }"
+            @init="onVfInit"
             @node-mouse-enter="onNodeEnter"
             @node-mouse-leave="onNodeLeave"
             @pane-mouse-leave="onNodeLeave"
@@ -202,6 +227,40 @@ const flowEdges = computed(() =>
             <span class="stack-legend-item"><i class="stack-legend-line stack-legend-line--dep" />depends on</span>
             <span class="stack-legend-item"><i class="stack-legend-line stack-legend-line--int" />integrates</span>
         </div>
+        <button
+            type="button"
+            class="stack-fs-btn"
+            :aria-label="isFullscreen ? 'Exit fullscreen' : 'Fullscreen graph'"
+            :title="isFullscreen ? 'Exit fullscreen' : 'Fullscreen'"
+            @click="toggleFullscreen"
+        >
+            <svg
+                v-if="!isFullscreen"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+                <path d="M8 3H5a2 2 0 0 0-2 2v3" /><path d="M21 8V5a2 2 0 0 0-2-2h-3" /><path d="M3 16v3a2 2 0 0 0 2 2h3" /><path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+            </svg>
+            <svg
+                v-else
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+                <path d="M8 3v3a2 2 0 0 1-2 2H3" /><path d="M21 8h-3a2 2 0 0 1-2-2V3" /><path d="M3 16h3a2 2 0 0 1 2 2v3" /><path d="M16 21v-3a2 2 0 0 1 2-2h3" />
+            </svg>
+        </button>
     </div>
 </template>
 
@@ -339,5 +398,51 @@ const flowEdges = computed(() =>
 
 .stack-flow .vue-flow__controls-button:hover {
     background: var(--vp-c-bg-alt);
+}
+
+.stack-fs-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--vp-c-bg) 85%, transparent);
+    backdrop-filter: blur(4px);
+    color: var(--vp-c-text-1);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.stack-fs-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.stack-fs-btn:hover {
+    background: var(--vp-c-bg-alt);
+    color: var(--vp-c-brand-1);
+}
+
+.stack-graph-wrap:fullscreen {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: var(--vp-c-bg);
+}
+
+.stack-graph-wrap:fullscreen .stack-flow {
+    flex: 1;
+    height: auto;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
 }
 </style>
