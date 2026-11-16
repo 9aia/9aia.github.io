@@ -5,7 +5,7 @@ hero:
   name: "Gaia"
   blobs: true
   text: "Put AI agents to work, on your terms"
-  tagline: Open infrastructure for agent-driven development
+  tagline: Put IA to work.
   actions:
     - theme: brand
       text: Tamias
@@ -43,7 +43,7 @@ function shortDate(iso) {
     <VPTeamPageTitle>
         <template #title>The Stack</template>
         <template #lead>
-          One organism, four layers: delivery down to interface.
+          One superorganism, four layers: delivery down to interface.
         </template>
     </VPTeamPageTitle>
     <ClientOnly>

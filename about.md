@@ -92,9 +92,7 @@ And the factory is run by the workers it serves: agents are the operators, not t
 
 ## Members
 
-<VPTeamMembers size="small" :members="members.slice(0, 1)" />
-
-<VPTeamMembers size="small" :members="members.slice(1)" />
+<VPTeamMembers size="small" :members="members" />
 
 ## Contact
 
