@@ -12,10 +12,10 @@ const props = defineProps({
 })
 
 const LAYER_COLORS = {
-    delivery: '#22d3ee',
-    memory: '#a78bfa',
-    process: '#fbbf24',
-    interface: '#fb7185',
+    delivery: '#4f9ecb',
+    memory: '#8f6fd0',
+    process: '#c99b45',
+    interface: '#d4709a',
 }
 
 const LAYER_ICONS = {
