@@ -16,7 +16,7 @@ const layerMeta = [
   {
     key: 'process',
     title: 'Process',
-    blurb: 'How work is governed and run: sturn coordinates, cuora brokers secrets, mimus verifies claims, cicada schedules, lasius manages the workspace, sepia runs sessions, peregrin drives campaigns on the hypha plane.',
+    blurb: 'How work is governed and run: sturn coordinates, cuora brokers secrets, tardigrada holds identity, mimus verifies claims, cicada schedules, lasius manages the workspace, sepia runs sessions, peregrin drives campaigns on the hypha plane.',
   },
   {
     key: 'interface',
