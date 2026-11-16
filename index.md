@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "Gaia"
-  text: "Put AI agents to work — on your terms"
+  text: "Put AI agents to work, on your terms"
   tagline: Open infrastructure for agent-driven development
   actions:
     - theme: brand
@@ -23,7 +23,7 @@ import { data as activity } from '.vitepress/theme/activity.data.ts'
 const layerMeta = [
   { key: 'packaging', title: 'Packaging', blurb: 'How everything installs, updates, and ships.' },
   { key: 'plane', title: 'Planes', blurb: 'Cross-cutting services: releases and the CI gate.' },
-  { key: 'engine', title: 'Engines', blurb: 'The machines — each a small engine owning one mechanism.' },
+  { key: 'engine', title: 'Engines', blurb: 'The machines, each a small engine owning one mechanism.' },
   { key: 'orchestration', title: 'Orchestration', blurb: 'Campaigns that drive work across machines.' },
   { key: 'surface', title: 'Surfaces', blurb: 'What humans and agents actually see.' },
 ]
@@ -49,7 +49,7 @@ function shortDate(iso) {
     <VPTeamPageTitle>
         <template #title>The Stack</template>
         <template #lead>
-          One machine, five layers — packaging down to surfaces, planes underneath.
+          One machine, five layers: packaging down to surfaces, planes underneath.
         </template>
     </VPTeamPageTitle>
     <div class="ecosystem">
@@ -75,7 +75,7 @@ function shortDate(iso) {
     <VPTeamPageTitle>
         <template #title>The Machines</template>
         <template #lead>
-          Small engines, each owning one mechanism. Swipe through — every card links to its docs.
+          Small engines, each owning one mechanism. Swipe through; every card links to its docs.
         </template>
     </VPTeamPageTitle>
     <div class="carousel">
@@ -96,7 +96,7 @@ function shortDate(iso) {
     </VPTeamPageTitle>
     <p class="mission">
       We're building the missing layers between coding agents and the repositories
-      they work on — packages (tamias), a ledger (myco, kuda), a WAL (sturn),
+      they work on: packages (tamias), a ledger (myco, kuda), a WAL (sturn),
       an orchestrator (peregrin, sepia), and a queue (bupha, mimus, cicada).
       Open, minimal, composable. A stack agents can actually run on.
     </p>
@@ -109,7 +109,7 @@ function shortDate(iso) {
     <VPTeamPageTitle>
         <template #title>Recently shipped</template>
         <template #lead>
-          Tags are releases — the latest across the org.
+          Tags are releases: the latest across the org.
         </template>
     </VPTeamPageTitle>
     <ul class="releases-teaser">
@@ -120,7 +120,7 @@ function shortDate(iso) {
         </li>
     </ul>
     <p class="mission-cta">
-        <VPLink href="/releases">All releases & activity →</VPLink>
+        <VPLink href="/activity">All activity →</VPLink>
     </p>
 </div>
 
@@ -128,7 +128,7 @@ function shortDate(iso) {
     <VPTeamPageTitle>
         <template #title>Get in touch</template>
         <template #lead>
-          Open source, self-hosted — come build with us.
+          Open source, self-hosted. Come build with us.
         </template>
     </VPTeamPageTitle>
     <p class="mission">

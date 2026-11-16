@@ -13,7 +13,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Ecosystem', link: '/ecosystem' },
-      { text: 'Releases', link: '/releases' },
+      { text: 'Activity', link: '/activity' },
       { text: 'About', link: '/about' },
       { text: 'Contact', link: '/contact' },
     ],

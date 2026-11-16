@@ -55,7 +55,7 @@ const members = [
     <VPTeamPageTitle>
         <template #title>About GAIA</template>
         <template #lead>
-            Open infrastructure for agent-driven development — a small group of
+            Open infrastructure for agent-driven development, a small group of
             developers building minimal, open-source engines that people and
             agents can own.
         </template>
@@ -65,7 +65,7 @@ const members = [
         <template #title>What we believe</template>
         <template #default>
             <p class="mb-6">
-                Coding agents are here to stay — the question is who owns the
+                Coding agents are here to stay. The question is who owns the
                 infrastructure they run on. We think the answer should be you:
                 open source, self-hosted, composable, yours. Not a SaaS control
                 plane, not a DSL, not a server fleet you rent back.
@@ -98,7 +98,7 @@ const members = [
                 </div>
                 <div class="value">
                     <span class="value-icon">📦</span>
-                    <h3 class="value-title">One Binary, One Daemon — Not a Control Plane</h3>
+                    <h3 class="value-title">One Binary, One Daemon, Not a Control Plane</h3>
                     <p class="value-details">A single process + a background service on any OS. The market answer is a server fleet + a dashboard.</p>
                 </div>
                 <div class="value">
@@ -125,8 +125,8 @@ const members = [
         <template #default>
             <p class="mb-4">
                 We think of the stack as a factory, not a suite. Each tool is a machine: a small
-                engine with one mechanism and a shipped preset. tamias is the packaging dock —
-                everything installs and updates through its packs — myco the ledger on the
+                engine with one mechanism and a shipped preset. tamias is the packaging dock:
+                everything installs and updates through its packs; myco the ledger on the
                 floor, kuda the code memory, sturn the wiring, bupha the gate, sepia the
                 shifts, peregrin the foreman, cuora the safe.
             </p>
@@ -181,7 +181,7 @@ const members = [
         <template #title>Contact</template>
         <template #default>
             <p>
-                Questions, contributions, or collaboration — see the
+                Questions, contributions, or collaboration? See the
                 <VPLink href="/contact">contact page</VPLink>.
             </p>
         </template>

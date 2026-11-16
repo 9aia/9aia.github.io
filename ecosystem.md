@@ -11,12 +11,12 @@ const layerMeta = [
   {
     key: 'plane',
     title: 'Planes',
-    blurb: 'Cross-cutting services that govern the stack itself — releases and the CI gate ride the same pack machinery as everything else.',
+    blurb: 'Cross-cutting services that govern the stack itself: releases and the CI gate ride the same pack machinery as everything else.',
   },
   {
     key: 'engine',
     title: 'Engines',
-    blurb: 'The machines. Each a small engine owning exactly one mechanism — memory, secrets, coordination, sessions, scheduling, verification. They compose over wires, not plugins.',
+    blurb: 'The machines. Each a small engine owning exactly one mechanism: memory, secrets, coordination, sessions, scheduling, verification. They compose over wires, not plugins.',
   },
   {
     key: 'orchestration',
@@ -48,7 +48,7 @@ const flow = [
 
 # The ecosystem
 
-GAIA is a suite of small engines — not a framework, not a control plane. Each
+GAIA is a suite of small engines, not a framework, not a control plane. Each
 project owns one mechanism, speaks a wire protocol, and composes with the
 rest. The layers below are the architecture: **packaging → engines →
 orchestration → surfaces**, with planes underneath serving the whole stack.
@@ -70,17 +70,17 @@ orchestration → surfaces**, with planes underneath serving the whole stack.
 
 ## How a change ships
 
-The suite manages its own development — this is the loop, end to end:
+The suite manages its own development. This is the loop, end to end:
 
 <ol class="eco-flow">
   <li v-for="(s, i) in flow" :key="s.who">
-    <code>{{ s.who }}</code> — {{ s.what }}
+    <code>{{ s.who }}</code>: {{ s.what }}
   </li>
 </ol>
 
 <p>
-  Every project has its own docs site — tutorial, how-tos, reference, and
-  explanation — linked from each card above. Start with
+  Every project has its own docs site (tutorial, how-tos, reference, and
+  explanation) linked from each card above. Start with
   <VPLink href="https://9aia.com/tamias/">tamias</VPLink>, the entrypoint.
 </p>
 
