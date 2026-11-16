@@ -118,6 +118,12 @@
   }
 }
 
+/* Anchor for the MetaBlobs canvas teleported into .VPHero
+   (ported from gaia-docus hero background). */
+.VPHero {
+  position: relative;
+}
+
 /**
  * Component: Custom Block
  * -------------------------------------------------------------------------- */
