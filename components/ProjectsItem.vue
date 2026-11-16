@@ -1,11 +1,18 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import type { Project } from "../types";
 import VPSocialLink from "vitepress/dist/client/theme-default/components/VPSocialLink.vue";
 import VPLink from "vitepress/dist/client/theme-default/components/VPLink.vue";
 
-defineProps<{
+const props = defineProps<{
     project: Project,
 }>();
+
+const layerLabel = computed(() =>
+    props.project.layer
+        ? props.project.layer[0].toUpperCase() + props.project.layer.slice(1)
+        : "",
+);
 </script>
 
 <template>
@@ -14,7 +21,7 @@ defineProps<{
             <div class="data flex justify-between flex-col h-full gap-2">
                 <div>
                     <h1 class="name">{{ project.name }}
-                        <span v-if="project.layer" class="layer">{{ project.layer }}</span>
+                        <span v-if="project.layer" class="layer">{{ layerLabel }}</span>
                         <span v-if="project.status && project.status !== 'recent'" class="status">{{ project.status === 'wip' ? 'WIP' : project.status }}</span>
                     </h1>
                     <p v-if="project.tagline" class="tagline">{{ project.tagline }}</p>

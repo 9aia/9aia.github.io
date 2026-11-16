@@ -21,12 +21,13 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
 import { data as activity } from '.vitepress/theme/activity.data.ts'
 
 const layerMeta = [
-  { key: 'packaging', title: 'Packaging', blurb: 'How everything installs, updates, and ships.' },
-  { key: 'plane', title: 'Planes', blurb: 'Cross-cutting services: releases and the CI gate.' },
-  { key: 'engine', title: 'Engines', blurb: 'The machines, each a small engine owning one mechanism.' },
-  { key: 'orchestration', title: 'Orchestration', blurb: 'Campaigns that drive work across machines.' },
-  { key: 'surface', title: 'Surfaces', blurb: 'What humans and agents actually see.' },
+  { key: 'delivery', title: 'Delivery', blurb: 'How everything installs, updates, ships, and passes the gate.' },
+  { key: 'memory', title: 'Memory', blurb: 'What the system knows: records, code maps, coordination, substrate.' },
+  { key: 'process', title: 'Process', blurb: 'How work is governed: secrets, verification, schedules, sessions, workspace.' },
+  { key: 'agency', title: 'Agency', blurb: 'What acts and what shows: orchestration in, views out.' },
 ]
+
+const layerTitle = Object.fromEntries(layerMeta.map((l) => [l.key, l.title]))
 
 const layers = layerMeta.map((l) => ({
   ...l,
@@ -49,7 +50,7 @@ function shortDate(iso) {
     <VPTeamPageTitle>
         <template #title>The Stack</template>
         <template #lead>
-          One machine, five layers: packaging down to surfaces, planes underneath.
+          One organism, four layers: delivery down to agency.
         </template>
     </VPTeamPageTitle>
     <div class="ecosystem">
@@ -73,16 +74,16 @@ function shortDate(iso) {
 
 <div>
     <VPTeamPageTitle>
-        <template #title>The Machines</template>
+        <template #title>The Organisms</template>
         <template #lead>
-          Small engines, each owning one mechanism. Swipe through; every card links to its docs.
+          Each a small engine owning one mechanism. Swipe through; every card links to its docs.
         </template>
     </VPTeamPageTitle>
     <div class="carousel">
-        <a v-for="p in active" :key="p.name" :href="p.docs ?? p.website ?? '#'" class="machine">
-            <span class="machine-name">{{ p.name }}</span>
-            <span class="machine-layer">{{ p.layer }}</span>
-            <span class="machine-tag">{{ p.tagline }}</span>
+        <a v-for="p in active" :key="p.name" :href="p.docs ?? p.website ?? '#'" class="organism">
+            <span class="organism-name">{{ p.name }}</span>
+            <span class="organism-layer">{{ layerTitle[p.layer] ?? p.layer }}</span>
+            <span class="organism-tag">{{ p.tagline }}</span>
         </a>
     </div>
 </div>
@@ -174,7 +175,7 @@ function shortDate(iso) {
 
 @media (min-width: 1280px) {
     .ecosystem {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -244,7 +245,7 @@ function shortDate(iso) {
     scrollbar-width: thin;
 }
 
-.machine {
+.organism {
     flex: 0 0 240px;
     scroll-snap-align: start;
     display: flex;
@@ -257,28 +258,28 @@ function shortDate(iso) {
     transition: transform 0.15s ease;
 }
 
-.machine:hover {
+.organism:hover {
     transform: translateY(-2px);
 }
 
-.machine-name {
+.organism-name {
     font-weight: 700;
     font-size: 16px;
     color: var(--vp-c-text-1);
 }
 
-.machine:hover .machine-name {
+.organism:hover .organism-name {
     color: var(--vp-c-brand-1);
 }
 
-.machine-layer {
+.organism-layer {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.6px;
     color: var(--vp-c-text-3);
 }
 
-.machine-tag {
+.organism-tag {
     font-size: 13px;
     line-height: 19px;
     color: var(--vp-c-text-2);

@@ -4,29 +4,24 @@ import { data as projects } from '.vitepress/theme/projects.data.ts'
 
 const layerMeta = [
   {
-    key: 'packaging',
-    title: 'Packaging',
-    blurb: 'Everything installs, updates, and ships through tamias packs. Pluggable adapters fetch content; the store caches it; drivers dispense it to whoever asks.',
+    key: 'delivery',
+    title: 'Delivery',
+    blurb: 'How artifacts move: tamias installs and dispenses packs, scarab loads config and templates, tarsi cuts releases, bupha gates every push.',
   },
   {
-    key: 'plane',
-    title: 'Planes',
-    blurb: 'Cross-cutting services that govern the stack itself: releases and the CI gate ride the same pack machinery as everything else.',
+    key: 'memory',
+    title: 'Memory',
+    blurb: 'What the system knows: myco keeps the work ledger, kuda the verified code maps, sturn the coordination WAL, hypha the distributed substrate.',
   },
   {
-    key: 'engine',
-    title: 'Engines',
-    blurb: 'The machines. Each a small engine owning exactly one mechanism: memory, secrets, coordination, sessions, scheduling, verification. They compose over wires, not plugins.',
+    key: 'process',
+    title: 'Process',
+    blurb: 'How work is governed: cuora brokers secrets, mimus verifies claims, cicada schedules, lasius manages the workspace, sepia runs sessions.',
   },
   {
-    key: 'orchestration',
-    title: 'Orchestration',
-    blurb: 'Campaigns that drive work across machines: declarative events, nodes, and drivers, with a session plane on every node.',
-  },
-  {
-    key: 'surface',
-    title: 'Surfaces',
-    blurb: 'What humans and agents actually see. Products ship tamias drivers; surfaces render their ViewNode IR across CLI, TUI, and web.',
+    key: 'agency',
+    title: 'Agency',
+    blurb: 'What acts and what shows: peregrin orchestrates campaigns across machines, pavo renders every view the drivers emit.',
   },
 ]
 
@@ -50,8 +45,8 @@ const flow = [
 
 GAIA is a suite of small engines, not a framework, not a control plane. Each
 project owns one mechanism, speaks a wire protocol, and composes with the
-rest. The layers below are the architecture: **packaging → engines →
-orchestration → surfaces**, with planes underneath serving the whole stack.
+rest. The layers below are the architecture: **delivery → memory →
+process → agency**, from how artifacts move to what acts and what shows.
 
 ## The layers
 
