@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { VPLink } from 'vitepress/theme'
 import { data as activity } from '.vitepress/theme/activity.data.ts'
 
@@ -64,6 +64,25 @@ const visible = computed(() => {
   return [...commitItems, ...tagItems].sort((a, b) => b.date.localeCompare(a.date))
 })
 
+const PER_PAGE = 50
+const page = ref(1)
+watch(filter, () => { page.value = 1 })
+
+const totalPages = computed(() => Math.max(1, Math.ceil(visible.value.length / PER_PAGE)))
+watch(totalPages, (n) => { if (page.value > n) page.value = n })
+
+const pageItems = computed(() =>
+  visible.value.slice((page.value - 1) * PER_PAGE, page.value * PER_PAGE),
+)
+
+// Compact page list: first, last, and a window around the current page.
+const pageList = computed(() => {
+  const n = totalPages.value
+  const p = page.value
+  const set = new Set([1, n, p - 1, p, p + 1])
+  return [...set].filter((x) => x >= 1 && x <= n).sort((a, b) => a - b)
+})
+
 function timeStr(iso) {
   return new Date(iso).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
 }
@@ -90,7 +109,7 @@ function dayLabel(iso) {
 // Group the visible feed into per-day sections, newest day first.
 const groups = computed(() => {
   const out = []
-  for (const i of visible.value) {
+  for (const i of pageItems.value) {
     const k = dayKey(i.date)
     let last = out[out.length - 1]
     if (!last || last.key !== k) {
@@ -141,6 +160,15 @@ org; release-tagged commits carry their tag inline.
   </template>
   <li v-if="visible.length === 0" class="feed-empty">Nothing here yet.</li>
 </ul>
+
+<nav v-if="totalPages > 1" class="pager">
+  <button class="page-btn" :disabled="page === 1" @click="page--">‹ Prev</button>
+  <template v-for="(p, idx) in pageList" :key="p">
+    <span v-if="idx > 0 && p - pageList[idx - 1] > 1" class="page-gap">…</span>
+    <button class="page-btn" :class="{ active: p === page }" @click="page = p">{{ p }}</button>
+  </template>
+  <button class="page-btn" :disabled="page === totalPages" @click="page++">Next ›</button>
+</nav>
 
 <p class="feed-generated">Generated {{ new Date(activity.generated).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) }}. Refreshes on each site build.</p>
 
@@ -225,6 +253,41 @@ org; release-tagged commits carry their tag inline.
   font-size: 12px;
   white-space: nowrap;
   flex-shrink: 0;
+}
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+.page-btn {
+  min-width: 32px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  background: transparent;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+  cursor: pointer;
+}
+.page-btn:hover:not(:disabled) {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+.page-btn.active {
+  background: var(--vp-c-brand-soft);
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.page-gap {
+  color: var(--vp-c-text-3);
+  padding: 0 2px;
 }
 .feed-empty,
 .feed-generated {
