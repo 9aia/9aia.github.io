@@ -10,57 +10,56 @@ const FILTERS = [
   { key: 'commits', label: 'Commits' },
 ]
 
-// Unified chronological feed: commits (with inline tag badges) plus
-// standalone tag entries whose commits fall outside the fetched window.
-const commitSha = new Set()
+// One row anatomy for every item: repo | summary | tag badges | date.
+// summary links to the commit or the release/tag page; badges link to releases.
 const items = []
 
 for (const r of activity.repos) {
+  const tagUrl = new Map(r.tags.map((t) => [t.name, `${r.repo}/releases/tag/${t.name}`]))
+  const commitShas = new Set(r.commits.map((c) => c.sha))
+
   for (const c of r.commits) {
-    commitSha.add(`${r.name}:${c.sha}`)
     items.push({
       kind: 'commit',
       repo: r.name,
       repoUrl: r.repo,
       date: c.date,
-      sha: c.sha,
-      message: c.message,
-      url: c.url,
-      tags: c.tags,
+      summary: c.message,
+      summaryUrl: c.url,
+      badges: c.tags.map((t) => ({ name: t, url: tagUrl.get(t) })),
     })
   }
-}
 
-// Release-tagged commits always show; fill the rest with latest activity.
-const taggedCommits = items.filter((i) => i.kind === 'commit' && i.tags.length > 0)
-const untagged = items
-  .filter((i) => i.kind === 'commit' && i.tags.length === 0)
-  .sort((a, b) => b.date.localeCompare(a.date))
-  .slice(0, Math.max(0, 150 - taggedCommits.length))
-const commitItems = [...taggedCommits, ...untagged].sort((a, b) =>
-  b.date.localeCompare(a.date),
-)
-
-for (const r of activity.repos) {
   for (const t of r.tags) {
-    if (commitSha.has(`${r.name}:${t.sha}`)) continue // already badged inline
+    if (commitShas.has(t.sha)) continue // already badged inline on its commit
     items.push({
       kind: 'tag',
       repo: r.name,
       repoUrl: r.repo,
       date: t.date,
-      name: t.name,
-      url: `${r.repo}/releases/tag/${t.name}`,
+      summary: t.name,
+      summaryUrl: `${r.repo}/releases/tag/${t.name}`,
+      badges: [],
     })
   }
 }
 
+// Release-tagged commits always show; fill the rest with latest activity.
+const taggedCommits = items
+  .filter((i) => i.kind === 'commit' && i.badges.length > 0)
+  .sort((a, b) => b.date.localeCompare(a.date))
+const untagged = items
+  .filter((i) => i.kind === 'commit' && i.badges.length === 0)
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .slice(0, Math.max(0, 150 - taggedCommits.length))
+const commitItems = [...taggedCommits, ...untagged].sort((a, b) =>
+  b.date.localeCompare(a.date),
+)
 const tagItems = items.filter((i) => i.kind === 'tag')
-const tagCommits = commitItems.filter((c) => c.tags.length > 0)
 
 const visible = computed(() => {
   if (filter.value === 'tags')
-    return [...tagCommits, ...tagItems].sort((a, b) => b.date.localeCompare(a.date))
+    return [...taggedCommits, ...tagItems].sort((a, b) => b.date.localeCompare(a.date))
   if (filter.value === 'commits') return commitItems
   return [...commitItems, ...tagItems].sort((a, b) => b.date.localeCompare(a.date))
 })
@@ -86,16 +85,21 @@ org; release-tagged commits carry their tag inline.
 </div>
 
 <ul class="feed">
-  <li v-for="i in visible" :key="i.kind + i.repo + (i.sha ?? i.name)" class="feed-item">
-    <template v-if="i.kind === 'tag'">
-      <span class="feed-tag">{{ i.name }}</span>
-      <VPLink :href="i.url" class="feed-repo">{{ i.repo }}</VPLink>
-    </template>
-    <template v-else>
-      <VPLink :href="i.url" class="feed-repo">{{ i.repo }}</VPLink>
-      <span class="feed-msg">{{ i.message }}</span>
-      <span v-for="t in i.tags" :key="t" class="feed-badge">{{ t }}</span>
-    </template>
+  <li v-for="i in visible" :key="i.kind + i.repo + i.summary + i.date" class="feed-item">
+    <VPLink :href="i.repoUrl" class="feed-repo">{{ i.repo }}</VPLink>
+    <VPLink
+      :href="i.summaryUrl"
+      class="feed-msg"
+      :class="{ 'feed-tag-name': i.kind === 'tag' }"
+    >{{ i.summary }}</VPLink>
+    <a
+      v-for="t in i.badges"
+      :key="t.name"
+      :href="t.url"
+      class="feed-badge"
+      target="_blank"
+      rel="noopener"
+    >{{ t.name }}</a>
     <span class="feed-date">{{ shortDate(i.date) }}</span>
   </li>
   <li v-if="visible.length === 0" class="feed-empty">Nothing here yet.</li>
@@ -137,14 +141,10 @@ org; release-tagged commits carry their tag inline.
   border-bottom: 1px solid var(--vp-c-divider);
   font-size: 14px;
 }
-.feed-tag {
-  font-family: var(--vp-font-family-mono);
-  font-weight: 600;
-  color: var(--vp-c-brand-1);
-}
 .feed-repo {
   font-weight: 600;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .feed-msg {
   flex: 1;
@@ -154,6 +154,13 @@ org; release-tagged commits carry their tag inline.
   white-space: nowrap;
   color: var(--vp-c-text-2);
 }
+.feed-msg:hover {
+  color: var(--vp-c-brand-1);
+}
+.feed-tag-name {
+  font-family: var(--vp-font-family-mono);
+  color: var(--vp-c-brand-1);
+}
 .feed-badge {
   font-family: var(--vp-font-family-mono);
   font-size: 11px;
@@ -162,11 +169,17 @@ org; release-tagged commits carry their tag inline.
   background: var(--vp-c-brand-soft);
   color: var(--vp-c-brand-1);
   white-space: nowrap;
+  text-decoration: none;
+}
+.feed-badge:hover {
+  background: var(--vp-c-brand-1);
+  color: var(--vp-c-bg);
 }
 .feed-date {
   color: var(--vp-c-text-3);
   font-size: 12px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .feed-empty,
 .feed-generated {
