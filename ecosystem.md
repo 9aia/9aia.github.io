@@ -18,7 +18,7 @@ const flow = [
 
 # The ecosystem
 
-GAIA is a suite of organisms, not a framework, not a control plane. Each
+Gaia is a suite of organisms, not a framework, not a control plane. Each
 organism owns one mechanism, speaks a wire protocol, and composes with the
 rest. The layers below are the architecture: **delivery → memory →
 process → interface**, from how artifacts move to what renders.

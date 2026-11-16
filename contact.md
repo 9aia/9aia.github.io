@@ -4,7 +4,7 @@ import { VPLink } from 'vitepress/theme'
 
 # Contact
 
-GAIA is open source and self-hosted. Reach us where the work happens.
+Gaia is open source and self-hosted. Reach us where the work happens.
 
 ## General inquiries
 

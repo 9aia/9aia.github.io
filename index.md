@@ -90,7 +90,7 @@ function shortDate(iso) {
 
 <div>
     <VPTeamPageTitle>
-        <template #title>Why GAIA</template>
+        <template #title>Why Gaia</template>
         <template #lead>
           The missing layers between coding agents and the repositories they work on.
         </template>
