@@ -61,7 +61,7 @@ const members = [
         </template>
     </VPTeamPageTitle>
 
-    <PageSection>
+<PageSection>
         <template #title>What we believe</template>
         <template #default>
             <p class="mb-6">
@@ -118,9 +118,9 @@ const members = [
                 </div>
             </div>
         </template>
-    </PageSection>
+</PageSection>
 
-    <PageSection>
+<PageSection>
         <template #title>The Factory</template>
         <template #default>
             <p class="mb-4">
@@ -142,9 +142,9 @@ const members = [
                 <VPLink href="/ecosystem">ecosystem map</VPLink> shows how the layers fit together.
             </p>
         </template>
-    </PageSection>
+</PageSection>
 
-    <PageSection>
+<PageSection>
         <template #title>Tech stack</template>
         <template #default>
             <div class="stack-grid">
@@ -166,18 +166,18 @@ const members = [
                 </div>
             </div>
         </template>
-    </PageSection>
+</PageSection>
 
-    <PageSection>
+<PageSection>
         <template #title>Members</template>
         <template #default>
             <VPTeamMembers size='small' :members='members.slice(0, 1)' />
             <div class="mb-6" />
             <VPTeamMembers size='small' :members='members.slice(1)' />
         </template>
-    </PageSection>
+</PageSection>
 
-    <PageSection>
+<PageSection>
         <template #title>Contact</template>
         <template #default>
             <p>
@@ -185,7 +185,7 @@ const members = [
                 <VPLink href="/contact">contact page</VPLink>.
             </p>
         </template>
-    </PageSection>
+</PageSection>
 </VPTeamPage>
 
 <style scoped>

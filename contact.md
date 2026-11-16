@@ -15,7 +15,7 @@ import PageSection from './components/PageSection.vue'
         </template>
     </VPTeamPageTitle>
 
-    <PageSection>
+<PageSection>
         <template #title>General inquiries</template>
         <template #default>
             <p class="mb-4">
@@ -24,9 +24,9 @@ import PageSection from './components/PageSection.vue'
                 <VPLink href="mailto:luisfuturist+9aia@gmail.com">luisfuturist+9aia@gmail.com</VPLink>.
             </p>
         </template>
-    </PageSection>
+</PageSection>
 
-    <PageSection>
+<PageSection>
         <template #title>Contributing</template>
         <template #default>
             <p class="mb-4">
@@ -36,9 +36,9 @@ import PageSection from './components/PageSection.vue'
                 <code>CONTRIBUTING.md</code> covers the local workflow.
             </p>
         </template>
-    </PageSection>
+</PageSection>
 
-    <PageSection>
+<PageSection>
         <template #title>Security</template>
         <template #default>
             <p>
@@ -46,5 +46,5 @@ import PageSection from './components/PageSection.vue'
                 repo's <code>SECURITY.md</code>. Do not open a public issue.
             </p>
         </template>
-    </PageSection>
+</PageSection>
 </VPTeamPage>
