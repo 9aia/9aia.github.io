@@ -297,7 +297,7 @@ const flowEdges = computed(() =>
 
 .vf-node {
     width: 230px;
-    border-radius: 10px;
+    border-radius: var(--radius-blob-a);
     background: var(--vp-c-bg-soft);
     color: var(--vp-c-text-1);
     box-shadow: 0 1px 3px rgb(20 20 60 / 0.12);

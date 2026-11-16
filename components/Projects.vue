@@ -63,13 +63,13 @@ const filtered = computed(() => {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 16px;
     margin-bottom: 40px;
 }
 
 .container {
     display: grid;
-    gap: 24px;
+    gap: 28px;
     margin: 0 auto;
     max-width: 1152px;
     grid-template-columns: 1fr;

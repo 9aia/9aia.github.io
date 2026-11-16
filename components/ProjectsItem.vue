@@ -43,7 +43,7 @@ const layerLabel = computed(() =>
     display: flex;
     flex-direction: column;
     gap: 2px;
-    border-radius: 12px;
+    border-radius: var(--radius-blob-a);
     width: 100%;
     height: 100%;
     overflow: hidden;

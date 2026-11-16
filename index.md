@@ -197,7 +197,7 @@ function shortDate(iso) {
     gap: 6px;
     height: 100%;
     padding: 20px 24px;
-    border-radius: 12px;
+    border-radius: var(--radius-blob-a);
     background-color: var(--vp-c-bg-soft);
     text-decoration: none;
     transition: transform 0.15s ease;

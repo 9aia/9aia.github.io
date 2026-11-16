@@ -47,6 +47,8 @@ root (this is the site itself, not a repo with a `docs/` worktree).
 ```bash
 bun install
 bun run dev          # vitepress dev --port 13101
+                     # theme changes need a dev-server restart — HMR does not
+                     # pick up vitepress-theme-9aia updates reliably
 bun run build        # vitepress build → dist/
 bun run preview      # preview the production build
 bun run docs:deploy  # build + gh-pages deploy (9aia.com)

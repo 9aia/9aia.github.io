@@ -93,7 +93,7 @@ The suite manages its own development. This is the loop, end to end:
 }
 .eco-grid {
   display: grid;
-  gap: 16px;
+  gap: 20px;
   grid-template-columns: 1fr;
 }
 @media (min-width: 768px) {
@@ -107,9 +107,15 @@ The suite manages its own development. This is the loop, end to end:
   }
 }
 .eco-card {
-  border-radius: 12px;
+  border-radius: var(--radius-blob-a);
   padding: 20px 24px;
   background-color: var(--vp-c-bg-soft);
+}
+.eco-grid .eco-card:nth-child(3n + 2) {
+  border-radius: var(--radius-blob-b);
+}
+.eco-grid .eco-card:nth-child(3n) {
+  border-radius: var(--radius-blob-c);
 }
 .eco-name {
   font-weight: 700;

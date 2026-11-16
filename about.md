@@ -142,7 +142,7 @@ Questions, contributions, or collaboration? See the <VPLink href="/contact">cont
 <style scoped>
 .values-grid {
     display: grid;
-    gap: 16px;
+    gap: 20px;
     grid-template-columns: 1fr;
 }
 @media (min-width: 768px) {
@@ -156,9 +156,15 @@ Questions, contributions, or collaboration? See the <VPLink href="/contact">cont
     }
 }
 .value {
-    border-radius: 12px;
+    border-radius: var(--radius-blob-a);
     padding: 20px 24px;
     background-color: var(--vp-c-bg-soft);
+}
+.values-grid .value:nth-child(3n + 2) {
+    border-radius: var(--radius-blob-b);
+}
+.values-grid .value:nth-child(3n) {
+    border-radius: var(--radius-blob-c);
 }
 .value-icon {
     display: inline-flex;
@@ -180,7 +186,7 @@ Questions, contributions, or collaboration? See the <VPLink href="/contact">cont
 }
 .stack-grid {
     display: grid;
-    gap: 16px;
+    gap: 20px;
     grid-template-columns: 1fr;
 }
 @media (min-width: 768px) {
