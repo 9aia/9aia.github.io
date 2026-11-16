@@ -272,7 +272,13 @@ const flowEdges = computed(() =>
 .stack-flow {
     height: 640px;
     border-radius: 12px;
-    background: var(--vp-c-bg-alt);
+    background: var(--vp-c-bg);
+}
+
+.stack-flow .vue-flow,
+.stack-flow .vue-flow__pane,
+.stack-flow .vue-flow__viewport {
+    background: transparent;
 }
 
 .stack-flow .vue-flow__edge-path {
