@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import UnoCSS from 'unocss/vite'
+import { externalSections } from './external-sections'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -10,28 +11,7 @@ export default defineConfig({
   appearance: 'dark',
   themeConfig: {
     search: { provider: 'local' },
-    externalSections: [
-      'tamias',
-      'scarab',
-      'tarsi',
-      'bupha',
-      'myco',
-      'kuda',
-      'mimus',
-      'cuora',
-      'tardigrada',
-      'sturn',
-      'hypha',
-      'cicada',
-      'lasius',
-      'sepia',
-      'peregrin',
-      'pavo',
-      'delphis',
-      'strigi',
-      'cypera',
-      'workspace',
-    ],
+    externalSections: [...externalSections],
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
