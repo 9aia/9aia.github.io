@@ -49,7 +49,7 @@ const visible = computed(
             </nav>
         </div>
 
-        <p class="footer-copyright">© {{ year }} 9aia — open source, self-hosted, yours.</p>
+        <p class="footer-copyright">© {{ year }} Gaia: one superorganism, many organisms.</p>
     </footer>
 </template>
 
