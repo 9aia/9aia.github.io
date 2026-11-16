@@ -1,1 +1,0 @@
-import{_ as t,o as a,c as i,a1 as s}from"./chunks/framework.Dcbl3eEm.js";const u=JSON.parse('{"title":"Gaia Website","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md"}'),n={name:"README.md"};function o(r,e,l,h,d,p){return a(),i("div",null,[...e[0]||(e[0]=[s("",18)])])}const g=t(n,[["render",o]]);export{u as __pageData,g as default};
