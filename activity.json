@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T06:16:13.132Z",
+  "generated": "2026-11-16T06:22:18.363Z",
   "repos": [
     {
       "name": "tamias",
@@ -2695,6 +2695,36 @@
       "repo": "https://github.com/9aia/cuora",
       "commits": [
         {
+          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
+          "date": "2026-11-16T06:20:40Z",
+          "message": "chore(release): bump versions",
+          "url": "https://github.com/9aia/cuora/commit/bd525cdd23af8b43be2775e3eeef7215ce86255d",
+          "tags": [
+            "cuora-ops-v1.0.1"
+          ]
+        },
+        {
+          "sha": "562cc0bfa0eff8abfde01014a9420ebedf3d6d91",
+          "date": "2026-11-16T06:20:40Z",
+          "message": "chore: default_bump=patch fallback for non-feat/fix releases",
+          "url": "https://github.com/9aia/cuora/commit/562cc0bfa0eff8abfde01014a9420ebedf3d6d91",
+          "tags": []
+        },
+        {
+          "sha": "3224398bb9c1f732f9b02979f6a70aaa4d33ed48",
+          "date": "2026-11-16T06:16:06Z",
+          "message": "refactor: retire cuora identity verbs — superseded by tardigrada",
+          "url": "https://github.com/9aia/cuora/commit/3224398bb9c1f732f9b02979f6a70aaa4d33ed48",
+          "tags": []
+        },
+        {
+          "sha": "89a945bd958ce099162563ebb52399f0c9e28147",
+          "date": "2026-11-16T06:16:06Z",
+          "message": "fix: sync workspace dep version reqs to 1.0.0 (release bump missed them)",
+          "url": "https://github.com/9aia/cuora/commit/89a945bd958ce099162563ebb52399f0c9e28147",
+          "tags": []
+        },
+        {
           "sha": "6286e32c640653cc67c60efe362f12d71ad5e9c9",
           "date": "2026-11-16T05:57:45Z",
           "message": "chore: sync pack manifest version to 1.0.0",
@@ -2707,7 +2737,7 @@
           "message": "chore(release): bump versions",
           "url": "https://github.com/9aia/cuora/commit/65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
           "tags": [
-            "cuora-config-v1.0.0"
+            "cuora-sealed-v0.3.0"
           ]
         },
         {
@@ -3019,34 +3049,6 @@
           "message": "docs: fix cuora etymology (box turtle, not ark clam)",
           "url": "https://github.com/9aia/cuora/commit/8bcffacc9d9a2dd1e56019619ef5005095a9cac6",
           "tags": []
-        },
-        {
-          "sha": "ceecad17e39fa7ea8a148d653d7beb0cf3959871",
-          "date": "2026-11-08T04:58:20Z",
-          "message": "fix(rename): legacy fallbacks for keyring entry, vault/cache/data paths",
-          "url": "https://github.com/9aia/cuora/commit/ceecad17e39fa7ea8a148d653d7beb0cf3959871",
-          "tags": []
-        },
-        {
-          "sha": "e66f8a6c173687aafaa80af1cf781093c44eb740",
-          "date": "2026-11-08T04:53:28Z",
-          "message": "refactor!: rename arca → cuora (crate, binary, env vars, refs, config)",
-          "url": "https://github.com/9aia/cuora/commit/e66f8a6c173687aafaa80af1cf781093c44eb740",
-          "tags": []
-        },
-        {
-          "sha": "0f03a698bd0c9c81fff3520d3aa55925152e8072",
-          "date": "2026-11-08T02:54:13Z",
-          "message": "fix(security): remaining audit hardening — tokens, fsync, hooks, otel",
-          "url": "https://github.com/9aia/cuora/commit/0f03a698bd0c9c81fff3520d3aa55925152e8072",
-          "tags": []
-        },
-        {
-          "sha": "b27c4b26537d989c692af49d5b60dd3ee3b20c3e",
-          "date": "2026-11-08T02:42:36Z",
-          "message": "test: proptest property coverage + audit hardening fixes",
-          "url": "https://github.com/9aia/cuora/commit/b27c4b26537d989c692af49d5b60dd3ee3b20c3e",
-          "tags": []
         }
       ],
       "tags": [
@@ -3056,9 +3058,19 @@
           "date": "2026-11-08T06:53:33Z"
         },
         {
+          "name": "cuora-vault-v1.0.1",
+          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
+          "date": "2026-11-16T06:20:40Z"
+        },
+        {
           "name": "cuora-vault-v1.0.0",
           "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
           "date": "2026-11-16T05:56:19Z"
+        },
+        {
+          "name": "cuora-vault-cf-v1.0.1",
+          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
+          "date": "2026-11-16T06:20:40Z"
         },
         {
           "name": "cuora-vault-cf-v1.0.0",
@@ -3066,9 +3078,19 @@
           "date": "2026-11-16T05:56:19Z"
         },
         {
+          "name": "cuora-vault-cached-v1.0.1",
+          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
+          "date": "2026-11-16T06:20:40Z"
+        },
+        {
           "name": "cuora-vault-cached-v1.0.0",
           "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
           "date": "2026-11-16T05:56:19Z"
+        },
+        {
+          "name": "cuora-vault-age-v1.0.1",
+          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
+          "date": "2026-11-16T06:20:40Z"
         },
         {
           "name": "cuora-vault-age-v1.0.0",
@@ -3076,9 +3098,19 @@
           "date": "2026-11-16T05:56:19Z"
         },
         {
+          "name": "cuora-v1.0.1",
+          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
+          "date": "2026-11-16T06:20:40Z"
+        },
+        {
           "name": "cuora-v1.0.0",
           "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
           "date": "2026-11-16T05:56:19Z"
+        },
+        {
+          "name": "cuora-testkit-v1.0.1",
+          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
+          "date": "2026-11-16T06:20:40Z"
         },
         {
           "name": "cuora-testkit-v1.0.0",
@@ -3086,9 +3118,19 @@
           "date": "2026-11-16T05:56:19Z"
         },
         {
+          "name": "cuora-shell-v1.0.1",
+          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
+          "date": "2026-11-16T06:20:40Z"
+        },
+        {
           "name": "cuora-shell-v1.0.0",
           "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
           "date": "2026-11-16T05:56:19Z"
+        },
+        {
+          "name": "cuora-serve-v1.0.1",
+          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
+          "date": "2026-11-16T06:20:40Z"
         },
         {
           "name": "cuora-serve-v1.0.0",
@@ -3096,59 +3138,19 @@
           "date": "2026-11-16T05:56:19Z"
         },
         {
+          "name": "cuora-sealed-v1.0.1",
+          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
+          "date": "2026-11-16T06:20:40Z"
+        },
+        {
           "name": "cuora-sealed-v0.3.0",
           "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
           "date": "2026-11-16T05:56:19Z"
         },
         {
-          "name": "cuora-ops-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-notice-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-identity-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-identity-keyring-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-identity-file-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-driver-v0.3.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-deploy-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-deploy-cf-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-core-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-config-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
+          "name": "cuora-ops-v1.0.1",
+          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
+          "date": "2026-11-16T06:20:40Z"
         }
       ]
     },
