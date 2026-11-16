@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T06:48:11.621Z",
+  "generated": "2026-11-16T07:04:12.080Z",
   "repos": [
     {
       "name": "tamias",
@@ -7,6 +7,13 @@
       "website": "https://9aia.com/tamias/",
       "repo": "https://github.com/9aia/tamias",
       "commits": [
+        {
+          "sha": "3cac5fc995686d858456d3336bc301636ee77448",
+          "date": "2026-11-16T06:47:55Z",
+          "message": "docs(config): cover [search] and [limits]; drop stale ConfigFormat trait entry",
+          "url": "https://github.com/9aia/tamias/commit/3cac5fc995686d858456d3336bc301636ee77448",
+          "tags": []
+        },
         {
           "sha": "e2da5e4e9c36025f5219cc575927bd273fc91ba7",
           "date": "2026-11-16T06:31:24Z",
@@ -354,13 +361,6 @@
           "date": "2026-11-10T22:50:25Z",
           "message": "feat(bin): tamias bin — link a package's bin/ payload into ~/.local/bin",
           "url": "https://github.com/9aia/tamias/commit/c59938b2a481373e62999cd967bc126cf38aa014",
-          "tags": []
-        },
-        {
-          "sha": "eaca20b7fa46c1a301a4c17d8eb9e8173e8423ac",
-          "date": "2026-11-10T22:04:58Z",
-          "message": "feat(serve): plan op; driver kind validation at dispatch boundary",
-          "url": "https://github.com/9aia/tamias/commit/eaca20b7fa46c1a301a4c17d8eb9e8173e8423ac",
           "tags": []
         }
       ],
@@ -2697,6 +2697,36 @@
       "repo": "https://github.com/9aia/cuora",
       "commits": [
         {
+          "sha": "97bab55ea317ec31788f262f1e0ba9be74a52cdf",
+          "date": "2026-11-16T06:52:07Z",
+          "message": "chore: sync Cargo.lock to 1.0.2",
+          "url": "https://github.com/9aia/cuora/commit/97bab55ea317ec31788f262f1e0ba9be74a52cdf",
+          "tags": []
+        },
+        {
+          "sha": "5f054425ea957791b2ae6b6f550a13a1dc387638",
+          "date": "2026-11-16T06:50:00Z",
+          "message": "chore: sync pack manifest version to 1.0.2",
+          "url": "https://github.com/9aia/cuora/commit/5f054425ea957791b2ae6b6f550a13a1dc387638",
+          "tags": []
+        },
+        {
+          "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
+          "date": "2026-11-16T06:47:56Z",
+          "message": "chore(release): bump versions",
+          "url": "https://github.com/9aia/cuora/commit/d51293db497f6ef68f4dc974463043d5e8dc9e70",
+          "tags": [
+            "cuora-shell-v1.0.2"
+          ]
+        },
+        {
+          "sha": "a39c1cd2eb01538d4145cf8624a5c13b241101f2",
+          "date": "2026-11-16T06:45:51Z",
+          "message": "feat: canonicalize the age identity under the tardigrada namespace",
+          "url": "https://github.com/9aia/cuora/commit/a39c1cd2eb01538d4145cf8624a5c13b241101f2",
+          "tags": []
+        },
+        {
           "sha": "cb34d189ba809d5dad0980fa11989131e927df10",
           "date": "2026-11-16T06:32:42Z",
           "message": "chore: sync Cargo.lock to 1.0.1",
@@ -2709,7 +2739,7 @@
           "message": "chore(release): bump versions",
           "url": "https://github.com/9aia/cuora/commit/bd525cdd23af8b43be2775e3eeef7215ce86255d",
           "tags": [
-            "cuora-ops-v1.0.1"
+            "cuora-testkit-v1.0.1"
           ]
         },
         {
@@ -2746,7 +2776,7 @@
           "message": "chore(release): bump versions",
           "url": "https://github.com/9aia/cuora/commit/65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
           "tags": [
-            "cuora-sealed-v0.3.0"
+            "cuora-testkit-v1.0.0"
           ]
         },
         {
@@ -3021,36 +3051,6 @@
           "message": "feat(driver): tamias-driver-cuora — pavo view driver; retire cuora-tui",
           "url": "https://github.com/9aia/cuora/commit/d24c5fad1dadc922599f7e72039add7ca3f8b965",
           "tags": []
-        },
-        {
-          "sha": "b86e9c2417e026b92763c34d9a3122e7b8306851",
-          "date": "2026-11-08T07:10:16Z",
-          "message": "chore: publish cuora-testkit — dev-dep of 7 crates blocks crates.io publish",
-          "url": "https://github.com/9aia/cuora/commit/b86e9c2417e026b92763c34d9a3122e7b8306851",
-          "tags": []
-        },
-        {
-          "sha": "1f8a3c1089b8b415e97fd81afaa50cfde2a937fd",
-          "date": "2026-11-08T06:53:33Z",
-          "message": "fix(audit): empty CUORA_* no longer shadows ARCA_* fallback; manifest documents legacy aliases",
-          "url": "https://github.com/9aia/cuora/commit/1f8a3c1089b8b415e97fd81afaa50cfde2a937fd",
-          "tags": [
-            "v0.1.0"
-          ]
-        },
-        {
-          "sha": "b6d3ee91f1d3c9ef6476c6ff37eaa02f14752ea6",
-          "date": "2026-11-08T06:21:04Z",
-          "message": "chore(cf): wrangler.ktbhealth.toml — third vault deploy target",
-          "url": "https://github.com/9aia/cuora/commit/b6d3ee91f1d3c9ef6476c6ff37eaa02f14752ea6",
-          "tags": []
-        },
-        {
-          "sha": "5a80f72a96d254e37d752469a6a90d3e47d8066c",
-          "date": "2026-11-08T05:28:49Z",
-          "message": "chore(cf): deploy cuora workers — cuora.luisfuturist.com + cuora.9aia.com",
-          "url": "https://github.com/9aia/cuora/commit/5a80f72a96d254e37d752469a6a90d3e47d8066c",
-          "tags": []
         }
       ],
       "tags": [
@@ -3058,6 +3058,11 @@
           "name": "v0.1.0",
           "sha": "1f8a3c1089b8b415e97fd81afaa50cfde2a937fd",
           "date": "2026-11-08T06:53:33Z"
+        },
+        {
+          "name": "cuora-vault-v1.0.2",
+          "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
+          "date": "2026-11-16T06:47:56Z"
         },
         {
           "name": "cuora-vault-v1.0.1",
@@ -3070,6 +3075,11 @@
           "date": "2026-11-16T05:56:19Z"
         },
         {
+          "name": "cuora-vault-cf-v1.0.2",
+          "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
+          "date": "2026-11-16T06:47:56Z"
+        },
+        {
           "name": "cuora-vault-cf-v1.0.1",
           "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
           "date": "2026-11-16T06:20:40Z"
@@ -3078,6 +3088,11 @@
           "name": "cuora-vault-cf-v1.0.0",
           "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
           "date": "2026-11-16T05:56:19Z"
+        },
+        {
+          "name": "cuora-vault-cached-v1.0.2",
+          "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
+          "date": "2026-11-16T06:47:56Z"
         },
         {
           "name": "cuora-vault-cached-v1.0.1",
@@ -3090,6 +3105,11 @@
           "date": "2026-11-16T05:56:19Z"
         },
         {
+          "name": "cuora-vault-age-v1.0.2",
+          "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
+          "date": "2026-11-16T06:47:56Z"
+        },
+        {
           "name": "cuora-vault-age-v1.0.1",
           "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
           "date": "2026-11-16T06:20:40Z"
@@ -3098,6 +3118,11 @@
           "name": "cuora-vault-age-v1.0.0",
           "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
           "date": "2026-11-16T05:56:19Z"
+        },
+        {
+          "name": "cuora-v1.0.2",
+          "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
+          "date": "2026-11-16T06:47:56Z"
         },
         {
           "name": "cuora-v1.0.1",
@@ -3110,6 +3135,11 @@
           "date": "2026-11-16T05:56:19Z"
         },
         {
+          "name": "cuora-testkit-v1.0.2",
+          "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
+          "date": "2026-11-16T06:47:56Z"
+        },
+        {
           "name": "cuora-testkit-v1.0.1",
           "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
           "date": "2026-11-16T06:20:40Z"
@@ -3120,39 +3150,9 @@
           "date": "2026-11-16T05:56:19Z"
         },
         {
-          "name": "cuora-shell-v1.0.1",
-          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
-          "date": "2026-11-16T06:20:40Z"
-        },
-        {
-          "name": "cuora-shell-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-serve-v1.0.1",
-          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
-          "date": "2026-11-16T06:20:40Z"
-        },
-        {
-          "name": "cuora-serve-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-sealed-v1.0.1",
-          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
-          "date": "2026-11-16T06:20:40Z"
-        },
-        {
-          "name": "cuora-sealed-v0.3.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-ops-v1.0.1",
-          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
-          "date": "2026-11-16T06:20:40Z"
+          "name": "cuora-shell-v1.0.2",
+          "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
+          "date": "2026-11-16T06:47:56Z"
         }
       ]
     },
@@ -4276,6 +4276,13 @@
       "website": "https://9aia.com/lasius/",
       "repo": "https://github.com/9aia/lasius",
       "commits": [
+        {
+          "sha": "330a88c72c87d5bdf0f6fb0a76054737d5d7883e",
+          "date": "2026-11-16T06:49:22Z",
+          "message": "doctor: loc coverage check against .github loc config pack",
+          "url": "https://github.com/9aia/lasius/commit/330a88c72c87d5bdf0f6fb0a76054737d5d7883e",
+          "tags": []
+        },
         {
           "sha": "9366164f69783b59780fec8c266ab4fcd9315082",
           "date": "2026-11-16T06:42:15Z",
