@@ -5,8 +5,7 @@ import { data as activity } from '.vitepress/theme/activity.data.ts'
 
 # Activity
 
-Tags are releases. One chronological feed of commits and tags across the
-org; release-tagged commits carry their tag inline.
+Tags are releases. One chronological feed of commits and tags across the org; release-tagged commits carry their tag inline.
 
 <ActivityFeed />
 

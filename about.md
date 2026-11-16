@@ -46,16 +46,11 @@ const members = [
 
 # About
 
-Open infrastructure for agent-driven development: a small group of
-developers building minimal, open-source engines that people and agents
-can own.
+Open infrastructure for agent-driven development: a small group of developers building minimal, open-source engines that people and agents can own.
 
 ## What we believe
 
-Coding agents are here to stay. The question is who owns the
-infrastructure they run on. We think the answer should be you: open
-source, self-hosted, composable, yours. Not a SaaS control plane, not a
-DSL, not a server fleet you rent back.
+Coding agents are here to stay. The question is who owns the infrastructure they run on. We think the answer should be you: open source, self-hosted, composable, yours. Not a SaaS control plane, not a DSL, not a server fleet you rent back.
 
 <div class="values-grid">
     <div class="value">
@@ -107,22 +102,11 @@ DSL, not a server fleet you rent back.
 
 ## The factory
 
-We think of the stack as a factory, not a suite. Each tool is a machine: a
-small engine with one mechanism and a shipped preset. tamias is the
-packaging dock: everything installs and updates through its packs; myco
-the ledger on the floor, kuda the code memory, sturn the wiring, bupha
-the gate, sepia the shifts, peregrin the foreman, cuora the safe.
+We think of the stack as a factory, not a suite. Each tool is a machine: a small engine with one mechanism and a shipped preset. tamias is the packaging dock: everything installs and updates through its packs; myco the ledger on the floor, kuda the code memory, sturn the wiring, bupha the gate, sepia the shifts, peregrin the foreman, cuora the safe.
 
-None of them were designed as engines. They became them. Features kept
-pulling the same way until the mechanism stood alone and the domain was
-just configuration. That's the method: engines are grown from use, not
-planned upfront. Every new feature answers "engine or preset?" Machines
-stay small, replaceable, and owned.
+None of them were designed as engines. They became them. Features kept pulling the same way until the mechanism stood alone and the domain was just configuration. That's the method: engines are grown from use, not planned upfront. Every new feature answers "engine or preset?" Machines stay small, replaceable, and owned.
 
-And the factory is run by the workers it serves: agents are the
-operators, not the audience. Self-hosted, composable, yours. The
-<VPLink href="/ecosystem">ecosystem map</VPLink> shows how the layers fit
-together.
+And the factory is run by the workers it serves: agents are the operators, not the audience. Self-hosted, composable, yours. The <VPLink href="/ecosystem">ecosystem map</VPLink> shows how the layers fit together.
 
 ## Tech stack
 
@@ -153,8 +137,7 @@ together.
 
 ## Contact
 
-Questions, contributions, or collaboration? See the
-<VPLink href="/contact">contact page</VPLink>.
+Questions, contributions, or collaboration? See the <VPLink href="/contact">contact page</VPLink>.
 
 <style scoped>
 .values-grid {

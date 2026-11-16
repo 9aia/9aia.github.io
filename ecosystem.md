@@ -43,10 +43,7 @@ const flow = [
 
 # The ecosystem
 
-GAIA is a suite of small engines, not a framework, not a control plane. Each
-project owns one mechanism, speaks a wire protocol, and composes with the
-rest. The layers below are the architecture: **delivery → memory →
-process → agency**, from how artifacts move to what acts and what shows.
+GAIA is a suite of small engines, not a framework, not a control plane. Each project owns one mechanism, speaks a wire protocol, and composes with the rest. The layers below are the architecture: **delivery → memory → process → agency**, from how artifacts move to what acts and what shows.
 
 ## The layers
 

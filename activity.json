@@ -1,9 +1,9 @@
 {
-  "generated": "2026-11-16T02:21:04.709Z",
+  "generated": "2026-11-16T02:26:02.429Z",
   "repos": [
     {
       "name": "tamias",
-      "layer": "packaging",
+      "layer": "delivery",
       "website": "https://9aia.com/tamias/",
       "repo": "https://github.com/9aia/tamias",
       "commits": [
@@ -467,7 +467,7 @@
     },
     {
       "name": "scarab",
-      "layer": "packaging",
+      "layer": "delivery",
       "website": "https://9aia.com/scarab/",
       "repo": "https://github.com/9aia/scarab",
       "commits": [
@@ -651,7 +651,7 @@
     },
     {
       "name": "tarsi",
-      "layer": "plane",
+      "layer": "delivery",
       "website": "https://9aia.com/tarsi/",
       "repo": "https://github.com/9aia/tarsi",
       "commits": [
@@ -1100,7 +1100,7 @@
     },
     {
       "name": "bupha",
-      "layer": "plane",
+      "layer": "delivery",
       "website": "https://9aia.com/bupha/",
       "repo": "https://github.com/9aia/bupha",
       "commits": [
@@ -1560,7 +1560,7 @@
     },
     {
       "name": "myco",
-      "layer": "engine",
+      "layer": "memory",
       "website": "https://9aia.com/myco/",
       "repo": "https://github.com/9aia/myco",
       "commits": [
@@ -1959,7 +1959,7 @@
     },
     {
       "name": "kuda",
-      "layer": "engine",
+      "layer": "memory",
       "website": "https://9aia.com/kuda/",
       "repo": "https://github.com/9aia/kuda",
       "commits": [
@@ -2324,7 +2324,7 @@
     },
     {
       "name": "mimus",
-      "layer": "engine",
+      "layer": "process",
       "website": "https://9aia.com/mimus/",
       "repo": "https://github.com/9aia/mimus",
       "commits": [
@@ -2683,7 +2683,7 @@
     },
     {
       "name": "cuora",
-      "layer": "engine",
+      "layer": "process",
       "website": "https://9aia.com/cuora/",
       "repo": "https://github.com/9aia/cuora",
       "commits": [
@@ -3050,7 +3050,7 @@
     },
     {
       "name": "sturn",
-      "layer": "engine",
+      "layer": "memory",
       "website": "https://9aia.com/sturn/",
       "repo": "https://github.com/9aia/sturn",
       "commits": [
@@ -3409,7 +3409,7 @@
     },
     {
       "name": "hypha",
-      "layer": "engine",
+      "layer": "memory",
       "website": "https://9aia.com/hypha/",
       "repo": "https://github.com/9aia/hypha",
       "commits": [
@@ -3776,7 +3776,7 @@
     },
     {
       "name": "cicada",
-      "layer": "engine",
+      "layer": "process",
       "website": "https://9aia.com/cicada/",
       "repo": "https://github.com/9aia/cicada",
       "commits": [
@@ -4135,7 +4135,7 @@
     },
     {
       "name": "lasius",
-      "layer": "engine",
+      "layer": "process",
       "website": "https://9aia.com/lasius/",
       "repo": "https://github.com/9aia/lasius",
       "commits": [
@@ -4452,7 +4452,7 @@
     },
     {
       "name": "sepia",
-      "layer": "engine",
+      "layer": "process",
       "website": "https://9aia.com/sepia/",
       "repo": "https://github.com/9aia/sepia",
       "commits": [
@@ -4819,7 +4819,7 @@
     },
     {
       "name": "peregrin",
-      "layer": "orchestration",
+      "layer": "agency",
       "website": "https://9aia.com/peregrin/",
       "repo": "https://github.com/9aia/peregrin",
       "commits": [
@@ -5184,7 +5184,7 @@
     },
     {
       "name": "pavo",
-      "layer": "surface",
+      "layer": "agency",
       "website": "https://9aia.com/pavo/",
       "repo": "https://github.com/9aia/pavo",
       "commits": [
