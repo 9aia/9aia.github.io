@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { VPLink } from 'vitepress/theme'
 import { data as activity } from '.vitepress/theme/activity.data.ts'
 
@@ -10,20 +10,60 @@ const FILTERS = [
   { key: 'commits', label: 'Commits' },
 ]
 
-const allCommits = activity.repos
-  .flatMap((r) => r.commits.map((c) => ({ ...c, repo: r.name, repoUrl: r.repo })))
-  .sort((a, b) => b.date.localeCompare(a.date))
+// Unified chronological feed: commits (with inline tag badges) plus
+// standalone tag entries whose commits fall outside the fetched window.
+const commitSha = new Set()
+const items = []
+
+for (const r of activity.repos) {
+  for (const c of r.commits) {
+    commitSha.add(`${r.name}:${c.sha}`)
+    items.push({
+      kind: 'commit',
+      repo: r.name,
+      repoUrl: r.repo,
+      date: c.date,
+      sha: c.sha,
+      message: c.message,
+      url: c.url,
+      tags: c.tags,
+    })
+  }
+}
 
 // Release-tagged commits always show; fill the rest with latest activity.
-const tagged = allCommits.filter((c) => c.tags.length > 0)
-const commits = [
-  ...tagged,
-  ...allCommits.filter((c) => c.tags.length === 0).slice(0, 150 - tagged.length),
-].sort((a, b) => b.date.localeCompare(a.date))
-
-const tags = activity.repos
-  .flatMap((r) => r.tags.map((t) => ({ ...t, repo: r.name, repoUrl: r.repo })))
+const taggedCommits = items.filter((i) => i.kind === 'commit' && i.tags.length > 0)
+const untagged = items
+  .filter((i) => i.kind === 'commit' && i.tags.length === 0)
   .sort((a, b) => b.date.localeCompare(a.date))
+  .slice(0, Math.max(0, 150 - taggedCommits.length))
+const commitItems = [...taggedCommits, ...untagged].sort((a, b) =>
+  b.date.localeCompare(a.date),
+)
+
+for (const r of activity.repos) {
+  for (const t of r.tags) {
+    if (commitSha.has(`${r.name}:${t.sha}`)) continue // already badged inline
+    items.push({
+      kind: 'tag',
+      repo: r.name,
+      repoUrl: r.repo,
+      date: t.date,
+      name: t.name,
+      url: `${r.repo}/releases/tag/${t.name}`,
+    })
+  }
+}
+
+const tagItems = items.filter((i) => i.kind === 'tag')
+const tagCommits = commitItems.filter((c) => c.tags.length > 0)
+
+const visible = computed(() => {
+  if (filter.value === 'tags')
+    return [...tagCommits, ...tagItems].sort((a, b) => b.date.localeCompare(a.date))
+  if (filter.value === 'commits') return commitItems
+  return [...commitItems, ...tagItems].sort((a, b) => b.date.localeCompare(a.date))
+})
 
 function shortDate(iso) {
   return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
@@ -32,8 +72,8 @@ function shortDate(iso) {
 
 # Activity
 
-Tags are releases. This feed is the org's commit activity, with release
-tags marked inline.
+Tags are releases. One chronological feed of commits and tags across the
+org; release-tagged commits carry their tag inline.
 
 <div class="filters">
   <button
@@ -45,31 +85,21 @@ tags marked inline.
   >{{ f.label }}</button>
 </div>
 
-<template v-if="filter === 'all' || filter === 'tags'">
-  <h2>Tags</h2>
-  <p class="feed-note">Every tag across the org, newest first. Tags mark releases.</p>
-  <ul class="feed">
-    <li v-for="t in tags.slice(0, 50)" :key="t.repo + t.name" class="feed-item">
-      <span class="feed-tag">{{ t.name }}</span>
-      <VPLink :href="`${t.repoUrl}/releases/tag/${t.name}`" class="feed-repo">{{ t.repo }}</VPLink>
-      <span class="feed-date">{{ shortDate(t.date) }}</span>
-    </li>
-    <li v-if="tags.length === 0" class="feed-empty">No tags yet. Tags mark releases.</li>
-  </ul>
-</template>
-
-<template v-if="filter === 'all' || filter === 'commits'">
-  <h2>Commits</h2>
-  <p class="feed-note">Latest commits across all active repos, newest first.</p>
-  <ul class="feed">
-    <li v-for="c in commits" :key="c.repo + c.sha" class="feed-item feed-commit">
-      <VPLink :href="c.url" class="feed-repo">{{ c.repo }}</VPLink>
-      <span class="feed-msg">{{ c.message }}</span>
-      <span v-for="t in c.tags" :key="t" class="feed-badge">{{ t }}</span>
-      <span class="feed-date">{{ shortDate(c.date) }}</span>
-    </li>
-  </ul>
-</template>
+<ul class="feed">
+  <li v-for="i in visible" :key="i.kind + i.repo + (i.sha ?? i.name)" class="feed-item">
+    <template v-if="i.kind === 'tag'">
+      <span class="feed-tag">{{ i.name }}</span>
+      <VPLink :href="i.url" class="feed-repo">{{ i.repo }}</VPLink>
+    </template>
+    <template v-else>
+      <VPLink :href="i.url" class="feed-repo">{{ i.repo }}</VPLink>
+      <span class="feed-msg">{{ i.message }}</span>
+      <span v-for="t in i.tags" :key="t" class="feed-badge">{{ t }}</span>
+    </template>
+    <span class="feed-date">{{ shortDate(i.date) }}</span>
+  </li>
+  <li v-if="visible.length === 0" class="feed-empty">Nothing here yet.</li>
+</ul>
 
 <p class="feed-generated">Generated {{ shortDate(activity.generated) }}. Refreshes on each site build.</p>
 
@@ -139,7 +169,6 @@ tags marked inline.
   white-space: nowrap;
 }
 .feed-empty,
-.feed-note,
 .feed-generated {
   color: var(--vp-c-text-2);
   font-size: 13px;
