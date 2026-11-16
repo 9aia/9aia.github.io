@@ -15,4 +15,6 @@ export interface Project {
     status?: ProjectStatus;
     stage?: ProjectStage;
     order?: number;
+    depends_on?: string[];
+    integrates_with?: string[];
 }

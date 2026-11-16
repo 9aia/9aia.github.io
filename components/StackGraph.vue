@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue'
-import { VueFlow, Handle, Position } from '@vue-flow/core'
+import dagre from '@dagrejs/dagre'
+import { VueFlow } from '@vue-flow/core'
 import { Controls } from '@vue-flow/controls'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
@@ -17,98 +18,116 @@ const LAYER_COLORS = {
     interface: '#fb7185',
 }
 
-const COL_W = 360
-const REGION_W = 320
-const CHILD_X = 24
-const CHILD_Y = 118
-const CHILD_STEP = 64
+const NODE_W = 230
+const NODE_H = 76
 
-const flowNodes = computed(() => {
-    const nodes = []
-    props.layers.forEach((l, i) => {
-        const regionId = `region-${l.key}`
-        nodes.push({
-            id: regionId,
-            type: 'region',
-            position: { x: i * COL_W, y: 0 },
-            width: REGION_W,
-            data: { ...l, color: LAYER_COLORS[l.key] ?? '#8b9bb4' },
-            draggable: false,
-            connectable: false,
-            selectable: false,
-        })
-        l.projects.forEach((p, j) => {
-            nodes.push({
-                id: `p-${p.name}`,
-                type: 'project',
-                parentNode: regionId,
-                extent: 'parent',
-                expandParent: true,
-                position: { x: CHILD_X, y: CHILD_Y + j * CHILD_STEP },
-                data: { p, color: LAYER_COLORS[l.key] ?? '#8b9bb4' },
-                draggable: false,
-                connectable: false,
-            })
-        })
-    })
-    return nodes
+const allProjects = computed(() =>
+    props.layers.flatMap((l) => l.projects.map((p) => ({ ...p, layer: l }))),
+)
+
+const byName = computed(() => {
+    const map = new Map()
+    for (const lp of allProjects.value) map.set(lp.name, lp)
+    return map
 })
 
-const flowEdges = computed(() => {
+const rawEdges = computed(() => {
     const edges = []
-    props.layers.forEach((l, i) => {
-        const next = props.layers[i + 1]
-        if (next) {
-            edges.push({
-                id: `e-chain-${l.key}`,
-                source: `region-${l.key}`,
-                sourceHandle: 'next',
-                target: `region-${next.key}`,
-                targetHandle: 'prev',
-                type: 'smoothstep',
-                class: 'stack-edge-chain',
-                animated: true,
-            })
+    const seen = new Set()
+    for (const lp of allProjects.value) {
+        const add = (target, kind) => {
+            if (!byName.value.has(target)) return
+            const id = `${kind}:${lp.name}->${target}`
+            if (seen.has(id)) return
+            seen.add(id)
+            edges.push({ source: `p-${lp.name}`, target: `p-${target}`, kind })
+        }
+        for (const d of lp.depends_on ?? []) add(d, 'dep')
+        for (const i of lp.integrates_with ?? []) add(i, 'integrates')
+    }
+    return edges
+})
+
+const { flowNodes, flowEdges } = computed(() => {
+    const g = new dagre.graphlib.Graph()
+    g.setGraph({ rankdir: 'LR', nodesep: 24, ranksep: 110, marginx: 16, marginy: 16 })
+    g.setDefaultEdgeLabel(() => ({}))
+
+    for (const lp of allProjects.value) {
+        g.setNode(`p-${lp.name}`, { width: NODE_W, height: NODE_H })
+    }
+    for (const e of rawEdges.value) {
+        g.setEdge(e.source, e.target)
+    }
+    dagre.layout(g)
+
+    const nodes = allProjects.value.map((lp) => {
+        const n = g.node(`p-${lp.name}`)
+        return {
+            id: `p-${lp.name}`,
+            type: 'project',
+            position: { x: n.x - NODE_W / 2, y: n.y - NODE_H / 2 },
+            data: {
+                p: lp,
+                layer: lp.layer,
+                color: LAYER_COLORS[lp.layer.key] ?? '#8b9bb4',
+            },
+            connectable: false,
+            draggable: false,
         }
     })
-    return edges
+
+    const edges = rawEdges.value.map((e) => {
+        const src = byName.value.get(e.source.slice(2))
+        const color = LAYER_COLORS[src.layer.key] ?? '#8b9bb4'
+        return {
+            id: `${e.kind}:${e.source}->${e.target}`,
+            source: e.source,
+            target: e.target,
+            type: 'smoothstep',
+            class: `dep-edge dep-edge--${e.kind}`,
+            style: { stroke: color, strokeOpacity: e.kind === 'dep' ? 0.6 : 0.4 },
+        }
+    })
+
+    return { flowNodes: nodes, flowEdges: edges }
 })
 </script>
 
 <template>
-    <VueFlow
-        class="stack-flow"
-        :nodes="flowNodes"
-        :edges="flowEdges"
-        :nodes-draggable="false"
-        :nodes-connectable="false"
-        fit-view-on-init
-        :fit-view-options="{ padding: 0.06 }"
-    >
-        <template #node-region="nodeProps">
-            <div class="vf-region" :style="{ '--accent': nodeProps.data.color }">
-                <Handle type="target" :position="Position.Left" id="prev" class="vf-handle" style="top: 56px" />
-                <Handle type="source" :position="Position.Right" id="next" class="vf-handle" style="top: 56px" />
-                <div class="vf-region-head">
-                    <div class="vf-region-kicker">{{ nodeProps.data.projects.length }} organisms</div>
-                    <div class="vf-region-title">{{ nodeProps.data.title }}</div>
-                    <p class="vf-region-blurb">{{ nodeProps.data.blurb }}</p>
+    <div class="stack-graph-wrap">
+        <VueFlow
+            class="stack-flow"
+            :nodes="flowNodes"
+            :edges="flowEdges"
+            :nodes-connectable="false"
+            :nodes-draggable="false"
+            fit-view-on-init
+            :fit-view-options="{ padding: 0.08 }"
+        >
+            <template #node-project="nodeProps">
+                <div class="vf-node" :style="{ '--accent': nodeProps.data.color }">
+                    <a :href="nodeProps.data.p.docs ?? nodeProps.data.p.website ?? '#'" class="vf-node-link">
+                        <span class="vf-node-kicker">{{ nodeProps.data.layer.title }}</span>
+                        <span class="vf-node-name">{{ nodeProps.data.p.name }}</span>
+                        <span class="vf-node-tag">{{ nodeProps.data.p.tagline }}</span>
+                    </a>
                 </div>
-            </div>
-        </template>
-        <template #node-project="nodeProps">
-            <div class="vf-project" :style="{ '--accent': nodeProps.data.color }">
-                <a :href="nodeProps.data.p.docs ?? nodeProps.data.p.website ?? '#'" class="vf-project-link">
-                    <span class="vf-project-name">{{ nodeProps.data.p.name }}</span>
-                    <span class="vf-project-tag">{{ nodeProps.data.p.tagline }}</span>
-                </a>
-            </div>
-        </template>
-        <Controls :show-interactive="false" />
-    </VueFlow>
+            </template>
+            <Controls :show-interactive="false" />
+        </VueFlow>
+        <div class="stack-legend">
+            <span class="stack-legend-item"><i class="stack-legend-line stack-legend-line--dep" />depends on</span>
+            <span class="stack-legend-item"><i class="stack-legend-line stack-legend-line--int" />integrates</span>
+        </div>
+    </div>
 </template>
 
 <style>
+.stack-graph-wrap {
+    position: relative;
+}
+
 .stack-flow {
     height: 640px;
     border: 1px solid var(--vp-c-divider);
@@ -120,66 +139,23 @@ const flowEdges = computed(() => {
     stroke-linecap: round;
 }
 
-.stack-flow .vue-flow__edge.stack-edge-chain .vue-flow__edge-path {
-    stroke: var(--vp-c-brand-1);
-    stroke-width: 2;
+.stack-flow .vue-flow__edge.dep-edge--dep .vue-flow__edge-path {
+    stroke-width: 1.6;
 }
 
-.vf-handle {
-    opacity: 0;
-    pointer-events: none;
+.stack-flow .vue-flow__edge.dep-edge--integrates .vue-flow__edge-path {
+    stroke-dasharray: 5 4;
 }
 
-.vf-region {
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
-    background: color-mix(in srgb, var(--accent) 6%, var(--vp-c-bg-soft));
-}
-
-.vf-region-head {
-    padding: 18px 20px 14px;
-}
-
-.vf-region-kicker {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: var(--accent);
-}
-
-.vf-region-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--vp-c-text-1);
-    margin-top: 2px;
-}
-
-.vf-region-blurb {
-    margin: 6px 0 0;
-    font-size: 12px;
-    line-height: 18px;
-    color: var(--vp-c-text-2);
-}
-
-.vf-project {
-    width: 272px;
+.vf-node {
+    width: 230px;
     border-radius: 10px;
     background: var(--vp-c-bg-soft);
-    border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--vp-c-divider));
-    box-shadow: 0 1px 3px rgb(0 0 0 / 0.12);
+    border: 1px solid var(--vp-c-divider);
     color: var(--vp-c-text-1);
-    transition: transform 0.15s ease, border-color 0.15s ease;
 }
 
-.vf-project:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent);
-}
-
-.vf-project-link {
+.vf-node-link {
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -188,17 +164,20 @@ const flowEdges = computed(() => {
     text-decoration: none;
 }
 
-.vf-project-name {
-    font-size: 13px;
+.vf-node-kicker {
+    font-size: 10px;
     font-weight: 600;
-    color: var(--vp-c-text-1);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--accent);
 }
 
-.vf-project-link:hover .vf-project-name {
-    color: var(--vp-c-brand-1);
+.vf-node-name {
+    font-size: 14px;
+    font-weight: 700;
 }
 
-.vf-project-tag {
+.vf-node-tag {
     font-size: 11px;
     line-height: 16px;
     color: var(--vp-c-text-2);
@@ -206,6 +185,38 @@ const flowEdges = computed(() => {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.stack-legend {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    display: flex;
+    gap: 14px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--vp-c-divider);
+    background: color-mix(in srgb, var(--vp-c-bg) 85%, transparent);
+    backdrop-filter: blur(4px);
+    font-size: 11px;
+    color: var(--vp-c-text-2);
+}
+
+.stack-legend-line {
+    display: inline-block;
+    width: 22px;
+    height: 0;
+    margin-right: 5px;
+    vertical-align: middle;
+    border-top: 2px solid var(--vp-c-text-2);
+}
+
+.stack-legend-line--dep {
+    border-top-style: solid;
+}
+
+.stack-legend-line--int {
+    border-top-style: dashed;
 }
 
 .stack-flow .vue-flow__controls {
