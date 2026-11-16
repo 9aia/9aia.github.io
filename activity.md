@@ -10,7 +10,7 @@ const FILTERS = [
   { key: 'commits', label: 'Commits' },
 ]
 
-// One row anatomy for every item: repo | summary | tag badges | date.
+// One row anatomy for every item: repo | summary | tag badges | time.
 // summary links to the commit or the release/tag page; badges link to releases.
 const items = []
 
@@ -64,9 +64,43 @@ const visible = computed(() => {
   return [...commitItems, ...tagItems].sort((a, b) => b.date.localeCompare(a.date))
 })
 
-function shortDate(iso) {
-  return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+function timeStr(iso) {
+  return new Date(iso).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
 }
+
+function dayKey(iso) {
+  const d = new Date(iso)
+  return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`
+}
+
+function dayLabel(iso) {
+  const d = new Date(iso)
+  const now = new Date()
+  const start = (x) => new Date(x.getFullYear(), x.getMonth(), x.getDate()).getTime()
+  const diff = Math.round((start(now) - start(d)) / 86400000)
+  if (diff === 0) return 'Today'
+  if (diff === 1) return 'Yesterday'
+  if (diff < 7)
+    return d.toLocaleDateString('en-US', { weekday: 'long' })
+  if (d.getFullYear() === now.getFullYear())
+    return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+}
+
+// Group the visible feed into per-day sections, newest day first.
+const groups = computed(() => {
+  const out = []
+  for (const i of visible.value) {
+    const k = dayKey(i.date)
+    let last = out[out.length - 1]
+    if (!last || last.key !== k) {
+      last = { key: k, label: dayLabel(i.date), items: [] }
+      out.push(last)
+    }
+    last.items.push(i)
+  }
+  return out
+})
 </script>
 
 # Activity
@@ -85,27 +119,30 @@ org; release-tagged commits carry their tag inline.
 </div>
 
 <ul class="feed">
-  <li v-for="i in visible" :key="i.kind + i.repo + i.summary + i.date" class="feed-item">
-    <VPLink :href="i.repoUrl" class="feed-repo">{{ i.repo }}</VPLink>
-    <VPLink
-      :href="i.summaryUrl"
-      class="feed-msg"
-      :class="{ 'feed-tag-name': i.kind === 'tag' }"
-    >{{ i.summary }}</VPLink>
-    <a
-      v-for="t in i.badges"
-      :key="t.name"
-      :href="t.url"
-      class="feed-badge"
-      target="_blank"
-      rel="noopener"
-    >{{ t.name }}</a>
-    <span class="feed-date">{{ shortDate(i.date) }}</span>
-  </li>
+  <template v-for="g in groups" :key="g.key">
+    <li class="feed-day">{{ g.label }}</li>
+    <li v-for="i in g.items" :key="i.kind + i.repo + i.summary + i.date" class="feed-item">
+      <VPLink :href="i.repoUrl" class="feed-repo">{{ i.repo }}</VPLink>
+      <VPLink
+        :href="i.summaryUrl"
+        class="feed-msg"
+        :class="{ 'feed-tag-name': i.kind === 'tag' }"
+      >{{ i.summary }}</VPLink>
+      <a
+        v-for="t in i.badges"
+        :key="t.name"
+        :href="t.url"
+        class="feed-badge"
+        target="_blank"
+        rel="noopener"
+      >{{ t.name }}</a>
+      <span class="feed-time">{{ timeStr(i.date) }}</span>
+    </li>
+  </template>
   <li v-if="visible.length === 0" class="feed-empty">Nothing here yet.</li>
 </ul>
 
-<p class="feed-generated">Generated {{ shortDate(activity.generated) }}. Refreshes on each site build.</p>
+<p class="feed-generated">Generated {{ new Date(activity.generated).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) }}. Refreshes on each site build.</p>
 
 <style scoped>
 .filters {
@@ -133,12 +170,20 @@ org; release-tagged commits carry their tag inline.
   margin: 0;
   padding: 0;
 }
+.feed-day {
+  padding: 18px 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--vp-c-text-3);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
 .feed-item {
   display: flex;
   align-items: baseline;
   gap: 10px;
   padding: 8px 0;
-  border-bottom: 1px solid var(--vp-c-divider);
   font-size: 14px;
 }
 .feed-repo {
@@ -175,7 +220,7 @@ org; release-tagged commits carry their tag inline.
   background: var(--vp-c-brand-1);
   color: var(--vp-c-bg);
 }
-.feed-date {
+.feed-time {
   color: var(--vp-c-text-3);
   font-size: 12px;
   white-space: nowrap;
