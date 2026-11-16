@@ -1,6 +1,8 @@
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { VPLink } from 'vitepress/theme'
+import { inBrowser } from 'vitepress'
+import Pagination from './components/Pagination.vue'
 import { data as activity } from '.vitepress/theme/activity.data.ts'
 
 const filter = ref('all')
@@ -66,10 +68,23 @@ const visible = computed(() => {
 
 const PER_PAGE = 50
 const page = ref(1)
-watch(filter, () => { page.value = 1 })
 
 const totalPages = computed(() => Math.max(1, Math.ceil(visible.value.length / PER_PAGE)))
+
 watch(totalPages, (n) => { if (page.value > n) page.value = n })
+watch(page, (n) => {
+  if (!inBrowser) return
+  const url = new URL(location.href)
+  if (n > 1) url.searchParams.set('page', String(n))
+  else url.searchParams.delete('page')
+  history.replaceState(null, '', url)
+})
+watch(filter, () => { page.value = 1 })
+
+onMounted(() => {
+  const q = Number(new URLSearchParams(location.search).get('page'))
+  if (q > 1) page.value = Math.min(q, totalPages.value)
+})
 
 const pageItems = computed(() =>
   visible.value.slice((page.value - 1) * PER_PAGE, page.value * PER_PAGE),
@@ -127,12 +142,13 @@ const groups = computed(() => {
 Tags are releases. One chronological feed of commits and tags across the
 org; release-tagged commits carry their tag inline.
 
-<div class="filters">
+<div class="filters" role="group" aria-label="Filter activity">
   <button
     v-for="f in FILTERS"
     :key="f.key"
     class="filter"
     :class="{ active: filter === f.key }"
+    :aria-pressed="filter === f.key"
     @click="filter = f.key"
   >{{ f.label }}</button>
 </div>
@@ -161,14 +177,7 @@ org; release-tagged commits carry their tag inline.
   <li v-if="visible.length === 0" class="feed-empty">Nothing here yet.</li>
 </ul>
 
-<nav v-if="totalPages > 1" class="pager">
-  <button class="page-btn" :disabled="page === 1" @click="page--">‹ Prev</button>
-  <template v-for="(p, idx) in pageList" :key="p">
-    <span v-if="idx > 0 && p - pageList[idx - 1] > 1" class="page-gap">…</span>
-    <button class="page-btn" :class="{ active: p === page }" @click="page = p">{{ p }}</button>
-  </template>
-  <button class="page-btn" :disabled="page === totalPages" @click="page++">Next ›</button>
-</nav>
+<Pagination :page="page" :total-pages="totalPages" :pages="pageList" @select="page = $event" />
 
 <p class="feed-generated">Generated {{ new Date(activity.generated).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) }}. Refreshes on each site build.</p>
 
@@ -253,41 +262,6 @@ org; release-tagged commits carry their tag inline.
   font-size: 12px;
   white-space: nowrap;
   flex-shrink: 0;
-}
-.pager {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 20px;
-}
-.page-btn {
-  min-width: 32px;
-  padding: 4px 10px;
-  border-radius: 8px;
-  border: 1px solid var(--vp-c-divider);
-  background: transparent;
-  color: var(--vp-c-text-2);
-  font-size: 13px;
-  cursor: pointer;
-}
-.page-btn:hover:not(:disabled) {
-  color: var(--vp-c-brand-1);
-  border-color: var(--vp-c-brand-1);
-}
-.page-btn.active {
-  background: var(--vp-c-brand-soft);
-  border-color: var(--vp-c-brand-1);
-  color: var(--vp-c-brand-1);
-  font-weight: 600;
-}
-.page-btn:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-.page-gap {
-  color: var(--vp-c-text-3);
-  padding: 0 2px;
 }
 .feed-empty,
 .feed-generated {
