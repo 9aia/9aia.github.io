@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue';
 // Ported from gaia-docus `app/components/MetaBlobs.vue` — same WebGL
 // metaball field (26 drifting blobs, mouse repulsion, wobble, reduced-
 // motion + offscreen gating). Colors resolve from VitePress CSS vars so
