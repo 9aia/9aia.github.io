@@ -15,6 +15,7 @@ hero:
 ---
 
 <script setup>
+import { defineAsyncComponent } from 'vue'
 import { VPTeamPageTitle, VPLink } from "vitepress/theme";
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
@@ -33,8 +34,10 @@ const layerTitle = Object.fromEntries(layerMeta.map((l) => [l.key, l.title]))
 
 const layers = layerMeta.map((l) => ({
   ...l,
-  projects: projects.filter((p) => p.layer === l.key),
+  projects: projects.filter((p) => p.layer === l.key && p.status !== 'deprecated'),
 }))
+
+const StackGraph = defineAsyncComponent(() => import('./components/StackGraph.vue'))
 
 const active = projects.filter((p) => p.status !== 'deprecated')
 
@@ -55,32 +58,9 @@ function shortDate(iso) {
           One organism, four layers: delivery down to interface.
         </template>
     </VPTeamPageTitle>
-    <Carousel
-        class="stack-carousel"
-        :items-to-show="3.05"
-        :items-to-scroll="1"
-        :wrap-around="true"
-        :mouse-drag="true"
-        :breakpoints="{ 640: { itemsToShow: 1.15 }, 1024: { itemsToShow: 2.05 }, 1280: { itemsToShow: 3.05 } }"
-    >
-        <Slide v-for="l in layers" :key="l.key">
-            <div class="layer-card">
-                <div class="layer-head">
-                    <span class="layer-name">{{ l.title }}</span>
-                </div>
-                <p class="layer-blurb">{{ l.blurb }}</p>
-                <ul class="layer-list">
-                    <li v-for="p in l.projects" :key="p.name">
-                        <a :href="p.docs ?? p.website ?? '#'" class="layer-link">{{ p.name }}</a>
-                        <span class="layer-tag">{{ p.tagline }}</span>
-                    </li>
-                </ul>
-            </div>
-        </Slide>
-        <template #addons>
-            <Navigation />
-        </template>
-    </Carousel>
+    <ClientOnly>
+        <StackGraph :layers="layers" />
+    </ClientOnly>
     <p class="ecosystem-cta">
         <VPLink href="/ecosystem">How it all fits together →</VPLink>
     </p>
@@ -187,7 +167,6 @@ function shortDate(iso) {
     margin-top: 16px;
 }
 
-.stack-carousel,
 .organism-carousel {
     --vc-nav-background: var(--vp-c-bg-soft);
     --vc-nav-color: var(--vp-c-text-1);
@@ -195,92 +174,18 @@ function shortDate(iso) {
     --vc-nav-border-radius: 50%;
     --vc-nav-height: 36px;
     --vc-nav-width: 36px;
-}
-
-.stack-carousel {
-    padding: 8px 32px 24px;
-}
-
-.stack-carousel .carousel__slide {
-    padding: 0 8px;
-    display: flex;
-    height: 100%;
-}
-
-.stack-carousel .layer-card {
-    flex: 1;
-    height: 100%;
-}
-
-.organism-carousel {
     padding: 8px 32px 24px;
 }
 
 .organism-carousel .carousel__prev,
-.organism-carousel .carousel__next,
-.stack-carousel .carousel__prev,
-.stack-carousel .carousel__next {
+.organism-carousel .carousel__next {
     border: 1px solid var(--vp-c-divider);
     transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .organism-carousel .carousel__prev:hover,
-.organism-carousel .carousel__next:hover,
-.stack-carousel .carousel__prev:hover,
-.stack-carousel .carousel__next:hover {
+.organism-carousel .carousel__next:hover {
     border-color: var(--vp-c-brand-1);
-}
-
-.layer-card {
-    border-radius: 12px;
-    padding: 24px;
-    background-color: var(--vp-c-bg-soft);
-}
-
-.layer-name {
-    font-weight: 700;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--vp-c-brand-1);
-}
-
-.layer-blurb {
-    margin: 8px 0 16px;
-    font-size: 13px;
-    line-height: 20px;
-    color: var(--vp-c-text-2);
-}
-
-.layer-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.layer-list li {
-    display: flex;
-    flex-direction: column;
-}
-
-.layer-link {
-    font-weight: 600;
-    font-size: 14px;
-    color: var(--vp-c-text-1);
-    text-decoration: none;
-}
-
-.layer-link:hover {
-    color: var(--vp-c-brand-1);
-}
-
-.layer-tag {
-    font-size: 12px;
-    line-height: 18px;
-    color: var(--vp-c-text-3);
 }
 
 .ecosystem-cta {
