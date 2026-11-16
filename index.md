@@ -204,10 +204,12 @@ function shortDate(iso) {
 .stack-carousel .carousel__slide {
     padding: 0 8px;
     display: flex;
+    height: 100%;
 }
 
 .stack-carousel .layer-card {
     flex: 1;
+    height: 100%;
 }
 
 .organism-carousel {
