@@ -284,6 +284,24 @@ const groups = computed(() => {
   white-space: nowrap;
   flex-shrink: 0;
 }
+
+/* One external-link arrow per row, pinned to the last column — not after each link's text. */
+.feed-item .vp-external-link-icon::after,
+.feed-item a[href*='://']::after {
+  display: none;
+}
+.feed-item::after {
+  content: '';
+  flex-shrink: 0;
+  width: 11px;
+  height: 11px;
+  margin-left: 2px;
+  align-self: center;
+  background: var(--vp-c-text-3);
+  --icon: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3E%3Cpath d='M0 0h24v24H0V0z' fill='none' /%3E%3Cpath d='M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z' /%3E%3C/svg%3E");
+  -webkit-mask-image: var(--icon);
+  mask-image: var(--icon);
+}
 .feed-empty {
   color: var(--vp-c-text-2);
   font-size: 13px;

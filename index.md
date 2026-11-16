@@ -314,6 +314,23 @@ function shortDate(iso) {
     font-size: 12px;
 }
 
+/* One external-link arrow per row, pinned to the last column. */
+.releases-teaser li .vp-external-link-icon::after,
+.releases-teaser li a[href*='://']::after {
+    display: none;
+}
+.releases-teaser li::after {
+    content: '';
+    flex-shrink: 0;
+    width: 11px;
+    height: 11px;
+    align-self: center;
+    background: var(--vp-c-text-3);
+    --icon: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3E%3Cpath d='M0 0h24v24H0V0z' fill='none' /%3E%3Cpath d='M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z' /%3E%3C/svg%3E");
+    -webkit-mask-image: var(--icon);
+    mask-image: var(--icon);
+}
+
 @media (min-width: 768px) {
     .carousel {
         padding: 8px 48px 24px;
