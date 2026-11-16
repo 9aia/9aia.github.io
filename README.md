@@ -55,4 +55,4 @@ To get started locally:
 
 ## Contributing
 
-We welcome contributions that align with our mission of open-source, minimal, and tech-forward projects. Please feel free to submit issues, feature requests, or pull requests.
+We welcome contributions that align with our mission of open-source, minimal, and tech-forward projects. The 9aia org does not run public issue or pull request queues — please reach out via email at luisfuturist+9aia@gmail.com to coordinate.
