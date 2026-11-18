@@ -18,6 +18,26 @@ hero:
 <script setup>
 import { defineAsyncComponent } from 'vue'
 import { VPTeamPageTitle, VPLink } from "vitepress/theme";
+
+// Drag-vs-click guard: vue3-carousel only suppresses the click that follows
+// a mouse drag; touch drags still synthesize a click on the slide's link.
+// Record where the pointer went down and swallow any click that lands more
+// than ~10px away (a real tap/click has ~0px of travel).
+let pointerStart = null
+function onCarouselPointerDown(e) {
+    pointerStart = { x: e.clientX, y: e.clientY }
+}
+function onCarouselClickCapture(e) {
+    if (!pointerStart) return
+    const dx = e.clientX - pointerStart.x
+    const dy = e.clientY - pointerStart.y
+    pointerStart = null
+    if (dx * dx + dy * dy > 100) {
+        e.preventDefault()
+        e.stopPropagation()
+        e.stopImmediatePropagation()
+    }
+}
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 
@@ -68,25 +88,31 @@ function shortDate(iso) {
           Each an organism owning one mechanism. Swipe through; every card links to its docs.
         </template>
     </VPTeamPageTitle>
-    <Carousel
-        class="organism-carousel"
-        :items-to-show="1.15"
-        :items-to-scroll="1"
-        :wrap-around="true"
-        :mouse-drag="true"
-        :breakpoints="{ 640: { itemsToShow: 2.2 }, 1024: { itemsToShow: 3.2 }, 1280: { itemsToShow: 4.2 } }"
+    <div
+        class="organism-carousel-wrap"
+        @pointerdown.capture="onCarouselPointerDown"
+        @click.capture="onCarouselClickCapture"
     >
-        <Slide v-for="p in active" :key="p.name">
-            <a :href="p.docs ?? p.website ?? '#'" class="organism">
-                <span class="organism-name">{{ p.name }}</span>
-                <span class="organism-layer">{{ layerTitle[p.layer] ?? p.layer }}</span>
-                <span class="organism-tag">{{ p.tagline }}</span>
-            </a>
-        </Slide>
-        <template #addons>
-            <Navigation />
-        </template>
-    </Carousel>
+        <Carousel
+            class="organism-carousel"
+            :items-to-show="1.15"
+            :items-to-scroll="1"
+            :wrap-around="true"
+            :mouse-drag="true"
+            :breakpoints="{ 640: { itemsToShow: 2.2 }, 1024: { itemsToShow: 3.2 }, 1280: { itemsToShow: 4.2 } }"
+        >
+            <Slide v-for="p in active" :key="p.name">
+                <a :href="p.docs ?? p.website ?? '#'" class="organism">
+                    <span class="organism-name">{{ p.name }}</span>
+                    <span class="organism-layer">{{ layerTitle[p.layer] ?? p.layer }}</span>
+                    <span class="organism-tag">{{ p.tagline }}</span>
+                </a>
+            </Slide>
+            <template #addons>
+                <Navigation />
+            </template>
+        </Carousel>
+    </div>
 </div>
 
 <div class="home-section">
@@ -210,10 +236,29 @@ function shortDate(iso) {
 /* Mobile: break out of the .VPDoc 24px inline padding so the carousel
    runs edge-to-edge (padding returns at 768px). */
 @media (max-width: 767px) {
-    .organism-carousel {
+    .organism-carousel-wrap {
         margin-left: -24px;
         margin-right: -24px;
     }
+}
+
+.organism-carousel-wrap {
+    cursor: grab;
+}
+
+.organism-carousel-wrap :deep(.carousel.is-dragging),
+.organism-carousel-wrap :deep(.carousel.is-dragging *) {
+    cursor: grabbing;
+}
+
+/* Horizontal carousel: vertical pan stays with page scroll; horizontal
+   drags belong to the carousel and must not be claimed as a scroll pan. */
+.organism-carousel-wrap :deep(.carousel__viewport) {
+    touch-action: pan-y;
+}
+
+.organism-carousel-wrap :deep(.carousel.is-dragging) {
+    user-select: none;
 }
 
 .ecosystem-cta {
