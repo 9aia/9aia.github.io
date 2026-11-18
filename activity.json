@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T07:13:15.466Z",
+  "generated": "2026-11-18T06:00:34.452Z",
   "repos": [
     {
       "name": "tamias",
@@ -7,6 +7,124 @@
       "website": "https://9aia.com/tamias/",
       "repo": "https://github.com/9aia/tamias",
       "commits": [
+        {
+          "sha": "662daeba6f6f533d1d8d75a9736f3a2b03d9811d",
+          "date": "2026-11-18T04:52:06Z",
+          "message": "chore(kuda): sync cards after serve driver.* ops merge",
+          "url": "https://github.com/9aia/tamias/commit/662daeba6f6f533d1d8d75a9736f3a2b03d9811d",
+          "tags": []
+        },
+        {
+          "sha": "59bfeb8644ba2218d2c97f572e06172bb111ec93",
+          "date": "2026-11-18T04:49:57Z",
+          "message": "merge: serve driver.* ops — proxy tamias-driver-* over the wire (P-096)",
+          "url": "https://github.com/9aia/tamias/commit/59bfeb8644ba2218d2c97f572e06172bb111ec93",
+          "tags": []
+        },
+        {
+          "sha": "a882f00cdaa6d20852b9d371ba8368db15dc9f13",
+          "date": "2026-11-18T04:11:24Z",
+          "message": "fix(scripts): sanitize git env in docs-check for hook/worktree runs",
+          "url": "https://github.com/9aia/tamias/commit/a882f00cdaa6d20852b9d371ba8368db15dc9f13",
+          "tags": []
+        },
+        {
+          "sha": "50d546edb0a11349dd46e39c806e80b7a1cbd097",
+          "date": "2026-11-18T04:06:43Z",
+          "message": "feat(serve): driver.* ops — proxy tamias-driver-* binaries over the wire",
+          "url": "https://github.com/9aia/tamias/commit/50d546edb0a11349dd46e39c806e80b7a1cbd097",
+          "tags": []
+        },
+        {
+          "sha": "0de1e3cd87e65618b792b2950c91a24fc4d2712d",
+          "date": "2026-11-16T21:03:59Z",
+          "message": "docs: release flow — tarsi-serve direct + cuora token_ref (release.sh gone)",
+          "url": "https://github.com/9aia/tamias/commit/0de1e3cd87e65618b792b2950c91a24fc4d2712d",
+          "tags": []
+        },
+        {
+          "sha": "352d353c9c4cc869af370383e5e9eee3f2b70a6a",
+          "date": "2026-11-16T20:31:21Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora are enough",
+          "url": "https://github.com/9aia/tamias/commit/352d353c9c4cc869af370383e5e9eee3f2b70a6a",
+          "tags": []
+        },
+        {
+          "sha": "0e93033b16cfd4f95add168401cc753b16bcf64e",
+          "date": "2026-11-16T16:56:17Z",
+          "message": "chore: sync tamias-driver-tamias lockfile (tamias-serve telemetry dep)",
+          "url": "https://github.com/9aia/tamias/commit/0e93033b16cfd4f95add168401cc753b16bcf64e",
+          "tags": []
+        },
+        {
+          "sha": "88cd2b5fef7c92f6447e3ca3f86bfc02aaaf03ae",
+          "date": "2026-11-16T16:44:32Z",
+          "message": "feat(serve): standalone tamias-serve binary — lean server install, no TUI",
+          "url": "https://github.com/9aia/tamias/commit/88cd2b5fef7c92f6447e3ca3f86bfc02aaaf03ae",
+          "tags": []
+        },
+        {
+          "sha": "00ba5ce56d70048b79852e4c0d015ccf4388c64c",
+          "date": "2026-11-16T14:58:10Z",
+          "message": "chore(release): sync lockfiles to 0.2.1",
+          "url": "https://github.com/9aia/tamias/commit/00ba5ce56d70048b79852e4c0d015ccf4388c64c",
+          "tags": []
+        },
+        {
+          "sha": "a9f1c207c78f1facadaab4006a247f71b33f07bc",
+          "date": "2026-11-16T14:48:25Z",
+          "message": "chore(release): bump versions",
+          "url": "https://github.com/9aia/tamias/commit/a9f1c207c78f1facadaab4006a247f71b33f07bc",
+          "tags": [
+            "tamias-store-v0.2.1"
+          ]
+        },
+        {
+          "sha": "90184270c2ca85328b434984bc7541d711d19820",
+          "date": "2026-11-16T13:15:45Z",
+          "message": "chore: sync tamias-driver-tamias lockfile to 0.2.0",
+          "url": "https://github.com/9aia/tamias/commit/90184270c2ca85328b434984bc7541d711d19820",
+          "tags": []
+        },
+        {
+          "sha": "e91d64905b450275ca881bbd6cb0538534ad0a14",
+          "date": "2026-11-16T13:12:36Z",
+          "message": "fix(release): tamias-deploy-cf back to workspace versioning",
+          "url": "https://github.com/9aia/tamias/commit/e91d64905b450275ca881bbd6cb0538534ad0a14",
+          "tags": [
+            "tamias-store-v0.2.0"
+          ]
+        },
+        {
+          "sha": "79f24d62adca298a7e53da580feb4bec6144126e",
+          "date": "2026-11-16T13:06:45Z",
+          "message": "ci(dist): allow-dirty ci — release.yml tag glob is hand-narrowed",
+          "url": "https://github.com/9aia/tamias/commit/79f24d62adca298a7e53da580feb4bec6144126e",
+          "tags": [
+            "tamias-tui-v0.2.0"
+          ]
+        },
+        {
+          "sha": "3ec5266a87f3e8d0e77d472ce23509bb84680aaa",
+          "date": "2026-11-16T13:04:26Z",
+          "message": "ci(hooks): skip heavy gates on tag-only pushes",
+          "url": "https://github.com/9aia/tamias/commit/3ec5266a87f3e8d0e77d472ce23509bb84680aaa",
+          "tags": []
+        },
+        {
+          "sha": "9387a3f0a29f5d597288c8bb1f080c74a8bb55ee",
+          "date": "2026-11-16T12:59:00Z",
+          "message": "chore(release): bump versions",
+          "url": "https://github.com/9aia/tamias/commit/9387a3f0a29f5d597288c8bb1f080c74a8bb55ee",
+          "tags": []
+        },
+        {
+          "sha": "6bb5421658eb0fd13fcc312227939f5e002bdadf",
+          "date": "2026-11-16T12:30:46Z",
+          "message": "feat(actions): setup-tamias prefers prebuilt release binaries",
+          "url": "https://github.com/9aia/tamias/commit/6bb5421658eb0fd13fcc312227939f5e002bdadf",
+          "tags": []
+        },
         {
           "sha": "3cac5fc995686d858456d3336bc301636ee77448",
           "date": "2026-11-16T06:47:55Z",
@@ -155,7 +273,7 @@
           "message": "docs(config): pin canonical cuora vault for tamias/registry-token (T-037)",
           "url": "https://github.com/9aia/tamias/commit/b30cc04c8cc361832832217205f7d9eeca5ee56c",
           "tags": [
-            "tamias-source-registry-v0.1.5"
+            "tamias-telemetry-v0.1.5"
           ]
         },
         {
@@ -248,120 +366,6 @@
           "message": "feat: registry retention — prune old published versions per package (P-024)",
           "url": "https://github.com/9aia/tamias/commit/222ac8b7dd54223cbc31283d7b4236337c3d683f",
           "tags": []
-        },
-        {
-          "sha": "6485ef1cbb9ac691cfd02df9c73938110af699f6",
-          "date": "2026-11-11T20:13:55Z",
-          "message": "docs: note product CLIs ship as tamias packs, not cargo bins",
-          "url": "https://github.com/9aia/tamias/commit/6485ef1cbb9ac691cfd02df9c73938110af699f6",
-          "tags": []
-        },
-        {
-          "sha": "3010f780508921a937e02b890a6400a36bbb4234",
-          "date": "2026-11-11T19:21:01Z",
-          "message": "feat(cli): lib-ify the tamias engine + ops surface on tamias-driver-tamias (T-007)",
-          "url": "https://github.com/9aia/tamias/commit/3010f780508921a937e02b890a6400a36bbb4234",
-          "tags": []
-        },
-        {
-          "sha": "638308751a15bcc1c4333dddc1eba46e6b7fda62",
-          "date": "2026-11-11T18:58:31Z",
-          "message": "fix(core): pack_tgz never emits GNUSparse tar entries",
-          "url": "https://github.com/9aia/tamias/commit/638308751a15bcc1c4333dddc1eba46e6b7fda62",
-          "tags": []
-        },
-        {
-          "sha": "c86b2b04c6441f4a44f40c3a2d1c50eb865572b6",
-          "date": "2026-11-11T18:52:00Z",
-          "message": "fix(cli): forward --help/--version through bin exec + driver exec passthrough",
-          "url": "https://github.com/9aia/tamias/commit/c86b2b04c6441f4a44f40c3a2d1c50eb865572b6",
-          "tags": []
-        },
-        {
-          "sha": "ad841f582ffc2e246335502f98f56431499e2635",
-          "date": "2026-11-11T13:11:03Z",
-          "message": "feat: declared bins lifecycle — bins[] manifests, tools/bin payloads, tamias bin verbs",
-          "url": "https://github.com/9aia/tamias/commit/ad841f582ffc2e246335502f98f56431499e2635",
-          "tags": []
-        },
-        {
-          "sha": "5945c02f8fb8180a61025f71fc42a10d5003fff6",
-          "date": "2026-11-11T05:41:56Z",
-          "message": "feat(install): template.extends — materialize parent packs at .scarab-parent/",
-          "url": "https://github.com/9aia/tamias/commit/5945c02f8fb8180a61025f71fc42a10d5003fff6",
-          "tags": []
-        },
-        {
-          "sha": "7f85e99f07fad32f780d0a9a732c8e42447b271c",
-          "date": "2026-11-11T03:46:00Z",
-          "message": "chore(config): nine registry — tamias.9aia.com CF registry (worker+R2, token via cuora)",
-          "url": "https://github.com/9aia/tamias/commit/7f85e99f07fad32f780d0a9a732c8e42447b271c",
-          "tags": []
-        },
-        {
-          "sha": "78efad1f26bf998c2948ba66e0c76baa9a05c779",
-          "date": "2026-11-11T03:11:35Z",
-          "message": "feat(xtask): pack-self — build + pack the tamias self-package",
-          "url": "https://github.com/9aia/tamias/commit/78efad1f26bf998c2948ba66e0c76baa9a05c779",
-          "tags": []
-        },
-        {
-          "sha": "f8e740550f8e066814c28a8966b85227e46ea4ef",
-          "date": "2026-11-11T02:23:50Z",
-          "message": "chore: driver-tamias lockfile — version bumps from 0.1.4 release",
-          "url": "https://github.com/9aia/tamias/commit/f8e740550f8e066814c28a8966b85227e46ea4ef",
-          "tags": []
-        },
-        {
-          "sha": "6c7fb600e8395baa84fa6145f7930bd9698f3903",
-          "date": "2026-11-11T01:39:05Z",
-          "message": "release: bump crate versions",
-          "url": "https://github.com/9aia/tamias/commit/6c7fb600e8395baa84fa6145f7930bd9698f3903",
-          "tags": [
-            "tamias-source-v0.1.4"
-          ]
-        },
-        {
-          "sha": "2f3ae2b8002ff6107bc63cff5e429892452ed63f",
-          "date": "2026-11-11T00:34:38Z",
-          "message": "fix(sources): bearer auth on registry tarball fetches + e2e config isolation",
-          "url": "https://github.com/9aia/tamias/commit/2f3ae2b8002ff6107bc63cff5e429892452ed63f",
-          "tags": []
-        },
-        {
-          "sha": "45fa11d4e055dee4d6e57e5e08f7ec14412b44af",
-          "date": "2026-11-11T00:15:12Z",
-          "message": "fix(release): full publish order + opt-in dist artifacts",
-          "url": "https://github.com/9aia/tamias/commit/45fa11d4e055dee4d6e57e5e08f7ec14412b44af",
-          "tags": []
-        },
-        {
-          "sha": "1564bb0052b105222a66374f8073acc0509e8953",
-          "date": "2026-11-10T23:59:52Z",
-          "message": "feat(refs): registry-scoped install refs — <registry>:<pkg>[@<ver>]",
-          "url": "https://github.com/9aia/tamias/commit/1564bb0052b105222a66374f8073acc0509e8953",
-          "tags": []
-        },
-        {
-          "sha": "4e65c3938cd719e5bd96b30aa219ca837033ff22",
-          "date": "2026-11-10T23:37:00Z",
-          "message": "feat(config): layered user-level config — ~/.config/tamias base + project overlay",
-          "url": "https://github.com/9aia/tamias/commit/4e65c3938cd719e5bd96b30aa219ca837033ff22",
-          "tags": []
-        },
-        {
-          "sha": "f3a8603bc55f5b1fc9ddfd094156dde6e5f049fe",
-          "date": "2026-11-10T22:58:59Z",
-          "message": "feat(self-upgrade): tamias self-upgrade — update the package that owns this exe",
-          "url": "https://github.com/9aia/tamias/commit/f3a8603bc55f5b1fc9ddfd094156dde6e5f049fe",
-          "tags": []
-        },
-        {
-          "sha": "c59938b2a481373e62999cd967bc126cf38aa014",
-          "date": "2026-11-10T22:50:25Z",
-          "message": "feat(bin): tamias bin — link a package's bin/ payload into ~/.local/bin",
-          "url": "https://github.com/9aia/tamias/commit/c59938b2a481373e62999cd967bc126cf38aa014",
-          "tags": []
         }
       ],
       "tags": [
@@ -369,6 +373,11 @@
           "name": "v0.1.5",
           "sha": "e2da5e4e9c36025f5219cc575927bd273fc91ba7",
           "date": "2026-11-16T06:31:24Z"
+        },
+        {
+          "name": "tamias-v0.2.0",
+          "sha": "79f24d62adca298a7e53da580feb4bec6144126e",
+          "date": "2026-11-16T13:06:45Z"
         },
         {
           "name": "tamias-v0.1.5",
@@ -391,6 +400,16 @@
           "date": "2026-11-08T08:26:40Z"
         },
         {
+          "name": "tamias-tui-v0.2.1",
+          "sha": "a9f1c207c78f1facadaab4006a247f71b33f07bc",
+          "date": "2026-11-16T14:48:25Z"
+        },
+        {
+          "name": "tamias-tui-v0.2.0",
+          "sha": "79f24d62adca298a7e53da580feb4bec6144126e",
+          "date": "2026-11-16T13:06:45Z"
+        },
+        {
           "name": "tamias-tui-v0.1.5",
           "sha": "b30cc04c8cc361832832217205f7d9eeca5ee56c",
           "date": "2026-11-13T01:22:34Z"
@@ -399,6 +418,16 @@
           "name": "tamias-tui-v0.1.4",
           "sha": "6c7fb600e8395baa84fa6145f7930bd9698f3903",
           "date": "2026-11-11T01:39:05Z"
+        },
+        {
+          "name": "tamias-testkit-v0.2.1",
+          "sha": "a9f1c207c78f1facadaab4006a247f71b33f07bc",
+          "date": "2026-11-16T14:48:25Z"
+        },
+        {
+          "name": "tamias-testkit-v0.2.0",
+          "sha": "e91d64905b450275ca881bbd6cb0538534ad0a14",
+          "date": "2026-11-16T13:12:36Z"
         },
         {
           "name": "tamias-testkit-v0.1.5",
@@ -411,6 +440,16 @@
           "date": "2026-11-11T01:39:05Z"
         },
         {
+          "name": "tamias-telemetry-v0.2.1",
+          "sha": "a9f1c207c78f1facadaab4006a247f71b33f07bc",
+          "date": "2026-11-16T14:48:25Z"
+        },
+        {
+          "name": "tamias-telemetry-v0.2.0",
+          "sha": "e91d64905b450275ca881bbd6cb0538534ad0a14",
+          "date": "2026-11-16T13:12:36Z"
+        },
+        {
           "name": "tamias-telemetry-v0.1.5",
           "sha": "b30cc04c8cc361832832217205f7d9eeca5ee56c",
           "date": "2026-11-13T01:22:34Z"
@@ -421,49 +460,14 @@
           "date": "2026-11-11T01:39:05Z"
         },
         {
-          "name": "tamias-store-v0.1.5",
-          "sha": "b30cc04c8cc361832832217205f7d9eeca5ee56c",
-          "date": "2026-11-13T01:22:34Z"
+          "name": "tamias-store-v0.2.1",
+          "sha": "a9f1c207c78f1facadaab4006a247f71b33f07bc",
+          "date": "2026-11-16T14:48:25Z"
         },
         {
-          "name": "tamias-store-v0.1.4",
-          "sha": "6c7fb600e8395baa84fa6145f7930bd9698f3903",
-          "date": "2026-11-11T01:39:05Z"
-        },
-        {
-          "name": "tamias-store-local-v0.1.5",
-          "sha": "b30cc04c8cc361832832217205f7d9eeca5ee56c",
-          "date": "2026-11-13T01:22:34Z"
-        },
-        {
-          "name": "tamias-store-local-v0.1.4",
-          "sha": "6c7fb600e8395baa84fa6145f7930bd9698f3903",
-          "date": "2026-11-11T01:39:05Z"
-        },
-        {
-          "name": "tamias-store-cf-v0.1.5",
-          "sha": "b30cc04c8cc361832832217205f7d9eeca5ee56c",
-          "date": "2026-11-13T01:22:34Z"
-        },
-        {
-          "name": "tamias-store-cf-v0.1.4",
-          "sha": "6c7fb600e8395baa84fa6145f7930bd9698f3903",
-          "date": "2026-11-11T01:39:05Z"
-        },
-        {
-          "name": "tamias-source-v0.1.5",
-          "sha": "b30cc04c8cc361832832217205f7d9eeca5ee56c",
-          "date": "2026-11-13T01:22:34Z"
-        },
-        {
-          "name": "tamias-source-v0.1.4",
-          "sha": "6c7fb600e8395baa84fa6145f7930bd9698f3903",
-          "date": "2026-11-11T01:39:05Z"
-        },
-        {
-          "name": "tamias-source-registry-v0.1.5",
-          "sha": "b30cc04c8cc361832832217205f7d9eeca5ee56c",
-          "date": "2026-11-13T01:22:34Z"
+          "name": "tamias-store-v0.2.0",
+          "sha": "e91d64905b450275ca881bbd6cb0538534ad0a14",
+          "date": "2026-11-16T13:12:36Z"
         }
       ]
     },
@@ -473,6 +477,13 @@
       "website": "https://9aia.com/scarab/",
       "repo": "https://github.com/9aia/scarab",
       "commits": [
+        {
+          "sha": "199410d12c5e628ef9bac41e7ee88b501a22b1b0",
+          "date": "2026-11-16T20:46:14Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/scarab/commit/199410d12c5e628ef9bac41e7ee88b501a22b1b0",
+          "tags": []
+        },
         {
           "sha": "6089512bb58f1ead1712284a078446840bff5b45",
           "date": "2026-11-16T02:34:55Z",
@@ -664,6 +675,41 @@
       "website": "https://9aia.com/tarsi/",
       "repo": "https://github.com/9aia/tarsi",
       "commits": [
+        {
+          "sha": "ecd13d256307a091fd1eb6a602a46326e4c6a48b",
+          "date": "2026-11-16T21:01:35Z",
+          "message": "docs: 9aia-release profile comment — release.sh shims removed",
+          "url": "https://github.com/9aia/tarsi/commit/ecd13d256307a091fd1eb6a602a46326e4c6a48b",
+          "tags": []
+        },
+        {
+          "sha": "ecd9e8a69c6969b1ca3c0bf31d9e8d9a1b2986a3",
+          "date": "2026-11-16T20:57:30Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/tarsi/commit/ecd9e8a69c6969b1ca3c0bf31d9e8d9a1b2986a3",
+          "tags": []
+        },
+        {
+          "sha": "9ed8c411fe060bbefed477ba87018defbb96f113",
+          "date": "2026-11-16T16:45:51Z",
+          "message": "fix(publish): per-attempt timeout + real 429 backoff for crates.io (I-003)",
+          "url": "https://github.com/9aia/tarsi/commit/9ed8c411fe060bbefed477ba87018defbb96f113",
+          "tags": []
+        },
+        {
+          "sha": "88423e7462262e3848206f56dc386836a2efa707",
+          "date": "2026-11-16T14:01:35Z",
+          "message": "fix(plan): shared workspace versions release in lockstep (I-002)",
+          "url": "https://github.com/9aia/tarsi/commit/88423e7462262e3848206f56dc386836a2efa707",
+          "tags": []
+        },
+        {
+          "sha": "97422894248a0c86da775bcf884fa5221f4d8ae5",
+          "date": "2026-11-16T12:38:05Z",
+          "message": "fix(release): sync path-dep version reqs during bump",
+          "url": "https://github.com/9aia/tarsi/commit/97422894248a0c86da775bcf884fa5221f4d8ae5",
+          "tags": []
+        },
         {
           "sha": "5980a1cd70aeb83dc2b4c790bba23530384ac850",
           "date": "2026-11-16T02:36:30Z",
@@ -982,41 +1028,6 @@
           "message": "feat: tarsi-core — pure release domain (PL-014 B1/B2)",
           "url": "https://github.com/9aia/tarsi/commit/a31a6889c2c0f759dc5ad0b0a41e82982ca15aff",
           "tags": []
-        },
-        {
-          "sha": "dad99de4aafa7c1189bb65ccd0af65f42113130e",
-          "date": "2026-11-10T23:26:00Z",
-          "message": "chore: org wiring — sturn/kuda/mimus configs, skills lock, myco project worktree",
-          "url": "https://github.com/9aia/tarsi/commit/dad99de4aafa7c1189bb65ccd0af65f42113130e",
-          "tags": []
-        },
-        {
-          "sha": "04309e562fc508b4f847be8f7c7d726e3e12bbb4",
-          "date": "2026-11-10T23:25:52Z",
-          "message": "chore: seed myco.toml kinds prelude",
-          "url": "https://github.com/9aia/tarsi/commit/04309e562fc508b4f847be8f7c7d726e3e12bbb4",
-          "tags": []
-        },
-        {
-          "sha": "85bf0ba54d89e2295fe77bc0509afbbd84aafaf6",
-          "date": "2026-11-10T23:25:52Z",
-          "message": "chore: manage AGENTS.md agent-awareness block",
-          "url": "https://github.com/9aia/tarsi/commit/85bf0ba54d89e2295fe77bc0509afbbd84aafaf6",
-          "tags": []
-        },
-        {
-          "sha": "a8cf6aa2093d9858ce76d64a61a1b741b5271bec",
-          "date": "2026-11-10T23:25:46Z",
-          "message": "chore: scaffold Rust workspace — xtask, lints, hooks; TS tree → legacy-ts branch",
-          "url": "https://github.com/9aia/tarsi/commit/a8cf6aa2093d9858ce76d64a61a1b741b5271bec",
-          "tags": []
-        },
-        {
-          "sha": "c6984fe9e15a3d9794a1139bf74cf52b6cc04f45",
-          "date": "2026-11-10T23:24:52Z",
-          "message": "docs: unarchive — reposition as release plane (Rust rewrite, P-013/PL-014)",
-          "url": "https://github.com/9aia/tarsi/commit/c6984fe9e15a3d9794a1139bf74cf52b6cc04f45",
-          "tags": []
         }
       ],
       "tags": [
@@ -1113,6 +1124,13 @@
       "website": "https://9aia.com/bupha/",
       "repo": "https://github.com/9aia/bupha",
       "commits": [
+        {
+          "sha": "5367d6a9298968054850f9d419325c8c55b08a7a",
+          "date": "2026-11-16T20:53:04Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/bupha/commit/5367d6a9298968054850f9d419325c8c55b08a7a",
+          "tags": []
+        },
         {
           "sha": "7499cd9096291d4a04b3b412a49627a0f8a7bedc",
           "date": "2026-11-16T02:34:19Z",
@@ -1455,13 +1473,6 @@
           "message": "feat(ci-job): fork-PR head checkout via cloneUrl/headRef (T-073)",
           "url": "https://github.com/9aia/bupha/commit/882a92c2e99254c201d1a3ffaae9013c85f28ad8",
           "tags": []
-        },
-        {
-          "sha": "44d6f3c6be1ec72b4a013fec597421ac040813da",
-          "date": "2026-11-13T05:22:34Z",
-          "message": "feat(gha): actions/upload-artifact + download-artifact via per-run tar store (T-048)",
-          "url": "https://github.com/9aia/bupha/commit/44d6f3c6be1ec72b4a013fec597421ac040813da",
-          "tags": []
         }
       ],
       "tags": [
@@ -1573,6 +1584,13 @@
       "website": "https://9aia.com/myco/",
       "repo": "https://github.com/9aia/myco",
       "commits": [
+        {
+          "sha": "5d8d1ba748c0e8c406c8275926abb7baf915a113",
+          "date": "2026-11-16T20:54:20Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/myco/commit/5d8d1ba748c0e8c406c8275926abb7baf915a113",
+          "tags": []
+        },
         {
           "sha": "5ee061bbafeeb82a2adec46ebac2280df4b60d0a",
           "date": "2026-11-16T06:42:32Z",
@@ -1919,13 +1937,6 @@
           "message": "docs: boundary — bupha is the CI repo; gate migrating from peregrin ci-gate",
           "url": "https://github.com/9aia/myco/commit/07fb8c74e971eeee64a11145bc7de41d56d09d46",
           "tags": []
-        },
-        {
-          "sha": "54c151b213ba28d5722c40c167ab219bb8c5224e",
-          "date": "2026-11-10T17:24:30Z",
-          "message": "fix(cli): view about-text lists the next preset",
-          "url": "https://github.com/9aia/myco/commit/54c151b213ba28d5722c40c167ab219bb8c5224e",
-          "tags": []
         }
       ],
       "tags": [
@@ -1972,6 +1983,20 @@
       "website": "https://9aia.com/kuda/",
       "repo": "https://github.com/9aia/kuda",
       "commits": [
+        {
+          "sha": "ee8b71c27a2449cf1abdb5a2dca906c5846271e9",
+          "date": "2026-11-16T21:00:51Z",
+          "message": "docs: publish_order comment — release.sh shim removed",
+          "url": "https://github.com/9aia/kuda/commit/ee8b71c27a2449cf1abdb5a2dca906c5846271e9",
+          "tags": []
+        },
+        {
+          "sha": "ccb86efdb331aa1d95a1cc053b5776834a27d7fb",
+          "date": "2026-11-16T20:54:20Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/kuda/commit/ccb86efdb331aa1d95a1cc053b5776834a27d7fb",
+          "tags": []
+        },
         {
           "sha": "0cfede2040842938334d01c589b0f32fa8715c7b",
           "date": "2026-11-16T02:34:37Z",
@@ -2307,20 +2332,6 @@
           "message": "feat(kuda-driver): engine ops over the wire — ops manifest + cli.* dispatch to kuda::dispatch",
           "url": "https://github.com/9aia/kuda/commit/28493c49b91e43f130e391e8c416cc228f8835c8",
           "tags": []
-        },
-        {
-          "sha": "579818359e203620b48cd03dd3bcfb14742cdfa9",
-          "date": "2026-11-10T04:42:11Z",
-          "message": "refactor: extractor + summarizer registries in the sync pipeline",
-          "url": "https://github.com/9aia/kuda/commit/579818359e203620b48cd03dd3bcfb14742cdfa9",
-          "tags": []
-        },
-        {
-          "sha": "de421425dc8c0624c96b7e98ffc0d736408aa7c0",
-          "date": "2026-11-10T04:41:52Z",
-          "message": "refactor: parse/dispatch split — Cli/Cmd pub, ops callable as dispatch(&cli)",
-          "url": "https://github.com/9aia/kuda/commit/de421425dc8c0624c96b7e98ffc0d736408aa7c0",
-          "tags": []
         }
       ],
       "tags": [
@@ -2337,6 +2348,20 @@
       "website": "https://9aia.com/mimus/",
       "repo": "https://github.com/9aia/mimus",
       "commits": [
+        {
+          "sha": "ed65452cfc7d8ce73e80d8d07848e63a01ad7a38",
+          "date": "2026-11-16T21:01:26Z",
+          "message": "docs: release flow is tarsi-serve direct — shim removed",
+          "url": "https://github.com/9aia/mimus/commit/ed65452cfc7d8ce73e80d8d07848e63a01ad7a38",
+          "tags": []
+        },
+        {
+          "sha": "a5d13eb27dbcab335e667d97e7c8f5c12dc7bfb6",
+          "date": "2026-11-16T20:54:20Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/mimus/commit/a5d13eb27dbcab335e667d97e7c8f5c12dc7bfb6",
+          "tags": []
+        },
         {
           "sha": "2949d3a7b45e7f488010e9ef8a99776c60c329d0",
           "date": "2026-11-16T02:34:41Z",
@@ -2672,20 +2697,6 @@
           "message": "test: coverage tooling + unit/integration suite",
           "url": "https://github.com/9aia/mimus/commit/69ea94fd45ce7e8bc1fded5dbf741a9c3726d01e",
           "tags": []
-        },
-        {
-          "sha": "04b04d01c6e4cf71a444344d8b0a904c910ef23d",
-          "date": "2026-10-22T23:39:20Z",
-          "message": "chore: release hardening — rusqlite 0.40, doc regen on release",
-          "url": "https://github.com/9aia/mimus/commit/04b04d01c6e4cf71a444344d8b0a904c910ef23d",
-          "tags": []
-        },
-        {
-          "sha": "c259234369cfbb9c9ee7c6ba7792e6091bb9cd2b",
-          "date": "2026-10-22T23:39:15Z",
-          "message": "chore: local gate — .githooks/pre-push runs scripts/check.sh",
-          "url": "https://github.com/9aia/mimus/commit/c259234369cfbb9c9ee7c6ba7792e6091bb9cd2b",
-          "tags": []
         }
       ],
       "tags": []
@@ -2697,12 +2708,56 @@
       "repo": "https://github.com/9aia/cuora",
       "commits": [
         {
+          "sha": "d97445bb8bacb5ecd926f06bf59e2530de0bc249",
+          "date": "2026-11-16T20:53:44Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/cuora/commit/d97445bb8bacb5ecd926f06bf59e2530de0bc249",
+          "tags": []
+        },
+        {
+          "sha": "69d9457a73ff7ed6d66d2b2133278895f2b096a8",
+          "date": "2026-11-16T07:28:48Z",
+          "message": "chore: sync Cargo.lock to 1.0.4",
+          "url": "https://github.com/9aia/cuora/commit/69d9457a73ff7ed6d66d2b2133278895f2b096a8",
+          "tags": []
+        },
+        {
+          "sha": "80dc89411a95ea718acf7f46f44b8b4f6150d090",
+          "date": "2026-11-16T07:25:45Z",
+          "message": "chore(release): bump versions",
+          "url": "https://github.com/9aia/cuora/commit/80dc89411a95ea718acf7f46f44b8b4f6150d090",
+          "tags": [
+            "cuora-vault-age-v1.0.4"
+          ]
+        },
+        {
+          "sha": "f00c7f11aaf5e74594b3728ba39f40dc797aad9c",
+          "date": "2026-11-16T07:25:25Z",
+          "message": "chore(kuda): resync cards — identity probe/zeroize fixes + accumulated drift",
+          "url": "https://github.com/9aia/cuora/commit/f00c7f11aaf5e74594b3728ba39f40dc797aad9c",
+          "tags": []
+        },
+        {
+          "sha": "7bd0e07b2f8b25a429c13d9551219a10e7da4e7a",
+          "date": "2026-11-16T07:24:41Z",
+          "message": "fix(identity): read-only keyring probe, zeroized key material, honest timeout hint",
+          "url": "https://github.com/9aia/cuora/commit/7bd0e07b2f8b25a429c13d9551219a10e7da4e7a",
+          "tags": []
+        },
+        {
+          "sha": "c23ae18e2361762fb70befab4d791c29bdc7847d",
+          "date": "2026-11-16T07:17:55Z",
+          "message": "chore: sync Cargo.lock to 1.0.3",
+          "url": "https://github.com/9aia/cuora/commit/c23ae18e2361762fb70befab4d791c29bdc7847d",
+          "tags": []
+        },
+        {
           "sha": "2703ee9bae376ff830532153e9553b109b507259",
           "date": "2026-11-16T07:12:46Z",
           "message": "chore(release): bump versions",
           "url": "https://github.com/9aia/cuora/commit/2703ee9bae376ff830532153e9553b109b507259",
           "tags": [
-            "cuora-v1.0.3"
+            "cuora-vault-age-v1.0.3"
           ]
         },
         {
@@ -2767,7 +2822,7 @@
           "message": "chore(release): bump versions",
           "url": "https://github.com/9aia/cuora/commit/d51293db497f6ef68f4dc974463043d5e8dc9e70",
           "tags": [
-            "cuora-testkit-v1.0.2"
+            "cuora-vault-age-v1.0.2"
           ]
         },
         {
@@ -2790,7 +2845,7 @@
           "message": "chore(release): bump versions",
           "url": "https://github.com/9aia/cuora/commit/bd525cdd23af8b43be2775e3eeef7215ce86255d",
           "tags": [
-            "cuora-testkit-v1.0.1"
+            "cuora-vault-age-v1.0.1"
           ]
         },
         {
@@ -2827,7 +2882,7 @@
           "message": "chore(release): bump versions",
           "url": "https://github.com/9aia/cuora/commit/65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
           "tags": [
-            "cuora-testkit-v1.0.0"
+            "cuora-vault-cached-v1.0.0"
           ]
         },
         {
@@ -3011,48 +3066,6 @@
           "message": "docs: describe identity backend selection in init help + manifest",
           "url": "https://github.com/9aia/cuora/commit/9aa078807f3d952dd07e69bd48851e3ce8243869",
           "tags": []
-        },
-        {
-          "sha": "7a8e3ebbc36ed36bb26d0f5ac792e0fce1e795c3",
-          "date": "2026-11-11T20:52:41Z",
-          "message": "chore(release): bump cuora to 0.2.0 — bins[] migration release",
-          "url": "https://github.com/9aia/cuora/commit/7a8e3ebbc36ed36bb26d0f5ac792e0fce1e795c3",
-          "tags": []
-        },
-        {
-          "sha": "1fdc6750f3d24d3a8a77c5737ed73b0888843c5d",
-          "date": "2026-11-11T20:15:03Z",
-          "message": "docs: README install — registry ref 9aia:cuora@0.1.0",
-          "url": "https://github.com/9aia/cuora/commit/1fdc6750f3d24d3a8a77c5737ed73b0888843c5d",
-          "tags": []
-        },
-        {
-          "sha": "0e55fd5c8a9125a5e92f87bd8e0e0c8d0c4a7415",
-          "date": "2026-11-11T13:56:57Z",
-          "message": "feat: libraries/cuora tamias pack — the cuora command as a bins[] shim",
-          "url": "https://github.com/9aia/cuora/commit/0e55fd5c8a9125a5e92f87bd8e0e0c8d0c4a7415",
-          "tags": []
-        },
-        {
-          "sha": "98c54565f365c81ad45462bbd793801ec961a511",
-          "date": "2026-11-11T13:56:52Z",
-          "message": "feat(cuora-driver): cli verb is an engine passthrough — the tamias bins[] shim contract",
-          "url": "https://github.com/9aia/cuora/commit/98c54565f365c81ad45462bbd793801ec961a511",
-          "tags": []
-        },
-        {
-          "sha": "e6be3718bfec6ae711625cc41d1e0459f0028d5a",
-          "date": "2026-11-11T05:09:25Z",
-          "message": "feat(cuora-driver): engine ops surface — ops manifest, run passthrough, cli/mcp features",
-          "url": "https://github.com/9aia/cuora/commit/e6be3718bfec6ae711625cc41d1e0459f0028d5a",
-          "tags": []
-        },
-        {
-          "sha": "88b2b4673197d0260b53825d9861e0e2b5323ac5",
-          "date": "2026-11-11T05:09:19Z",
-          "message": "refactor(cuora-cli): lib-ify the engine — Cli/Cmd, parse/parse_from/command/dispatch/run_from",
-          "url": "https://github.com/9aia/cuora/commit/88b2b4673197d0260b53825d9861e0e2b5323ac5",
-          "tags": []
         }
       ],
       "tags": [
@@ -3060,6 +3073,16 @@
           "name": "v0.1.0",
           "sha": "1f8a3c1089b8b415e97fd81afaa50cfde2a937fd",
           "date": "2026-11-08T06:53:33Z"
+        },
+        {
+          "name": "cuora-vault-v1.0.4",
+          "sha": "80dc89411a95ea718acf7f46f44b8b4f6150d090",
+          "date": "2026-11-16T07:25:45Z"
+        },
+        {
+          "name": "cuora-vault-v1.0.3",
+          "sha": "2703ee9bae376ff830532153e9553b109b507259",
+          "date": "2026-11-16T07:12:46Z"
         },
         {
           "name": "cuora-vault-v1.0.2",
@@ -3077,6 +3100,16 @@
           "date": "2026-11-16T05:56:19Z"
         },
         {
+          "name": "cuora-vault-cf-v1.0.4",
+          "sha": "80dc89411a95ea718acf7f46f44b8b4f6150d090",
+          "date": "2026-11-16T07:25:45Z"
+        },
+        {
+          "name": "cuora-vault-cf-v1.0.3",
+          "sha": "2703ee9bae376ff830532153e9553b109b507259",
+          "date": "2026-11-16T07:12:46Z"
+        },
+        {
           "name": "cuora-vault-cf-v1.0.2",
           "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
           "date": "2026-11-16T06:47:56Z"
@@ -3090,6 +3123,16 @@
           "name": "cuora-vault-cf-v1.0.0",
           "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
           "date": "2026-11-16T05:56:19Z"
+        },
+        {
+          "name": "cuora-vault-cached-v1.0.4",
+          "sha": "80dc89411a95ea718acf7f46f44b8b4f6150d090",
+          "date": "2026-11-16T07:25:45Z"
+        },
+        {
+          "name": "cuora-vault-cached-v1.0.3",
+          "sha": "2703ee9bae376ff830532153e9553b109b507259",
+          "date": "2026-11-16T07:12:46Z"
         },
         {
           "name": "cuora-vault-cached-v1.0.2",
@@ -3107,6 +3150,16 @@
           "date": "2026-11-16T05:56:19Z"
         },
         {
+          "name": "cuora-vault-age-v1.0.4",
+          "sha": "80dc89411a95ea718acf7f46f44b8b4f6150d090",
+          "date": "2026-11-16T07:25:45Z"
+        },
+        {
+          "name": "cuora-vault-age-v1.0.3",
+          "sha": "2703ee9bae376ff830532153e9553b109b507259",
+          "date": "2026-11-16T07:12:46Z"
+        },
+        {
           "name": "cuora-vault-age-v1.0.2",
           "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
           "date": "2026-11-16T06:47:56Z"
@@ -3115,46 +3168,6 @@
           "name": "cuora-vault-age-v1.0.1",
           "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
           "date": "2026-11-16T06:20:40Z"
-        },
-        {
-          "name": "cuora-vault-age-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-v1.0.3",
-          "sha": "2703ee9bae376ff830532153e9553b109b507259",
-          "date": "2026-11-16T07:12:46Z"
-        },
-        {
-          "name": "cuora-v1.0.2",
-          "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
-          "date": "2026-11-16T06:47:56Z"
-        },
-        {
-          "name": "cuora-v1.0.1",
-          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
-          "date": "2026-11-16T06:20:40Z"
-        },
-        {
-          "name": "cuora-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
-        },
-        {
-          "name": "cuora-testkit-v1.0.2",
-          "sha": "d51293db497f6ef68f4dc974463043d5e8dc9e70",
-          "date": "2026-11-16T06:47:56Z"
-        },
-        {
-          "name": "cuora-testkit-v1.0.1",
-          "sha": "bd525cdd23af8b43be2775e3eeef7215ce86255d",
-          "date": "2026-11-16T06:20:40Z"
-        },
-        {
-          "name": "cuora-testkit-v1.0.0",
-          "sha": "65659c0894c476c6079fcec8bc6f3e9e74b4d38d",
-          "date": "2026-11-16T05:56:19Z"
         }
       ]
     },
@@ -3181,6 +3194,11 @@
       ],
       "tags": [
         {
+          "name": "tardigrada-v0.4.0",
+          "sha": "a3336bd5aac38e0f82b8783ab2938b2cbb49d9db",
+          "date": "2026-11-16T07:30:31Z"
+        },
+        {
           "name": "tardigrada-v0.3.0",
           "sha": "6d187ed77010e875c8bb38b716f70d95153123f5",
           "date": "2026-11-16T07:04:57Z"
@@ -3198,6 +3216,13 @@
       "website": "https://9aia.com/sturn/",
       "repo": "https://github.com/9aia/sturn",
       "commits": [
+        {
+          "sha": "3760cea1451f0326f550af54082898297722a2df",
+          "date": "2026-11-16T20:54:21Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/sturn/commit/3760cea1451f0326f550af54082898297722a2df",
+          "tags": []
+        },
         {
           "sha": "adc463a6cc74bf7344c51463e99a3002d41e8119",
           "date": "2026-11-16T02:34:59Z",
@@ -3540,13 +3565,6 @@
           "message": "chore: migrate project ledger to myco project/ worktree",
           "url": "https://github.com/9aia/sturn/commit/cd4e067e7080a8af677c025ecd052b926ddb3030",
           "tags": []
-        },
-        {
-          "sha": "9b5383cc57ba2794741724e056990b5bf764c1cc",
-          "date": "2026-10-27T02:49:32Z",
-          "message": "docs: point bupha listener example at :29173",
-          "url": "https://github.com/9aia/sturn/commit/9b5383cc57ba2794741724e056990b5bf764c1cc",
-          "tags": []
         }
       ],
       "tags": []
@@ -3557,6 +3575,13 @@
       "website": "https://9aia.com/hypha/",
       "repo": "https://github.com/9aia/hypha",
       "commits": [
+        {
+          "sha": "865965422b58eb319423eefbc8e054029fcfe45c",
+          "date": "2026-11-16T20:54:19Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/hypha/commit/865965422b58eb319423eefbc8e054029fcfe45c",
+          "tags": []
+        },
         {
           "sha": "3d3221dc1a7edb4f551520034d3c1f2587ddcb10",
           "date": "2026-11-16T02:34:34Z",
@@ -3901,13 +3926,6 @@
           "message": "fix(http,hub,node-api): canonical wire paths — drop alias routes",
           "url": "https://github.com/9aia/hypha/commit/71cbaf8425f2ef02519e628d8a7c1ce6c621141a",
           "tags": []
-        },
-        {
-          "sha": "98694d1453503de72b06d8fb4a46cdf144facb21",
-          "date": "2026-11-09T18:40:38Z",
-          "message": "fix: make Pairing::with_token_prefix work on shared instances",
-          "url": "https://github.com/9aia/hypha/commit/98694d1453503de72b06d8fb4a46cdf144facb21",
-          "tags": []
         }
       ],
       "tags": [
@@ -3924,6 +3942,13 @@
       "website": "https://9aia.com/cicada/",
       "repo": "https://github.com/9aia/cicada",
       "commits": [
+        {
+          "sha": "3b1790b2bb6f192dab718cbbc087c4ce35c1d9ff",
+          "date": "2026-11-16T20:53:17Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/cicada/commit/3b1790b2bb6f192dab718cbbc087c4ce35c1d9ff",
+          "tags": []
+        },
         {
           "sha": "cf817614000cda1486c645462193da3dab705af0",
           "date": "2026-11-16T02:34:26Z",
@@ -4266,13 +4291,6 @@
           "message": "feat(state): JsonFileStateStore + apply/refresh/drift use cases + sendUpdates",
           "url": "https://github.com/9aia/cicada/commit/4a90759434b2f9adb44289372b5e0feb2bf41467",
           "tags": []
-        },
-        {
-          "sha": "ed6054903d8b1a842ad2be53edca9133e5ea0a45",
-          "date": "2026-10-23T06:14:29Z",
-          "message": "feat(planning): OperationPlanner, plan/range/show use cases, fakes, CLI verbs",
-          "url": "https://github.com/9aia/cicada/commit/ed6054903d8b1a842ad2be53edca9133e5ea0a45",
-          "tags": []
         }
       ],
       "tags": []
@@ -4283,6 +4301,13 @@
       "website": "https://9aia.com/lasius/",
       "repo": "https://github.com/9aia/lasius",
       "commits": [
+        {
+          "sha": "ad4a6c6b49e9b28d7383c71e6a84941fdf431484",
+          "date": "2026-11-16T20:45:51Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/lasius/commit/ad4a6c6b49e9b28d7383c71e6a84941fdf431484",
+          "tags": []
+        },
         {
           "sha": "330a88c72c87d5bdf0f6fb0a76054737d5d7883e",
           "date": "2026-11-16T06:49:22Z",
@@ -4622,6 +4647,27 @@
       "repo": "https://github.com/9aia/sepia",
       "commits": [
         {
+          "sha": "3e65c524a7bdbb80d02040c43c4168dbf8b645e6",
+          "date": "2026-11-18T05:39:29Z",
+          "message": "merge: driver-sepia sessions.* ops queries",
+          "url": "https://github.com/9aia/sepia/commit/3e65c524a7bdbb80d02040c43c4168dbf8b645e6",
+          "tags": []
+        },
+        {
+          "sha": "221c2000dacd39a4b385f4ca14c183215c8828de",
+          "date": "2026-11-18T05:37:56Z",
+          "message": "feat(driver-sepia): sessions.* ops queries for the session plane",
+          "url": "https://github.com/9aia/sepia/commit/221c2000dacd39a4b385f4ca14c183215c8828de",
+          "tags": []
+        },
+        {
+          "sha": "554eaa03a8d74fbb1c3ac14a94e90b11659ffb5e",
+          "date": "2026-11-16T20:54:21Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/sepia/commit/554eaa03a8d74fbb1c3ac14a94e90b11659ffb5e",
+          "tags": []
+        },
+        {
           "sha": "774e11f790b175c7473348a20eee5082d1c9236f",
           "date": "2026-11-16T02:34:57Z",
           "message": "docs: security reports via private email, no public disclosure",
@@ -4949,29 +4995,6 @@
           "message": "docs(release): manual invocation — bupha watch deprecated",
           "url": "https://github.com/9aia/sepia/commit/3835f64a23cbbe377c53756e21e77b71db8c1a87",
           "tags": []
-        },
-        {
-          "sha": "e2a18ba296d876c1e08521f91f9338278e85f990",
-          "date": "2026-11-09T21:33:54Z",
-          "message": "docs: releasing — publish order, crates.io names, tag flow",
-          "url": "https://github.com/9aia/sepia/commit/e2a18ba296d876c1e08521f91f9338278e85f990",
-          "tags": [
-            "v0.1.0"
-          ]
-        },
-        {
-          "sha": "79d1746f3cca0900c8fd4f435b70d935457c07b5",
-          "date": "2026-11-09T21:32:28Z",
-          "message": "feat: release infrastructure — v0.1.0 publish metadata, dist + tag-triggered releases",
-          "url": "https://github.com/9aia/sepia/commit/79d1746f3cca0900c8fd4f435b70d935457c07b5",
-          "tags": []
-        },
-        {
-          "sha": "68501ec7cb032b8e77bf48fa02a7a11fc3210239",
-          "date": "2026-11-09T19:25:16Z",
-          "message": "feat(sepia-peregrin): server-side sepia-session entity plane for hypha",
-          "url": "https://github.com/9aia/sepia/commit/68501ec7cb032b8e77bf48fa02a7a11fc3210239",
-          "tags": []
         }
       ],
       "tags": [
@@ -4988,6 +5011,27 @@
       "website": "https://9aia.com/peregrin/",
       "repo": "https://github.com/9aia/peregrin",
       "commits": [
+        {
+          "sha": "d27ca7ba24f40dbd2b6b23f7c0e2f49ed88c3fd0",
+          "date": "2026-11-18T04:50:01Z",
+          "message": "merge: driver: ops — bounded tamias-driver queries over tamias serve (P-096)",
+          "url": "https://github.com/9aia/peregrin/commit/d27ca7ba24f40dbd2b6b23f7c0e2f49ed88c3fd0",
+          "tags": []
+        },
+        {
+          "sha": "9ba1cd04ed56c2923df40749e8ec7bc7619bd790",
+          "date": "2026-11-18T04:36:48Z",
+          "message": "feat(driver): ops driver — bounded tamias-driver queries over tamias serve (P-096)",
+          "url": "https://github.com/9aia/peregrin/commit/9ba1cd04ed56c2923df40749e8ec7bc7619bd790",
+          "tags": []
+        },
+        {
+          "sha": "f22527aff90286a6070be9d7f0b59cf4c2e76851",
+          "date": "2026-11-16T20:54:20Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/peregrin/commit/f22527aff90286a6070be9d7f0b59cf4c2e76851",
+          "tags": []
+        },
         {
           "sha": "d1e8e389adb6e4679e9d10c82a8adf3b460501aa",
           "date": "2026-11-16T02:34:53Z",
@@ -5316,27 +5360,6 @@
           "message": "feat(libraries): ledger-notify bundle — project-branch watcher → ntfy (T-025)",
           "url": "https://github.com/9aia/peregrin/commit/ed0e33a5243eed7e5b90adb87b19f8f162f01dcd",
           "tags": []
-        },
-        {
-          "sha": "a8bafec9f9e6a8983a17ff638cd7b7faf50811a5",
-          "date": "2026-11-11T23:40:23Z",
-          "message": "libraries: mark git/github/agent snippets deprecated (PL-015 WS3)",
-          "url": "https://github.com/9aia/peregrin/commit/a8bafec9f9e6a8983a17ff638cd7b7faf50811a5",
-          "tags": []
-        },
-        {
-          "sha": "bc109bea22437096fc3c0f43d55adee820ae1c11",
-          "date": "2026-11-11T23:37:41Z",
-          "message": "feat(libraries): myco-maintenance bundle — scheduled myco reap sweep (T-022)",
-          "url": "https://github.com/9aia/peregrin/commit/bc109bea22437096fc3c0f43d55adee820ae1c11",
-          "tags": []
-        },
-        {
-          "sha": "ee8f4426050a79b692af6bcbeb1a555bdc6e9ce2",
-          "date": "2026-11-11T23:35:46Z",
-          "message": "feat(webhook): push_refs param — per-route push ref filtering",
-          "url": "https://github.com/9aia/peregrin/commit/ee8f4426050a79b692af6bcbeb1a555bdc6e9ce2",
-          "tags": []
         }
       ],
       "tags": [
@@ -5353,6 +5376,13 @@
       "website": "https://9aia.com/pavo/",
       "repo": "https://github.com/9aia/pavo",
       "commits": [
+        {
+          "sha": "ca4079d123fe7533210ed698051f5c3a09000911",
+          "date": "2026-11-16T20:46:05Z",
+          "message": "chore(release): drop scripts/release.sh — tarsi-serve + cuora suffice",
+          "url": "https://github.com/9aia/pavo/commit/ca4079d123fe7533210ed698051f5c3a09000911",
+          "tags": []
+        },
         {
           "sha": "ddfab83fe56c469c1e242edaebf41ea212b4105e",
           "date": "2026-11-16T02:34:49Z",
@@ -5694,13 +5724,6 @@
           "date": "2026-11-08T23:20:04Z",
           "message": "feat(driver-config): graduate config driver to first-party crate",
           "url": "https://github.com/9aia/pavo/commit/c6c997640de823333cdac0910b3ddf97d32e0a2f",
-          "tags": []
-        },
-        {
-          "sha": "4cce795df85812419b7d2da609c11668961986aa",
-          "date": "2026-11-08T23:07:09Z",
-          "message": "fix(core): tamias_home fallback ./tamias -> ./.tamias (match tamias-driver fix)",
-          "url": "https://github.com/9aia/pavo/commit/4cce795df85812419b7d2da609c11668961986aa",
           "tags": []
         }
       ],
