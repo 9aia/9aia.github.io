@@ -67,3 +67,13 @@ bun run docs:deploy  # build + gh-pages deploy (9aia.com)
 Owns the public website only. Org repos keep their own docs sites;
 the shared look lives in `vitepress-theme-9aia` /
 `slidev-theme-9aia`.
+
+## Specs
+
+`specs/<name>.toml` is this repo's mimus-standard conformance spec —
+approval-gated. Any change requires a live org proposal
+(`proposal-NNNN`, status open|done) referenced in the spec header or
+commit range, and no coverage regression vs merge-base. Guard:
+workspace `../../scripts/spec-guard.py`; sweep:
+`../../scripts/standard.sh`; regenerate coverage only via
+`../../scripts/gen-repo-specs.py`.
